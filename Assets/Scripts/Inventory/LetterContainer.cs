@@ -42,18 +42,19 @@ public class LetterContainer : MonoBehaviour
         {
             gm = GameManager.GetInstance();
         }
-        for ( int i = 0; i < gm.letters.Count; i++ )
+        InventoryManager invManage = gm.inventoryManager;
+        for ( int i = 0; i < gm.inventoryManager.letters.Count; i++ )
         {
             GameObject letterInstance = Instantiate(letterPrefab, letterPanel.transform);
-            letterInstance.GetComponent<LetterUI>().letterSubject.text = gm.letters[i].letter.subject;
-            if (gm.letters[i].newLetter)
+            letterInstance.GetComponent<LetterUI>().letterSubject.text = invManage.letters[i].letter.subject;
+            if (invManage.letters[i].newLetter)
             {
                 letterInstance.GetComponent<LetterUI>().newIcon.SetActive(true);
             } else
             {
                 letterInstance.GetComponent<LetterUI>().newIcon.SetActive(false);
             }
-            LetterSlot tempLetter = gm.letters[i];
+            LetterSlot tempLetter = invManage.letters[i];
             letterInstance.GetComponent<Button>().onClick.AddListener(delegate { showLetterCloseup(ref tempLetter); });
         }
     }
@@ -68,8 +69,15 @@ public class LetterContainer : MonoBehaviour
 
     public void closeLetterCloseup()
     {
-        letterCloseup.SetActive(false);
-        inventoryPanel.showLettersPanel();
+        if (!gm.cutsceneManager.mailboxInteract1)
+        {
+            gm.cutsceneManager.mailboxInteract1 = true;
+            letterCloseup.SetActive(false);
+        } else
+        {
+            letterCloseup.SetActive(false);
+            inventoryPanel.showLettersPanel();
+        }
     }
 
     public void addLetter(Letter letterToAdd)
@@ -78,7 +86,7 @@ public class LetterContainer : MonoBehaviour
         {
             gm = GameManager.GetInstance();
         }
-        gm.letters.Add(new LetterSlot(letterToAdd, true));
+        gm.inventoryManager.letters.Add(new LetterSlot(letterToAdd, true));
     }
 
     public void addLetter(Letter letterToAdd, bool isNew)
@@ -87,6 +95,6 @@ public class LetterContainer : MonoBehaviour
         {
             gm = GameManager.GetInstance();
         }
-        gm.letters.Add(new LetterSlot(letterToAdd, isNew));
+        gm.inventoryManager.letters.Add(new LetterSlot(letterToAdd, isNew));
     }
 }

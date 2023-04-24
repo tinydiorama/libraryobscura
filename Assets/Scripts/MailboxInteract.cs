@@ -16,6 +16,9 @@ public class MailboxInteract : Interactable
     
     [SerializeField] private LetterContainer letterContainer;
 
+    /* for initial cutscene */
+    [SerializeField] private Inventory inv;
+
     private GameManager gm;
 
     private void Start()
@@ -37,21 +40,35 @@ public class MailboxInteract : Interactable
     public override IEnumerator Interact(PlayerController player)
     {
         gm.isPaused = true;
-        if ( gm.mailManager.hasNewMail )
+        if ( ! gm.cutsceneManager.mailboxInteract1 ) // have never interacted with the mailbox before
         {
-            noMailNotif.SetActive(false);
-            for ( int i = 0; i < gm.mailManager.newLetters.Count; i++ )
-            {
-                GameObject newLetterInstance = Instantiate(newLetterPrefab, notifContentPanel.transform);
-            }
-            closeText.text = "Get all";
+            notifications.SetActive(false);
+            mailNotifications.SetActive(false);
+            inv.gameObject.SetActive(true);
+            gm.pauseShown = true;
+            letterContainer.addLetter(gm.mailManager.newLetters[0]);
+            inv.showLetterCloseup(gm.mailManager.newLetters[0]);
+            gm.mailManager.clearLetters();
+            gm.mailManager.hasNewMail = false;
         } else
         {
-            noMailNotif.SetActive(true);
-            closeText.text = "Close";
+            if (gm.mailManager.hasNewMail)
+            {
+                noMailNotif.SetActive(false);
+                for (int i = 0; i < gm.mailManager.newLetters.Count; i++)
+                {
+                    GameObject newLetterInstance = Instantiate(newLetterPrefab, notifContentPanel.transform);
+                }
+                closeText.text = "Get all";
+            }
+            else
+            {
+                noMailNotif.SetActive(true);
+                closeText.text = "Close";
+            }
+            notifications.SetActive(true);
+            mailNotifications.SetActive(true);
         }
-        notifications.SetActive(true);
-        mailNotifications.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         player.GetComponent<PlayerInteractController>().isInteracting = false;
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -68,5 +69,16 @@ public class Inventory : MonoBehaviour
         booksButton.GetComponent<Image>().color = inactiveColor;
         seedsButton.GetComponent<Image>().color = activeColor;
         seedsPanel.GetComponent<ItemContainer>().ShowItems();
+    }
+
+    public void showLetterCloseup(Letter letterToShow)
+    {
+        booksPanel.SetActive(false);
+        lettersPanel.SetActive(false);
+        seedsPanel.SetActive(false);
+        lettersCloseup.SetActive(true);
+        buttonsContainer.SetActive(false);
+
+        lettersCloseup.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = letterToShow.body;
     }
 }

@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class CutsceneManager : MonoBehaviour {
     public bool cutscene1Triggered;
+    public bool mailboxInteract1;
 }

@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour, iDataPersistence
+public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] public List<LetterSlot> letters;
-    [SerializeField] public List<Letter> letterDatabase;
-    [SerializeField] public List<BookSlot> books;
-    [SerializeField] public List<Book> booksDatabase;
 
     public CutsceneManager cutsceneManager;
     public MailManager mailManager;
     public DayTimeController dayTime;
+    public InventoryManager inventoryManager;
     public bool isPaused;
     public bool pauseShown;
 
@@ -67,47 +64,5 @@ public class GameManager : MonoBehaviour, iDataPersistence
         isPaused = false;
         pauseShown = false;
         pauseMenu.SetActive(false);
-    }
-    
-    public void LoadData(GameData data)
-    {
-        foreach (Letter dbLetter in letterDatabase)
-        {
-            if (data.letters.ContainsKey(dbLetter.id))
-            {
-                bool isNew;
-                data.letters.TryGetValue(dbLetter.id, out isNew);
-                letters.Add(new LetterSlot(dbLetter, isNew));
-            }
-        }
-        foreach (Book dbBook in booksDatabase)
-        {
-            if (data.books.ContainsKey(dbBook.id))
-            {
-                bool isNew;
-                data.books.TryGetValue(dbBook.id, out isNew);
-                books.Add(new BookSlot(dbBook, isNew));
-            }
-        }
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        foreach (LetterSlot slot in letters)
-        {
-            if (data.letters.ContainsKey(slot.letter.id))
-            {
-                data.letters.Remove(slot.letter.id);
-            }
-            data.letters.Add(slot.letter.id, slot.newLetter);
-        }
-        foreach (BookSlot slot in books)
-        {
-            if (data.books.ContainsKey(slot.book.id))
-            {
-                data.books.Remove(slot.book.id);
-            }
-            data.books.Add(slot.book.id, slot.newBook);
-        }
     }
 }

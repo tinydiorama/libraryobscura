@@ -42,11 +42,12 @@ public class BookContainer : MonoBehaviour
         {
             gm = GameManager.GetInstance();
         }
-        for (int i = 0; i < gm.books.Count; i++)
+        InventoryManager invManage = gm.inventoryManager;
+        for (int i = 0; i < invManage.books.Count; i++)
         {
             GameObject bookInstance = Instantiate(bookPrefab, bookPanel.transform);
-            bookInstance.GetComponent<BookUI>().bookTitleAuthor.text = gm.books[i].book.title + " by " + gm.books[i].book.author;
-            if (gm.books[i].newBook)
+            bookInstance.GetComponent<BookUI>().bookTitleAuthor.text = invManage.books[i].book.title + " by " + invManage.books[i].book.author;
+            if (invManage.books[i].newBook)
             {
                 bookInstance.GetComponent<BookUI>().newIcon.SetActive(true);
             }
@@ -54,7 +55,7 @@ public class BookContainer : MonoBehaviour
             {
                 bookInstance.GetComponent<BookUI>().newIcon.SetActive(false);
             }
-            BookSlot tempBook = gm.books[i];
+            BookSlot tempBook = invManage.books[i];
             bookInstance.GetComponent<Button>().onClick.AddListener(delegate { showBookCloseup(ref tempBook); });
         }
     }
@@ -80,6 +81,6 @@ public class BookContainer : MonoBehaviour
         {
             gm = GameManager.GetInstance();
         }
-        gm.books.Add(new BookSlot(bookToAdd, true));
+        gm.inventoryManager.books.Add(new BookSlot(bookToAdd, true));
     }
 }

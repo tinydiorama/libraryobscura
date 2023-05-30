@@ -28,7 +28,14 @@ public class HouseController : MonoBehaviour
         anim.SetBool("ZoomIn", false);
         foreach (GameObject room in unlockedRooms)
         {
-            room.SetActive(false);
+            room.GetComponent<Animator>().SetBool("FadeOut", true);
+            StartCoroutine(fadeRoom(room));
         }
+    }
+
+    IEnumerator fadeRoom(GameObject room)
+    {
+        yield return new WaitForSeconds(0.9f);
+        room.SetActive(false);
     }
 }

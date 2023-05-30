@@ -13,6 +13,11 @@ public class Item : ScriptableObject
     public Sprite icon;
     public bool sellable;
     public Category category;
+    public int buyPrice;
+    public int sellPrice;
+
+    public Sprite[] seedImages;
+    public Item harvestPlant;
 
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()

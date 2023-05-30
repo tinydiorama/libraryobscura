@@ -144,8 +144,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: To the one who comes...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb93d49c9f4a73a438c5adf70db6761f, type: 2}
-  m_sharedMaterial: {fileID: 8189538864929640155, guid: bb93d49c9f4a73a438c5adf70db6761f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b9223782f8a6c2e4a9f02a702f20b372, type: 2}
+  m_sharedMaterial: {fileID: 2534533887740486622, guid: b9223782f8a6c2e4a9f02a702f20b372, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

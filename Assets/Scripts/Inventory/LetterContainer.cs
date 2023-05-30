@@ -25,6 +25,8 @@ public class LetterContainer : MonoBehaviour
     [SerializeField] private GameObject letterCloseup;
     [SerializeField] private TextMeshProUGUI letterBodyText;
 
+    [SerializeField] private NotifController notifController;
+
     private GameManager gm;
 
     private void Start()
@@ -69,32 +71,23 @@ public class LetterContainer : MonoBehaviour
 
     public void closeLetterCloseup()
     {
+        if (gm == null)
+        {
+            gm = GameManager.GetInstance();
+        }
         if (!gm.cutsceneManager.mailboxInteract1)
         {
             gm.cutsceneManager.mailboxInteract1 = true;
+            letterBodyText.text = "";
             letterCloseup.SetActive(false);
+            gm.mailManager.clearLetters();
+            notifController.showNotifications();
+            inventoryPanel.hidePanels();
+            inventoryPanel.gameObject.SetActive(false);
         } else
         {
             letterCloseup.SetActive(false);
             inventoryPanel.showLettersPanel();
         }
-    }
-
-    public void addLetter(Letter letterToAdd)
-    {
-        if ( gm == null )
-        {
-            gm = GameManager.GetInstance();
-        }
-        gm.inventoryManager.letters.Add(new LetterSlot(letterToAdd, true));
-    }
-
-    public void addLetter(Letter letterToAdd, bool isNew)
-    {
-        if (gm == null)
-        {
-            gm = GameManager.GetInstance();
-        }
-        gm.inventoryManager.letters.Add(new LetterSlot(letterToAdd, isNew));
     }
 }

@@ -4,13 +4,14 @@ using UnityEngine;
 using TMPro;
 using System.Xml;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public enum PlantState { 
-    DIRT = 1,
-    TILLED = 2,
-    PLANTED1 = 3,
-    PLANTED2 = 4,
-    READYFORHARVEST = 5,
+    DIRT = 0,
+    TILLED = 1,
+    PLANTED1 = 2,
+    PLANTED2 = 3,
+    READYFORHARVEST = 4,
     DEAD = -1
 };
 
@@ -25,11 +26,17 @@ public class GardenPlot : Interactable
     [SerializeField] private GameObject notifContainer;
     [SerializeField] private GameObject selectSeedContainer;
     [SerializeField] private GameObject seedDisplay;
+    [SerializeField] private GameObject noSeedMessage;
+    [SerializeField] private Button plantButton;
     [SerializeField] private GameObject seedSelectPrefab;
     [SerializeField] private Color selectedColor;
     [SerializeField] private Color neutralColor;
 
+    [SerializeField] private SpriteRenderer plantImage;
+    [SerializeField] private Sprite witheredImage;
+
     private ItemSlot seedSelected;
+    public ItemSlot growingSeed;
     private Button seedSelectedUI;
 
     public int state;
@@ -39,7 +46,7 @@ public class GardenPlot : Interactable
 
     private void Start()
     {
-        state = (int)PlantState.DIRT;
+        //state = (int)PlantState.DIRT;
         gm = GameManager.GetInstance();
     }
 
@@ -48,10 +55,7 @@ public class GardenPlot : Interactable
 
         if ( state == (int)PlantState.DIRT )
         {
-            Debug.Log("tilling");
-            sr.sprite = tilledSprite;
-            state = (int)PlantState.TILLED;
-            promptText.text = "Plant";
+            setStateTilled();
         } else if ( state == (int)PlantState.TILLED )
         {
             //GetComponent<HighlightShowController>().disableHighlight();
@@ -59,14 +63,72 @@ public class GardenPlot : Interactable
             showSeedSelect();
         } else if ( (state == (int)PlantState.PLANTED1 || state == (int)PlantState.PLANTED2) && ! watered)
         {
-            Debug.Log("watering");
-            watered = true;
-            sr.sprite = wateredSoil;
-            GetComponent<HighlightShowController>().disableHighlight();
-            GetComponent<HighlightShowController>().hideHighlight();
+            waterPlant();
+        } else if ( state == (int)PlantState.DEAD )
+        {
+            setStateDirt();
         }
         yield return new WaitForSeconds(0.2f);
         resetInteraction(player);
+    }
+
+    public void waterPlant()
+    {
+        watered = true;
+        sr.sprite = wateredSoil;
+        GetComponent<HighlightShowController>().disableHighlight();
+        GetComponent<HighlightShowController>().hideHighlight();
+    }
+
+    public void setStateDirt()
+    {
+        state = (int)PlantState.DIRT;
+        promptText.text = "Plow";
+        watered = false;
+        sr.sprite = null;
+    }
+
+    public void setStateTilled()
+    {
+        sr.sprite = tilledSprite;
+        state = (int)PlantState.TILLED;
+        watered = false;
+        promptText.text = "Plant";
+    }
+
+    public void setStatePlant1()
+    {
+        sr.sprite = tilledSprite;
+        state = (int)PlantState.PLANTED1;
+        plantImage.sprite = growingSeed.item.seedImages[0];
+        watered = false;
+        promptText.text = "Water";
+    }
+
+    public void setStatePlant2()
+    {
+        Debug.Log("gets here");
+        sr.sprite = tilledSprite;
+        plantImage.sprite = growingSeed.item.seedImages[1];
+        state = (int)PlantState.PLANTED2;
+        watered = false;
+        promptText.text = "Water";
+    }
+    public void setStatePlant3()
+    {
+        sr.sprite = tilledSprite;
+        plantImage.sprite = growingSeed.item.seedImages[2];
+        state = (int)PlantState.READYFORHARVEST;
+        watered = false;
+        promptText.text = "Harvest";
+    }
+    public void setStatePlantDead()
+    {
+        sr.sprite = tilledSprite;
+        plantImage.sprite = witheredImage;
+        state = (int)PlantState.DEAD;
+        watered = false;
+        promptText.text = "Clear";
     }
 
     private void showSeedSelect()
@@ -77,13 +139,24 @@ public class GardenPlot : Interactable
 
         foreach (Transform child in seedDisplay.transform)
         {
-            Destroy(child.gameObject);
+            if ( child.name != "NoSeeds" )
+            {
+                Destroy(child.gameObject);
+            }
         }
         int j = 0;
         InventoryManager invManage = gm.inventoryManager;
-        for (int i = 0; i < gm.inventoryManager.items.Count; i++)
+        if ( invManage.items.Count > 0 )
         {
-            Debug.Log(gm.inventoryManager.items[i].item.category.ToString());
+            noSeedMessage.SetActive(false);
+            plantButton.interactable = true;
+        } else
+        {
+            noSeedMessage.SetActive(true);
+            plantButton.interactable = false;
+        }
+        for (int i = 0; i < invManage.items.Count; i++)
+        {
             if (invManage.items[i].item.category.ToString() == "Seed")
             {
                 GameObject seedInstance = Instantiate(seedSelectPrefab, seedDisplay.transform);
@@ -122,7 +195,12 @@ public class GardenPlot : Interactable
 
     public void plantSeed()
     {
-        state = (int)PlantState.PLANTED1;
-        promptText.text = "Water";
+        bool successfulPlant = gm.inventoryManager.removeItem(seedSelected.item);
+        growingSeed = seedSelected;
+        if ( successfulPlant )
+        {
+            setStatePlant1();
+        }
     }
+
 }

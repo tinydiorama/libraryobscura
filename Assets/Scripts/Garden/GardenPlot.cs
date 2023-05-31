@@ -107,7 +107,6 @@ public class GardenPlot : Interactable
 
     public void setStatePlant2()
     {
-        Debug.Log("gets here");
         sr.sprite = tilledSprite;
         plantImage.sprite = growingSeed.item.seedImages[1];
         state = (int)PlantState.PLANTED2;

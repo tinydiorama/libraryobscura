@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class StairsController : MonoBehaviour
 {
     [SerializeField] private GameObject stairsCollider;
+    [SerializeField] private GameObject stairsOverlay;
 
     private bool upPressed;
     private bool stayPressed;
@@ -34,10 +36,12 @@ public class StairsController : MonoBehaviour
         if (upPressed)
         {
             stairsCollider.SetActive(true);
+            stairsOverlay.SetActive(true);
         }
         else
         {
             stairsCollider.SetActive(false);
+            stairsOverlay.SetActive(false);
         }
     }
 

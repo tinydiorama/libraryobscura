@@ -80,7 +80,6 @@ public class FarmController : MonoBehaviour, iDataPersistence
                 seedId = data.seedId[index];
                 if (seedId != "") // plant exists
                 {
-                    Debug.Log(data.state[index]);
                     for (int i = 0; i < gm.inventoryManager.itemsDatabase.Count; i++)
                     {
                         if (gm.inventoryManager.itemsDatabase[i].id == seedId)

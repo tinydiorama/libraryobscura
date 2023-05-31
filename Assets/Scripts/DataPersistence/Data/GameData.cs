@@ -17,7 +17,16 @@ public class GameData
 
     // cutscene
     public bool initialMailbox;
+    public bool cutscene0triggered;
     public bool cutscene1triggered;
+    public bool cutscene2triggered;
+    public bool buyAllowed;
+
+    // current mailbox
+    public bool hasNewMail;
+    public List<string> mailboxLetters;
+    public List<string> mailboxBooks;
+    public List<string> mailboxItems;
 
     // the values defined in this constructor are the default values
     // default values on new game
@@ -28,11 +37,18 @@ public class GameData
         this.books = new SerializedDictionary<string, bool>();
         this.items = new SerializedDictionary<string, int>();
 
-        seedId = new List<string>();
-        state = new List<int>();
-        watered = new List<bool>();
+        this.seedId = new List<string>();
+        this.state = new List<int>();
+        this.watered = new List<bool>();
 
-        initialMailbox = false;
-        cutscene1triggered = false;
+        this.initialMailbox = false;
+        this.cutscene0triggered = false;
+        this.cutscene1triggered = false;
+        this.cutscene2triggered = false;
+
+        this.hasNewMail = false;
+        this.mailboxLetters = new List<string>();
+        this.mailboxBooks = new List<string>();
+        this.mailboxItems = new List<string>();
     }
 }

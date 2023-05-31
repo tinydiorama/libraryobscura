@@ -80,6 +80,10 @@ public class LetterContainer : MonoBehaviour
             gm.cutsceneManager.mailboxInteract1 = true;
             letterBodyText.text = "";
             letterCloseup.SetActive(false);
+            for (int i = 0; i < gm.mailManager.newLetters.Count; i++)
+            {
+                gm.inventoryManager.addLetter(gm.mailManager.newLetters[i]);
+            }
             gm.mailManager.clearLetters();
             notifController.showNotifications();
             inventoryPanel.hidePanels();

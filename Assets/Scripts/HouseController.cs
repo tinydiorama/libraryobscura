@@ -20,7 +20,8 @@ public class HouseController : MonoBehaviour
         anim.SetBool("ZoomIn", true);
         foreach ( GameObject room in unlockedRooms)
         {
-            room.SetActive(true);
+            room.GetComponent<Animator>().SetBool("FadeOut", true);
+            StartCoroutine(fadeRoom(room));
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -28,8 +29,7 @@ public class HouseController : MonoBehaviour
         anim.SetBool("ZoomIn", false);
         foreach (GameObject room in unlockedRooms)
         {
-            room.GetComponent<Animator>().SetBool("FadeOut", true);
-            StartCoroutine(fadeRoom(room));
+            room.SetActive(true);
         }
     }
 

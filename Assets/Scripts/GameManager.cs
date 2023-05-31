@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FarmController farm;
 
     public CutsceneManager cutsceneManager;
+    public CutsceneData cutsceneData;
     public MailManager mailManager;
     public DayTimeController dayTime;
     public InventoryManager inventoryManager;
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
         AnimatorClipInfo[] animController = nightFade.GetCurrentAnimatorClipInfo(0);
 
         m_CurrentClipLength = animController[0].clip.length;
+        AudioManager.GetInstance().FadeOutMusic();
 
         StartCoroutine(processDay());
     }
@@ -70,8 +72,13 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(m_CurrentClipLength);
         nightFade.SetBool("NightFaded", true);
+
+        // process things
         dayTime.NextDay();
         farm.advanceSeeds();
+        processDataforDay();
+
+        // Saves the game
         DataPersistenceManager.instance.SaveGame();
         nightFade.SetBool("FadeToDay", true);
         StartCoroutine(startNewDay());
@@ -80,6 +87,7 @@ public class GameManager : MonoBehaviour
     IEnumerator startNewDay()
     {
         isPaused = false;
+        AudioManager.GetInstance().ChangeSong();
         yield return new WaitForSeconds(m_CurrentClipLength);
         nightFade.gameObject.SetActive(false);
     }
@@ -99,5 +107,18 @@ public class GameManager : MonoBehaviour
         isPaused = false;
         pauseShown = false;
         pauseMenu.SetActive(false);
+    }
+
+    private void processDataforDay()
+    {
+        if ( dayTime.days == 1 ) // day 1 (really day 2) gives you a new letter and 2 new seeds
+        {
+            mailManager.addNewLetter(cutsceneData.day2Letter);
+            foreach( Item seed in cutsceneData.day2Seeds )
+            {
+                mailManager.newItems.Add(seed);
+            }
+            mailManager.hasNewMail = true;
+        }
     }
 }

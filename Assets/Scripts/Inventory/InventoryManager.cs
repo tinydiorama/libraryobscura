@@ -17,6 +17,11 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         letters.Add(new LetterSlot(letterToAdd, true));
     }
 
+    public void addBook(Book bookToAdd)
+    {
+        books.Add(new BookSlot(bookToAdd, true));
+    }
+
     public void addLetter(Letter letterToAdd, bool isNew)
     {
         letters.Add(new LetterSlot(letterToAdd, isNew));

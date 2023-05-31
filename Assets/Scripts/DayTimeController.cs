@@ -16,7 +16,7 @@ public class DayTimeController : MonoBehaviour, iDataPersistence
     [SerializeField] private GameObject timeArrow;
 
     private float time;
-    private int days;
+    public int days { get; private set; }
     private GameManager gm;
 
     private void Start()

@@ -41,8 +41,10 @@ public class MailboxInteract : Interactable
             inv.showLetterCloseup(tempLetter);
         } else
         {
-            //TODO need to save/load/set the current letters sitting in the mailbox at any given day
-            notifController.showNotifications();
+            if (gm.cutsceneManager.buyAllowed)
+            {
+                notifController.showNotifications();
+            }
         }
         yield return new WaitForSeconds(0.2f);
         player.GetComponent<PlayerInteractController>().isInteracting = false;

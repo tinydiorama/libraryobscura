@@ -51,9 +51,6 @@ public class NotifController : MonoBehaviour
         }
         else
         {
-            // show buy sell window
-            /*noNotif.SetActive(true);
-            closeText.text = "Close";*/
             buySell.gameObject.SetActive(true);
             buySell.showShop();
         }
@@ -64,15 +61,28 @@ public class NotifController : MonoBehaviour
     {
         notifications.SetActive(false);
         notifContainer.SetActive(false);
+        foreach ( Transform child in notifContentPanel.transform)
+        {
+            if (child.name != "NoMail")
+            {
+                Destroy(child.gameObject);
+            }
+        }
         for (int i = 0; i < gm.mailManager.newLetters.Count; i++)
         {
             gm.inventoryManager.addLetter(gm.mailManager.newLetters[i]);
+        }
+        for (int i = 0; i < gm.mailManager.newBooks.Count; i++)
+        {
+            gm.inventoryManager.addBook(gm.mailManager.newBooks[i]);
         }
         for ( int i = 0; i < gm.mailManager.newItems.Count; i++ )
         {
             gm.inventoryManager.addItem(gm.mailManager.newItems[i]);
         }
         gm.mailManager.clearLetters();
+        gm.mailManager.clearBooks();
+        gm.mailManager.clearItems();
         gm.mailManager.hasNewMail = false;
         gm.isPaused = false;
         gm.pauseShown = false;

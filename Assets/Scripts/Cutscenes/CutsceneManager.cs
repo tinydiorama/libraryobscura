@@ -9,6 +9,7 @@ public class CutsceneManager : MonoBehaviour, iDataPersistence
     public bool cutscene2Triggered;
     public bool mailboxInteract1;
     public bool buyAllowed;
+    public bool sellAllowed;
 
     [SerializeField] private GameObject introBG;
     [SerializeField] private GameObject introText1;
@@ -25,6 +26,7 @@ public class CutsceneManager : MonoBehaviour, iDataPersistence
         this.cutscene1Triggered = data.cutscene1triggered;
         this.cutscene2Triggered = data.cutscene2triggered;
         this.buyAllowed = data.buyAllowed;
+        this.sellAllowed = data.sellAllowed;
 
         if (this.cutscene2Triggered)
         {
@@ -32,6 +34,10 @@ public class CutsceneManager : MonoBehaviour, iDataPersistence
         } else
         {
             figure.SetActive(true);
+        }
+        if ( this.buyAllowed )
+        {
+            GameManager.GetInstance().showMoneyUI();
         }
     }
 
@@ -42,6 +48,7 @@ public class CutsceneManager : MonoBehaviour, iDataPersistence
         data.cutscene1triggered = this.cutscene1Triggered;
         data.cutscene2triggered = this.cutscene2Triggered;
         data.buyAllowed = this.buyAllowed;
+        data.sellAllowed = this.sellAllowed;
     }
 
     public void Start()

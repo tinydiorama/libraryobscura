@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 502.0367, y: 44.183}
+  m_SizeDelta: {x: 502.0367, y: 65.3585}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6958860854895594166
 CanvasRenderer:
@@ -206,8 +206,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A Tree Grows in Brooklyn by John Smith
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b9223782f8a6c2e4a9f02a702f20b372, type: 2}
-  m_sharedMaterial: {fileID: 2534533887740486622, guid: b9223782f8a6c2e4a9f02a702f20b372, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70717bfc8b0f37f419a933c80cde9e3d, type: 2}
+  m_sharedMaterial: {fileID: -6847998942979070468, guid: 70717bfc8b0f37f419a933c80cde9e3d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -231,8 +231,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 41
+  m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -341,7 +341,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 7cc97d3fc5846ac48b45f068563ed48a, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -385,8 +385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3165, y: 0.3164}
-  m_SizeDelta: {x: 11.2421, y: 18.845}
+  m_AnchoredPosition: {x: 8.1904, y: -0.00010157}
+  m_SizeDelta: {x: 18.8044, y: 31.208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1550096155540370352
 CanvasRenderer:
@@ -418,8 +418,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bb93d49c9f4a73a438c5adf70db6761f, type: 2}
-  m_sharedMaterial: {fileID: 8189538864929640155, guid: bb93d49c9f4a73a438c5adf70db6761f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70717bfc8b0f37f419a933c80cde9e3d, type: 2}
+  m_sharedMaterial: {fileID: -6847998942979070468, guid: 70717bfc8b0f37f419a933c80cde9e3d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -443,15 +443,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.16
-  m_fontSizeBase: 20.16
+  m_fontSize: 35.5
+  m_fontSizeBase: 35.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

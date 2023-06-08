@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 2639676088346571334}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.4821, y: 0.84414}
-  m_SizeDelta: {x: 242.1079, y: 26.883}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 32.652527, y: 0.0000009536743}
+  m_SizeDelta: {x: -65.3051, y: 46.6106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5068103427090023875
 CanvasRenderer:
@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3 Willow Seeds
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b9223782f8a6c2e4a9f02a702f20b372, type: 2}
-  m_sharedMaterial: {fileID: 2534533887740486622, guid: b9223782f8a6c2e4a9f02a702f20b372, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70717bfc8b0f37f419a933c80cde9e3d, type: 2}
+  m_sharedMaterial: {fileID: -6847998942979070468, guid: 70717bfc8b0f37f419a933c80cde9e3d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 41
+  m_fontSizeBase: 41
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -174,7 +174,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 288.1087, y: 43.833}
+  m_SizeDelta: {x: 438.2243, y: 66.6717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2376684019749225663
 CanvasRenderer:
@@ -291,10 +291,10 @@ RectTransform:
   m_Father: {fileID: 2639676088346571334}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -123.6, y: -0.61835}
-  m_SizeDelta: {x: 20.2725, y: 23.958}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 31.9, y: 0}
+  m_SizeDelta: {x: 42.6182, y: 50.3662}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4034935844740107152
 CanvasRenderer:

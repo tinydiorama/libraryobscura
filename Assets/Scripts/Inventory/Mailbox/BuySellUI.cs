@@ -16,6 +16,8 @@ public class BuySellUI : MonoBehaviour
     [SerializeField] private Color activeColor;
     [SerializeField] private Color inactiveColor;
     [SerializeField] private GameObject confirmWindow;
+    [SerializeField] private GameObject thanksWindow;
+    [SerializeField] private TextMeshProUGUI thanksText;
     [SerializeField] private GameObject cantBuyWindow;
     [SerializeField] private TMP_InputField quantityInput;
     [SerializeField] private TextMeshProUGUI buyButtonText;
@@ -60,6 +62,13 @@ public class BuySellUI : MonoBehaviour
                 }
             }
             buySellButton.GetComponent<Button>().onClick.AddListener(delegate { buyItem(ref buySellButton); });
+        }
+        if (gm.cutsceneManager.sellAllowed)
+        {
+            sellButton.SetActive(true);
+        } else
+        {
+            sellButton.SetActive(false);
         }
     }
 
@@ -170,12 +179,16 @@ public class BuySellUI : MonoBehaviour
         if ( buyingSelling ) // buying
         {
             gm.money -= activePriceCheck * currentQuantity;
-            gm.inventoryManager.addItem(activeItem, currentQuantity);
+            gm.inventoryManager.addToOrder(activeItem, currentQuantity);
+            thanksText.text = "Thank you for your order. You will receive it tomorrow.";
+            thanksWindow.SetActive(true);
             showShop();
         } else
         {
             gm.money += activePriceCheck * currentQuantity;
             gm.inventoryManager.removeItem(activeItem, currentQuantity);
+            thanksText.text = "Thank you for selling. We have collected payment and shipment.";
+            thanksWindow.SetActive(true);
             showSellTab();
         }
     }
@@ -191,5 +204,10 @@ public class BuySellUI : MonoBehaviour
     public void closeCantBuy()
     {
         cantBuyWindow.SetActive(false);
+    }
+
+    public void closeThanks()
+    {
+        thanksWindow.SetActive(false);
     }
 }

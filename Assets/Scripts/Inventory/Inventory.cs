@@ -73,10 +73,6 @@ public class Inventory : MonoBehaviour
 
     public void showLetterCloseup(Letter letterToShow)
     {
-        if ( letterToShow.id == "a30d3bfc-c0df-44ca-9d1e-ed9bf667fe76")
-        {
-            GameManager.GetInstance().cutsceneManager.buyAllowed = true;
-        }
         booksPanel.SetActive(false);
         lettersPanel.SetActive(false);
         seedsPanel.SetActive(false);

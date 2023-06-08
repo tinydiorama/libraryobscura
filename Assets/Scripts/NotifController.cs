@@ -48,13 +48,21 @@ public class NotifController : MonoBehaviour
             closeText.text = "Get all";
             manager.hasNewMail = false;
             notifContainer.SetActive(true);
+            notifications.SetActive(true);
         }
         else
         {
-            buySell.gameObject.SetActive(true);
-            buySell.showShop();
+
+            if (gm.cutsceneManager.buyAllowed)
+            {
+                buySell.gameObject.SetActive(true);
+                buySell.showShop();
+                notifications.SetActive(true);
+            } else
+            {
+                gm.isPaused = false;
+            }
         }
-        notifications.SetActive(true);
     }
 
     public void closeMailNotif()

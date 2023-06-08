@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private Animator nightFade;
     [SerializeField] private FarmController farm;
+    [SerializeField] private GameObject moneyContainer;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
     public CutsceneManager cutsceneManager;
     public CutsceneData cutsceneData;
@@ -49,6 +52,12 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        moneyText.text = money.ToString();
+    }
+
+    public void showMoneyUI()
+    {
+        moneyContainer.SetActive(true);
     }
 
     public static GameManager GetInstance()

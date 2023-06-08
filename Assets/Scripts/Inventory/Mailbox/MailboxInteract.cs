@@ -41,10 +41,7 @@ public class MailboxInteract : Interactable
             inv.showLetterCloseup(tempLetter);
         } else
         {
-            if (gm.cutsceneManager.buyAllowed)
-            {
-                notifController.showNotifications();
-            }
+            notifController.showNotifications();
         }
         yield return new WaitForSeconds(0.2f);
         player.GetComponent<PlayerInteractController>().isInteracting = false;

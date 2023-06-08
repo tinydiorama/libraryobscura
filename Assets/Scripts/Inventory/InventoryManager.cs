@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     [SerializeField] public List<BookSlot> books;
     [SerializeField] public List<Book> booksDatabase;
     [SerializeField] public List<ItemSlot> items;
+    [SerializeField] public List<Item> itemsOrdered;
     [SerializeField] public List<Item> itemsDatabase;
 
     public void addLetter(Letter letterToAdd)
@@ -25,6 +26,14 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     public void addLetter(Letter letterToAdd, bool isNew)
     {
         letters.Add(new LetterSlot(letterToAdd, isNew));
+    }
+
+    public void addToOrder(Item itemToAdd, int count)
+    {
+        for ( int i = 0; i < count; i++ )
+        {
+            itemsOrdered.Add(itemToAdd);
+        }
     }
 
     public void addItem(Item itemToAdd)

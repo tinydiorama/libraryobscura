@@ -21,6 +21,7 @@ public class GameData
     public bool cutscene1triggered;
     public bool cutscene2triggered;
     public bool buyAllowed;
+    public bool sellAllowed;
 
     // current mailbox
     public bool hasNewMail;
@@ -45,6 +46,8 @@ public class GameData
         this.cutscene0triggered = false;
         this.cutscene1triggered = false;
         this.cutscene2triggered = false;
+        this.buyAllowed = false;
+        this.sellAllowed = false;
 
         this.hasNewMail = false;
         this.mailboxLetters = new List<string>();

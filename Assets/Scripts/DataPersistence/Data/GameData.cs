@@ -14,6 +14,7 @@ public class GameData
     public List<string> seedId;
     public List<int> state;
     public List<bool> watered;
+    public SerializedDictionary<string, bool> grimoire;
 
     // cutscene
     public bool initialMailbox;
@@ -41,6 +42,7 @@ public class GameData
         this.seedId = new List<string>();
         this.state = new List<int>();
         this.watered = new List<bool>();
+        this.grimoire = new SerializedDictionary<string, bool>();
 
         this.initialMailbox = false;
         this.cutscene0triggered = false;

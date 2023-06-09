@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public DayTimeController dayTime;
     public InventoryManager inventoryManager;
     public ShopManager shopManager;
+    public GrimoireController grimoireManager;
     public bool isPaused;
     public bool pauseShown;
     public int money;

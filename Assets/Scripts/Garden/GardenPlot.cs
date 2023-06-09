@@ -32,6 +32,9 @@ public class GardenPlot : Interactable
     [SerializeField] private Color selectedColor;
     [SerializeField] private Color neutralColor;
 
+    [SerializeField] private GameObject notifications;
+    [SerializeField] private GameObject notificationPrefab;
+
     [SerializeField] private SpriteRenderer plantImage;
     [SerializeField] private Sprite witheredImage;
 
@@ -67,7 +70,13 @@ public class GardenPlot : Interactable
         } else if ( state == (int)PlantState.DEAD )
         {
             setStateDirt();
+            addNotification("This plant has died. You've cleared it away.",
+                null, false);
+        } else if ( state == (int)PlantState.READYFORHARVEST)
+        {
+            harvestPlant();
         }
+        this.GetComponent<HighlightShowController>().RefreshLayoutGroupsImmediateAndRecursive();
         yield return new WaitForSeconds(0.2f);
         resetInteraction(player);
     }
@@ -86,6 +95,7 @@ public class GardenPlot : Interactable
         promptText.text = "Plow";
         watered = false;
         sr.sprite = null;
+        plantImage.sprite = null;
     }
 
     public void setStateTilled()
@@ -130,6 +140,42 @@ public class GardenPlot : Interactable
         promptText.text = "Clear";
     }
 
+    public void harvestPlant()
+    {
+        Item harvestPlant = growingSeed.item.harvestPlant;
+        gm.inventoryManager.addItem(harvestPlant);
+        addNotification("You have harvested a " + harvestPlant.itemName + "!",
+            harvestPlant.icon, true);
+        setStateDirt();
+    }
+
+    private void addNotification(string message, Sprite img, bool shouldSparkle)
+    {
+        GameObject notification = Instantiate(notificationPrefab, notifications.transform);
+        GardenNotification currNotif = notification.GetComponent<GardenNotification>();
+        currNotif.message.text = message;
+        if ( img != null )
+        {
+            currNotif.image.sprite = img;
+        }
+        if ( shouldSparkle )
+        {
+            currNotif.sparkles.SetActive(true);
+        } else
+        {
+            currNotif.sparkles.SetActive(false);
+        }
+
+        StartCoroutine(closeNotification(notification));
+    }
+
+    private IEnumerator closeNotification(GameObject notification)
+    {
+        yield return new WaitForSeconds(4f);
+        notification.SetActive(false);
+        Destroy(notification);
+    }
+
     private void showSeedSelect()
     {
         notifContainer.SetActive(true);
@@ -145,15 +191,6 @@ public class GardenPlot : Interactable
         }
         int j = 0;
         InventoryManager invManage = gm.inventoryManager;
-        if ( invManage.items.Count > 0 )
-        {
-            noSeedMessage.SetActive(false);
-            plantButton.interactable = true;
-        } else
-        {
-            noSeedMessage.SetActive(true);
-            plantButton.interactable = false;
-        }
         for (int i = 0; i < invManage.items.Count; i++)
         {
             if (invManage.items[i].item.category.ToString() == "Seed")
@@ -169,6 +206,16 @@ public class GardenPlot : Interactable
                 }
                 j++;
             }
+        }
+        if (j > 0)
+        {
+            noSeedMessage.SetActive(false);
+            plantButton.interactable = true;
+        }
+        else
+        {
+            noSeedMessage.SetActive(true);
+            plantButton.interactable = false;
         }
     }
 

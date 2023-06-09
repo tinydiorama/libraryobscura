@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HighlightShowController : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectsToShow;
+    [SerializeField] private GameObject canvasToRedraw;
     private bool highlightEnabled = true;
 
     public void disableHighlight()
@@ -24,6 +26,10 @@ public class HighlightShowController : MonoBehaviour
             {
                 go.SetActive(true);
             }
+            if ( canvasToRedraw != null )
+            {
+                RefreshLayoutGroupsImmediateAndRecursive();
+            }
         }
     }
 
@@ -40,6 +46,20 @@ public class HighlightShowController : MonoBehaviour
         foreach (GameObject go in objectsToShow)
         {
             go.SetActive(false);
+        }
+    }
+
+
+
+    public void RefreshLayoutGroupsImmediateAndRecursive()
+    {
+        GameObject root = canvasToRedraw;
+        if (canvasToRedraw != null)
+        {
+            foreach (var layoutGroup in root.GetComponentsInChildren<LayoutGroup>())
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(layoutGroup.GetComponent<RectTransform>());
+            }
         }
     }
 }

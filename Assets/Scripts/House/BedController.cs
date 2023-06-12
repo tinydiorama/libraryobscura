@@ -3,35 +3,61 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class BedController : Interactable
+public class BedController : MonoBehaviour
 {
     [SerializeField] private GameObject notifications;
     [SerializeField] private GameObject bedConfirmNotif;
     [SerializeField] private TextMeshProUGUI timeText;
 
     private GameManager gm;
-    private PlayerController thePlayer;
+    private bool playerInRange;
+
+    private void Awake()
+    {
+        playerInRange = false;
+    }
 
     private void Start()
     {
         gm = GameManager.GetInstance();
     }
-    public override IEnumerator Interact(PlayerController player)
+
+    private void Update()
     {
-        timeText.text = gm.dayTime.getTime();
-        notifications.SetActive(true);
-        bedConfirmNotif.SetActive(true);
-        gm.isPaused = true;
-        gm.pauseShown = true;
-        thePlayer = player;
-        yield return new WaitForSeconds(0.2f);
+        if (playerInRange && !gm.isPaused)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                gm = GameManager.GetInstance();
+                timeText.text = gm.dayTime.getTime();
+                notifications.SetActive(true);
+                bedConfirmNotif.SetActive(true);
+                gm.isPaused = true;
+                gm.pauseShown = true;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+        }
     }
 
     public void cancelSleep()
     {
         notifications.SetActive(false);
         bedConfirmNotif.SetActive(false);
-        thePlayer.GetComponent<PlayerInteractController>().isInteracting = false;
         gm.isPaused = false;
         gm.pauseShown = false;
     }
@@ -41,7 +67,6 @@ public class BedController : Interactable
         gm.nextDayCleanup();
         notifications.SetActive(false);
         bedConfirmNotif.SetActive(false);
-        thePlayer.GetComponent<PlayerInteractController>().isInteracting = false;
         gm.isPaused = false;
         gm.pauseShown = false;
     }

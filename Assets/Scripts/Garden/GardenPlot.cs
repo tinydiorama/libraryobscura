@@ -15,7 +15,7 @@ public enum PlantState {
     DEAD = -1
 };
 
-public class GardenPlot : Interactable
+public class GardenPlot : MonoBehaviour
 {
     [SerializeField] private FarmController fm;
     [SerializeField] private Sprite tilledSprite;
@@ -46,6 +46,11 @@ public class GardenPlot : Interactable
     public bool watered;
 
     private GameManager gm;
+    private bool playerInRange;
+    private void Awake()
+    {
+        playerInRange = false;
+    }
 
     private void Start()
     {
@@ -53,32 +58,55 @@ public class GardenPlot : Interactable
         gm = GameManager.GetInstance();
     }
 
-    public override IEnumerator Interact(PlayerController player)
+    private void Update()
     {
-
-        if ( state == (int)PlantState.DIRT )
+        if (playerInRange && !gm.isPaused)
         {
-            setStateTilled();
-        } else if ( state == (int)PlantState.TILLED )
-        {
-            //GetComponent<HighlightShowController>().disableHighlight();
-            //GetComponent<HighlightShowController>().hideHighlight();
-            showSeedSelect();
-        } else if ( (state == (int)PlantState.PLANTED1 || state == (int)PlantState.PLANTED2) && ! watered)
-        {
-            waterPlant();
-        } else if ( state == (int)PlantState.DEAD )
-        {
-            setStateDirt();
-            addNotification("This plant has died. You've cleared it away.",
-                null, false);
-        } else if ( state == (int)PlantState.READYFORHARVEST)
-        {
-            harvestPlant();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (state == (int)PlantState.DIRT)
+                {
+                    setStateTilled();
+                }
+                else if (state == (int)PlantState.TILLED)
+                {
+                    //GetComponent<HighlightShowController>().disableHighlight();
+                    //GetComponent<HighlightShowController>().hideHighlight();
+                    showSeedSelect();
+                }
+                else if ((state == (int)PlantState.PLANTED1 || state == (int)PlantState.PLANTED2) && !watered)
+                {
+                    waterPlant();
+                }
+                else if (state == (int)PlantState.DEAD)
+                {
+                    setStateDirt();
+                    addNotification("This plant has died. You've cleared it away.",
+                        null, false);
+                }
+                else if (state == (int)PlantState.READYFORHARVEST)
+                {
+                    harvestPlant();
+                }
+                this.GetComponent<HighlightShowController>().RefreshLayoutGroupsImmediateAndRecursive();
+            }
         }
-        this.GetComponent<HighlightShowController>().RefreshLayoutGroupsImmediateAndRecursive();
-        yield return new WaitForSeconds(0.2f);
-        resetInteraction(player);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+        }
     }
 
     public void waterPlant()

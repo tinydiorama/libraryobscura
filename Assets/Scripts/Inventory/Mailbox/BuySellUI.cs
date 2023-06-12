@@ -116,7 +116,7 @@ public class BuySellUI : MonoBehaviour
 
     public void sellItem(ref ItemSlot itemSlot)
     {
-        Debug.Log(itemSlot.item.itemName);
+        gm.soldToday++;
         activePriceCheck = itemSlot.item.sellPrice;
         activeItem = itemSlot.item;
         currentQuantity = 1;

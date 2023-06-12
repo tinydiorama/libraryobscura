@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FarmController farm;
     [SerializeField] private GameObject moneyContainer;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private DayTransitionHelper dayTransitionHelper;
 
     public CutsceneManager cutsceneManager;
     public CutsceneData cutsceneData;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     public bool pauseShown;
     public int money;
+    public int soldToday;
 
     private float m_CurrentClipLength;
 
@@ -89,17 +91,19 @@ public class GameManager : MonoBehaviour
         processDataforDay();
 
         // Saves the game
-        DataPersistenceManager.instance.SaveGame();
-        nightFade.SetBool("FadeToDay", true);
-        StartCoroutine(startNewDay());
+        //DataPersistenceManager.instance.SaveGame();
+        dayTransitionHelper.showItems();
+        //StartCoroutine(startNewDay());
     }
 
-    IEnumerator startNewDay()
+    public IEnumerator startNewDay()
     {
-        isPaused = false;
+        soldToday = 0;
+        nightFade.SetBool("FadeToDay", true);
         AudioManager.GetInstance().ChangeSong();
         yield return new WaitForSeconds(m_CurrentClipLength);
         nightFade.gameObject.SetActive(false);
+        isPaused = false;
     }
 
     IEnumerator showPauseMenu()

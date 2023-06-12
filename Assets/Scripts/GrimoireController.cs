@@ -25,13 +25,21 @@ public class GrimoireController : MonoBehaviour, iDataPersistence
         gm = GameManager.GetInstance();
         List<Item> inv = gm.inventoryManager.itemsDatabase; 
 
-        foreach( Item item in inv )
+        if ( grimoire.Count == 0 ) // only fill it if our grimoire is empty i.e. we haven't loaded
         {
-            if (item.category.ToString() == "Plant" )
+            foreach (Item item in inv)
             {
-                grimoire.Add(new GrimoireItem(item, false));
+                if (item.category.ToString() == "Plant")
+                {
+                    grimoire.Add(new GrimoireItem(item, false));
+                }
             }
         }
+    }
+
+    public int numItemsDiscovered()
+    {
+        return grimoire.Count;
     }
 
     public void SaveData(ref GameData data)
@@ -51,7 +59,7 @@ public class GrimoireController : MonoBehaviour, iDataPersistence
 
         foreach (Item item in inv)
         {
-            if (item.category.ToString() == "Plant")
+            if (item.category.ToString() == "Plant" )
             {
                 grimoire.Add(new GrimoireItem(item, false));
             }

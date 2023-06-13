@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HighlightController : MonoBehaviour
 {
-    [SerializeField] private Sprite highlightSprite;
+    [SerializeField] public Sprite highlightSprite;
     [SerializeField] private Sprite normalSprite;
 
     private void OnTriggerEnter2D(Collider2D collision)

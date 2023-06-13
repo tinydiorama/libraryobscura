@@ -20,7 +20,7 @@ public class HighlightShowController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "Player" && highlightEnabled)
+        if (collision.name == "Player" && highlightEnabled && ! GameManager.GetInstance().disableInteractions )
         {
             foreach ( GameObject go in objectsToShow)
             {

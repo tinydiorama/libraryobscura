@@ -67,12 +67,21 @@ public class AudioManager : MonoBehaviour
         _audiosource.Play();
     }
 
+    public void playSFXLoop(AudioClip clip)
+    {
+        _sfxsource.loop = true;
+        _sfxsource.clip = clip;
+        _sfxsource.Play();
+    }
+
     public void playSFX(AudioClip clip)
     {
+        _sfxsource.loop = false;
         _sfxsource.PlayOneShot(clip);
     }
     public void playSFX(AudioClip clip, float volume)
     {
+        _sfxsource.loop = false;
         _sfxsource.PlayOneShot(clip, volume);
     }
 }

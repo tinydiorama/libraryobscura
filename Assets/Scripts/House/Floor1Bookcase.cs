@@ -5,8 +5,10 @@ using UnityEngine;
 public class Floor1Bookcase : MonoBehaviour
 {
     [SerializeField] private TextAsset bookcaseText1;
+    [SerializeField] private TextAsset tooDarkToSee;
 
     private bool playerInRange;
+    private GameManager gm;
 
     private void Awake()
     {
@@ -15,11 +17,19 @@ public class Floor1Bookcase : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        gm = GameManager.GetInstance();
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying && ! gm.disableInteractions)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                DialogueManager.GetInstance().EnterDialogueMode(bookcaseText1);
+                if (gm.dayTime.isTooDark())
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(tooDarkToSee);
+                }
+                else
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(bookcaseText1);
+                }
             }
         }
     }

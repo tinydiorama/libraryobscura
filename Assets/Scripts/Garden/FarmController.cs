@@ -65,6 +65,16 @@ public class FarmController : MonoBehaviour, iDataPersistence
                 {
                     plot.setStatePlantDead();
                 }
+            } else if ( plot.state == (int)PlantState.PLANTED3 )
+            {
+                if (plot.watered)
+                {
+                    plot.setStatePlant4();
+                }
+                else
+                {
+                    plot.setStatePlantDead();
+                }
             }
         }
     }

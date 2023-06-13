@@ -8,6 +8,7 @@ public class BedController : MonoBehaviour
     [SerializeField] private GameObject notifications;
     [SerializeField] private GameObject bedConfirmNotif;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private TextAsset finishExploringFirst;
 
     private GameManager gm;
     private bool playerInRange;
@@ -24,16 +25,22 @@ public class BedController : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && !gm.isPaused)
+        gm = GameManager.GetInstance();
+        if (playerInRange && !gm.isPaused && ! gm.disableInteractions)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                gm = GameManager.GetInstance();
-                timeText.text = gm.dayTime.getTime();
-                notifications.SetActive(true);
-                bedConfirmNotif.SetActive(true);
-                gm.isPaused = true;
-                gm.pauseShown = true;
+                if ( ! gm.cutsceneManager.cutscene2Triggered )
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(finishExploringFirst);
+                } else
+                {
+                    timeText.text = gm.dayTime.getTime();
+                    notifications.SetActive(true);
+                    bedConfirmNotif.SetActive(true);
+                    gm.isPaused = true;
+                    gm.pauseShown = true;
+                }
             }
         }
     }

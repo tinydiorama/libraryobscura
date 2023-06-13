@@ -5,8 +5,10 @@ using UnityEngine;
 public class StairsLockedDoor : MonoBehaviour
 {
     [SerializeField] private TextAsset staircaseLocked;
+    [SerializeField] private TextAsset tooDarkToSee; 
 
     private bool playerInRange;
+    private GameManager gm;
 
     private void Awake()
     {
@@ -15,11 +17,19 @@ public class StairsLockedDoor : MonoBehaviour
 
     private void Update()
     {
+        gm = GameManager.GetInstance();
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                DialogueManager.GetInstance().EnterDialogueMode(staircaseLocked);
+                if (gm.dayTime.isTooDark())
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(tooDarkToSee);
+                }
+                else
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(staircaseLocked);
+                }
             }
         }
     }

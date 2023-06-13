@@ -7,6 +7,7 @@ public class CutsceneManager : MonoBehaviour, iDataPersistence
     public bool cutscene0Triggered;
     public bool cutscene1Triggered;
     public bool cutscene2Triggered;
+    public bool cutscene3Triggered;
     public bool mailboxInteract1;
     public bool buyAllowed;
     public bool sellAllowed;
@@ -25,6 +26,7 @@ public class CutsceneManager : MonoBehaviour, iDataPersistence
         this.cutscene0Triggered = data.cutscene0triggered;
         this.cutscene1Triggered = data.cutscene1triggered;
         this.cutscene2Triggered = data.cutscene2triggered;
+        this.cutscene3Triggered = data.cutscene3triggered;
         this.buyAllowed = data.buyAllowed;
         this.sellAllowed = data.sellAllowed;
 
@@ -47,6 +49,7 @@ public class CutsceneManager : MonoBehaviour, iDataPersistence
         data.cutscene0triggered = this.cutscene0Triggered;
         data.cutscene1triggered = this.cutscene1Triggered;
         data.cutscene2triggered = this.cutscene2Triggered;
+        data.cutscene3triggered = this.cutscene3Triggered;
         data.buyAllowed = this.buyAllowed;
         data.sellAllowed = this.sellAllowed;
     }

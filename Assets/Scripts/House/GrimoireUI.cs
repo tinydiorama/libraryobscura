@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GrimoireUI : MonoBehaviour
 {
+    [SerializeField] private TextAsset tooDarkToSee;
 
 
     private GameManager gm;
@@ -17,11 +18,18 @@ public class GrimoireUI : MonoBehaviour
     private void Update()
     {
         gm = GameManager.GetInstance();
-        if (playerInRange && !gm.isPaused)
+        if (playerInRange && !gm.isPaused && ! gm.disableInteractions)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("grimoire activate!");
+                if (gm.dayTime.isTooDark())
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(tooDarkToSee);
+                }
+                else
+                {
+                    Debug.Log("grimoire activate!");
+                }
             }
         }
     }

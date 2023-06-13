@@ -7,10 +7,11 @@ public class PlayerPlatformerController : PhysicsObject
 
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
+    public float defaultSpeed = 5;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    bool facingRight;
+    public bool facingRight;
     private GameManager gm;
 
     // Use this for initialization
@@ -71,10 +72,16 @@ public class PlayerPlatformerController : PhysicsObject
         }
     }
 
-    void Flip()
+    public void Flip()
     {
         // Switch the way the player is labelled as facing
         facingRight = !facingRight;
         spriteRenderer.flipX = !spriteRenderer.flipX;
+    }
+
+    public void faceLeft()
+    {
+        facingRight = true;
+        spriteRenderer.flipX = true;
     }
 }

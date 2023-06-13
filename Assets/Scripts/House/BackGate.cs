@@ -5,8 +5,11 @@ using UnityEngine;
 public class BackGate : MonoBehaviour 
 {
     [SerializeField] private TextAsset gateText;
+    [SerializeField] private AudioClip gateLockedClip;
+    [SerializeField] private TextAsset tooDarkToSee;
 
     private bool playerInRange;
+    private GameManager gm;
 
     private void Awake()
     {
@@ -15,11 +18,19 @@ public class BackGate : MonoBehaviour
 
     private void Update()
     {
+        gm = GameManager.GetInstance();
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                DialogueManager.GetInstance().EnterDialogueMode(gateText);
+                if ( gm.dayTime.isTooDark() )
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(tooDarkToSee);
+                } else
+                {
+                    AudioManager.GetInstance().playSFX(gateLockedClip);
+                    DialogueManager.GetInstance().EnterDialogueMode(gateText);
+                }
             }
         }
     }

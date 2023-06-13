@@ -50,6 +50,15 @@ public class DayTransitionHelper : MonoBehaviour
         StartCoroutine(showItem(continueButton));
     }
 
+    public void hideItems()
+    {
+        foreach (GameObject item in itemsToShow)
+        {
+            item.SetActive(false);
+        }
+        continueButton.SetActive(false);
+    }
+
     IEnumerator showItem(GameObject item)
     {
         showItemTime += timeBetween;

@@ -11,7 +11,8 @@ public enum PlantState {
     TILLED = 1,
     PLANTED1 = 2,
     PLANTED2 = 3,
-    READYFORHARVEST = 4,
+    PLANTED3 = 4,
+    READYFORHARVEST = 5,
     DEAD = -1
 };
 
@@ -37,6 +38,7 @@ public class GardenPlot : MonoBehaviour
 
     [SerializeField] private SpriteRenderer plantImage;
     [SerializeField] private Sprite witheredImage;
+    [SerializeField] private TextAsset tooDarkToSee;
 
     private ItemSlot seedSelected;
     public ItemSlot growingSeed;
@@ -64,31 +66,38 @@ public class GardenPlot : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (state == (int)PlantState.DIRT)
+                if (gm.dayTime.isTooDark())
                 {
-                    setStateTilled();
+                    DialogueManager.GetInstance().EnterDialogueMode(tooDarkToSee);
                 }
-                else if (state == (int)PlantState.TILLED)
+                else
                 {
-                    //GetComponent<HighlightShowController>().disableHighlight();
-                    //GetComponent<HighlightShowController>().hideHighlight();
-                    showSeedSelect();
+                    if (state == (int)PlantState.DIRT)
+                    {
+                        setStateTilled();
+                    }
+                    else if (state == (int)PlantState.TILLED)
+                    {
+                        //GetComponent<HighlightShowController>().disableHighlight();
+                        //GetComponent<HighlightShowController>().hideHighlight();
+                        showSeedSelect();
+                    }
+                    else if ((state == (int)PlantState.PLANTED1 || state == (int)PlantState.PLANTED2 || state == (int)PlantState.PLANTED3) && !watered)
+                    {
+                        waterPlant();
+                    }
+                    else if (state == (int)PlantState.DEAD)
+                    {
+                        setStateDirt();
+                        addNotification("This plant has died. You've cleared it away.",
+                            null, false);
+                    }
+                    else if (state == (int)PlantState.READYFORHARVEST)
+                    {
+                        harvestPlant();
+                    }
+                    this.GetComponent<HighlightShowController>().RefreshLayoutGroupsImmediateAndRecursive();
                 }
-                else if ((state == (int)PlantState.PLANTED1 || state == (int)PlantState.PLANTED2) && !watered)
-                {
-                    waterPlant();
-                }
-                else if (state == (int)PlantState.DEAD)
-                {
-                    setStateDirt();
-                    addNotification("This plant has died. You've cleared it away.",
-                        null, false);
-                }
-                else if (state == (int)PlantState.READYFORHARVEST)
-                {
-                    harvestPlant();
-                }
-                this.GetComponent<HighlightShowController>().RefreshLayoutGroupsImmediateAndRecursive();
             }
         }
     }
@@ -138,7 +147,7 @@ public class GardenPlot : MonoBehaviour
     {
         sr.sprite = tilledSprite;
         state = (int)PlantState.PLANTED1;
-        plantImage.sprite = growingSeed.item.seedImages[0];
+        plantImage.sprite = null;
         watered = false;
         promptText.text = "Water";
     }
@@ -146,12 +155,20 @@ public class GardenPlot : MonoBehaviour
     public void setStatePlant2()
     {
         sr.sprite = tilledSprite;
-        plantImage.sprite = growingSeed.item.seedImages[1];
+        plantImage.sprite = growingSeed.item.seedImages[0];
         state = (int)PlantState.PLANTED2;
         watered = false;
         promptText.text = "Water";
     }
     public void setStatePlant3()
+    {
+        sr.sprite = tilledSprite;
+        plantImage.sprite = growingSeed.item.seedImages[1];
+        state = (int)PlantState.PLANTED3;
+        watered = false;
+        promptText.text = "Water";
+    }
+    public void setStatePlant4()
     {
         sr.sprite = tilledSprite;
         plantImage.sprite = growingSeed.item.seedImages[2];

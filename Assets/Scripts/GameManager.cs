@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject moneyContainer;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private DayTransitionHelper dayTransitionHelper;
+    [SerializeField] private DreamHelper dreamHelper;
 
     public CutsceneManager cutsceneManager;
     public CutsceneData cutsceneData;
@@ -19,10 +20,13 @@ public class GameManager : MonoBehaviour
     public InventoryManager inventoryManager;
     public ShopManager shopManager;
     public GrimoireController grimoireManager;
+    public GameObject player;
     public bool isPaused;
+    public bool isStopTime;
     public bool pauseShown;
     public int money;
     public int soldToday;
+    public bool disableInteractions;
 
     private float m_CurrentClipLength;
 
@@ -49,7 +53,7 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(hidePauseMenu());
             } else
             {
-                if ( ! isPaused )
+                if ( ! isPaused && ! disableInteractions)
                 {
                     StartCoroutine(showPauseMenu());
                 }
@@ -92,7 +96,17 @@ public class GameManager : MonoBehaviour
 
         // Saves the game
         //DataPersistenceManager.instance.SaveGame();
-        dayTransitionHelper.showItems();
+        if ( dayTime.days == 2 ) // do the dream instead
+        {
+            dreamHelper.setupDream1();
+            nightFade.GetComponent<Animator>().speed = 0.2f;
+            m_CurrentClipLength = m_CurrentClipLength / 0.2f;
+            StartCoroutine(startNewDay());
+        } else
+        {
+            dayTransitionHelper.showItems();
+            AudioManager.GetInstance().ChangeSong();
+        }
         //StartCoroutine(startNewDay());
     }
 
@@ -100,10 +114,11 @@ public class GameManager : MonoBehaviour
     {
         soldToday = 0;
         nightFade.SetBool("FadeToDay", true);
-        AudioManager.GetInstance().ChangeSong();
         yield return new WaitForSeconds(m_CurrentClipLength);
         nightFade.gameObject.SetActive(false);
+        dayTransitionHelper.hideItems();
         isPaused = false;
+        nightFade.GetComponent<Animator>().speed = 1f;
     }
 
     IEnumerator showPauseMenu()
@@ -133,6 +148,9 @@ public class GameManager : MonoBehaviour
                 mailManager.newItems.Add(seed);
             }
             mailManager.hasNewMail = true;
+        } else if ( dayTime.days == 2 )
+        {
+
         }
     }
 }

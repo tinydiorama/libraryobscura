@@ -32,7 +32,7 @@ public class DayTimeController : MonoBehaviour, iDataPersistence
 
     private void Update()
     {
-        if ( time < secondsInDay && ! gm.isPaused)
+        if ( time < secondsInDay && ! gm.isPaused && ! gm.isStopTime )
         {
             time += Time.deltaTime * timeScale;
 
@@ -50,6 +50,19 @@ public class DayTimeController : MonoBehaviour, iDataPersistence
             Color c = Color.Lerp(dayLightColor, nightLightColor, v);
             globalLight.color = c;
         }
+    }
+
+    public bool isTooDark()
+    {
+        float t = Hours / 24f;
+        float actualTime = Mathf.Lerp(6, 24, t);
+
+        int actualHour = (int)Mathf.Floor(actualTime);
+        if ( actualHour > 22 )
+        {
+            return true;
+        }
+        return false;
     }
 
     public string getTime()

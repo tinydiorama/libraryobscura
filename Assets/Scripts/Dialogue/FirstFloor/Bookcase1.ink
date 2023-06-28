@@ -1,1 +1,0 @@
-A bookcase. Several books are missing.

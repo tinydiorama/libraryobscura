@@ -1,1 +1,0 @@
-A clock. It's stopped.

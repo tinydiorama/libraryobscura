@@ -9,6 +9,7 @@ public class GameData
     public SerializedDictionary<string, bool> letters;
     public SerializedDictionary<string, bool> books;
     public SerializedDictionary<string, int> items;
+    public int money;
 
     // farm
     public List<string> seedId;
@@ -24,6 +25,7 @@ public class GameData
     public bool cutscene3triggered;
     public bool buyAllowed;
     public bool sellAllowed;
+    public bool dream1triggered;
 
     // current mailbox
     public bool hasNewMail;
@@ -39,6 +41,7 @@ public class GameData
         this.letters = new SerializedDictionary<string, bool>();
         this.books = new SerializedDictionary<string, bool>();
         this.items = new SerializedDictionary<string, int>();
+        this.money = 0;
 
         this.seedId = new List<string>();
         this.state = new List<int>();
@@ -52,6 +55,7 @@ public class GameData
         this.cutscene3triggered = false;
         this.buyAllowed = false;
         this.sellAllowed = false;
+        this.dream1triggered = false;
 
         this.hasNewMail = false;
         this.mailboxLetters = new List<string>();

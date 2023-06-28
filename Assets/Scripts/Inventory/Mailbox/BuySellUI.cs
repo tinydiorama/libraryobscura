@@ -76,7 +76,7 @@ public class BuySellUI : MonoBehaviour
     {
         gm = GameManager.GetInstance();
         InventoryManager inventory = gm.inventoryManager;
-        tabTitle.text = "Sell Items";
+        tabTitle.text = "Ship Items";
         sellButton.GetComponent<Image>().color = activeColor;
         buyButton.GetComponent<Image>().color = inactiveColor;
         foreach (Transform child in buySellButtonPanel.transform)
@@ -99,7 +99,7 @@ public class BuySellUI : MonoBehaviour
     public void buyItem( ref BuySellButton buySellButton)
     {
         gm = GameManager.GetInstance();
-        if ( buySellButton.item.buyPrice <= gm.money )
+        if ( buySellButton.item.buyPrice <= gm.inventoryManager.money )
         {
             activePriceCheck = buySellButton.item.buyPrice;
             activeItem = buySellButton.item;
@@ -116,7 +116,6 @@ public class BuySellUI : MonoBehaviour
 
     public void sellItem(ref ItemSlot itemSlot)
     {
-        gm.soldToday++;
         activePriceCheck = itemSlot.item.sellPrice;
         activeItem = itemSlot.item;
         currentQuantity = 1;
@@ -132,7 +131,7 @@ public class BuySellUI : MonoBehaviour
         gm = GameManager.GetInstance();
         if ( buyingSelling ) // buying
         {
-            if ((currentQuantity + 1) * activePriceCheck <= gm.money)
+            if ((currentQuantity + 1) * activePriceCheck <= gm.inventoryManager.money)
             {
                 currentQuantity++;
             }
@@ -178,16 +177,18 @@ public class BuySellUI : MonoBehaviour
         confirmWindow.SetActive(false);
         if ( buyingSelling ) // buying
         {
-            gm.money -= activePriceCheck * currentQuantity;
+            gm.inventoryManager.money -= activePriceCheck * currentQuantity;
+            gm.moneySpentToday = activePriceCheck * currentQuantity;
             gm.inventoryManager.addToOrder(activeItem, currentQuantity);
             thanksText.text = "Thank you for your order. You will receive it tomorrow.";
             thanksWindow.SetActive(true);
             showShop();
         } else
         {
-            gm.money += activePriceCheck * currentQuantity;
+            gm.soldToday = gm.soldToday + currentQuantity;
+            gm.moneyEarnedToday += activePriceCheck * currentQuantity;
             gm.inventoryManager.removeItem(activeItem, currentQuantity);
-            thanksText.text = "Thank you for selling. We have collected payment and shipment.";
+            thanksText.text = "Thank you for shipping. We have collected the items and will send payment soon.";
             thanksWindow.SetActive(true);
             showSellTab();
         }

@@ -30,7 +30,7 @@ public class BedController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if ( ! gm.cutsceneManager.cutscene2Triggered )
+                if ( ! gm.cutsceneManager.cutscene2Triggered || ! gm.inventoryManager.containsLetter("letter1") )
                 {
                     DialogueManager.GetInstance().EnterDialogueMode(finishExploringFirst);
                 } else

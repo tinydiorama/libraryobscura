@@ -12,7 +12,19 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     [SerializeField] public List<ItemSlot> items;
     [SerializeField] public List<Item> itemsOrdered;
     [SerializeField] public List<Item> itemsDatabase;
+    public int money;
 
+    public bool containsLetter(string id)
+    {
+        foreach( LetterSlot slot in letters )
+        {
+            if ( slot.letter.id == id )
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void addLetter(Letter letterToAdd)
     {
         letters.Add(new LetterSlot(letterToAdd, true));
@@ -118,6 +130,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
                 items.Add(new ItemSlot(dbItem, count));
             }
         }
+        this.money = data.money;
     }
 
     public void SaveData(ref GameData data)
@@ -158,5 +171,6 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         {
             data.items.Clear();
         }
+        data.money = this.money;
     }
 }

@@ -39,6 +39,7 @@ public class KnockDreamTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         cutToBlack.SetActive(false);
+        fadeToNightDay.GetComponent<Animator>().SetBool("NightFaded", true);
         dh.endDream1();
     }
 

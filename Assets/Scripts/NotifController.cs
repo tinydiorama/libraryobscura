@@ -67,15 +67,15 @@ public class NotifController : MonoBehaviour
 
     public void closeMailNotif()
     {
-        notifications.SetActive(false);
-        notifContainer.SetActive(false);
-        foreach ( Transform child in notifContentPanel.transform)
+        foreach (Transform child in notifContentPanel.transform)
         {
             if (child.name != "NoMail")
             {
                 Destroy(child.gameObject);
             }
         }
+        notifications.SetActive(false);
+        notifContainer.SetActive(false);
         for (int i = 0; i < gm.mailManager.newLetters.Count; i++)
         {
             gm.inventoryManager.addLetter(gm.mailManager.newLetters[i]);

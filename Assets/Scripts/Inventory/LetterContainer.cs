@@ -63,11 +63,11 @@ public class LetterContainer : MonoBehaviour
 
     public void showLetterCloseup(ref LetterSlot letterToShow)
     {
-        if (letterToShow.letter.id == "a30d3bfc-c0df-44ca-9d1e-ed9bf667fe76")
+        if (letterToShow.letter.id == "letter2")
         {
             GameManager.GetInstance().cutsceneManager.buyAllowed = true;
             GameManager.GetInstance().showMoneyUI();
-            GameManager.GetInstance().money = 20;
+            GameManager.GetInstance().inventoryManager.money = 20;
         }
         letterToShow.newLetter = false;
         inventoryPanel.hidePanels();

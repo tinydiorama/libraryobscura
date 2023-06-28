@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private DayTransitionHelper dayTransitionHelper;
     [SerializeField] private DreamHelper dreamHelper;
+    [SerializeField] private GameObject packageManager;
 
     public CutsceneManager cutsceneManager;
     public CutsceneData cutsceneData;
@@ -24,10 +25,12 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     public bool isStopTime;
     public bool pauseShown;
-    public int money;
     public int soldToday;
+    public int moneyEarnedToday;
+    public int moneySpentToday;
     public bool disableInteractions;
 
+    private bool hasPackageAtDoor;
     private float m_CurrentClipLength;
 
     private static GameManager instance;
@@ -59,7 +62,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        moneyText.text = money.ToString();
+        moneyText.text = inventoryManager.money.ToString();
     }
 
     public void showMoneyUI()
@@ -93,25 +96,35 @@ public class GameManager : MonoBehaviour
         dayTime.NextDay();
         farm.advanceSeeds();
         processDataforDay();
+        processSaleData();
 
         // Saves the game
-        //DataPersistenceManager.instance.SaveGame();
-        if ( dayTime.days == 2 ) // do the dream instead
+        DataPersistenceManager.instance.SaveGame();
+        if (inventoryManager.containsLetter("letter2") && ! cutsceneManager.dream1Triggered) // do the dream instead
         {
             dreamHelper.setupDream1();
             nightFade.GetComponent<Animator>().speed = 0.2f;
             m_CurrentClipLength = m_CurrentClipLength / 0.2f;
-            StartCoroutine(startNewDay());
+            StartCoroutine(startDream1());
         } else
         {
-            dayTransitionHelper.showItems();
+            dayTransitionHelper.showItems(hasPackageAtDoor);
             AudioManager.GetInstance().ChangeSong();
         }
         //StartCoroutine(startNewDay());
     }
 
+    public IEnumerator startDream1()
+    {
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(startNewDay());
+    }
+
     public IEnumerator startNewDay()
     {
+        hasPackageAtDoor = false;
+        moneyEarnedToday = 0;
+        moneySpentToday = 0;
         soldToday = 0;
         nightFade.SetBool("FadeToDay", true);
         yield return new WaitForSeconds(m_CurrentClipLength);
@@ -148,9 +161,23 @@ public class GameManager : MonoBehaviour
                 mailManager.newItems.Add(seed);
             }
             mailManager.hasNewMail = true;
-        } else if ( dayTime.days == 2 )
+        } else if ( inventoryManager.containsLetter("letter2") && ! inventoryManager.containsLetter("letter3") )
         {
-
+            mailManager.addNewLetter(cutsceneData.day3Letter);
+            mailManager.hasNewMail = true;
         }
+    }
+
+    private void processSaleData()
+    {
+        if ( inventoryManager.itemsOrdered.Count > 0 )
+        {
+            packageManager.SetActive(true);
+            packageManager.GetComponent<PackageManager>().itemsObtained = inventoryManager.itemsOrdered;
+            hasPackageAtDoor = true;
+        }
+        // sale data
+        inventoryManager.money += moneyEarnedToday;
+        // setup books for # of items sold
     }
 }

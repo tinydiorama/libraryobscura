@@ -12,6 +12,8 @@ public class DayTransitionHelper : MonoBehaviour
     [SerializeField] private TextMeshProUGUI grimoireFilled;
     [SerializeField] private TextMeshProUGUI lucidityText;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI moneyChange;
+    [SerializeField] private GameObject packageAvailable;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private AudioClip thumpSound;
 
@@ -31,7 +33,7 @@ public class DayTransitionHelper : MonoBehaviour
         }
     }
 
-    public void showItems()
+    public void showItems(bool hasPackageAtDoor)
     {
         GameManager gm = GameManager.GetInstance();
         gm.isPaused = true;
@@ -41,11 +43,23 @@ public class DayTransitionHelper : MonoBehaviour
         booksObtained.text = gm.inventoryManager.books.Count.ToString();
         grimoireFilled.text = gm.grimoireManager.numItemsDiscovered().ToString();
         lucidityText.text = "Clear";
-        moneyText.text = gm.money.ToString();
+        moneyText.text = gm.inventoryManager.money.ToString();
+        
+        if ( gm.moneyEarnedToday - gm.moneySpentToday < 0 )
+        {
+            moneyChange.text = (gm.moneyEarnedToday - gm.moneySpentToday).ToString();
+        } else 
+        {
+            moneyChange.text = "+" + (gm.moneyEarnedToday - gm.moneySpentToday).ToString();
+        }
 
         foreach ( GameObject item in itemsToShow )
         {
             StartCoroutine(showItem(item));
+        }
+        if (hasPackageAtDoor)
+        {
+            StartCoroutine(showItem(packageAvailable));
         }
         StartCoroutine(showItem(continueButton));
     }

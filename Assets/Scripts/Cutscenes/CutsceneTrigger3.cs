@@ -22,21 +22,17 @@ public class CutsceneTrigger3 : MonoBehaviour
         if ( canShowNotif )
         {
 
-            foreach (LetterSlot slot in gm.inventoryManager.letters)
+            if ( gm.inventoryManager.containsLetter("letter2") )
             {
-                if (slot.letter.id == "a30d3bfc-c0df-44ca-9d1e-ed9bf667fe76")
-                {
-                    GameObject notification = Instantiate(notificationPrefab, notifications.transform);
-                    GardenNotification currNotif = notification.GetComponent<GardenNotification>();
-                    currNotif.message.text = "You can open your inventory and view letters with Tab.";
-                    currNotif.image.sprite = img;
-                    currNotif.sparkles.SetActive(false);
-                    StartCoroutine(closeNotification(notification));
+                GameObject notification = Instantiate(notificationPrefab, notifications.transform);
+                GardenNotification currNotif = notification.GetComponent<GardenNotification>();
+                currNotif.message.text = "You can open your inventory and view letters with Tab.";
+                currNotif.image.sprite = img;
+                currNotif.sparkles.SetActive(false);
+                StartCoroutine(closeNotification(notification));
 
-                    gm.cutsceneManager.cutscene3Triggered = true;
-                    canShowNotif = false;
-                    break;
-                }
+                gm.cutsceneManager.cutscene3Triggered = true;
+                canShowNotif = false;
             }
         }
     }

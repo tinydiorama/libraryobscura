@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MailManager : MonoBehaviour
+public class MailManager : MonoBehaviour, iDataPersistence
 {
     public bool hasNewMail;
     public List<Letter> newLetters;

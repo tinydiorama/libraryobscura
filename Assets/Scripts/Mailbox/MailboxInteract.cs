@@ -7,6 +7,7 @@ public class MailboxInteract : Interactable
     [SerializeField] private GameObject alert;
     [SerializeField] private InventoryUI inventoryUI;
     [SerializeField] private MailboxUI mailboxUI;
+    [SerializeField] private BuySellUI buySellUI;
 
     private void LateUpdate()
     {
@@ -37,8 +38,7 @@ public class MailboxInteract : Interactable
                 mailboxUI.showReceivedMail();
             } else if ( StoryManager.instance.buyAllowed )
             {
-                //buySell.gameObject.SetActive(true);
-                //buySell.showShop();
+                buySellUI.showShop();
             }
         }
     }

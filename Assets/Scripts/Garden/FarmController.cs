@@ -14,6 +14,7 @@ public class FarmController : MonoBehaviour, iDataPersistence
     private void Start()
     {
         gm = GameManager.GetInstance();
+        gm.onEndOfDay += advanceSeeds;
     }
 
     public void CloseSeedMenu()

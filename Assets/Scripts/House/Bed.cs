@@ -63,7 +63,7 @@ public class Bed : MonoBehaviour
     public void sleep()
     {
         GameManager gm = GameManager.GetInstance();
-        gm.nextDayCleanup();
+        gm.nextDay();
         bedConfirmPanel.SetActive(false);
         gm.isPaused = false;
     }

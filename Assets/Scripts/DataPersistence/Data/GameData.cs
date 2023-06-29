@@ -10,12 +10,12 @@ public class GameData
     public Dictionary<string, bool> books;
     public Dictionary<string, int> items;
     public int money;
+    public int numItemsSoldAllTime;
 
     // farm
     public List<string> seedId;
     public List<int> state;
     public List<bool> watered;
-    public Dictionary<string, bool> grimoire;
 
     // cutscene
     public bool initialMailbox;
@@ -39,6 +39,7 @@ public class GameData
     {
         this.days = 0;
         this.money = 0;
+        this.numItemsSoldAllTime = 0;
         this.letters = new Dictionary<string, bool>();
         this.books = new Dictionary<string, bool>();
         this.items = new Dictionary<string, int>();
@@ -46,7 +47,6 @@ public class GameData
         this.seedId = new List<string>();
         this.state = new List<int>();
         this.watered = new List<bool>();
-        this.grimoire = new Dictionary<string, bool>();
 
         this.initialMailbox = false;
         this.cutscene0triggered = false;

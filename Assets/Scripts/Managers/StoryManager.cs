@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryManager : MonoBehaviour
+public class StoryManager : MonoBehaviour, iDataPersistence
 {
     public bool cutscene0Triggered;
     public bool cutscene1Triggered;
@@ -14,6 +15,7 @@ public class StoryManager : MonoBehaviour
     public bool sellAllowed;
 
     [SerializeField] private GameObject figure;
+    [SerializeField] private StoryData data;
 
     public static StoryManager instance { get; private set; }
 
@@ -26,6 +28,31 @@ public class StoryManager : MonoBehaviour
         else
         {
             instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        GameManager.GetInstance().onEndOfDay += advanceStory;
+    }
+
+    private void advanceStory()
+    {
+        MailManager mm = MailManager.instance;
+        InventoryManager inv = InventoryManager.instance;
+        if (DayTimeController.instance.days == 1) // day 1 (really day 2) gives you a new letter and 2 new seeds
+        {
+            mm.addNewLetter(data.day2Letter);
+            foreach (Item seed in data.day2Seeds)
+            {
+                mm.newItems.Add(seed);
+            }
+            mm.hasNewMail = true;
+        }
+        else if (inv.containsLetter("letter2") && ! inv.containsLetter("letter3")) // after you've received the day 2 letter
+        {
+            mm.addNewLetter(data.day3Letter);
+            mm.hasNewMail = true;
         }
     }
 

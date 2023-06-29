@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private DayTransitionHelper dayTransition;
+    [SerializeField] private GameObject nightFade;
+    [SerializeField] private bool saveAtNight;
+
     public bool isPaused;
     public bool isInteractionsDisabled;
     private bool pauseMenuShown;
@@ -13,8 +18,8 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     
 
-    public static UnityAction onPaused;
-    //onPaused?.Invoke();
+    public event UnityAction onEndOfDay;
+    public event UnityAction onStartNewDay;
 
     private void Awake()
     {
@@ -66,8 +71,49 @@ public class GameManager : MonoBehaviour
         InventoryManager.instance.closeInventory();
     }
 
-    public void nextDayCleanup()
+    public void nextDay()
     {
-        Debug.Log("cleanup");
+        isPaused = true;
+        nightFade.SetActive(true);
+        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 1, 2f).setEase(LeanTweenType.easeInOutSine);
+        AudioManager.GetInstance().FadeOutMusic();
+
+        StartCoroutine(processDay());
+    }
+
+    private IEnumerator processDay()
+    {
+        yield return new WaitForSeconds(1f);
+        DayTimeController.instance.NextDay();
+        yield return new WaitForSeconds(1f);
+        onEndOfDay?.Invoke();
+
+        // Saves the game
+        if ( saveAtNight )
+        {
+            DataPersistenceManager.instance.SaveGame();
+        }
+        /*if (inventoryManager.containsLetter("letter2") && !cutsceneManager.dream1Triggered) // do the dream instead
+        {
+            dreamHelper.setupDream1();
+            nightFade.GetComponent<Animator>().speed = 0.2f;
+            m_CurrentClipLength = m_CurrentClipLength / 0.2f;
+            StartCoroutine(startDream1());
+        }
+        else
+        {*/
+            dayTransition.showItems(false);
+            AudioManager.GetInstance().ChangeSong();
+        //}
+    }
+
+    public IEnumerator startNewDay()
+    {
+        onStartNewDay?.Invoke();
+        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 0, 2f).setEase(LeanTweenType.easeInOutSine);
+        yield return new WaitForSeconds(2f);
+        nightFade.gameObject.SetActive(false);
+        dayTransition.hideItems();
+        isPaused = false;
     }
 }

@@ -54,8 +54,14 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     [SerializeField] public List<BookSlot> books;
     [SerializeField] public List<Book> booksDatabase;
     [SerializeField] public List<ItemSlot> items;
-    [SerializeField] public List<Item> itemsOrdered;
     [SerializeField] public List<Item> itemsDatabase;
+    [SerializeField] public List<Item> itemsOrdered;
+    [SerializeField] public List<Item> itemsSold;
+    [Header("Buy Sell Information")]
+    [SerializeField] public int moneySpentToday;
+    [SerializeField] public int moneyEarnedToday;
+    [SerializeField] public int numItemsSoldToday;
+    [SerializeField] public int numItemsSoldAllTime;
 
     [SerializeField] private InventoryUI inventoryUI;
     public static InventoryManager instance { get; private set; }
@@ -67,6 +73,34 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             Debug.Log("more than one inventory manager");
         }
         instance = this;
+    }
+    private void Start()
+    {
+        GameManager.GetInstance().onEndOfDay += processSaleData;
+        GameManager.GetInstance().onStartNewDay += resetSaleData;
+    }
+
+    private void processSaleData()
+    {
+        /*if (inventoryManager.itemsOrdered.Count > 0)
+        {
+            packageManager.SetActive(true);
+            packageManager.GetComponent<PackageManager>().itemsObtained = inventoryManager.itemsOrdered;
+            hasPackageAtDoor = true;
+        }*/
+        // sale data
+        money += moneyEarnedToday;
+        // setup books for # of items sold
+    }
+
+    private void resetSaleData()
+    {
+        //hasPackageAtDoor = false;
+        itemsOrdered.Clear();
+        itemsSold.Clear();
+        moneyEarnedToday = 0;
+        moneySpentToday = 0;
+        numItemsSoldToday = 0;
     }
 
     private void Update()
@@ -120,6 +154,13 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         for ( int i = 0; i < count; i++ )
         {
             itemsOrdered.Add(itemToAdd);
+        }
+    }
+    public void addToSold(Item itemToAdd, int count)
+    {
+        for ( int i = 0; i < count; i++)
+        {
+            itemsSold.Add(itemToAdd);
         }
     }
 
@@ -206,6 +247,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             }
         }
         this.money = data.money;
+        this.numItemsSoldAllTime = data.numItemsSoldAllTime;
     }
 
     public void SaveData(ref GameData data)
@@ -247,5 +289,6 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             data.items.Clear();
         }
         data.money = this.money;
+        data.numItemsSoldAllTime = this.numItemsSoldAllTime;
     }
 }

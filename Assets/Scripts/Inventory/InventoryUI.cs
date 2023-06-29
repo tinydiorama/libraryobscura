@@ -13,8 +13,10 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private GameObject booksButton;
     [SerializeField] private GameObject itemsButton;
     [SerializeField] private GameObject buttonsContainer;
+    [SerializeField] private TextMeshProUGUI noThingsText;
     [SerializeField] private Color activeColor;
     [SerializeField] private Color inactiveColor;
+    [SerializeField] private Sprite activeSprite;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject lettersPrefab;
@@ -63,6 +65,9 @@ public class InventoryUI : MonoBehaviour
         lettersButton.GetComponent<Image>().color = activeColor;
         booksButton.GetComponent<Image>().color = inactiveColor;
         itemsButton.GetComponent<Image>().color = inactiveColor;
+        lettersButton.GetComponent<Image>().sprite = activeSprite;
+        booksButton.GetComponent<Image>().sprite = null;
+        itemsButton.GetComponent<Image>().sprite = null;
         showLetters();
     }
     public void showBooksPanel()
@@ -74,6 +79,9 @@ public class InventoryUI : MonoBehaviour
         lettersButton.GetComponent<Image>().color = inactiveColor;
         booksButton.GetComponent<Image>().color = activeColor;
         itemsButton.GetComponent<Image>().color = inactiveColor;
+        lettersButton.GetComponent<Image>().sprite = null;
+        booksButton.GetComponent<Image>().sprite = activeSprite;
+        itemsButton.GetComponent<Image>().sprite = null;
         showBooks();
     }
     public void showSeedsPanel()
@@ -85,6 +93,9 @@ public class InventoryUI : MonoBehaviour
         lettersButton.GetComponent<Image>().color = inactiveColor;
         booksButton.GetComponent<Image>().color = inactiveColor;
         itemsButton.GetComponent<Image>().color = activeColor;
+        lettersButton.GetComponent<Image>().sprite = null;
+        booksButton.GetComponent<Image>().sprite = null;
+        itemsButton.GetComponent<Image>().sprite = activeSprite;
         showItems();
     }
 
@@ -138,6 +149,7 @@ public class InventoryUI : MonoBehaviour
             mm.clearLetters();
 
             mailboxUI.showReceivedMail();
+            hideInventory();
         }
         else
         {
@@ -150,10 +162,21 @@ public class InventoryUI : MonoBehaviour
     {
         foreach (Transform child in panelContents.transform)
         {
-            Destroy(child.gameObject);
+            if (child.name != "NoThings")
+            {
+                Destroy(child.gameObject);
+            }
         }
         GameManager gm = GameManager.GetInstance();
         InventoryManager invManage = InventoryManager.instance;
+        if (invManage.letters.Count > 0 )
+        {
+            noThingsText.gameObject.SetActive(false);
+        } else
+        {
+            noThingsText.gameObject.SetActive(true);
+            noThingsText.text = "You have no letters.";
+        }
         for (int i = 0; i < invManage.letters.Count; i++)
         {
             GameObject letterInstance = Instantiate(lettersPrefab, panelContents.transform);
@@ -175,10 +198,22 @@ public class InventoryUI : MonoBehaviour
     {
         foreach (Transform child in panelContents.transform)
         {
-            Destroy(child.gameObject);
+            if (child.name != "NoThings")
+            {
+                Destroy(child.gameObject);
+            }
         }
         GameManager gm = GameManager.GetInstance();
         InventoryManager invManage = InventoryManager.instance;
+        if (invManage.books.Count > 0)
+        {
+            noThingsText.gameObject.SetActive(false);
+        }
+        else
+        {
+            noThingsText.gameObject.SetActive(true);
+            noThingsText.text = "You have no books.";
+        }
         for (int i = 0; i < invManage.books.Count; i++)
         {
             GameObject bookInstance = Instantiate(booksPrefab, panelContents.transform);
@@ -201,10 +236,22 @@ public class InventoryUI : MonoBehaviour
     {
         foreach (Transform child in panelContents.transform)
         {
-            Destroy(child.gameObject);
+            if (child.name != "NoThings")
+            {
+                Destroy(child.gameObject);
+            }
         }
         GameManager gm = GameManager.GetInstance();
         InventoryManager invManage = InventoryManager.instance;
+        if (invManage.items.Count > 0)
+        {
+            noThingsText.gameObject.SetActive(false);
+        }
+        else
+        {
+            noThingsText.gameObject.SetActive(true);
+            noThingsText.text = "You have no items.";
+        }
         for (int i = 0; i < invManage.items.Count; i++)
         {
             GameObject itemInstance = Instantiate(itemsPrefab, panelContents.transform);

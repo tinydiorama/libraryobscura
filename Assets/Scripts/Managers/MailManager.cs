@@ -46,7 +46,6 @@ public class MailManager : MonoBehaviour, iDataPersistence
 
         if (StoryManager.instance.mailboxInteract1)
         {
-            hasNewMail = data.hasNewMail;
             newLetters.Clear();
             newBooks.Clear();
             newItems.Clear();
@@ -77,6 +76,7 @@ public class MailManager : MonoBehaviour, iDataPersistence
                 }
             }
         }
+        this.hasNewMail = data.hasNewMail;
     }
 
     public void SaveData(ref GameData data)

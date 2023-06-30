@@ -83,7 +83,8 @@ public class LevelLoader : MonoBehaviour
     }
     public IEnumerator GetSceneLoadProgress(Vector2 playerCoords)
     {
-        GameObject.FindGameObjectWithTag("Player").transform.position = playerCoords;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        playerObj.transform.position = playerCoords;
         Cinemachine.CinemachineVirtualCamera vcam = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<Cinemachine.CinemachineVirtualCamera>();
         vcam.ForceCameraPosition(new Vector3(playerCoords.x, playerCoords.y, 0), vcam.transform.rotation);
         for (int i = 0; i < scenesLoading.Count; i++)

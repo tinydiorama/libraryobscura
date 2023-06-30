@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool saveAtNight;
 
     public bool isPaused;
+    public bool isStopTime;
     public bool isInteractionsDisabled;
     private bool pauseMenuShown;
 
@@ -23,14 +24,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (instance != null)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
+            return;
         }
-        else
-        { 
-            instance = this;
-        }
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
     public static GameManager GetInstance()
     {
@@ -74,10 +74,8 @@ public class GameManager : MonoBehaviour
     public void nextDay()
     {
         isPaused = true;
-        nightFade.SetActive(true);
-        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 1, 2f).setEase(LeanTweenType.easeInOutSine);
+        showNightFade();
         AudioManager.GetInstance().FadeOutMusic();
-
         StartCoroutine(processDay());
     }
 
@@ -93,23 +91,40 @@ public class GameManager : MonoBehaviour
         {
             DataPersistenceManager.instance.SaveGame();
         }
-        /*if (inventoryManager.containsLetter("letter2") && !cutsceneManager.dream1Triggered) // do the dream instead
+
+        // nighttime activities :)
+        if (InventoryManager.instance.containsLetter("letter2") && ! StoryManager.instance.dream1Triggered) // do the dream instead
         {
-            dreamHelper.setupDream1();
-            nightFade.GetComponent<Animator>().speed = 0.2f;
-            m_CurrentClipLength = m_CurrentClipLength / 0.2f;
-            StartCoroutine(startDream1());
+            CutsceneManager.instance.loadCutscene1();
         }
         else
-        {*/
+        {
             dayTransition.showItems(false);
-            AudioManager.GetInstance().ChangeSong();
-        //}
+        }
+    }
+
+    public void showNightFade()
+    {
+        nightFade.SetActive(true);
+        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 1, 2f).setEase(LeanTweenType.easeInOutSine);
+    }
+
+    public void showNightFadeAbrupt()
+    {
+        nightFade.SetActive(true);
+    }
+
+    public IEnumerator hideNightFade()
+    {
+        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 0, 2f).setEase(LeanTweenType.easeInOutSine);
+        yield return new WaitForSeconds(2f);
+        nightFade.gameObject.SetActive(false);
     }
 
     public IEnumerator startNewDay()
     {
         onStartNewDay?.Invoke();
+        AudioManager.GetInstance().ChangeSong();
         LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 0, 2f).setEase(LeanTweenType.easeInOutSine);
         yield return new WaitForSeconds(2f);
         nightFade.gameObject.SetActive(false);

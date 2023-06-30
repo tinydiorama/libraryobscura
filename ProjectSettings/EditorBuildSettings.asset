@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 332deb11a73a92d4fa26f6446c821e17
+  - enabled: 1
+    path: Assets/Scenes/Dream1.unity
+    guid: 19666e4428b74d04d9a5df19bbdb07ce
   m_configObjects: {}

@@ -43,20 +43,21 @@ public class DayTimeController : MonoBehaviour, iDataPersistence {
 
     private void Update()
     {
-        if ( time < secondsInDay && ! gm.isPaused )
+        if ( time < secondsInDay && ! gm.isPaused && ! gm.isStopTime )
         {
             time += Time.deltaTime * timeScale;
 
+            if ( timeArrow != null )
+            {
+                Vector3 currentEuler = timeArrow.transform.rotation.eulerAngles;
+                float rotation = currentEuler.z;
 
-            Vector3 currentEuler = timeArrow.transform.rotation.eulerAngles;
-            float rotation = currentEuler.z;
+                float t = Hours / 24f;
+                float newRotation = Mathf.Lerp(90, -90, t);
 
-            float t = Hours / 24f;
-            float newRotation = Mathf.Lerp(90, -90, t);
-
-            //set rotation back onto transform
-            timeArrow.transform.rotation = Quaternion.Euler(new Vector3(currentEuler.x, currentEuler.y, newRotation));
-
+                //set rotation back onto transform
+                timeArrow.transform.rotation = Quaternion.Euler(new Vector3(currentEuler.x, currentEuler.y, newRotation));
+            }
             float v = nightTimeCurve.Evaluate(Hours);
             Color c = Color.Lerp(dayLightColor, nightLightColor, v);
             globalLight.color = c;

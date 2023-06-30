@@ -63,6 +63,7 @@ public class AudioManager : MonoBehaviour
         {
             songPlaying = 0;
         }
+        Debug.Log(songPlaying);
         _audiosource.clip = songs[songPlaying];
         _audiosource.Play();
     }

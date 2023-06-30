@@ -6,9 +6,9 @@ using UnityEngine.Rendering;
 public class GameData
 {
     public int days;
-    public Dictionary<string, bool> letters;
-    public Dictionary<string, bool> books;
-    public Dictionary<string, int> items;
+    public SerializableDictionary<string, bool> letters;
+    public SerializableDictionary<string, bool> books;
+    public SerializableDictionary<string, int> items;
     public int money;
     public int numItemsSoldAllTime;
 
@@ -40,9 +40,9 @@ public class GameData
         this.days = 0;
         this.money = 0;
         this.numItemsSoldAllTime = 0;
-        this.letters = new Dictionary<string, bool>();
-        this.books = new Dictionary<string, bool>();
-        this.items = new Dictionary<string, int>();
+        this.letters = new SerializableDictionary<string, bool>();
+        this.books = new SerializableDictionary<string, bool>();
+        this.items = new SerializableDictionary<string, int>();
 
         this.seedId = new List<string>();
         this.state = new List<int>();

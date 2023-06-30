@@ -17,6 +17,9 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     [SerializeField] private GameObject figure;
     [SerializeField] private StoryData data;
 
+    [Header("Dream Managers")]
+    [SerializeField] private Dream1Manager dream1Manager;
+
     public static StoryManager instance { get; private set; }
 
     private void Awake()
@@ -34,6 +37,18 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     private void Start()
     {
         GameManager.GetInstance().onEndOfDay += advanceStory;
+
+        MailManager mm = MailManager.instance;
+        InventoryManager inv = InventoryManager.instance;
+        if ( cutscene0Triggered == false )
+        {
+            mm.addNewLetter(data.day1Letter);
+            foreach (Item seed in data.day1Seeds)
+            {
+                mm.newItems.Add(seed);
+            }
+            mm.hasNewMail = true;
+        }
     }
 
     private void advanceStory()
@@ -67,13 +82,16 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.sellAllowed = data.sellAllowed;
         this.dream1Triggered = data.dream1triggered;
 
-        if (this.cutscene2Triggered)
+        if (figure != null)
         {
-            figure.SetActive(false);
-        }
-        else
-        {
-            figure.SetActive(true);
+            if (this.cutscene2Triggered)
+            {
+                figure.SetActive(false);
+            }
+            else
+            {
+                figure.SetActive(true);
+            }
         }
         if (this.buyAllowed)
         {

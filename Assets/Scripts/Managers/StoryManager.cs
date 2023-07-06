@@ -71,6 +71,18 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         }
     }
 
+    // check what sale rewards to give
+    public List<BookSlot> nightCheckBook()
+    {
+
+        return new List<BookSlot>();
+    }
+    public List<ItemSlot> nightCheckItem()
+    {
+
+        return new List<ItemSlot>();
+    }
+
     public void LoadData(GameData data)
     {
         this.mailboxInteract1 = data.initialMailbox;

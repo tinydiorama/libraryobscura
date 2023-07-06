@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public bool isInteractionsDisabled;
     private bool pauseMenuShown;
 
+    public bool showPackageInfo;
+
     private static GameManager instance;
     
 
@@ -81,9 +83,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator processDay()
     {
-        yield return new WaitForSeconds(1f);
         DayTimeController.instance.NextDay();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         onEndOfDay?.Invoke();
 
         // Saves the game
@@ -99,36 +100,31 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            dayTransition.showItems(false);
+            dayTransition.showItems(showPackageInfo);
         }
     }
 
     public void showNightFade()
     {
-        nightFade.SetActive(true);
-        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 1, 2f).setEase(LeanTweenType.easeInOutSine);
+        dayTransition.showOverlay();
     }
 
     public void showNightFadeAbrupt()
     {
-        nightFade.SetActive(true);
+        dayTransition.showOverlayAbrupt();
     }
 
-    public IEnumerator hideNightFade()
+    public void hideNightFade()
     {
-        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 0, 2f).setEase(LeanTweenType.easeInOutSine);
-        yield return new WaitForSeconds(2f);
-        nightFade.gameObject.SetActive(false);
+        dayTransition.hideOverlay();
     }
 
     public IEnumerator startNewDay()
     {
         onStartNewDay?.Invoke();
         AudioManager.GetInstance().ChangeSong();
-        LeanTween.alpha(nightFade.GetComponent<RectTransform>(), 0, 2f).setEase(LeanTweenType.easeInOutSine);
-        yield return new WaitForSeconds(2f);
-        nightFade.gameObject.SetActive(false);
-        dayTransition.hideItems();
+        dayTransition.hideOverlay();
+        yield return new WaitForSeconds(1f);
         isPaused = false;
     }
 }

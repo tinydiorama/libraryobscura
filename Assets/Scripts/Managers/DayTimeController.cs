@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering.Universal;
+using System;
 
 public class DayTimeController : MonoBehaviour, iDataPersistence {
     [SerializeField] private const float secondsInDay = 86400f;
@@ -95,7 +96,12 @@ public class DayTimeController : MonoBehaviour, iDataPersistence {
             trueHour = actualHour - 12;
             amPm = "pm";
         }
-        return trueHour.ToString() + ":" + actualMinute.ToString() + amPm;
+        string minString = actualMinute.ToString();
+        if ( minString.Length == 1 )
+        {
+            minString += "0";
+        }
+        return trueHour.ToString() + ":" + minString + amPm;
     }
 
     public void NextDay()

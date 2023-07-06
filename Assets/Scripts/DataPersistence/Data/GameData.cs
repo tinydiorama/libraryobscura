@@ -17,7 +17,7 @@ public class GameData
     public List<int> state;
     public List<bool> watered;
 
-    // cutscene
+    // cutscene/story
     public bool initialMailbox;
     public bool cutscene0triggered;
     public bool cutscene1triggered;
@@ -26,6 +26,7 @@ public class GameData
     public bool buyAllowed;
     public bool sellAllowed;
     public bool dream1triggered;
+    public SerializableDictionary<string, int> saleItems;
 
     // current mailbox
     public bool hasNewMail;
@@ -56,6 +57,7 @@ public class GameData
         this.buyAllowed = false;
         this.sellAllowed = false;
         this.dream1triggered = false;
+        this.saleItems = new SerializableDictionary<string, int>();
 
         this.hasNewMail = false;
         this.mailboxLetters = new List<string>();

@@ -52,6 +52,13 @@ public class CutsceneManager : MonoBehaviour
         player.transform.position = new Vector3(27.45f, -1.97f, 0);
         cameraCollider.transform.position = new Vector3(50.179f, 3.400905f, 0.009863324f);
         player.GetComponent<PlayerPlatformerController>().maxSpeed = player.GetComponent<PlayerPlatformerController>().defaultSpeed;
+        StartCoroutine(afterMoveCleanup());
+    }
+
+    private IEnumerator afterMoveCleanup()
+    {
+        GameManager gm = GameManager.GetInstance();
+        yield return new WaitForSeconds(4f);
         vnt.intensity.Override(0.508f);
         vnt.smoothness.Override(0.171f);
         globalLight.intensity = 1f;

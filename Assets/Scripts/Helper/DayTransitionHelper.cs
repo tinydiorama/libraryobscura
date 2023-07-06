@@ -6,6 +6,7 @@ using UnityEngine;
 public class DayTransitionHelper : MonoBehaviour
 {
     [SerializeField] private GameObject[] itemsToShow;
+    [SerializeField] private GameObject nightFadeOverlay;
     [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private TextMeshProUGUI soldItems;
     [SerializeField] private TextMeshProUGUI booksObtained;
@@ -21,6 +22,11 @@ public class DayTransitionHelper : MonoBehaviour
     private float showItemTime;
     private bool canContinue;
 
+    private float desiredAlpha;
+    private float currentAlpha;
+    private float timeToFade;
+
+
     private void Update()
     {
         if ( canContinue )
@@ -31,6 +37,15 @@ public class DayTransitionHelper : MonoBehaviour
                 StartCoroutine(GameManager.GetInstance().startNewDay());
             }
         }
+
+        nightFadeOverlay.GetComponent<CanvasGroup>().alpha = currentAlpha;
+        if ( currentAlpha != desiredAlpha )
+        {
+            currentAlpha = Mathf.MoveTowards(currentAlpha, desiredAlpha, timeToFade * Time.deltaTime);
+        } else if ( currentAlpha == desiredAlpha && currentAlpha == 0f )
+        {
+            nightFadeOverlay.SetActive(false); // hide it
+        }
     }
 
     public void showItems(bool hasPackageAtDoor)
@@ -39,7 +54,7 @@ public class DayTransitionHelper : MonoBehaviour
         InventoryManager inv = InventoryManager.instance;
         gm.isPaused = true;
         // update all the text
-        dayText.text = (DayTimeController.instance.days + 1).ToString();
+        dayText.text = (DayTimeController.instance.days).ToString();
         soldItems.text = inv.numItemsSoldToday.ToString();
         booksObtained.text = InventoryManager.instance.books.Count.ToString();
         plantsDiscovered.text = "0";
@@ -66,13 +81,32 @@ public class DayTransitionHelper : MonoBehaviour
         StartCoroutine(showItem(continueButton));
     }
 
-    public void hideItems()
+    public void showOverlay()
     {
+        nightFadeOverlay.SetActive(true);
+        timeToFade = 0.5f;
+        desiredAlpha = 1f;
+    }
+
+    public void showOverlayAbrupt()
+    {
+        nightFadeOverlay.SetActive(true);
+        desiredAlpha = 1f;
+        currentAlpha = 1f;
+        nightFadeOverlay.GetComponent<CanvasGroup>().alpha = 1f;
+    }
+
+    public void hideOverlay()
+    {
+        timeToFade = 0.5f;
+        desiredAlpha = 0;
         foreach (GameObject item in itemsToShow)
-        {
+        { 
             item.SetActive(false);
+
         }
         continueButton.SetActive(false);
+        showItemTime = 0;
     }
 
     IEnumerator showItem(GameObject item)

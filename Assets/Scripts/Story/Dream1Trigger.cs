@@ -23,6 +23,7 @@ public class Dream1Trigger : MonoBehaviour {
         if (playerInRange)
         {
             gm.showNightFadeAbrupt();
+            gm.isPaused = true;
             whine.Stop();
             knock.Stop();
             AudioManager.GetInstance().playSFX(boom);

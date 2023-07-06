@@ -32,7 +32,12 @@ public class Dream1Manager : MonoBehaviour
 
         player.transform.position = new Vector3(158.74f, -1.97f, 0);
         cameraCollider.transform.position = new Vector3(157.1f, 4.3f, 0);
-        StartCoroutine(GameManager.GetInstance().hideNightFade());
+        StartCoroutine(fadeOut());
     }
 
+    private IEnumerator fadeOut()
+    {
+        yield return new WaitForSeconds(2f);
+        GameManager.GetInstance().hideNightFade();
+    }
 }

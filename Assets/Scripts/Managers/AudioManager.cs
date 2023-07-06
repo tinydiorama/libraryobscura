@@ -58,12 +58,12 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeSong()
     {
+        _audiosource.volume = 1;
         songPlaying++;
         if ( songPlaying >= songs.Length)
         {
             songPlaying = 0;
         }
-        Debug.Log(songPlaying);
         _audiosource.clip = songs[songPlaying];
         _audiosource.Play();
     }

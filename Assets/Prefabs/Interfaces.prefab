@@ -7371,6 +7371,7 @@ MonoBehaviour:
   - {fileID: 7596513174241172214}
   - {fileID: 7444211837553575236}
   - {fileID: 7005668451111969811}
+  nightFadeOverlay: {fileID: 7723296293617674696}
   dayText: {fileID: 7112311503790828156}
   soldItems: {fileID: 1376939388933018694}
   booksObtained: {fileID: 7393590057749917429}
@@ -11950,6 +11951,7 @@ GameObject:
   - component: {fileID: 5233548672564337725}
   - component: {fileID: 1100348441577638082}
   - component: {fileID: 5650356851526519477}
+  - component: {fileID: 5688852967310502034}
   m_Layer: 5
   m_Name: Overlay
   m_TagString: Untagged
@@ -12006,7 +12008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12023,6 +12025,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &5688852967310502034
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723296293617674696}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7954810113240063289
 GameObject:
   m_ObjectHideFlags: 0

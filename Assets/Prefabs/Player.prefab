@@ -498,7 +498,7 @@ MonoBehaviour:
   gravityModifier: 3
   maxSpeed: 4
   jumpTakeOffSpeed: 4
-  defaultSpeed: 5
+  defaultSpeed: 4
 --- !u!95 &2884249848722211171
 Animator:
   serializedVersion: 5

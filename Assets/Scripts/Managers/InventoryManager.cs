@@ -238,6 +238,31 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         return false;
     }
 
+    public int numSold(string itemId)
+    {
+        foreach (ItemSlot slot in itemsSold)
+        {
+            if ( slot.item.id == itemId)
+            {
+                return slot.count;
+            }
+        }
+        return -1;
+    }
+
+    public int numItemsForSacrifice()
+    {
+        int numItems = 0;
+        foreach (ItemSlot slot in items)
+        {
+            if ( slot.item.canBeSacrificed )
+            {
+                numItems = numItems + slot.count;
+            }
+        }
+        return numItems;
+    }
+
     public void LoadData(GameData data)
     {
         foreach (Letter dbLetter in letterDatabase)

@@ -26,6 +26,7 @@ public class GameData
     public bool buyAllowed;
     public bool sellAllowed;
     public bool dream1triggered;
+    public bool seenAltar;
     public SerializableDictionary<string, int> saleItems;
 
     // current mailbox
@@ -57,6 +58,7 @@ public class GameData
         this.buyAllowed = false;
         this.sellAllowed = false;
         this.dream1triggered = false;
+        this.seenAltar = false;
         this.saleItems = new SerializableDictionary<string, int>();
 
         this.hasNewMail = false;

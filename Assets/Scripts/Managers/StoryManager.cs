@@ -13,6 +13,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool mailboxInteract1;
     public bool buyAllowed;
     public bool sellAllowed;
+    public bool seenAltar;
 
     [SerializeField] private GameObject figure;
     [SerializeField] private StoryData data;
@@ -64,9 +65,11 @@ public class StoryManager : MonoBehaviour, iDataPersistence
             }
             mm.hasNewMail = true;
         }
-        else if (inv.containsLetter("letter2") && ! inv.containsLetter("letter3")) // after you've received the day 2 letter
+        else if (inv.containsLetter("letter2") && ! inv.containsLetter("letter3")
+            && inv.numSold("glowwartplant") >= 3) // after you've received the day 2 letter & sold 3 glowwart
         {
             mm.addNewLetter(data.day3Letter);
+            mm.newItems.Add(data.day3Key);
             mm.hasNewMail = true;
         }
     }
@@ -93,6 +96,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.buyAllowed = data.buyAllowed;
         this.sellAllowed = data.sellAllowed;
         this.dream1Triggered = data.dream1triggered;
+        this.seenAltar = data.seenAltar;
 
         if (figure != null)
         {
@@ -121,5 +125,6 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.buyAllowed = this.buyAllowed;
         data.sellAllowed = this.sellAllowed;
         data.dream1triggered = this.dream1Triggered;
+        data.seenAltar = this.seenAltar;
     }
 }

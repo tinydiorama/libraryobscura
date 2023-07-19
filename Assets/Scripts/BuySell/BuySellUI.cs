@@ -29,6 +29,7 @@ public class BuySellUI : MonoBehaviour
     [Header("Confirm Item")]
     [SerializeField] private TMP_InputField quantityInput;
     [SerializeField] private TextMeshProUGUI confirmButtonText;
+    [SerializeField] private TextMeshProUGUI confirmTitle;
 
     private int activePriceCheck;
     private Item activeItem;
@@ -150,6 +151,7 @@ public class BuySellUI : MonoBehaviour
             quantityInput.text = activeQuantity.ToString();
             confirmPanel.SetActive(true);
             confirmButtonText.text = "Order for " + activePriceCheck.ToString();
+            confirmTitle.text = "How many to order?";
             isBuying = true;
         }
         else
@@ -166,6 +168,7 @@ public class BuySellUI : MonoBehaviour
         quantityInput.text = activeQuantity.ToString();
         confirmPanel.SetActive(true);
         confirmButtonText.text = "Sell for " + activePriceCheck.ToString();
+        confirmTitle.text = "How many to sell?";
         isBuying = false;
     }
     public void increaseQuantity()
@@ -217,7 +220,7 @@ public class BuySellUI : MonoBehaviour
         if (isBuying) // buying
         {
             inv.money -= activePriceCheck * activeQuantity;
-            inv.moneySpentToday = activePriceCheck * activeQuantity;
+            inv.moneySpentToday += activePriceCheck * activeQuantity;
             inv.addToOrder(activeItem, activeQuantity);
             thanksText.text = "Thank you for your order. You will receive it tomorrow.";
             thanksPanel.SetActive(true);

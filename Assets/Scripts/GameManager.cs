@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour
     {
         isPaused = true;
         showNightFade();
-        AudioManager.GetInstance().FadeOutMusic();
         StartCoroutine(processDay());
     }
 

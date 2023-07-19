@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class GameData
 {
     public int days;
+    public int lastLetterReceivedDay;
     public SerializableDictionary<string, bool> letters;
     public SerializableDictionary<string, bool> books;
     public SerializableDictionary<string, int> items;
@@ -27,6 +28,7 @@ public class GameData
     public bool sellAllowed;
     public bool dream1triggered;
     public bool seenAltar;
+    public bool backgateUnlocked;
     public SerializableDictionary<string, int> saleItems;
 
     // current mailbox
@@ -40,6 +42,7 @@ public class GameData
     public GameData()
     {
         this.days = 0;
+        this.lastLetterReceivedDay = 0;
         this.money = 0;
         this.numItemsSoldAllTime = 0;
         this.letters = new SerializableDictionary<string, bool>();
@@ -59,6 +62,7 @@ public class GameData
         this.sellAllowed = false;
         this.dream1triggered = false;
         this.seenAltar = false;
+        this.backgateUnlocked = false;
         this.saleItems = new SerializableDictionary<string, int>();
 
         this.hasNewMail = false;

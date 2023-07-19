@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SageMintPlant
   m_EditorClassIdentifier: 
   id: sagemintplant
-  itemName: Sagemint
+  itemName: Dwarf Sage
   icon: {fileID: 0}
   sellable: 1
   canBeSacrificed: 1

@@ -34,7 +34,7 @@ public class TitleScreenUI : MonoBehaviour
     public void ContinueGame()
     {
         disableButtons();
-        loader.LoadLevel((int)SceneIndexes.MAIN_WORLD);
+        loader.LoadLevel((int)SceneIndexes.MAIN_WORLD, new Vector2(27.45f, -0.71316f));
     }
 
     public void QuitGame()

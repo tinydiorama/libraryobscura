@@ -54,6 +54,10 @@ public class DayTimeController : MonoBehaviour, iDataPersistence {
                 float rotation = currentEuler.z;
 
                 float t = Hours / 24f;
+                if ( t >= 1 )
+                {
+                    AudioManager.GetInstance().FadeOutMusic();
+                }
                 float newRotation = Mathf.Lerp(90, -90, t);
 
                 //set rotation back onto transform
@@ -87,7 +91,11 @@ public class DayTimeController : MonoBehaviour, iDataPersistence {
         float actualMinute = Mathf.Floor((actualTime % 1) * 60);
         float trueHour;
         string amPm;
-        if ( actualHour <= 12 )
+        if ( actualHour == 24 )
+        {
+            trueHour = actualHour - 12;
+            amPm = "am";
+        } else if ( actualHour < 12 )
         {
             trueHour = actualHour;
             amPm = "am";

@@ -37,7 +37,7 @@ public class Dream1Manager : MonoBehaviour
 
     private IEnumerator fadeOut()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         GameManager.GetInstance().hideNightFade();
     }
 }

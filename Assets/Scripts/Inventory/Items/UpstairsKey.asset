@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 58c8866b-571c-4de6-933a-9d339a4a056c
   itemName: Upstairs Key
-  icon: {fileID: 21300000, guid: d6f91eb99d3714149a26bfb3f9dd8ccd, type: 3}
+  icon: {fileID: 21300000, guid: 0d4b1ffada33454488b73447cd795ef1, type: 3}
   sellable: 0
+  canBeSacrificed: 0
   category: 2
+  buyPrice: 0
+  sellPrice: 0
+  seedImages: []
+  harvestPlant: {fileID: 0}

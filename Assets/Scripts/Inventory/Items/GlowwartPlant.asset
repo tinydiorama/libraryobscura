@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GlowwartPlant
   m_EditorClassIdentifier: 
   id: glowwartplant
-  itemName: Glowwart
-  icon: {fileID: 21300000, guid: 5dad5c24dfeffae47a3d6d8ef9200744, type: 3}
+  itemName: Lucid Sprig
+  icon: {fileID: 21300000, guid: 686b5ed8ffd3ffc438bb283f92a6f26c, type: 3}
   sellable: 1
   canBeSacrificed: 1
   category: 1

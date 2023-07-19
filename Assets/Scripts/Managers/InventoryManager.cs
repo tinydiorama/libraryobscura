@@ -93,6 +93,9 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
                 pckg.itemsObtained.Add(new ItemSlot(slot.item, slot.count));
             }
             GameManager.GetInstance().showPackageInfo = true;
+        } else
+        {
+            GameManager.GetInstance().showPackageInfo = false;
         }
         itemsOrdered.Clear();
         // sale data
@@ -124,10 +127,10 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     {
         //hasPackageAtDoor = false;
         itemsOrdered.Clear();
-        itemsSold.Clear();
         moneyEarnedToday = 0;
         moneySpentToday = 0;
         numItemsSoldToday = 0;
+        GameManager.GetInstance().showPackageInfo = false;
     }
 
     private void Update()
@@ -207,6 +210,17 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             items.Add(new ItemSlot(itemToAdd, count));
         }
     }
+    public bool containsItem(string id)
+    {
+        foreach (ItemSlot slot in items)
+        {
+            if (slot.item.id == id)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public bool removeItem(Item itemToRemove)
     {
@@ -236,6 +250,11 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             index++;
         }
         return false;
+    }
+
+    public int numSold()
+    {
+        return itemsSold.Count;
     }
 
     public int numSold(string itemId)

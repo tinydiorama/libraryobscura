@@ -10,6 +10,7 @@ public class Letter : ScriptableObject
     public string id;
     public string from;
     public string subject;
+    public bool letterBGtan;
 
     [TextArea(5, 10)]
     public string body;

@@ -14,8 +14,13 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool buyAllowed;
     public bool sellAllowed;
     public bool seenAltar;
+    public bool backgateUnlocked;
+    public int lastLetterReceivedDay;
 
+    [Header("Story Objects")]
     [SerializeField] private GameObject figure;
+    [SerializeField] private GameObject backgate;
+    [SerializeField] private Sprite backgateOpenedSprite;
     [SerializeField] private StoryData data;
 
     [Header("Dream Managers")]
@@ -64,13 +69,20 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 mm.newItems.Add(seed);
             }
             mm.hasNewMail = true;
+            lastLetterReceivedDay = DayTimeController.instance.days;
         }
         else if (inv.containsLetter("letter2") && ! inv.containsLetter("letter3")
-            && inv.numSold("glowwartplant") >= 3) // after you've received the day 2 letter & sold 3 glowwart
+            && inv.numSold() >= 1) // after you've received the day 2 letter & sold ANYTHING
         {
             mm.addNewLetter(data.day3Letter);
-            mm.newItems.Add(data.day3Key);
             mm.hasNewMail = true;
+            lastLetterReceivedDay = DayTimeController.instance.days;
+        } else if ( inv.containsLetter("letter3") && ! inv.containsLetter("letter4") )
+        {
+            mm.addNewLetter(data.day4Letter);
+            mm.newItems.Add(data.day4Key);
+            mm.hasNewMail = true;
+            lastLetterReceivedDay = DayTimeController.instance.days;
         }
     }
 
@@ -97,6 +109,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.sellAllowed = data.sellAllowed;
         this.dream1Triggered = data.dream1triggered;
         this.seenAltar = data.seenAltar;
+        this.lastLetterReceivedDay = data.lastLetterReceivedDay;
 
         if (figure != null)
         {
@@ -107,6 +120,16 @@ public class StoryManager : MonoBehaviour, iDataPersistence
             else
             {
                 figure.SetActive(true);
+            }
+        }
+
+        if ( backgate != null )
+        {
+            if ( this.backgateUnlocked )
+            {
+                backgate.GetComponent<SpriteRenderer>().sprite = backgateOpenedSprite;
+                backgate.transform.GetChild(0).gameObject.SetActive(false);
+                backgate.GetComponent<HighlightShowController>().disableHighlight();
             }
         }
         if (this.buyAllowed)
@@ -126,5 +149,6 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.sellAllowed = this.sellAllowed;
         data.dream1triggered = this.dream1Triggered;
         data.seenAltar = this.seenAltar;
+        data.lastLetterReceivedDay = this.lastLetterReceivedDay;
     }
 }

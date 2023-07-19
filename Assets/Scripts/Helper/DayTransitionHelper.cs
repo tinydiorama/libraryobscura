@@ -105,6 +105,7 @@ public class DayTransitionHelper : MonoBehaviour
             item.SetActive(false);
 
         }
+        packageAvailable.SetActive(false);
         continueButton.SetActive(false);
         showItemTime = 0;
     }

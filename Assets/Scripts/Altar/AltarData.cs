@@ -13,14 +13,14 @@ public class AltarData : MonoBehaviour
 
     public List<Item> getSacrificeItems(Item item1, Item item2)
     {
-        if ( item1.id == "glowwart" && item2.id == "glowwart" )
+        if ( item1.id == "glowwartplant" && item2.id == "glowwartplant")
         {
             return glowWartItems;
-        } else if (item1.id == "glowwart" && item2.id == "sagemint")
+        } else if (item1.id == "glowwartplant" && item2.id == "sagemintplant")
         {
             return glowWartSagemintItems;
         }
-        else if (item1.id == "sagemint" && item2.id == "sagemint")
+        else if (item1.id == "sagemintplant" && item2.id == "sagemintplant")
         {
             return sagemintItems;
         }

@@ -13,16 +13,20 @@ MonoBehaviour:
   m_Name: Letter2
   m_EditorClassIdentifier: 
   id: letter2
-  from: Someone
-  subject: So...
+  from: X
+  subject: To the new librarian
+  letterBGtan: 0
   body: 'To the new librarian,
 
 
-    Did you plant the seeds I gave you? Did you
-    remember to water them? They''ll shrivel up if you don''t. I''ve sent you two
-    more, just in case. That''s all I have, though, so be careful. If you write to
-    me what you need and send me drobles, I''ll ship you more supplies. Oh - here''s
-    20 drobles, also.
+    Time for you is stretched, but for us it dwindles
+    each day. Did you plant the seeds and care for them? Remember, they are both
+    the lock and key. Without water, they''ll become ash. Here are two more seeds
+    - it''s all I''ve got for now. If you can raise drobles, I may be able to get
+    more seeds. I''ve sent you what little I have.
 
 
-    ... Let''s talk more later.'
+    I''ll send another letter
+    soon. Until later...
+
+    X'

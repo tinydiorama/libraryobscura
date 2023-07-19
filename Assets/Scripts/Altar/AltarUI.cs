@@ -21,6 +21,8 @@ public class AltarUI : MonoBehaviour
     [SerializeField] private Button item1ButtonDown;
     [SerializeField] private Button item2ButtonUp;
     [SerializeField] private Button item2ButtonDown;
+    [SerializeField] private GameObject altarAnimation;
+    [SerializeField] private AudioClip altarWhoosh;
 
     [Header("Altar GET")]
     [SerializeField] private GameObject altarGetPanel;
@@ -89,12 +91,14 @@ public class AltarUI : MonoBehaviour
                 {
                     item1.altarItem = slot.item;
                     item1.itemImage.sprite = slot.item.icon;
+                    item1.itemText.text = slot.item.itemName;
                     item1.altarIndex = count;
                     item1set = true;
                     if (slot.count > 1)
                     {
                         item2.altarItem = slot.item;
                         item2.itemImage.sprite = slot.item.icon;
+                        item2.itemText.text = slot.item.itemName;
                         item2.altarIndex = count;
                         return;
                     }
@@ -102,6 +106,7 @@ public class AltarUI : MonoBehaviour
                 {
                     item2.altarItem = slot.item;
                     item2.itemImage.sprite = slot.item.icon;
+                    item2.itemText.text = slot.item.itemName;
                     item2.altarIndex = count;
                     return;
                 }
@@ -179,12 +184,21 @@ public class AltarUI : MonoBehaviour
         }
         altarPanel.SetActive(false);
         // animation
+        altarAnimation.SetActive(true);
+        AudioManager.GetInstance().playSFX(altarWhoosh);
+        StartCoroutine(showSacrificeResults());
+    }
+
+    private IEnumerator showSacrificeResults()
+    {
+        yield return new WaitForSeconds(1.2f);
+        altarAnimation.SetActive(false);
         altarGetPanel.SetActive(true);
         InventoryManager inv = InventoryManager.instance;
         List<Item> itemsToGet = altarData.getSacrificeItems(item1.altarItem, item2.altarItem);
         inv.removeItem(item1.altarItem);
         inv.removeItem(item2.altarItem);
-        foreach ( Item item in itemsToGet )
+        foreach (Item item in itemsToGet)
         {
             GameObject tempObj = Instantiate(altarItemPrefab, altarItemList.transform);
             tempObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.itemName;

@@ -21,6 +21,7 @@ public class IntroCutscene : MonoBehaviour
         sm = StoryManager.instance;
         if (! sm.cutscene0Triggered)
         {
+            GameManager.GetInstance().isPaused = true;
             introBG.SetActive(true);
 
             introText1.gameObject.SetActive(true);
@@ -94,11 +95,12 @@ public class IntroCutscene : MonoBehaviour
         LeanTween.alpha(introArrow.GetComponent<RectTransform>(), 0, 1f).setDelay(1f).setOnComplete(() =>
         {
             introArrow.gameObject.SetActive(false);
-        }); ;
+        });
 
         LeanTween.alpha(introBG.GetComponent<RectTransform>(), 0, 2f).setDelay(3f).setOnComplete(() =>
         {
             introBG.gameObject.SetActive(false);
+            GameManager.GetInstance().isPaused = false;
         });
     }
 }

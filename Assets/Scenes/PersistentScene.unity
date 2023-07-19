@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73b03916486f4844aa9c1b46625705e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initializeDataIfNull: 1
+  initializeDataIfNull: 0
   fileName: data.game
   useEncryption: 0
 --- !u!4 &2086031779

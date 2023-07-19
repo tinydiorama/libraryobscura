@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: Letter1
   m_EditorClassIdentifier: 
   id: letter1
-  from: Someone
-  subject: To whoever comes here...
-  body: 'To whoever comes here...
+  from: X
+  subject: To the newly bound...
+  letterBGtan: 0
+  body: 'To the newly bound...
 
 
-    I''m writing to you to both warn you to stay
-    away from this place, and to beg you to help me. I''ll put it plainly - the library
-    is haunted. But inside its corridors holds great secrets, if you can unlock them.
-    If you choose to stay, then please: tend to the garden in the yard. The plants
-    there will help both of us. If you send them to me, I''ll try to send you things
-    that will help you, too.
+    I send you an appeal - the shadows run deep
+    outside. Where you stand on those hallowed grounds grow miraculous plants. Take
+    these seeds to the garden, care for them, and return the grown plants to me.
+    I can''t promise anything in return. Don''t try to leave there: you''re fate-bound
+    now. I wouldn''t trade spots with you, but at least the Shades can''t reach you
+    there.
 
 
     Sincerely,
 
-    A friend'
+    X'

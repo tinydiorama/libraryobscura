@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: SageMintSeed
   m_EditorClassIdentifier: 
   id: sagemintseed
-  itemName: Sagemint Seed
+  itemName: Dwarf Sage Seed
   icon: {fileID: 21300000, guid: d6f91eb99d3714149a26bfb3f9dd8ccd, type: 3}
-  sellable: 1
+  sellable: 0
   canBeSacrificed: 0
   category: 0
   buyPrice: 3
   sellPrice: 1
-  seedImages: []
+  seedImages:
+  - {fileID: 21300000, guid: 7396d5971dbbcce489fd2a191b57fd1e, type: 3}
+  - {fileID: 21300000, guid: dcd8ab2748f05e6429c12856a04101c7, type: 3}
+  - {fileID: 21300000, guid: 2bae2ef6a22e0f4478366d8b7f56ea3e, type: 3}
   harvestPlant: {fileID: 11400000, guid: 55fd78b595d478f439faa668b0339908, type: 2}

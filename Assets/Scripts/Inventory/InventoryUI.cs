@@ -23,13 +23,10 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private GameObject booksPrefab;
     [SerializeField] private GameObject itemsPrefab;
 
-    [Header("Book Fields")]
-    [SerializeField] private TextMeshProUGUI bookBodyText1;
-    [SerializeField] private TextMeshProUGUI bookBodyText2;
-    [SerializeField] private GameObject bookCloseup;
-
     [Header("Letter Fields")]
     [SerializeField] private GameObject lettersCloseup;
+    [SerializeField] private GameObject lettersCloseupImageGray;
+    [SerializeField] private GameObject lettersCloseupImageTan;
 
     [Header("First Encounter")]
     [SerializeField] private MailboxUI mailboxUI;
@@ -104,30 +101,25 @@ public class InventoryUI : MonoBehaviour
         if (letterToShow.letter.id == "letter2")
         {
             StoryManager.instance.buyAllowed = true;
+            StoryManager.instance.sellAllowed = true;
             InventoryManager.instance.showMoneyHUD();
             InventoryManager.instance.money = 20;
         }
 
         letterToShow.newLetter = false;
         hidePanels();
+        if ( letterToShow.letter.letterBGtan )
+        {
+            lettersCloseupImageTan.SetActive(true);
+            lettersCloseupImageGray.SetActive(false);
+        } else
+        {
+            lettersCloseupImageTan.SetActive(false);
+            lettersCloseupImageGray.SetActive(true);
+        }
         lettersCloseup.SetActive(true);
 
-        lettersCloseup.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = letterToShow.letter.body;
-    }
-
-    public void showBookCloseup(ref BookSlot bookToShow)
-    {
-        bookToShow.newBook = false;
-        hidePanels();
-        bookBodyText1.text = bookToShow.book.page1;
-        bookBodyText2.text = bookToShow.book.page2;
-        bookCloseup.SetActive(true);
-    }
-
-    public void closeBookCloseup()
-    {
-        bookCloseup.SetActive(false);
-        showBooksPanel();
+        lettersCloseup.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = letterToShow.letter.body;
     }
 
     public void closeLetterCloseup()
@@ -177,7 +169,7 @@ public class InventoryUI : MonoBehaviour
             noThingsText.gameObject.SetActive(true);
             noThingsText.text = "You have no letters.";
         }
-        for (int i = 0; i < invManage.letters.Count; i++)
+        for (int i = invManage.letters.Count - 1; i >= 0; i--) // showing the letters in reverse order
         {
             GameObject letterInstance = Instantiate(lettersPrefab, panelContents.transform);
             letterInstance.GetComponent<LetterUI>().letterSubject.text = invManage.letters[i].letter.subject;
@@ -228,7 +220,7 @@ public class InventoryUI : MonoBehaviour
                 bookInstance.GetComponent<BookUI>().newIcon.SetActive(false);
             }
             BookSlot tempBook = invManage.books[i];
-            bookInstance.GetComponent<Button>().onClick.AddListener(delegate { showBookCloseup(ref tempBook); });
+            //bookInstance.GetComponent<Button>().onClick.AddListener(delegate { showBookCloseup(ref tempBook); });
         }
     }
 

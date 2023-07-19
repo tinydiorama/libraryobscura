@@ -83,10 +83,7 @@ public class LevelLoader : MonoBehaviour
     }
     public IEnumerator GetSceneLoadProgress(Vector2 playerCoords)
     {
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        playerObj.transform.position = playerCoords;
-        Cinemachine.CinemachineVirtualCamera vcam = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<Cinemachine.CinemachineVirtualCamera>();
-        vcam.ForceCameraPosition(new Vector3(playerCoords.x, playerCoords.y, 0), vcam.transform.rotation);
+
         for (int i = 0; i < scenesLoading.Count; i++)
         {
             while (!scenesLoading[i].isDone)
@@ -94,10 +91,14 @@ public class LevelLoader : MonoBehaviour
                 yield return null;
             }
         }
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        playerObj.transform.position = playerCoords;
+        Cinemachine.CinemachineVirtualCamera vcam = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<Cinemachine.CinemachineVirtualCamera>();
+        vcam.ForceCameraPosition(new Vector3(playerCoords.x, playerCoords.y, 0), vcam.transform.rotation);
         fader.gameObject.SetActive(true);
         loadingScreen.SetActive(false);
         OnNewLevelLoaded?.Invoke(mostRecentScene);
-        LeanTween.alpha(fader, 0, 0.5f).setOnComplete(() =>
+        LeanTween.alpha(fader, 0, 0.7f).setOnComplete(() =>
         {
             fader.gameObject.SetActive(false);
         });

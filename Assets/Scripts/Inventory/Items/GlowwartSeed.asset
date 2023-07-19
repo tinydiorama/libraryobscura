@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GlowwartSeed
   m_EditorClassIdentifier: 
   id: 165f61f4-7584-4a42-8d66-95808222cc07
-  itemName: Glowwart Seed
+  itemName: Lucid Sprig Seed
   icon: {fileID: 21300000, guid: d6f91eb99d3714149a26bfb3f9dd8ccd, type: 3}
-  sellable: 1
+  sellable: 0
   canBeSacrificed: 0
   category: 0
   buyPrice: 5

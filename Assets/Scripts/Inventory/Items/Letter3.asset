@@ -13,6 +13,18 @@ MonoBehaviour:
   m_Name: Letter3
   m_EditorClassIdentifier: 
   id: letter3
-  from: Someone
-  subject: Testing
-  body: Something something something
+  from: X
+  subject: To the wizened gardener
+  letterBGtan: 0
+  body: 'To the wizened gardener,
+
+
+    It worked, at least for a time. The plant
+    you sent healed someone. It took away a measure of their consuming shadow. Out
+    here, there is so much darkness. Even at high noon, the Shades'' presence is
+    everywhere. I need more plants to continue the work.
+
+
+    Yours respectfully,
+
+    X'

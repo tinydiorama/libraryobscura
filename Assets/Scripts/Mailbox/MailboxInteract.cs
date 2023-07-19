@@ -26,6 +26,7 @@ public class MailboxInteract : Interactable
     {
         if (! StoryManager.instance.mailboxInteract1) // have never interacted with the mailbox before
         {
+            GameManager.GetInstance().isPaused = true;
             inventoryUI.gameObject.SetActive(true);
             GameManager.GetInstance().showPauseMenu();
             LetterSlot tempLetter = new LetterSlot(MailManager.instance.newLetters[0], false);

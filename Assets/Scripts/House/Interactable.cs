@@ -27,6 +27,7 @@ public abstract class Interactable : MonoBehaviour
                 }
                 else
                 {
+                    PlayerManager.instance.GetComponent<PlayerPlatformerController>().stopPlayer();
                     interact();
                 }
             }

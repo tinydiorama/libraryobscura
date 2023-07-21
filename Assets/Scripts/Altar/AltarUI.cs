@@ -55,8 +55,8 @@ public class AltarUI : MonoBehaviour
         var color = text.color;
         var fadeoutcolor = color;
         fadeoutcolor.a = 0;
-        LeanTween.value(introText1.gameObject, updateColorValueCallback, color, fadeoutcolor, 5f).setEase(LeanTweenType.easeInOutSine);
-        LeanTween.value(introText2.gameObject, updateColorValueCallback2, color, fadeoutcolor, 5f).setEase(LeanTweenType.easeInOutSine).setOnComplete(() =>
+        LeanTween.value(introText1.gameObject, updateColorValueCallback, color, fadeoutcolor, 3f).setEase(LeanTweenType.easeInOutSine);
+        LeanTween.value(introText2.gameObject, updateColorValueCallback2, color, fadeoutcolor, 3f).setEase(LeanTweenType.easeInOutSine).setOnComplete(() =>
         {
             introTextContainer.SetActive(true);
             StoryManager.instance.seenAltar = true;
@@ -191,15 +191,20 @@ public class AltarUI : MonoBehaviour
 
     private IEnumerator showSacrificeResults()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(0.7f);
         altarAnimation.SetActive(false);
         altarGetPanel.SetActive(true);
         InventoryManager inv = InventoryManager.instance;
         List<Item> itemsToGet = altarData.getSacrificeItems(item1.altarItem, item2.altarItem);
         inv.removeItem(item1.altarItem);
         inv.removeItem(item2.altarItem);
+        ShopManager shop = ShopManager.instance;
         foreach (Item item in itemsToGet)
         {
+            if ( item.buyable && ! shop.shopItems.Contains(item) )
+            {
+                shop.shopItems.Add(item); // add the newly discovered altar seed to the shop
+            }
             GameObject tempObj = Instantiate(altarItemPrefab, altarItemList.transform);
             tempObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.itemName;
             tempObj.transform.GetChild(1).GetComponent<Image>().sprite = item.icon;

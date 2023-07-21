@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerPlatformerController : PhysicsObject
 {
@@ -8,11 +9,16 @@ public class PlayerPlatformerController : PhysicsObject
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
     public float defaultSpeed = 5;
+    public bool isInMidAir;
+    private float prevYVelocity;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private bool facingRight;
+    public bool facingRight;
     private GameManager gm;
+
+    public event UnityAction onJump;
+    public event UnityAction onLand;
 
     // Use this for initialization
     void Awake()
@@ -70,6 +76,32 @@ public class PlayerPlatformerController : PhysicsObject
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
             targetVelocity = move * maxSpeed;
         }
+
+        if (velocity.y != 0)
+        {
+            if (prevYVelocity == 0)
+            {
+                isInMidAir = true;
+                onJump?.Invoke();
+                Debug.Log("jumping");
+            }
+        }
+        if (velocity.y == 0)
+        {
+            if (prevYVelocity != 0)
+            {
+                isInMidAir = false;
+                onLand?.Invoke();
+                Debug.Log("landing");
+            }
+        }
+        prevYVelocity = velocity.y;
+    }
+
+    public void stopPlayer()
+    {
+        velocity.x = 0;
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
     }
 
     public void Flip()

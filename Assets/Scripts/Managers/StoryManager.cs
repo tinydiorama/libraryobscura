@@ -10,12 +10,14 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool cutscene2Triggered;
     public bool cutscene3Triggered;
     public bool dream1Triggered;
+    public bool dream2Triggered;
     public bool mailboxInteract1;
     public bool buyAllowed;
     public bool sellAllowed;
     public bool seenAltar;
     public bool backgateUnlocked;
     public int lastLetterReceivedDay;
+    public string lucidity;
 
     [Header("Story Objects")]
     [SerializeField] private GameObject figure;
@@ -61,28 +63,37 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     {
         MailManager mm = MailManager.instance;
         InventoryManager inv = InventoryManager.instance;
-        if (DayTimeController.instance.days == 1) // day 1 (really day 2) gives you a new letter and 2 new seeds
+        if (dream1Triggered == true && dream2Triggered == false )
         {
-            mm.addNewLetter(data.day2Letter);
-            foreach (Item seed in data.day2Seeds)
-            {
-                mm.newItems.Add(seed);
-            }
-            mm.hasNewMail = true;
-            lastLetterReceivedDay = DayTimeController.instance.days;
+            lucidity = "Uncertain";
         }
-        else if (inv.containsLetter("letter2") && ! inv.containsLetter("letter3")
-            && inv.numSold() >= 1) // after you've received the day 2 letter & sold ANYTHING
+
+        if ( ! mm.hasNewMail ) // only put mail in if there's not already current mail
         {
-            mm.addNewLetter(data.day3Letter);
-            mm.hasNewMail = true;
-            lastLetterReceivedDay = DayTimeController.instance.days;
-        } else if ( inv.containsLetter("letter3") && ! inv.containsLetter("letter4") )
-        {
-            mm.addNewLetter(data.day4Letter);
-            mm.newItems.Add(data.day4Key);
-            mm.hasNewMail = true;
-            lastLetterReceivedDay = DayTimeController.instance.days;
+            if (DayTimeController.instance.days == 1) // day 1 (really day 2) gives you a new letter and 2 new seeds
+            {
+                mm.addNewLetter(data.day2Letter);
+                foreach (Item seed in data.day2Seeds)
+                {
+                    mm.newItems.Add(seed);
+                }
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = DayTimeController.instance.days;
+            }
+            else if (inv.containsLetter("letter2") && !inv.containsLetter("letter3")
+                && inv.numSold() >= 1) // after you've received the day 2 letter & sold ANYTHING
+            {
+                mm.addNewLetter(data.day3Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = DayTimeController.instance.days;
+            }
+            else if (inv.containsLetter("letter3") && !inv.containsLetter("letter4"))
+            {
+                mm.addNewLetter(data.day4Letter);
+                mm.newItems.Add(data.day4Key);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = DayTimeController.instance.days;
+            }
         }
     }
 
@@ -108,8 +119,11 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.buyAllowed = data.buyAllowed;
         this.sellAllowed = data.sellAllowed;
         this.dream1Triggered = data.dream1triggered;
+        this.dream2Triggered = data.dream2triggered;
         this.seenAltar = data.seenAltar;
         this.lastLetterReceivedDay = data.lastLetterReceivedDay;
+        this.lucidity = data.lucidity;
+        this.backgateUnlocked = data.backgateUnlocked;
 
         if (figure != null)
         {
@@ -148,7 +162,10 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.buyAllowed = this.buyAllowed;
         data.sellAllowed = this.sellAllowed;
         data.dream1triggered = this.dream1Triggered;
+        data.dream2triggered = this.dream2Triggered;
         data.seenAltar = this.seenAltar;
         data.lastLetterReceivedDay = this.lastLetterReceivedDay;
+        data.lucidity = this.lucidity;
+        data.backgateUnlocked = this.backgateUnlocked;
     }
 }

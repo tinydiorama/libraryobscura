@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Package : Interactable
 {
@@ -16,7 +17,6 @@ public class Package : Interactable
 
     public override void interact()
     {
-        sparkles.SetActive(false);
         Animator anim = packageSpriteBox.GetComponent<Animator>();
         anim.SetBool("Animate", true);
         foreach (ItemSlot slot in itemsObtained)
@@ -45,11 +45,13 @@ public class Package : Interactable
     private IEnumerator cleanup()
     {
         yield return new WaitForSeconds(4f);
-        packageSpriteBox.SetActive(false);
+        Animator anim = packageSpriteBox.GetComponent<Animator>();
+        anim.SetBool("Animate", false);
         gameObject.SetActive(false);
         foreach (Transform child in notificationsPanel.transform)
         {
             Destroy(child.gameObject);
         }
     }
+
 }

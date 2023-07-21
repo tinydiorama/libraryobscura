@@ -5,6 +5,7 @@ using UnityEngine;
 public class MailManager : MonoBehaviour, iDataPersistence
 {
     public bool hasNewMail;
+    public bool showAlert;
     public List<Letter> newLetters;
     public List<Book> newBooks;
     public List<Item> newItems;
@@ -24,7 +25,10 @@ public class MailManager : MonoBehaviour, iDataPersistence
 
     public void addNewLetter(Letter letterToAdd)
     {
-        newLetters.Add(letterToAdd);
+        if ( ! newLetters.Contains(letterToAdd) )
+        {
+            newLetters.Add(letterToAdd);
+        }
     }
 
     public void clearLetters()

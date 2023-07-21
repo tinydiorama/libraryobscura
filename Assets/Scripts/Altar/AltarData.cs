@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class AltarData : MonoBehaviour
 {
-    [Header("Glowwart and Glowwart")]
-    public List<Item> glowWartItems;
-    [Header("Glowwart and Sagemint")]
-    public List<Item> glowWartSagemintItems;
-    [Header("Sagemint and Sagemint")]
-    public List<Item> sagemintItems;
+    [Header("Lucid Sprig and Lucid Sprig")]
+    public List<Item> lucidSprigItems;
+    [Header("Lucid Sprig and Dwarf Sage")]
+    public List<Item> lucidSprigDwarfSageItems;
+    [Header("Dwarf Sage and Dwarf Sage")]
+    public List<Item> dwarfSageItems;
 
     public List<Item> getSacrificeItems(Item item1, Item item2)
     {
-        if ( item1.id == "glowwartplant" && item2.id == "glowwartplant")
+        if ( item1.id == "lucidsprigplant" && item2.id == "lucidsprigplant")
         {
-            return glowWartItems;
-        } else if (item1.id == "glowwartplant" && item2.id == "sagemintplant")
+            return lucidSprigItems;
+        } else if (item1.id == "lucidsprigplant" && item2.id == "dwarfsageplant" ||
+            item1.id == "dwarfsageplant" && item2.id == "lucidsprigplant")
         {
-            return glowWartSagemintItems;
+            return lucidSprigDwarfSageItems;
         }
-        else if (item1.id == "sagemintplant" && item2.id == "sagemintplant")
+        else if (item1.id == "dwarfsageplant" && item2.id == "dwarfsageplant")
         {
-            return sagemintItems;
+            return dwarfSageItems;
         }
         return new List<Item>();
     }

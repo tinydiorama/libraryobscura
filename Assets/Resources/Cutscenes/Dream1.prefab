@@ -1086,7 +1086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7846996177040196507
 Transform:
   m_ObjectHideFlags: 0
@@ -1716,7 +1716,7 @@ Transform:
   - {fileID: 2531308092341385390}
   - {fileID: 1554366244643229168}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7861641257929132080
 MonoBehaviour:
@@ -1730,6 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cb0033e1023ce4988eb6d6681daad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dreamTrigger: {fileID: 6198170431805420028}
 --- !u!1 &8987433820628218786
 GameObject:
   m_ObjectHideFlags: 0

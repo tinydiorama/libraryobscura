@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private DayTransitionHelper dayTransition;
     [SerializeField] private GameObject nightFade;
-    [SerializeField] private bool saveAtNight;
+    [SerializeField] private GameObject hud;
+    public bool saveAtNight;
 
     public bool isPaused;
     public bool isStopTime;
@@ -76,7 +77,9 @@ public class GameManager : MonoBehaviour
     public void nextDay()
     {
         isPaused = true;
+        hud.SetActive(false);
         showNightFade();
+        AudioManager.GetInstance().FadeOutMusic();
         StartCoroutine(processDay());
     }
 
@@ -86,21 +89,24 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         onEndOfDay?.Invoke();
 
+        // nighttime activities :)
+        if (InventoryManager.instance.containsLetter("letter2") && !StoryManager.instance.dream1Triggered
+            && (DayTimeController.instance.days - StoryManager.instance.lastLetterReceivedDay) == 2) // do the dream instead
+        {
+            CutsceneManager.instance.loadCutscene1();
+            StoryManager.instance.dream1Triggered = true;
+        }
+        else
+        {
+            dayTransition.showItems(showPackageInfo);
+        }
+
         // Saves the game
         if ( saveAtNight )
         {
             DataPersistenceManager.instance.SaveGame();
         }
 
-        // nighttime activities :)
-        if (InventoryManager.instance.containsLetter("letter2") && ! StoryManager.instance.dream1Triggered) // do the dream instead
-        {
-            CutsceneManager.instance.loadCutscene1();
-        }
-        else
-        {
-            dayTransition.showItems(showPackageInfo);
-        }
     }
 
     public void showNightFade()
@@ -120,6 +126,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator startNewDay()
     {
+        hud.SetActive(true);
         onStartNewDay?.Invoke();
         AudioManager.GetInstance().ChangeSong();
         dayTransition.hideOverlay();

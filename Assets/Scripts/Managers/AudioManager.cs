@@ -28,25 +28,23 @@ public class AudioManager : MonoBehaviour
         return instance;
     }
 
-    public void FadeOutMusic(float transitionTime = 2.0f)
+    public void FadeOutMusic(float transitionTime = 4.0f)
     {
         StartCoroutine(Fade(transitionTime));
     }
 
     private IEnumerator Fade(float transitionTime)
     {
-        if ( ! _audiosource.isPlaying )
+        if ( _audiosource.isPlaying )
         {
-            _audiosource.Play();
-        }
+            for (float i = 0; i < transitionTime; i += Time.deltaTime)
+            {
+                _audiosource.volume = (1 - (i / transitionTime));
+                yield return null;
+            }
 
-        for (float i = 0; i < transitionTime; i += Time.deltaTime)
-        {
-            _audiosource.volume = (1 - (i / transitionTime));
-            yield return null;
+            _audiosource.Stop();
         }
-
-        _audiosource.Stop();
     }
 
     public void StartPlaylist()

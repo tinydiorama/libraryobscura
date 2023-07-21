@@ -12,6 +12,7 @@ public class Item : ScriptableObject
     public string itemName;
     public Sprite icon;
     public bool sellable;
+    public bool buyable;
     public bool canBeSacrificed;
     public Category category;
     public int buyPrice;

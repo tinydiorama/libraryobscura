@@ -16,5 +16,6 @@ public class Altar : Interactable
         {
             altarUI.showAltar();
         }
+        GetComponent<HighlightShowController>().hideHighlight();
     }
 }

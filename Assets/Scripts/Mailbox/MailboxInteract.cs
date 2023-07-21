@@ -12,7 +12,7 @@ public class MailboxInteract : Interactable
     private void LateUpdate()
     {
 
-        if (MailManager.instance.hasNewMail)
+        if (MailManager.instance.hasNewMail || MailManager.instance.showAlert )
         {
             alert.SetActive(true);
         }
@@ -39,6 +39,7 @@ public class MailboxInteract : Interactable
                 mailboxUI.showReceivedMail();
             } else if ( StoryManager.instance.buyAllowed )
             {
+                MailManager.instance.showAlert = false;
                 buySellUI.showShop();
             }
         }

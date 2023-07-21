@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class Dream1Manager : MonoBehaviour
 {
-
+    [SerializeField] private GameObject dreamTrigger;
     private GameManager gm;
     private Vignette vnt;
 
@@ -38,6 +38,7 @@ public class Dream1Manager : MonoBehaviour
     private IEnumerator fadeOut()
     {
         yield return new WaitForSeconds(2.5f);
+        dreamTrigger.SetActive(true);
         GameManager.GetInstance().hideNightFade();
     }
 }

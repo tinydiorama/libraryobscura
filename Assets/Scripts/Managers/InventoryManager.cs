@@ -56,6 +56,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     [SerializeField] public List<ItemSlot> items;
     [SerializeField] public List<Item> itemsDatabase;
     [SerializeField] public List<ItemSlot> itemsOrdered;
+    [SerializeField] public List<BookSlot> booksOrdered;
     [SerializeField] public List<ItemSlot> itemsSold;
     [Header("Buy Sell Information")]
     [SerializeField] public int moneySpentToday;
@@ -97,7 +98,6 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         {
             GameManager.GetInstance().showPackageInfo = false;
         }
-        itemsOrdered.Clear();
         // sale data
         money += moneyEarnedToday;
         // setup books for # of items sold
@@ -108,17 +108,12 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         if ( saleBooksGiven.Count > 0 || saleItemGiven.Count > 0 )
         {
             package.SetActive(true);
-            if ( pckg.itemsObtained.Count > 0 )
+            for (int i = 0; i < saleItemGiven.Count; i++)
             {
-                for (int i = 0; i < saleItemGiven.Count; i++)
-                {
-                    pckg.itemsObtained.Add(saleItemGiven[i]); // add sale obtained items to bought items
-                }
-            } else
-            {
-                pckg.itemsObtained = saleItemGiven; // set items obtained straight up to sale items
+                pckg.itemsObtained.Add(saleItemGiven[i]); // add sale rewards to bought items
+                itemsOrdered.Add(saleItemGiven[i]); // add sale rewards to items ordered for saving
             }
-
+            booksOrdered = saleBooksGiven;
             pckg.booksObtained = saleBooksGiven;
         }
     }
@@ -127,6 +122,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     {
         //hasPackageAtDoor = false;
         itemsOrdered.Clear();
+        booksOrdered.Clear();
         moneyEarnedToday = 0;
         moneySpentToday = 0;
         numItemsSoldToday = 0;
@@ -301,6 +297,12 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
                 data.books.TryGetValue(dbBook.id, out isNew);
                 books.Add(new BookSlot(dbBook, isNew));
             }
+            if (data.booksOrdered.ContainsKey(dbBook.id))
+            {
+                bool read;
+                data.booksOrdered.TryGetValue(dbBook.id, out read);
+                booksOrdered.Add(new BookSlot(dbBook, read));
+            }
         }
         foreach (Item dbItem in itemsDatabase)
         {
@@ -316,9 +318,30 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
                 data.saleItems.TryGetValue(dbItem.id, out count);
                 itemsSold.Add(new ItemSlot(dbItem, count));
             }
+            if (data.itemsOrdered.ContainsKey(dbItem.id))
+            {
+                int count;
+                data.itemsOrdered.TryGetValue(dbItem.id, out count);
+                itemsOrdered.Add(new ItemSlot(dbItem, count));
+            }
         }
         this.money = data.money;
         this.numItemsSoldAllTime = data.numItemsSoldAllTime;
+        if (itemsOrdered.Count > 0 || booksOrdered.Count > 0)
+        {
+            package.SetActive(true);
+            Package pckg = package.GetComponent<Package>();
+            foreach (ItemSlot slot in itemsOrdered)
+            {
+                pckg.itemsObtained.Add(new ItemSlot(slot.item, slot.count));
+            }
+            foreach (BookSlot slot in booksOrdered)
+            {
+                pckg.booksObtained.Add(new BookSlot(slot.book, slot.newBook));
+            }
+            itemsOrdered.Clear();
+            booksOrdered.Clear(); // need to clear the inventory after we add it to the package
+        }
     }
 
     public void SaveData(ref GameData data)
@@ -370,6 +393,30 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         if (itemsSold.Count == 0)
         {
             data.saleItems.Clear();
+        }
+        foreach (ItemSlot slot in itemsOrdered)
+        {
+            if (data.itemsOrdered.ContainsKey(slot.item.id))
+            {
+                data.itemsOrdered.Remove(slot.item.id);
+            }
+            data.itemsOrdered.Add(slot.item.id, slot.count);
+        }
+        if (itemsOrdered.Count == 0)
+        {
+            data.itemsOrdered.Clear();
+        }
+        foreach (BookSlot slot in booksOrdered)
+        {
+            if (data.booksOrdered.ContainsKey(slot.book.id))
+            {
+                data.booksOrdered.Remove(slot.book.id);
+            }
+            data.booksOrdered.Add(slot.book.id, slot.newBook);
+        }
+        if (booksOrdered.Count == 0)
+        {
+            data.booksOrdered.Clear();
         }
         data.money = this.money;
         data.numItemsSoldAllTime = this.numItemsSoldAllTime;

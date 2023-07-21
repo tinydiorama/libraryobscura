@@ -87,6 +87,9 @@ public class PhysicsObject : MonoBehaviour
                     {
                         groundNormal = currentNormal;
                         currentNormal.x = 0;
+                    } else
+                    {
+                        Debug.Log("player has landed");
                     }
                 }
 

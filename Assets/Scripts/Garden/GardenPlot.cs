@@ -187,6 +187,7 @@ public class GardenPlot : MonoBehaviour
     public void harvestPlant()
     {
         Item harvestPlant = growingSeed.item.harvestPlant;
+        CollectionManager.instance.discoverNew(harvestPlant);
         InventoryManager.instance.addItem(harvestPlant);
         addNotification("You have harvested a " + harvestPlant.itemName + "!",
             harvestPlant.icon, true);
@@ -240,6 +241,7 @@ public class GardenPlot : MonoBehaviour
             {
                 GameObject seedInstance = Instantiate(seedSelectPrefab, seedDisplay.transform);
                 seedInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = invManage.items[i].count + " " + invManage.items[i].item.itemName;
+                seedInstance.transform.GetChild(1).GetComponent<Image>().sprite = invManage.items[i].item.icon;
 
                 ItemSlot tempSeed = invManage.items[i];
                 seedInstance.GetComponent<Button>().onClick.AddListener(delegate { selectSeed(ref seedInstance, ref tempSeed); });

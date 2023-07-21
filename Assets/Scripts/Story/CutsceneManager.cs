@@ -65,8 +65,6 @@ public class CutsceneManager : MonoBehaviour
         gm.isInteractionsDisabled = false;
         hud.SetActive(true);
 
-        StoryManager.instance.dream1Triggered = true;
-
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);

@@ -17,10 +17,13 @@ public class DayTransitionHelper : MonoBehaviour
     [SerializeField] private GameObject packageAvailable;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private AudioClip thumpSound;
+    [SerializeField] private GameObject saveGameText;
 
     private float timeBetween = 1f;
     private float showItemTime;
+    private float currentMoneyVal;
     private bool canContinue;
+    private bool showMoneyCounter;
 
     private float desiredAlpha;
     private float currentAlpha;
@@ -50,24 +53,35 @@ public class DayTransitionHelper : MonoBehaviour
 
     public void showItems(bool hasPackageAtDoor)
     {
+        currentMoneyVal = 0;
         GameManager gm = GameManager.GetInstance();
         InventoryManager inv = InventoryManager.instance;
         gm.isPaused = true;
         // update all the text
         dayText.text = (DayTimeController.instance.days).ToString();
         soldItems.text = inv.numItemsSoldToday.ToString();
-        booksObtained.text = InventoryManager.instance.books.Count.ToString();
-        plantsDiscovered.text = "0";
-        //grimoireFilled.text = gm.grimoireManager.numItemsDiscovered().ToString();
-        lucidityText.text = "Clear";
-        moneyText.text = InventoryManager.instance.money.ToString();
-        
+        booksObtained.text = inv.books.Count.ToString();
+        plantsDiscovered.text = CollectionManager.instance.getAllDiscovered().ToString();
+        lucidityText.text = StoryManager.instance.lucidity;
+        if ( inv.moneyEarnedToday > 0 ) // if you earned money, show the prev amount so we can count up
+        {
+            moneyText.text = (inv.money - inv.moneyEarnedToday).ToString();
+            currentMoneyVal = inv.money - inv.moneyEarnedToday;
+        } else
+        {
+            moneyText.text = inv.money.ToString();
+            currentMoneyVal = inv.money;
+        }
+
+
         if ( inv.moneyEarnedToday - inv.moneySpentToday < 0 )
         {
             moneyChange.text = (inv.moneyEarnedToday - inv.moneySpentToday).ToString();
+            showMoneyCounter = false;
         } else 
         {
             moneyChange.text = "+" + (inv.moneyEarnedToday - inv.moneySpentToday).ToString();
+            showMoneyCounter = true;
         }
 
         foreach ( GameObject item in itemsToShow )
@@ -115,12 +129,38 @@ public class DayTransitionHelper : MonoBehaviour
         showItemTime += timeBetween;
         yield return new WaitForSeconds(showItemTime);
         item.SetActive(true);
+        if ( item.name == "MoneyItem" && showMoneyCounter)
+        {
+            StartCoroutine(CountUpToTarget(moneyText, InventoryManager.instance.money));
+        }
         if ( item.name == "ContinueArrow" )
         {
             canContinue = true;
+            if (GameManager.GetInstance().saveAtNight)
+            {
+                saveGameText.SetActive(true);
+                StartCoroutine(hideSaveGameText());
+            }
         } else
         {
             AudioManager.GetInstance().playSFX(thumpSound);
         }
+    }
+
+    IEnumerator CountUpToTarget(TextMeshProUGUI field, int target)
+    {
+        while (currentMoneyVal < target)
+        {
+            currentMoneyVal += (target / (2f / Time.deltaTime));
+            currentMoneyVal = Mathf.Clamp(currentMoneyVal, 0, target);
+            field.text = Mathf.Ceil(currentMoneyVal).ToString();
+            yield return null;
+        }
+    }
+
+    IEnumerator hideSaveGameText()
+    {
+        yield return new WaitForSeconds(2f);
+        saveGameText.SetActive(false);
     }
 }

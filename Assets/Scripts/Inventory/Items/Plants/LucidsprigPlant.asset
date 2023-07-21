@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
-  m_Name: SageMintPlant
+  m_Name: LucidsprigPlant
   m_EditorClassIdentifier: 
-  id: sagemintplant
-  itemName: Dwarf Sage
-  icon: {fileID: 0}
+  id: lucidsprigplant
+  itemName: Lucid Sprig
+  icon: {fileID: 21300000, guid: 686b5ed8ffd3ffc438bb283f92a6f26c, type: 3}
   sellable: 1
+  buyable: 0
   canBeSacrificed: 1
   category: 1
-  buyPrice: 60
-  sellPrice: 50
+  buyPrice: 20
+  sellPrice: 10
   seedImages: []
   harvestPlant: {fileID: 0}

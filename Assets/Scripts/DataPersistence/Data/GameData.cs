@@ -12,6 +12,7 @@ public class GameData
     public SerializableDictionary<string, int> items;
     public int money;
     public int numItemsSoldAllTime;
+    public string lucidity;
 
     // farm
     public List<string> seedId;
@@ -27,9 +28,12 @@ public class GameData
     public bool buyAllowed;
     public bool sellAllowed;
     public bool dream1triggered;
+    public bool dream2triggered;
     public bool seenAltar;
     public bool backgateUnlocked;
     public SerializableDictionary<string, int> saleItems;
+    public SerializableDictionary<string, bool> booksOrdered;
+    public SerializableDictionary<string, int> itemsOrdered;
 
     // current mailbox
     public bool hasNewMail;
@@ -48,6 +52,7 @@ public class GameData
         this.letters = new SerializableDictionary<string, bool>();
         this.books = new SerializableDictionary<string, bool>();
         this.items = new SerializableDictionary<string, int>();
+        this.lucidity = "Clear";
 
         this.seedId = new List<string>();
         this.state = new List<int>();
@@ -61,9 +66,12 @@ public class GameData
         this.buyAllowed = false;
         this.sellAllowed = false;
         this.dream1triggered = false;
+        this.dream2triggered = false;
         this.seenAltar = false;
         this.backgateUnlocked = false;
         this.saleItems = new SerializableDictionary<string, int>();
+        this.booksOrdered = new SerializableDictionary<string, bool>();
+        this.itemsOrdered = new SerializableDictionary<string, int>();
 
         this.hasNewMail = false;
         this.mailboxLetters = new List<string>();

@@ -104,6 +104,8 @@ public class InventoryUI : MonoBehaviour
             StoryManager.instance.sellAllowed = true;
             InventoryManager.instance.showMoneyHUD();
             InventoryManager.instance.money = 20;
+
+            MailManager.instance.showAlert = true;
         }
 
         letterToShow.newLetter = false;

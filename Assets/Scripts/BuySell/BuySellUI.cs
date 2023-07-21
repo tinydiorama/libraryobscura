@@ -98,7 +98,7 @@ public class BuySellUI : MonoBehaviour
     {
         GameManager gm = GameManager.GetInstance();
         InventoryManager inventory = InventoryManager.instance;
-        title.text = "Ship Items";
+        title.text = "Send Items";
 
         sellTab.GetComponent<Image>().color = activeColor;
         sellTab.GetComponent<Image>().sprite = activeSprite;
@@ -136,7 +136,7 @@ public class BuySellUI : MonoBehaviour
         else
         {
             emptyText.gameObject.SetActive(true);
-            emptyText.text = "You have nothing to sell.";
+            emptyText.text = "You have nothing to send.";
         }
     }
 
@@ -167,8 +167,8 @@ public class BuySellUI : MonoBehaviour
         numCanSell = itemSlot.count;
         quantityInput.text = activeQuantity.ToString();
         confirmPanel.SetActive(true);
-        confirmButtonText.text = "Sell for " + activePriceCheck.ToString();
-        confirmTitle.text = "How many to sell?";
+        confirmButtonText.text = "Send for " + activePriceCheck.ToString();
+        confirmTitle.text = "How many to send?";
         isBuying = false;
     }
     public void increaseQuantity()
@@ -188,7 +188,7 @@ public class BuySellUI : MonoBehaviour
             {
                 activeQuantity++;
             }
-            confirmButtonText.text = "Sell for " + (activePriceCheck * activeQuantity).ToString();
+            confirmButtonText.text = "Send for " + (activePriceCheck * activeQuantity).ToString();
         }
         quantityInput.text = activeQuantity.ToString();
     }
@@ -207,7 +207,7 @@ public class BuySellUI : MonoBehaviour
         }
         else // selling
         {
-            confirmButtonText.text = "Sell for " + (activePriceCheck * activeQuantity).ToString();
+            confirmButtonText.text = "Send for " + (activePriceCheck * activeQuantity).ToString();
         }
         quantityInput.text = activeQuantity.ToString();
     }
@@ -233,7 +233,7 @@ public class BuySellUI : MonoBehaviour
             inv.moneyEarnedToday += activePriceCheck * activeQuantity;
             inv.addToSold(activeItem, activeQuantity);
             inv.removeItem(activeItem, activeQuantity);
-            thanksText.text = "Thank you for shipping. We have collected the items and will send payment soon.";
+            thanksText.text = "Thank you for sending. We have collected the items and will send payment soon.";
             thanksPanel.SetActive(true);
             showSellTab();
         }

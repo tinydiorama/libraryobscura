@@ -495,10 +495,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 3
+  gravityModifier: 2
   maxSpeed: 4
   jumpTakeOffSpeed: 4
   defaultSpeed: 4
+  isInMidAir: 0
 --- !u!95 &2884249848722211171
 Animator:
   serializedVersion: 5

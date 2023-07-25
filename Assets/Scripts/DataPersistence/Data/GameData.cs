@@ -10,6 +10,7 @@ public class GameData
     public SerializableDictionary<string, bool> letters;
     public SerializableDictionary<string, bool> books;
     public SerializableDictionary<string, int> items;
+    public SerializableDictionary<string, bool> collection;
     public int money;
     public int numItemsSoldAllTime;
     public string lucidity;
@@ -52,6 +53,7 @@ public class GameData
         this.letters = new SerializableDictionary<string, bool>();
         this.books = new SerializableDictionary<string, bool>();
         this.items = new SerializableDictionary<string, int>();
+        this.collection = new SerializableDictionary<string, bool>();
         this.lucidity = "Clear";
 
         this.seedId = new List<string>();

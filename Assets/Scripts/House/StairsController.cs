@@ -9,7 +9,6 @@ public class StairsController : MonoBehaviour
     [SerializeField] private GameObject stairsOverlay;
 
     public bool upPressed;
-    private bool keyPressed;
     public bool playerInFront;
     public bool isInAir;
 
@@ -34,12 +33,10 @@ public class StairsController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 upPressed = true;
-                keyPressed = true;
             }
             else if (Input.GetKeyUp(KeyCode.W) )
             {
                 upPressed = false;
-                keyPressed = false;
             }
         }
 
@@ -60,13 +57,11 @@ public class StairsController : MonoBehaviour
         if (!playerPlatformer.facingRight && !playerInFront)
         {
             upPressed = true;
-            keyPressed = true;
         }
     }
     private void hasLanded()
     {
         upPressed = false;
-        keyPressed = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

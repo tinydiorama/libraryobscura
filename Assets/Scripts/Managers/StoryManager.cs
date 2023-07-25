@@ -63,6 +63,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     {
         MailManager mm = MailManager.instance;
         InventoryManager inv = InventoryManager.instance;
+        DayTimeController dayTime = DayTimeController.instance;
         if (dream1Triggered == true && dream2Triggered == false )
         {
             lucidity = "Uncertain";
@@ -70,7 +71,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
 
         if ( ! mm.hasNewMail ) // only put mail in if there's not already current mail
         {
-            if (DayTimeController.instance.days == 1) // day 1 (really day 2) gives you a new letter and 2 new seeds
+            if (dayTime.days == 1) // day 1 (really day 2) gives you a new letter and 2 new seeds
             {
                 mm.addNewLetter(data.day2Letter);
                 foreach (Item seed in data.day2Seeds)
@@ -78,21 +79,41 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                     mm.newItems.Add(seed);
                 }
                 mm.hasNewMail = true;
-                lastLetterReceivedDay = DayTimeController.instance.days;
+                lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("letter2") && !inv.containsLetter("letter3")
                 && inv.numSold() >= 1) // after you've received the day 2 letter & sold ANYTHING
             {
                 mm.addNewLetter(data.day3Letter);
                 mm.hasNewMail = true;
-                lastLetterReceivedDay = DayTimeController.instance.days;
+                lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("letter3") && !inv.containsLetter("letter4"))
             {
                 mm.addNewLetter(data.day4Letter);
                 mm.newItems.Add(data.day4Key);
                 mm.hasNewMail = true;
-                lastLetterReceivedDay = DayTimeController.instance.days;
+                lastLetterReceivedDay = dayTime.days;
+            } else if (inv.containsLetter("letter4") && !inv.containsLetter("letter6") 
+                && (dayTime.days - lastLetterReceivedDay >= 2))
+            {
+                foreach (Letter letter in data.day5Letters)
+                {
+                    mm.addNewLetter(letter);
+                }
+                lastLetterReceivedDay = dayTime.days;
+                mm.hasNewMail = true;
+            } else if (inv.containsLetter("letter6") && !inv.containsLetter("letter7")
+                && inv.numSold("cloudsprigplant") >= 2)
+            {
+                mm.addNewLetter(data.day6Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            } else if (inv.containsLetter("letter7") && !inv.containsLetter("letter8"))
+            {
+                mm.addNewLetter(data.day7Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
             }
         }
     }

@@ -181,7 +181,20 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
     }
     public void addToSold(Item itemToAdd, int count)
     {
-        itemsSold.Add(new ItemSlot(itemToAdd, count));
+        bool found = false;
+        foreach (ItemSlot slot in itemsSold)
+        {
+            if (slot.item.id == itemToAdd.id) // same item, increase count
+            {
+                slot.count = slot.count + count;
+                found = true;
+            }
+        }
+        if (!found)
+        {
+            // could not find the item, so just add it
+            itemsSold.Add(new ItemSlot(itemToAdd, count));
+        }
     }
 
     public void addItem(Item itemToAdd)

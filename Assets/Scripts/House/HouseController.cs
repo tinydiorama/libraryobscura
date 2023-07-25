@@ -9,10 +9,16 @@ public class HouseController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcam;
 
     private Animator anim;
+    private bool inHouse;
 
     private void Start()
     {
         anim = vcam.GetComponent<Animator>();
+        inHouse = false;
+    }
+
+    private void Update()
+    {
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

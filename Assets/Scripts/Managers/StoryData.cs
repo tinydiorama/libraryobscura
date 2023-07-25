@@ -11,4 +11,7 @@ public class StoryData : MonoBehaviour
     public Letter day3Letter;
     public Letter day4Letter;
     public Item day4Key;
+    public List<Letter> day5Letters;
+    public Letter day6Letter;
+    public Letter day7Letter;
 }

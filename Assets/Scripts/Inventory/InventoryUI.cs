@@ -41,6 +41,13 @@ public class InventoryUI : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void closeInventory()
+    {
+        hideInventory();
+        GameManager.GetInstance().isPaused = false;
+        GameManager.GetInstance().pauseMenuShown = false;
+    }
+
     public void inventoryInitialize()
     {
         showLettersPanel();
@@ -110,7 +117,7 @@ public class InventoryUI : MonoBehaviour
 
         letterToShow.newLetter = false;
         hidePanels();
-        if ( letterToShow.letter.letterBGtan )
+        if ( letterToShow.letter.letterBgTan)
         {
             lettersCloseupImageTan.SetActive(true);
             lettersCloseupImageGray.SetActive(false);

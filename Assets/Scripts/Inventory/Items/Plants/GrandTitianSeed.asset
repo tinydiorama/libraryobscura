@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: GrandTitianSeed
+  m_EditorClassIdentifier: 
+  id: grandtitianseed
+  itemName: Grand Titian Seed
+  icon: {fileID: 21300000, guid: ed1fd75685f2a4445a5bc9f77f8d8bdf, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 5
+  sellPrice: 5
+  seedImages:
+  - {fileID: 21300000, guid: 2856ef8ce7ad8ea4d8936a11f59ab508, type: 3}
+  - {fileID: 21300000, guid: 56c12dd6a1b7dfa4588a1aab4abfd67d, type: 3}
+  - {fileID: 21300000, guid: 0bebe855c0dd7c74fb8b7781d73b283e, type: 3}
+  harvestPlant: {fileID: 11400000, guid: ffade8b9dc5241649b3beaa2b394a0f4, type: 2}

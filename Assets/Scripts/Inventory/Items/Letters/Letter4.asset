@@ -15,7 +15,7 @@ MonoBehaviour:
   id: letter4
   from: A Friend
   subject: To the kindly traveler
-  letterBGtan: 1
+  letterBgTan: 1
   body: 'To the kindly traveler,
 
 

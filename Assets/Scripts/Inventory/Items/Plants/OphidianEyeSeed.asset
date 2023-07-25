@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: OphidianEyeSeed
+  m_EditorClassIdentifier: 
+  id: ophidianeyeseed
+  itemName: Ophidian's Eye Seed
+  icon: {fileID: 21300000, guid: 24700625aff48be41a8d2d423d7b379d, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 6
+  sellPrice: 6
+  seedImages:
+  - {fileID: 21300000, guid: 33f46f763d8e526419090fbf992791f1, type: 3}
+  - {fileID: 21300000, guid: 7b2c5f676315241438dafe431502c432, type: 3}
+  - {fileID: 21300000, guid: 0f91f04ddad747a4bba620a1e301711b, type: 3}
+  harvestPlant: {fileID: 11400000, guid: 4b71518dbe4507c4cafa830bdb12dad9, type: 2}

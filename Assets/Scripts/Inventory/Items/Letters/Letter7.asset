@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: Letter7
+  m_EditorClassIdentifier: 
+  id: letter7
+  from: X
+  subject: You must hurry!
+  letterBgTan: 0
+  body: 'You must hurry!
+
+
+    Why can''t you send more herbs? It simply is never
+    enough. I had to bury more patients today.
+
+
+    The treatments had worked so
+    well at the start. The plague may be evolving or worse. Send me new plants and
+    with haste.
+
+
+    Regards,
+
+    X'

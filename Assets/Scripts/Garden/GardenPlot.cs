@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using System.Xml;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public enum PlantState { 
     DIRT = 0,

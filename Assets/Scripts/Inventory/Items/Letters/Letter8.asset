@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: Letter8
+  m_EditorClassIdentifier: 
+  id: letter8
+  from: A friend
+  subject: A breakthrough!
+  letterBgTan: 1
+  body: 'A breakthrough!
+
+
+    How does this letter find you? I hope you''ve adjusted
+    to the library and your new duties. What do you see, there in the library? What
+    shadows pass in the night?
+
+
+    My breakthrough came last night. I found this
+    book hidden away in the darkest night. The letters seem to shift when I try to
+    read it. May it help you in your trials.
+
+
+    Kindly,
+
+    A friend'

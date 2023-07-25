@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: Letter5
+  m_EditorClassIdentifier: 
+  id: letter5
+  from: X
+  subject: The darkness spreads
+  letterBgTan: 0
+  body: 'The darkness spreads,
+
+
+    The plants only stem the tide, inch by painful
+    inch. One person saved and then two more afflicted. The Shades grow.
+
+
+    It''s
+    a plague. I don''t know exactly how it spreads. It has something to do with all
+    these growing Shades. They walk and people are exposed everywhere. There has
+    to be a better way before it''s too late.
+
+
+    Sincerely,
+
+    X'

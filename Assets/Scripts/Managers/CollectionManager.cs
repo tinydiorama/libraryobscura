@@ -14,10 +14,10 @@ public class CollectionSlot
         discovered = isDiscovered;
     }
 }
-public class CollectionManager : MonoBehaviour
+public class CollectionManager : MonoBehaviour, iDataPersistence
 {
     public List<CollectionSlot> collection;
-    
+
     public static CollectionManager instance { get; private set; }
 
     private void Awake()
@@ -31,9 +31,9 @@ public class CollectionManager : MonoBehaviour
 
     public bool discoverNew(Item itemToDiscover)
     {
-        foreach ( CollectionSlot slot in collection )
+        foreach (CollectionSlot slot in collection)
         {
-            if ( slot.item.id == itemToDiscover.id )
+            if (slot.item.id == itemToDiscover.id)
             {
                 bool alreadyDiscovered = slot.discovered;
                 slot.discovered = true;
@@ -54,5 +54,33 @@ public class CollectionManager : MonoBehaviour
             }
         }
         return discoveredItems;
+    }
+    public void LoadData(GameData data)
+    {
+        InventoryManager inv = InventoryManager.instance;
+        foreach (Item dbItem in inv.itemsDatabase)
+        {
+            if (data.collection.ContainsKey(dbItem.id))
+            {
+                bool isdiscovered;
+                data.collection.TryGetValue(dbItem.id, out isdiscovered);
+                collection.Add(new CollectionSlot(dbItem, isdiscovered));
+            }
+        }
+    }
+    public void SaveData(ref GameData data)
+    {
+        foreach (CollectionSlot slot in collection)
+        {
+            if (data.collection.ContainsKey(slot.item.id))
+            {
+                data.collection.Remove(slot.item.id);
+            }
+            data.collection.Add(slot.item.id, slot.discovered);
+        }
+        if (collection.Count == 0)
+        {
+            data.collection.Clear();
+        }
     }
 }

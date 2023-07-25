@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     public bool isStopTime;
     public bool isInteractionsDisabled;
-    private bool pauseMenuShown;
+    public bool pauseMenuShown;
 
     public bool showPackageInfo;
 
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
         // nighttime activities :)
         if (InventoryManager.instance.containsLetter("letter2") && !StoryManager.instance.dream1Triggered
-            && (DayTimeController.instance.days - StoryManager.instance.lastLetterReceivedDay) == 2) // do the dream instead
+            && InventoryManager.instance.itemsOrdered.Count == 0) // do the dream instead
         {
             CutsceneManager.instance.loadCutscene1();
             StoryManager.instance.dream1Triggered = true;

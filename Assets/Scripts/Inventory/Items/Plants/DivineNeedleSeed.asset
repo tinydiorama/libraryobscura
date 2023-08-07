@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: DivineNeedleSeed
+  m_EditorClassIdentifier: 
+  id: divineneedleseed
+  itemName: Divine Needle Seed
+  icon: {fileID: 21300000, guid: 4619aa0384cd606408313163b3591785, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 7
+  sellPrice: 7
+  seedImages:
+  - {fileID: 21300000, guid: b9fbdaeb836ee7b48bf82e28c8a049d7, type: 3}
+  - {fileID: 21300000, guid: 8ac580e4dbc4c8e46bebcb3907a542c9, type: 3}
+  - {fileID: 21300000, guid: 022bc01fc90c6634db8cb7fa823c74ea, type: 3}
+  harvestPlant: {fileID: 11400000, guid: a6f28687b4e18e144bda3b524e74754a, type: 2}

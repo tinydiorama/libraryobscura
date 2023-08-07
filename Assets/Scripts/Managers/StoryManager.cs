@@ -15,6 +15,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool buyAllowed;
     public bool sellAllowed;
     public bool seenAltar;
+    public bool allowBooks;
     public bool backgateUnlocked;
     public int lastLetterReceivedDay;
     public string lucidity;
@@ -84,27 +85,29 @@ public class StoryManager : MonoBehaviour, iDataPersistence
             else if (inv.containsLetter("letter2") && !inv.containsLetter("letter3")
                 && inv.numSold() >= 1) // after you've received the day 2 letter & sold ANYTHING
             {
-                mm.addNewLetter(data.day3Letter);
+                foreach (Letter letter in data.day3Letters)
+                {
+                    mm.addNewLetter(letter);
+                }
+                mm.addNewBook(data.day3Book);
+                allowBooks = true;
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
-            else if (inv.containsLetter("letter3") && !inv.containsLetter("letter4"))
+            else if (inv.containsLetter("letter4") && !inv.containsLetter("letter5"))
             {
                 mm.addNewLetter(data.day4Letter);
                 mm.newItems.Add(data.day4Key);
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
-            } else if (inv.containsLetter("letter4") && !inv.containsLetter("letter6") 
+            } else if (inv.containsLetter("letter5") && !inv.containsLetter("letter6") 
                 && (dayTime.days - lastLetterReceivedDay >= 2))
             {
-                foreach (Letter letter in data.day5Letters)
-                {
-                    mm.addNewLetter(letter);
-                }
+                mm.addNewLetter(data.day5Letter);
                 lastLetterReceivedDay = dayTime.days;
                 mm.hasNewMail = true;
             } else if (inv.containsLetter("letter6") && !inv.containsLetter("letter7")
-                && inv.numSold("cloudsprigplant") >= 2)
+                && inv.numSold("cloudsprigplant") >= 1)
             {
                 mm.addNewLetter(data.day6Letter);
                 mm.hasNewMail = true;
@@ -144,6 +147,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.seenAltar = data.seenAltar;
         this.lastLetterReceivedDay = data.lastLetterReceivedDay;
         this.lucidity = data.lucidity;
+        this.allowBooks = data.allowBooks;
         this.backgateUnlocked = data.backgateUnlocked;
 
         if (figure != null)
@@ -188,5 +192,6 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.lastLetterReceivedDay = this.lastLetterReceivedDay;
         data.lucidity = this.lucidity;
         data.backgateUnlocked = this.backgateUnlocked;
+        data.allowBooks = this.allowBooks;
     }
 }

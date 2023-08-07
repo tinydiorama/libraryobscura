@@ -10,8 +10,7 @@ public class Book : ScriptableObject
     public string author;
     public Color bookColor;
 
-    [TextArea(5, 10)]
-    public string page1;
+    public Sprite page1;
 
     [TextArea(5, 10)]
     public string page2;

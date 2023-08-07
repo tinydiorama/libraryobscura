@@ -30,8 +30,8 @@ public class MailboxUI : MonoBehaviour
         // New Books
         for (int i = 0; i < manager.newBooks.Count; i++)
         {
-            GameObject newLetterInstance = Instantiate(newLetterPrefab, receivedMailPanel.transform);
-            newLetterInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = manager.newBooks[i].title;
+            GameObject newBookInstance = Instantiate(newBookPrefab, receivedMailPanel.transform);
+            newBookInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = manager.newBooks[i].title;
         }
         // New Items
         for (int i = 0; i < manager.newItems.Count; i++)

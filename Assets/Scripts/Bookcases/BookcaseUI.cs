@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class BookcaseUI : MonoBehaviour
 {
+    [SerializeField] private GameObject overlay;
+
     [Header("Book Select Fields")]
     [SerializeField] private GameObject bookSelectPanel;
     [SerializeField] private GameObject bookSelectList;
@@ -15,15 +17,24 @@ public class BookcaseUI : MonoBehaviour
     [Header("Book Read Fields")]
     [SerializeField] private GameObject bookReadPanel;
     [SerializeField] private GameObject bookReadList;
+    [SerializeField] private GameObject noBooksToRead;
 
     [Header("Book Closeup Fields")]
-    [SerializeField] private TextMeshProUGUI bookBodyText1;
+    [SerializeField] private Image bookCover;
+    [SerializeField] private Image bookBodyText1;
     [SerializeField] private TextMeshProUGUI bookBodyText2;
     [SerializeField] private GameObject bookCloseup;
 
+    private List<Book> referenceBooks;
+    private List<Book> currentBooksToRead;
+    public BookSlot selectedBook;
+    public GameObject referenceObject;
 
-    public void showBookSelectUI()
+    public void showBookSelectUI(GameObject refObj)
     {
+        GameManager.GetInstance().isPaused = true;
+        referenceObject = refObj;
+        overlay.SetActive(true);
         bookSelectPanel.SetActive(true);
 
         foreach (Transform child in bookSelectList.transform)
@@ -46,49 +57,96 @@ public class BookcaseUI : MonoBehaviour
         for (int i = 0; i < invManage.books.Count; i++)
         {
             GameObject bookInstance = Instantiate(bookSelectPrefab, bookSelectList.transform);
+
+            // TODO: bookInstance doesn't have a bookUI on it yet
             bookInstance.GetComponent<BookUI>().bookTitle.text = invManage.books[i].book.title;
             bookInstance.GetComponent<BookUI>().bookAuthor.text = "by " + invManage.books[i].book.author;
-            if (invManage.books[i].newBook)
-            {
-                bookInstance.GetComponent<BookUI>().newIcon.SetActive(true);
-            }
-            else
-            {
-                bookInstance.GetComponent<BookUI>().newIcon.SetActive(false);
-            }
             BookSlot tempBook = invManage.books[i];
-            // TODO what happens when selecting a book
+            bookInstance.GetComponent<Button>().onClick.AddListener(delegate
+            {
+                selectBook(ref tempBook);
+            });
+            if ( i == 0 ) // select first book
+            {
+                selectBook(ref tempBook);
+            }
         }
+    }
+
+    public void selectBook(ref BookSlot bookToPlace)
+    {
+        selectedBook = bookToPlace;
+    }
+
+    public void placeBook()
+    {
+        referenceObject.GetComponent<Bookcase>().books.Add(selectedBook.book);
+        closeBookSelectUI();
+        showBookReadUI(referenceObject.GetComponent<Bookcase>().books);
     }
 
     public void closeBookSelectUI()
     {
+        GameManager.GetInstance().isPaused = false;
+        overlay.SetActive(false);
         bookSelectPanel.SetActive(false);
     }
 
-    public void showBookReadUI()
+    public void showBookReadUI( List<Book> booksToRead )
     {
-        // TODO show books that can be read at this bookshelf
-        //bookInstance.GetComponent<Button>().onClick.AddListener(delegate { showBookCloseup(ref tempBook); });
+        GameManager.GetInstance().isPaused = true;
+        overlay.SetActive(true);
+        currentBooksToRead = booksToRead;
+        foreach (Transform child in bookReadList.transform)
+        {
+            if (child.name != "NoThings")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        if ( currentBooksToRead.Count > 0 )
+        {
+            noBooksToRead.SetActive(false);
+        } else
+        {
+            noBooksToRead.SetActive(true);
+        }
+        for (int i = 0; i < currentBooksToRead.Count; i++)
+        {
+            GameObject bookInstance = Instantiate(bookSelectPrefab, bookReadList.transform);
+            bookInstance.GetComponent<BookUI>().bookTitle.text = currentBooksToRead[i].title;
+            bookInstance.GetComponent<BookUI>().bookAuthor.text = "by " + currentBooksToRead[i].author;
+            Book tempBook = currentBooksToRead[i];
+            bookInstance.GetComponent<Button>().onClick.AddListener(delegate
+            {
+                showBookCloseup(ref tempBook);
+            });
+        }
         bookReadPanel.SetActive(true);
     }
     public void closeBookReadUI()
     {
+        GameManager.GetInstance().isPaused = false;
+        overlay.SetActive(false);
         bookReadPanel.SetActive(false);
     }
 
-    public void showBookCloseup(ref BookSlot bookToShow)
+    public void showBookCloseup(ref Book bookToShow)
     {
-        bookToShow.newBook = false;
         closeBookReadUI();
-        bookBodyText1.text = bookToShow.book.page1;
-        bookBodyText2.text = bookToShow.book.page2;
+        GameManager.GetInstance().isPaused = true;
+        overlay.SetActive(true);
+        bookCover.color = bookToShow.bookColor;
+        bookBodyText1.sprite = bookToShow.page1;
+        bookBodyText2.text = bookToShow.page2;
         bookCloseup.SetActive(true);
     }
 
     public void closeBookCloseup()
     {
+        GameManager.GetInstance().isPaused = false;
+        overlay.SetActive(false);
         bookCloseup.SetActive(false);
-        showBookReadUI();
+        showBookReadUI(currentBooksToRead);
     }
 }

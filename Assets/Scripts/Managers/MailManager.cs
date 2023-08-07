@@ -30,6 +30,13 @@ public class MailManager : MonoBehaviour, iDataPersistence
             newLetters.Add(letterToAdd);
         }
     }
+    public void addNewBook(Book bookToAdd)
+    {
+        if (!newBooks.Contains(bookToAdd))
+        {
+            newBooks.Add(bookToAdd);
+        }
+    }
 
     public void clearLetters()
     {

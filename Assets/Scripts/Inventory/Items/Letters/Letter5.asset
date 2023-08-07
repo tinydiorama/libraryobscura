@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Letter5
   m_EditorClassIdentifier: 
   id: letter5
-  from: X
-  subject: The darkness spreads
-  letterBgTan: 0
-  body: 'The darkness spreads,
+  from: A friend
+  subject: To the kindly key-bearer
+  letterBgTan: 1
+  body: 'To the kindly key-bearer,
 
 
-    The plants only stem the tide, inch by painful
-    inch. One person saved and then two more afflicted. The Shades grow.
+    It fills me with hope that someone is at
+    the library! It''s wondrous work that you''re doing. Hopefully the key I sent
+    has been helpful.
 
 
-    It''s
-    a plague. I don''t know exactly how it spreads. It has something to do with all
-    these growing Shades. They walk and people are exposed everywhere. There has
-    to be a better way before it''s too late.
+    I''ve been researching the library for years, and I''m
+    finally close to a breakthrough. I''ll send it along soon. Stay the course!
 
 
-    Sincerely,
+    Kindly,
 
-    X'
+    A
+    friend'

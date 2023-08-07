@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: SunbloomSeed
+  m_EditorClassIdentifier: 
+  id: sunbloomseed
+  itemName: Sunbloom Seed
+  icon: {fileID: 21300000, guid: 10b1ff3f971ab404ebc03fcd9bbc71fc, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 7
+  sellPrice: 7
+  seedImages:
+  - {fileID: 21300000, guid: 55032ec99c23c32428eaa2b97c450b55, type: 3}
+  - {fileID: 21300000, guid: 80ada980f8a1948489f9bd9c2b488e24, type: 3}
+  - {fileID: 21300000, guid: 703424fe7bef53546831a40836a14ee6, type: 3}
+  harvestPlant: {fileID: 11400000, guid: 7302cf128237bdc429581c883d41ce73, type: 2}

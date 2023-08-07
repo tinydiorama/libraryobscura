@@ -99,6 +99,10 @@ public class DayTimeController : MonoBehaviour, iDataPersistence {
         {
             trueHour = actualHour;
             amPm = "am";
+        } else if ( actualHour == 12 )
+        {
+            trueHour = actualHour;
+            amPm = "pm";
         } else
         {
             trueHour = actualHour - 12;

@@ -32,6 +32,7 @@ public class GameData
     public bool dream2triggered;
     public bool seenAltar;
     public bool backgateUnlocked;
+    public bool allowBooks;
     public SerializableDictionary<string, int> saleItems;
     public SerializableDictionary<string, bool> booksOrdered;
     public SerializableDictionary<string, int> itemsOrdered;
@@ -41,6 +42,9 @@ public class GameData
     public List<string> mailboxLetters;
     public List<string> mailboxBooks;
     public List<string> mailboxItems;
+
+    // bookcases
+    public List<string> floor1Bookcase;
 
     // the values defined in this constructor are the default values
     // default values on new game
@@ -71,6 +75,7 @@ public class GameData
         this.dream2triggered = false;
         this.seenAltar = false;
         this.backgateUnlocked = false;
+        this.allowBooks = false;
         this.saleItems = new SerializableDictionary<string, int>();
         this.booksOrdered = new SerializableDictionary<string, bool>();
         this.itemsOrdered = new SerializableDictionary<string, int>();
@@ -79,5 +84,7 @@ public class GameData
         this.mailboxLetters = new List<string>();
         this.mailboxBooks = new List<string>();
         this.mailboxItems = new List<string>();
+
+        this.floor1Bookcase = new List<string>();
     }
 }

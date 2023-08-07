@@ -15,18 +15,18 @@ MonoBehaviour:
   id: letter2
   from: X
   subject: To the new librarian
-  letterBGtan: 0
+  letterBgTan: 0
   body: 'To the new librarian,
 
 
     Time for you is stretched, but for us it dwindles
-    each day. Did you plant the seeds and care for them? Remember, they are both
-    the lock and key. Without water, they''ll become ash. Here are two more seeds
-    - it''s all I''ve got for now. If you can raise drobles, I may be able to get
-    more seeds. I''ve sent you what little I have.
+    each day. Did you plant the seeds and care for them? Remember, you must send
+    them to me when you''ve grown them. Without water, they''ll become ash. Here
+    are two more seeds - it''s all I''ve got for now. If you can raise drobles, I
+    may be able to get more seeds. I''ve sent you what little I have.
 
 
-    I''ll send another letter
-    soon. Until later...
+    I''ll
+    send another letter soon. Until later...
 
     X'

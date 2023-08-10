@@ -14,21 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: letter5
   from: A friend
-  subject: To the kindly key-bearer
+  subject: To the book-keeper
   letterBgTan: 1
-  body: 'To the kindly key-bearer,
+  body: 'To the book-keeper,
 
 
-    It fills me with hope that someone is at
-    the library! It''s wondrous work that you''re doing. Hopefully the key I sent
-    has been helpful.
+    It fills me with hope that someone is at the library!
+    It''s wondrous work that you''re doing. Have you had any luck with that troublesome
+    book?
 
 
-    I''ve been researching the library for years, and I''m
-    finally close to a breakthrough. I''ll send it along soon. Stay the course!
+    In my studies, I''ve found many different curious artifacts. Some
+    are helpful and others are terrifying. I found this key. I pass it to you now.
+    I''ve kept it in my pocket, but it''s still ice-cold
+
+    to the touch. Stay
+    the course!
 
 
     Kindly,
 
-    A
-    friend'
+    A Friend'

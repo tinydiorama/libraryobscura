@@ -85,16 +85,21 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator processDay()
     {
+        InventoryManager inv = InventoryManager.instance;
         DayTimeController.instance.NextDay();
         yield return new WaitForSeconds(2f);
         onEndOfDay?.Invoke();
 
         // nighttime activities :)
-        if (InventoryManager.instance.containsLetter("letter2") && !StoryManager.instance.dream1Triggered
-            && InventoryManager.instance.itemsOrdered.Count == 0) // do the dream instead
+        if (inv.containsLetter("letter2") && !StoryManager.instance.dream1Triggered
+            && inv.itemsOrdered.Count == 0) // do the dream instead
         {
             CutsceneManager.instance.loadCutscene1();
             StoryManager.instance.dream1Triggered = true;
+        } else if ( inv.containsLetter("letter8") && ! StoryManager.instance.dream2Triggered)
+        {
+            CutsceneManager.instance.loadCutscene2();
+            StoryManager.instance.dream2Triggered = true;
         }
         else
         {

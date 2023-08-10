@@ -83,7 +83,6 @@ public class PlayerPlatformerController : PhysicsObject
             {
                 isInMidAir = true;
                 onJump?.Invoke();
-                Debug.Log("jumping");
             }
         }
         if (velocity.y == 0)
@@ -92,7 +91,6 @@ public class PlayerPlatformerController : PhysicsObject
             {
                 isInMidAir = false;
                 onLand?.Invoke();
-                Debug.Log("landing");
             }
         }
         prevYVelocity = velocity.y;

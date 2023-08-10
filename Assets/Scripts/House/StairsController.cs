@@ -7,6 +7,7 @@ public class StairsController : MonoBehaviour
 {
     [SerializeField] private GameObject stairsCollider;
     [SerializeField] private GameObject stairsOverlay;
+    [SerializeField] private GameObject stairsTop;
 
     public bool upPressed;
     public bool playerInFront;
@@ -43,11 +44,16 @@ public class StairsController : MonoBehaviour
         if (upPressed )
         {
             stairsCollider.SetActive(true);
+            if ( StoryManager.instance.floor2Unlocked )
+            {
+                stairsTop.SetActive(true);
+            }
             stairsOverlay.SetActive(true);
         }
         else
         {
             stairsCollider.SetActive(false);
+            stairsTop.SetActive(false);
             stairsOverlay.SetActive(false);
         }
     }

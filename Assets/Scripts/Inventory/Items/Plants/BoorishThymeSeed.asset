@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: BoorishThymeSeed
+  m_EditorClassIdentifier: 
+  id: boorishthymeseed
+  itemName: Boorish Thyme Seed
+  icon: {fileID: 21300000, guid: 9157902894856044e9a3fdbc24582122, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 8
+  sellPrice: 8
+  seedImages:
+  - {fileID: 21300000, guid: 6a2f991997da448409906832c286c94d, type: 3}
+  - {fileID: 21300000, guid: 6dcd9ef8ec4c52e42857bf9f5241b3b6, type: 3}
+  - {fileID: 21300000, guid: 86b586f9d60d5e8458573c9127132e03, type: 3}
+  harvestPlant: {fileID: 11400000, guid: ea19d4ec7ddaa6642866d02647a5761c, type: 2}

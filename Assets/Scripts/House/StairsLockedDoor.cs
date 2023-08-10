@@ -5,7 +5,10 @@ using UnityEngine;
 public class StairsLockedDoor : MonoBehaviour
 {
     [SerializeField] private TextAsset staircaseLocked;
-    [SerializeField] private TextAsset tooDarkToSee; 
+    [SerializeField] private TextAsset tooDarkToSee;
+    [SerializeField] private AudioClip doorUnlockedClip;
+    [SerializeField] private GameObject colliderObj;
+    [SerializeField] private HouseController houseController;
 
     private bool playerInRange;
     private GameManager gm;
@@ -18,7 +21,7 @@ public class StairsLockedDoor : MonoBehaviour
     private void Update()
     {
         gm = GameManager.GetInstance();
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying && !StoryManager.instance.floor2Unlocked)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -28,10 +31,27 @@ public class StairsLockedDoor : MonoBehaviour
                 }
                 else
                 {
-                    DialogueManager.GetInstance().EnterDialogueMode(staircaseLocked);
+                    if (InventoryManager.instance.containsItem("upstairskey"))
+                    {
+                        colliderObj.SetActive(false);
+                        AudioManager.GetInstance().playSFX(doorUnlockedClip);
+                        StoryManager.instance.floor2Unlocked = true;
+                        GetComponent<HighlightShowController>().disableHighlight();
+                        houseController.unlockLibrary();
+                    } else
+                    {
+                        DialogueManager.GetInstance().EnterDialogueMode(staircaseLocked);
+                    }
                 }
             }
         }
+    }
+
+    public void unlockLibrary()
+    {
+        colliderObj.SetActive(false);
+        GetComponent<HighlightShowController>().disableHighlight();
+        houseController.addLibrary();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

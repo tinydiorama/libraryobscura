@@ -1,0 +1,1 @@
+Locked. The ceiling looms and distorts.

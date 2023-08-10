@@ -1,20 +1,21 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HouseController : MonoBehaviour
 {
-    [SerializeField] private GameObject[] unlockedRooms;
+    [SerializeField] private List<GameObject> unlockedRooms;
     [SerializeField] private CinemachineVirtualCamera vcam;
 
+    [SerializeField] private GameObject upstairsLibrary;
+
     private Animator anim;
-    private bool inHouse;
 
     private void Start()
     {
         anim = vcam.GetComponent<Animator>();
-        inHouse = false;
     }
 
     private void Update()
@@ -43,6 +44,18 @@ public class HouseController : MonoBehaviour
                 room.SetActive(true);
             }
         }
+    }
+
+    public void unlockLibrary()
+    {
+        upstairsLibrary.GetComponent<Animator>().SetBool("FadeOut", true);
+        StartCoroutine(fadeRoom(upstairsLibrary));
+        unlockedRooms.Add(upstairsLibrary);
+    }
+
+    public void addLibrary()
+    {
+        unlockedRooms.Add(upstairsLibrary);
     }
 
     IEnumerator fadeRoom(GameObject room)

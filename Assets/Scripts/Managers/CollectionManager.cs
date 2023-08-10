@@ -64,7 +64,13 @@ public class CollectionManager : MonoBehaviour, iDataPersistence
             {
                 bool isdiscovered;
                 data.collection.TryGetValue(dbItem.id, out isdiscovered);
-                collection.Add(new CollectionSlot(dbItem, isdiscovered));
+                foreach ( CollectionSlot collectionItem in collection)
+                {
+                    if ( dbItem.id == collectionItem.item.id )
+                    {
+                        collectionItem.discovered = isdiscovered;
+                    }
+                }
             }
         }
     }

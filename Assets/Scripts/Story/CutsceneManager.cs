@@ -43,6 +43,14 @@ public class CutsceneManager : MonoBehaviour
         cutscene.GetComponent<Dream1Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight);
     }
 
+    public void loadCutscene2()
+    {
+        hud.SetActive(false);
+        GameObject cutscene = InstantiateResource("Cutscenes", "Dream2");
+        cutscene.GetComponent<Dream2Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight);
+
+    }
+
     public void cleanupCutscene()
     {
         // reset everything

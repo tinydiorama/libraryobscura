@@ -15,7 +15,7 @@ MonoBehaviour:
   id: letter3
   from: X
   subject: To the wizened gardener
-  letterBGtan: 0
+  letterBgTan: 0
   body: 'To the wizened gardener,
 
 

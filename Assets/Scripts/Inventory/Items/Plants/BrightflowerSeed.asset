@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: BrightflowerSeed
+  m_EditorClassIdentifier: 
+  id: brightflowerseed
+  itemName: Brightflower Seed
+  icon: {fileID: 21300000, guid: e813e900ea9833f4784a2c8e7d30514f, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 8
+  sellPrice: 8
+  seedImages:
+  - {fileID: 21300000, guid: 6969e8008c740874e9ec8b1a83f97438, type: 3}
+  - {fileID: 21300000, guid: 83dbbcd81d0fa2a45a118a7b603b2e13, type: 3}
+  - {fileID: 21300000, guid: 4998c12aaed41474db0c8b01db4df720, type: 3}
+  harvestPlant: {fileID: 11400000, guid: 826be620a9024784db9738638b33f36d, type: 2}

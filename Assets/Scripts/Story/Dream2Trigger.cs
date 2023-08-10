@@ -2,15 +2,16 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class Dream2Trigger : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera mainCam;
     [SerializeField] private CinemachineVirtualCamera cutsceneCam;
+    public CinemachineVirtualCamera mainCam;
 
     private GameManager gm;
     private bool playerInRange;
+    private GameObject player;
+
     private void Awake()
     {
         playerInRange = false;
@@ -21,9 +22,7 @@ public class Dream2Trigger : MonoBehaviour
         gm = GameManager.GetInstance();
         if (playerInRange)
         {
-            cutsceneCam.gameObject.SetActive(false);
-            mainCam.gameObject.SetActive(true);
-            CutsceneManager.instance.cleanupCutscene();
+            StartCoroutine(animateTrigger());
         }
     }
     private void OnTriggerEnter2D(Collider2D collider)
@@ -31,6 +30,7 @@ public class Dream2Trigger : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = true;
+            player = collider.gameObject;
         }
     }
 
@@ -40,5 +40,22 @@ public class Dream2Trigger : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
+    private IEnumerator animateTrigger()
+    {
+        player.GetComponent<Animator>().SetBool("Falling", true);
+        gm.isPaused = true;
+        yield return new WaitForSeconds(1.5f);
+        gm.showNightFade();
+        StartCoroutine(cleanupTrigger());
+    }
+
+    private IEnumerator cleanupTrigger()
+    {
+        yield return new WaitForSeconds(2.5f);
+        cutsceneCam.gameObject.SetActive(false);
+        mainCam.gameObject.SetActive(true);
+        player.GetComponent<Animator>().SetBool("Falling", false);
+        CutsceneManager.instance.cleanupCutscene();
     }
 }

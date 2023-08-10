@@ -33,6 +33,7 @@ public class GameData
     public bool seenAltar;
     public bool backgateUnlocked;
     public bool allowBooks;
+    public bool floor2Unlocked;
     public SerializableDictionary<string, int> saleItems;
     public SerializableDictionary<string, bool> booksOrdered;
     public SerializableDictionary<string, int> itemsOrdered;
@@ -76,6 +77,7 @@ public class GameData
         this.seenAltar = false;
         this.backgateUnlocked = false;
         this.allowBooks = false;
+        this.floor2Unlocked = false;
         this.saleItems = new SerializableDictionary<string, int>();
         this.booksOrdered = new SerializableDictionary<string, bool>();
         this.itemsOrdered = new SerializableDictionary<string, int>();

@@ -17,12 +17,14 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool seenAltar;
     public bool allowBooks;
     public bool backgateUnlocked;
+    public bool floor2Unlocked;
     public int lastLetterReceivedDay;
     public string lucidity;
 
     [Header("Story Objects")]
     [SerializeField] private GameObject figure;
     [SerializeField] private GameObject backgate;
+    [SerializeField] private StairsLockedDoor upstairsTrigger;
     [SerializeField] private Sprite backgateOpenedSprite;
     [SerializeField] private StoryData data;
 
@@ -116,6 +118,31 @@ public class StoryManager : MonoBehaviour, iDataPersistence
             {
                 mm.addNewLetter(data.day7Letter);
                 mm.hasNewMail = true;
+                mm.addNewBook(data.day7Book);
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("letter8") && !inv.containsLetter("letter9"))
+            {
+                foreach (Letter letter in data.day10Letters)
+                {
+                    mm.addNewLetter(letter);
+                }
+                mm.hasNewMail = true;
+                mm.newItems.Add(data.day10Key);
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("letter10") && !inv.containsLetter("letter11")
+                && inv.numSold() >= 10)
+            {
+                mm.addNewLetter(data.day11Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("letter11") && !inv.containsLetter("letter12"))
+            {
+                mm.addNewLetter(data.day12Letter);
+                mm.addNewBook(data.day12Book);
+                mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
         }
@@ -148,6 +175,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.lastLetterReceivedDay = data.lastLetterReceivedDay;
         this.lucidity = data.lucidity;
         this.allowBooks = data.allowBooks;
+        this.floor2Unlocked = data.floor2Unlocked;
         this.backgateUnlocked = data.backgateUnlocked;
 
         if (figure != null)
@@ -171,6 +199,10 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 backgate.GetComponent<HighlightShowController>().disableHighlight();
             }
         }
+        if (upstairsTrigger != null && this.floor2Unlocked )
+        {
+            upstairsTrigger.unlockLibrary();
+        }
         if (this.buyAllowed)
         {
             InventoryManager.instance.showMoneyHUD();
@@ -193,5 +225,6 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.lucidity = this.lucidity;
         data.backgateUnlocked = this.backgateUnlocked;
         data.allowBooks = this.allowBooks;
+        data.floor2Unlocked = this.floor2Unlocked;
     }
 }

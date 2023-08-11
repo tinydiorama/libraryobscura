@@ -34,6 +34,8 @@ public class GameData
     public bool backgateUnlocked;
     public bool allowBooks;
     public bool floor2Unlocked;
+    public bool floor2StudyUnlocked;
+    public bool floor3Unlocked;
     public SerializableDictionary<string, int> saleItems;
     public SerializableDictionary<string, bool> booksOrdered;
     public SerializableDictionary<string, int> itemsOrdered;
@@ -78,6 +80,8 @@ public class GameData
         this.backgateUnlocked = false;
         this.allowBooks = false;
         this.floor2Unlocked = false;
+        this.floor2StudyUnlocked = false;
+        this.floor3Unlocked = false;
         this.saleItems = new SerializableDictionary<string, int>();
         this.booksOrdered = new SerializableDictionary<string, bool>();
         this.itemsOrdered = new SerializableDictionary<string, int>();

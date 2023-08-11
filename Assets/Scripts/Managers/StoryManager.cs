@@ -18,6 +18,8 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool allowBooks;
     public bool backgateUnlocked;
     public bool floor2Unlocked;
+    public bool floor2StudyUnlocked;
+    public bool floor3Unlocked;
     public int lastLetterReceivedDay;
     public string lucidity;
 
@@ -176,6 +178,8 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.lucidity = data.lucidity;
         this.allowBooks = data.allowBooks;
         this.floor2Unlocked = data.floor2Unlocked;
+        this.floor2StudyUnlocked = data.floor2StudyUnlocked;
+        this.floor3Unlocked = data.floor3Unlocked;
         this.backgateUnlocked = data.backgateUnlocked;
 
         if (figure != null)
@@ -226,5 +230,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.backgateUnlocked = this.backgateUnlocked;
         data.allowBooks = this.allowBooks;
         data.floor2Unlocked = this.floor2Unlocked;
+        data.floor2StudyUnlocked = this.floor2StudyUnlocked;
+        data.floor3Unlocked = this.floor3Unlocked;
     }
 }

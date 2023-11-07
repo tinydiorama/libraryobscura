@@ -10,16 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
-  m_Name: UpstairsKey
+  m_Name: RazorbackPlant
   m_EditorClassIdentifier: 
-  id: upstairskey
-  itemName: Upstairs Key
-  icon: {fileID: 21300000, guid: 0d4b1ffada33454488b73447cd795ef1, type: 3}
-  sellable: 0
+  id: razorbackplant
+  itemName: Razorback
+  icon: {fileID: 21300000, guid: f0cc7bfeba94e1f45985efc47802c1d4, type: 3}
+  sellable: 1
   buyable: 0
-  canBeSacrificed: 0
-  category: 2
-  buyPrice: 0
-  sellPrice: 0
+  canBeSacrificed: 1
+  category: 1
+  buyPrice: 20
+  sellPrice: 20
+  itemDesc: 
   seedImages: []
   harvestPlant: {fileID: 0}
+  crossBreed1: {fileID: 0}
+  crossBreedResult1: {fileID: 0}
+  crossBreed2: {fileID: 0}
+  crossBreedResult2: {fileID: 0}
+  crossBreed3: {fileID: 0}
+  crossBreedResult3: {fileID: 0}

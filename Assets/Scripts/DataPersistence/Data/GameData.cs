@@ -8,7 +8,7 @@ public class GameData
     public int days;
     public int lastLetterReceivedDay;
     public SerializableDictionary<string, bool> letters;
-    public SerializableDictionary<string, bool> books;
+    public SerializableDictionary<string, string> books;
     public SerializableDictionary<string, int> items;
     public SerializableDictionary<string, bool> collection;
     public int money;
@@ -37,7 +37,7 @@ public class GameData
     public bool floor2StudyUnlocked;
     public bool floor3Unlocked;
     public SerializableDictionary<string, int> saleItems;
-    public SerializableDictionary<string, bool> booksOrdered;
+    public SerializableDictionary<string, string> booksOrdered;
     public SerializableDictionary<string, int> itemsOrdered;
 
     // current mailbox
@@ -58,7 +58,7 @@ public class GameData
         this.money = 0;
         this.numItemsSoldAllTime = 0;
         this.letters = new SerializableDictionary<string, bool>();
-        this.books = new SerializableDictionary<string, bool>();
+        this.books = new SerializableDictionary<string, string>();
         this.items = new SerializableDictionary<string, int>();
         this.collection = new SerializableDictionary<string, bool>();
         this.lucidity = "Clear";
@@ -83,7 +83,7 @@ public class GameData
         this.floor2StudyUnlocked = false;
         this.floor3Unlocked = false;
         this.saleItems = new SerializableDictionary<string, int>();
-        this.booksOrdered = new SerializableDictionary<string, bool>();
+        this.booksOrdered = new SerializableDictionary<string, string>();
         this.itemsOrdered = new SerializableDictionary<string, int>();
 
         this.hasNewMail = false;

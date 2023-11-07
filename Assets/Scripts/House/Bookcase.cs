@@ -7,6 +7,7 @@ public class Bookcase : Interactable
     [SerializeField] private TextAsset bookcaseText1;
     [SerializeField] private int numPossibleBooks = 1;
     [SerializeField] private BookcaseUI bookcaseUI;
+    [SerializeField] public string bookcasePlacementText;
 
     public List<Book> books;
 

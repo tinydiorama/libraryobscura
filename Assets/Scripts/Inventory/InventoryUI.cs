@@ -220,14 +220,8 @@ public class InventoryUI : MonoBehaviour
             GameObject bookInstance = Instantiate(booksPrefab, panelContents.transform);
             bookInstance.GetComponent<BookUI>().bookTitle.text = invManage.books[i].book.title;
             bookInstance.GetComponent<BookUI>().bookAuthor.text = "by " + invManage.books[i].book.author;
-            if (invManage.books[i].newBook)
-            {
-                bookInstance.GetComponent<BookUI>().newIcon.SetActive(true);
-            }
-            else
-            {
-                bookInstance.GetComponent<BookUI>().newIcon.SetActive(false);
-            }
+            bookInstance.GetComponent<BookUI>().placement.text = invManage.books[i].placement;
+
             BookSlot tempBook = invManage.books[i];
             //bookInstance.GetComponent<Button>().onClick.AddListener(delegate { showBookCloseup(ref tempBook); });
         }

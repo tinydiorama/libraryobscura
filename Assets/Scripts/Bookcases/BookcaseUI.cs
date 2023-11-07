@@ -80,6 +80,7 @@ public class BookcaseUI : MonoBehaviour
 
     public void placeBook()
     {
+        selectedBook.placement = referenceObject.GetComponent<Bookcase>().bookcasePlacementText;
         referenceObject.GetComponent<Bookcase>().books.Add(selectedBook.book);
         closeBookSelectUI();
         showBookReadUI(referenceObject.GetComponent<Bookcase>().books);

@@ -31,7 +31,7 @@ public class StairsLockedDoor : MonoBehaviour
                 }
                 else
                 {
-                    if (InventoryManager.instance.containsItem("upstairskey"))
+                    if (InventoryManager.instance.containsItem("elevatorkey1"))
                     {
                         colliderObj.SetActive(false);
                         AudioManager.GetInstance().playSFX(doorUnlockedClip);

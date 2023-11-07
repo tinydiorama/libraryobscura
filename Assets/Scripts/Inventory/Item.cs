@@ -17,9 +17,17 @@ public class Item : ScriptableObject
     public Category category;
     public int buyPrice;
     public int sellPrice;
+    [TextArea(5, 10)]
+    public string itemDesc;
 
     public Sprite[] seedImages;
     public Item harvestPlant;
+    public Item crossBreed1;
+    public Item crossBreedResult1;
+    public Item crossBreed2;
+    public Item crossBreedResult2;
+    public Item crossBreed3;
+    public Item crossBreedResult3;
 
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()

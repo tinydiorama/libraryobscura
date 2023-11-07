@@ -33,12 +33,12 @@ public class LetterSlot
 public class BookSlot
 {
     public Book book;
-    public bool newBook;
+    public string placement;
 
-    public BookSlot(Book bookToAdd, bool isNew)
+    public BookSlot(Book bookToAdd, string wherePlacement)
     {
         book = bookToAdd;
-        newBook = isNew;
+        placement = wherePlacement;
     }
 }
 
@@ -167,7 +167,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
 
     public void addBook(Book bookToAdd)
     {
-        books.Add(new BookSlot(bookToAdd, true));
+        books.Add(new BookSlot(bookToAdd, ""));
     }
 
     public void addLetter(Letter letterToAdd, bool isNew)
@@ -263,7 +263,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
 
     public int numSold()
     {
-        return itemsSold.Count;
+        return numItemsSoldAllTime;
     }
 
     public int numSold(string itemId)
@@ -306,15 +306,15 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         {
             if (data.books.ContainsKey(dbBook.id))
             {
-                bool isNew;
-                data.books.TryGetValue(dbBook.id, out isNew);
-                books.Add(new BookSlot(dbBook, isNew));
+                string placement;
+                data.books.TryGetValue(dbBook.id, out placement);
+                books.Add(new BookSlot(dbBook, placement));
             }
             if (data.booksOrdered.ContainsKey(dbBook.id))
             {
-                bool read;
-                data.booksOrdered.TryGetValue(dbBook.id, out read);
-                booksOrdered.Add(new BookSlot(dbBook, read));
+                string placement;
+                data.booksOrdered.TryGetValue(dbBook.id, out placement);
+                booksOrdered.Add(new BookSlot(dbBook, placement));
             }
         }
         foreach (Item dbItem in itemsDatabase)
@@ -350,7 +350,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             }
             foreach (BookSlot slot in booksOrdered)
             {
-                pckg.booksObtained.Add(new BookSlot(slot.book, slot.newBook));
+                pckg.booksObtained.Add(new BookSlot(slot.book, slot.placement));
             }
             itemsOrdered.Clear();
             booksOrdered.Clear(); // need to clear the inventory after we add it to the package
@@ -377,7 +377,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             {
                 data.books.Remove(slot.book.id);
             }
-            data.books.Add(slot.book.id, slot.newBook);
+            data.books.Add(slot.book.id, slot.placement);
         }
         if (books.Count == 0)
         {
@@ -425,7 +425,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
             {
                 data.booksOrdered.Remove(slot.book.id);
             }
-            data.booksOrdered.Add(slot.book.id, slot.newBook);
+            data.booksOrdered.Add(slot.book.id, slot.placement);
         }
         if (booksOrdered.Count == 0)
         {

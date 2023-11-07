@@ -51,7 +51,7 @@ public class AltarUI : MonoBehaviour
 
     private IEnumerator fadeOutText()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
         var color = text.color;
         var fadeoutcolor = color;
         fadeoutcolor.a = 0;

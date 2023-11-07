@@ -10,6 +10,7 @@ public class HouseController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcam;
 
     [SerializeField] private GameObject upstairsLibrary;
+    [SerializeField] private GameObject upstairsStudy;
 
     private Animator anim;
 
@@ -49,13 +50,17 @@ public class HouseController : MonoBehaviour
     public void unlockLibrary()
     {
         upstairsLibrary.GetComponent<Animator>().SetBool("FadeOut", true);
+        upstairsStudy.GetComponent<Animator>().SetBool("FadeOut", true);
         StartCoroutine(fadeRoom(upstairsLibrary));
+        StartCoroutine(fadeRoom(upstairsStudy));
         unlockedRooms.Add(upstairsLibrary);
+        unlockedRooms.Add(upstairsStudy);
     }
 
     public void addLibrary()
     {
         unlockedRooms.Add(upstairsLibrary);
+        unlockedRooms.Add(upstairsStudy);
     }
 
     IEnumerator fadeRoom(GameObject room)

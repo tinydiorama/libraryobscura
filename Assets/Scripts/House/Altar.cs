@@ -9,7 +9,7 @@ public class Altar : Interactable
     public override void interact()
     {
         StoryManager sm = StoryManager.instance;
-        if (sm.seenAltar == false)
+        if (sm.seenAltar == false && GameManager.GetInstance().isPaused == false)
         {
             altarUI.showIntroMessage();
         } else

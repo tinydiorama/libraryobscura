@@ -22,6 +22,7 @@ public class Dream2Trigger : MonoBehaviour
         gm = GameManager.GetInstance();
         if (playerInRange)
         {
+            gm.isPaused = true;
             StartCoroutine(animateTrigger());
         }
     }
@@ -44,7 +45,6 @@ public class Dream2Trigger : MonoBehaviour
     private IEnumerator animateTrigger()
     {
         player.GetComponent<Animator>().SetBool("Falling", true);
-        gm.isPaused = true;
         yield return new WaitForSeconds(1.5f);
         gm.showNightFade();
         StartCoroutine(cleanupTrigger());

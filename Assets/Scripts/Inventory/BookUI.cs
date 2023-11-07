@@ -7,5 +7,5 @@ public class BookUI : MonoBehaviour
 {
     public TextMeshProUGUI bookTitle;
     public TextMeshProUGUI bookAuthor;
-    public GameObject newIcon;
+    public TextMeshProUGUI placement;
 }

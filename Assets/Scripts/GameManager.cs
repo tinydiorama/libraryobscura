@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
         onStartNewDay?.Invoke();
         AudioManager.GetInstance().ChangeSong();
         dayTransition.hideOverlay();
+        InteractableItemsManager.instance.resetItems();
         yield return new WaitForSeconds(1f);
         isPaused = false;
     }

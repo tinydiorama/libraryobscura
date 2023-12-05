@@ -5,8 +5,8 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource _audiosource;
     [SerializeField] private AudioSource _sfxsource;
-    public AudioClip[] songs;
-    public int songPlaying;
+    [SerializeField] private AudioClip[] songs;
+    [SerializeField] private int songPlaying;
 
     private static AudioManager instance;
 
@@ -42,6 +42,16 @@ public class AudioManager : MonoBehaviour
 
             _audiosource.Stop();
         }
+    }
+
+    public void setMusicVolume(float volume)
+    {
+        _audiosource.volume = volume;
+    }
+
+    public void setSFXVolume(float volume)
+    {
+        _sfxsource.volume = volume;
     }
 
     public void StartPlaylist()

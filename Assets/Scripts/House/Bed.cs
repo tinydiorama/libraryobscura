@@ -21,7 +21,7 @@ public class Bed : MonoBehaviour
         GameManager gm = GameManager.GetInstance();
         if (playerInRange && !gm.isPaused && !gm.isInteractionsDisabled)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 if (! StoryManager.instance.cutscene2Triggered || ! InventoryManager.instance.containsLetter("letter1"))
                 {

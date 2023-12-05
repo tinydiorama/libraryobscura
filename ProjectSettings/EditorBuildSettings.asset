@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Dream1.unity
     guid: 19666e4428b74d04d9a5df19bbdb07ce
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 3f3b3fc0729e60549b8cfb6f8f64c5ca, type: 2}

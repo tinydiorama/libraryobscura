@@ -37,14 +37,15 @@ public class PlayerPlatformerController : PhysicsObject
         if ( ! gm.isPaused )
         {
             Vector2 move = Vector2.zero;
+            Vector2 inputVector = InputManager.GetInstance().GetMoveDirection();
 
-            move.x = Input.GetAxis("Horizontal");
+            move.x = inputVector.x;
 
-            if (Input.GetButtonDown("Jump") && grounded)
+            if (InputManager.GetInstance().GetJumpPressed() && grounded)
             {
                 velocity.y = jumpTakeOffSpeed;
             }
-            else if (Input.GetButtonUp("Jump"))
+            else if (InputManager.GetInstance().GetJumpPressed())
             {
                 if (velocity.y > 0)
                 {
@@ -52,14 +53,14 @@ public class PlayerPlatformerController : PhysicsObject
                 }
             }
 
-            if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
+            if (inputVector.x > 0.5f || inputVector.x < -0.5f)
             {
-                if (Input.GetAxisRaw("Horizontal") > 0.5f && facingRight)
+                if (inputVector.x > 0.5f && facingRight)
                 {
                     Flip();
                     facingRight = false;
                 }
-                else if (Input.GetAxisRaw("Horizontal") < 0.5f && !facingRight)
+                else if (inputVector.x < 0.5f && !facingRight)
                 {
                     Flip();
                     facingRight = true;

@@ -67,7 +67,7 @@ public class IntroCutscene : MonoBehaviour
     {
         if (allowContinue && ! sm.cutscene0Triggered)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 allowContinue = false;
                 fadeOut();

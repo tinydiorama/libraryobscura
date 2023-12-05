@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (canContinueToNextLine && Input.GetKeyDown(KeyCode.E))
+        if (canContinueToNextLine && InputManager.GetInstance().GetInteractPressed())
         {
             ContinueStory();
         }

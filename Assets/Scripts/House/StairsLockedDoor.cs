@@ -23,7 +23,7 @@ public class StairsLockedDoor : MonoBehaviour
         gm = GameManager.GetInstance();
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying && !StoryManager.instance.floor2Unlocked)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 if (DayTimeController.instance.isTooDark())
                 {

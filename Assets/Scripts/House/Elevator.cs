@@ -46,7 +46,7 @@ public class Elevator : MonoBehaviour
         gm = GameManager.GetInstance();
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying && !gm.isInteractionsDisabled)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 PlayerManager.instance.GetComponent<PlayerPlatformerController>().stopPlayer();
                 gm.isPaused = true;

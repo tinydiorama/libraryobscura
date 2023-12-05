@@ -62,7 +62,7 @@ public class GardenPlot : MonoBehaviour
     {
         if (playerInRange && !gm.isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 if (DayTimeController.instance.isTooDark())
                 {

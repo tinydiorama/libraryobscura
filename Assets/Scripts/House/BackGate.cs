@@ -23,7 +23,7 @@ public class BackGate : MonoBehaviour
         gm = GameManager.GetInstance();
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying && ! StoryManager.instance.backgateUnlocked)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 if ( DayTimeController.instance.isTooDark() )
                 {

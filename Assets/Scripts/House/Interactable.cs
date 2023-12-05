@@ -19,7 +19,7 @@ public abstract class Interactable : MonoBehaviour
         gm = GameManager.GetInstance();
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying && !gm.isInteractionsDisabled)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 if (DayTimeController.instance.isTooDark())
                 {

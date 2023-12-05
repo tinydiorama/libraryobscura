@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Properties;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
@@ -30,6 +31,50 @@ public class InventoryUI : MonoBehaviour
 
     [Header("First Encounter")]
     [SerializeField] private MailboxUI mailboxUI;
+
+    private int tabindex;
+    private bool isCloseupShown;
+
+    private void Update()
+    {
+        if (InputManager.GetInstance().GetMenuMoveLeftPressed())
+        {
+            if ( tabindex == 0 ) // show items
+            {
+                showSeedsPanel();
+            } else if ( tabindex == 1 ) // show letters
+            {
+                showLettersPanel();
+            } else // show books
+            {
+                showBooksPanel();
+            }
+        }
+        else if (InputManager.GetInstance().GetMenuMoveRightPressed())
+        {
+            if (tabindex == 0) // show books
+            {
+                showBooksPanel();
+            }
+            else if (tabindex == 1) // show items
+            {
+                showSeedsPanel();
+            }
+            else // show letters
+            {
+                showLettersPanel();
+            }
+        } else if ( InputManager.GetInstance().GetClosePressed() )
+        {
+            if ( ! isCloseupShown )
+            {
+                closeInventory();
+            } else
+            {
+                closeLetterCloseup();
+            }
+        }
+    }
 
     public void showInventory()
     {
@@ -65,6 +110,7 @@ public class InventoryUI : MonoBehaviour
         panel.SetActive(true);
         lettersCloseup.SetActive(false);
         buttonsContainer.SetActive(true);
+        tabindex = 0;
 
         lettersButton.GetComponent<Image>().color = activeColor;
         booksButton.GetComponent<Image>().color = inactiveColor;
@@ -79,6 +125,7 @@ public class InventoryUI : MonoBehaviour
         panel.SetActive(true);
         lettersCloseup.SetActive(false);
         buttonsContainer.SetActive(true);
+        tabindex = 1;
 
         lettersButton.GetComponent<Image>().color = inactiveColor;
         booksButton.GetComponent<Image>().color = activeColor;
@@ -93,6 +140,7 @@ public class InventoryUI : MonoBehaviour
         panel.SetActive(true);
         lettersCloseup.SetActive(false);
         buttonsContainer.SetActive(true);
+        tabindex = 2;
 
         lettersButton.GetComponent<Image>().color = inactiveColor;
         booksButton.GetComponent<Image>().color = inactiveColor;
@@ -105,6 +153,7 @@ public class InventoryUI : MonoBehaviour
 
     public void showLetterCloseup(ref LetterSlot letterToShow)
     {
+        isCloseupShown = true;
         if (letterToShow.letter.id == "letter2")
         {
             StoryManager.instance.buyAllowed = true;
@@ -133,6 +182,7 @@ public class InventoryUI : MonoBehaviour
 
     public void closeLetterCloseup()
     {
+        isCloseupShown = false;
         GameManager gm = GameManager.GetInstance();
         StoryManager sm = StoryManager.instance;
         MailManager mm = MailManager.instance;
@@ -192,6 +242,10 @@ public class InventoryUI : MonoBehaviour
             }
             LetterSlot tempLetter = invManage.letters[i];
             letterInstance.GetComponent<Button>().onClick.AddListener(delegate { showLetterCloseup(ref tempLetter); });
+            if ( i == invManage.letters.Count - 1)
+            {
+                EventSystem.current.SetSelectedGameObject(letterInstance);
+            }
         }
     }
 
@@ -224,6 +278,10 @@ public class InventoryUI : MonoBehaviour
 
             BookSlot tempBook = invManage.books[i];
             //bookInstance.GetComponent<Button>().onClick.AddListener(delegate { showBookCloseup(ref tempBook); });
+            if (i == 0)
+            {
+                EventSystem.current.SetSelectedGameObject(bookInstance);
+            }
         }
     }
 
@@ -253,6 +311,10 @@ public class InventoryUI : MonoBehaviour
             itemInstance.GetComponent<ItemUI>().itemName.text = invManage.items[i].item.itemName;
             itemInstance.GetComponent<ItemUI>().count.text = invManage.items[i].count.ToString();
             itemInstance.GetComponent<ItemUI>().icon.sprite = invManage.items[i].item.icon;
+            if (i == 0)
+            {
+                EventSystem.current.SetSelectedGameObject(itemInstance);
+            }
         }
     }
 }

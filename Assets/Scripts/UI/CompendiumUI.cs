@@ -40,6 +40,22 @@ public class CompendiumUI : MonoBehaviour
         showFirstCollection();
     }
 
+    private void Update()
+    {
+        if (InputManager.GetInstance().GetMenuMoveLeftPressed())
+        {
+            nextPage();
+        }
+        else if (InputManager.GetInstance().GetMenuMoveRightPressed())
+        {
+            prevPage();
+        }
+        else if (InputManager.GetInstance().GetClosePressed())
+        {
+            closeCompendium();
+        }
+    }
+
     private void showFirstCollection()
     {
         

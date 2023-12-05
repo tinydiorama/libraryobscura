@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -21,6 +22,10 @@ public class TitleScreenUI : MonoBehaviour
         if ( ! DataPersistenceManager.instance.HasGameData() )
         {
             continueButton.gameObject.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(newGameButton.gameObject);
+        } else
+        {
+            EventSystem.current.SetSelectedGameObject(continueButton.gameObject);
         }
     }
 

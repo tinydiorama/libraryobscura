@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using Cinemachine;
 
 public class CutsceneManager : MonoBehaviour
 {
     [SerializeField] private GameObject cameraCollider;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject world;
+    [SerializeField] private CinemachineVirtualCamera vcam;
 
     [SerializeField] private Volume globalVolume;
     [SerializeField] private Light2D globalLight;
@@ -40,25 +42,28 @@ public class CutsceneManager : MonoBehaviour
     {
         hud.SetActive(false);
         GameObject cutscene = InstantiateResource("Cutscenes", "Dream1");
-        cutscene.GetComponent<Dream1Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight);
+        cutscene.GetComponent<Dream1Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight, vcam);
     }
 
     public void loadCutscene2()
     {
         hud.SetActive(false);
         GameObject cutscene = InstantiateResource("Cutscenes", "Dream2");
-        cutscene.GetComponent<Dream2Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight);
+        cutscene.GetComponent<Dream2Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight, vcam);
 
     }
 
     public void cleanupCutscene()
     {
         // reset everything
+        Vector2 newPos = new Vector2(27.45f, -1.97f);
+        Vector2 posDelta = newPos - (Vector2)player.transform.position;
         GameManager gm = GameManager.GetInstance();
         world.SetActive(true);
         gm.isStopTime = false;
-        player.transform.position = new Vector3(27.45f, -1.97f, 0);
+        player.transform.position = newPos;
         cameraCollider.transform.position = new Vector3(50.179f, 3.400905f, 0.009863324f);
+        vcam.OnTargetObjectWarped(player.transform, posDelta);
         player.GetComponent<PlayerPlatformerController>().maxSpeed = player.GetComponent<PlayerPlatformerController>().defaultSpeed;
         StartCoroutine(afterMoveCleanup());
     }

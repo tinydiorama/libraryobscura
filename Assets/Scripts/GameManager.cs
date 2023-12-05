@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (InputManager.GetInstance().GetMenuPressed())
         {
             if (pauseMenuShown)
             {

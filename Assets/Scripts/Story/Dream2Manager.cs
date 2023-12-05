@@ -14,7 +14,7 @@ public class Dream2Manager : MonoBehaviour
     private GameManager gm;
     private Vignette vnt;
 
-    public void startDream(GameObject cameraCollider, GameObject player, GameObject world, Volume globalVolume, Light2D globalLight)
+    public void startDream(GameObject cameraCollider, GameObject player, GameObject world, Volume globalVolume, Light2D globalLight, CinemachineVirtualCamera vcam)
     {
         mainCam = GameObject.FindWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         Vignette temp;
@@ -33,7 +33,11 @@ public class Dream2Manager : MonoBehaviour
         gm.isInteractionsDisabled = true;
 
         //world.SetActive(false);
+        Vector2 newPos = new Vector2(206.43f, 9.45f);
+        Vector2 posDelta = newPos - (Vector2)player.transform.position;
+
         player.transform.position = new Vector3(206.43f, 9.45f, 0);
+        vcam.OnTargetObjectWarped(player.transform, posDelta);
         cutsceneCam.m_LookAt = player.transform;
         cutsceneCam.m_Follow = player.transform;
         dreamTrigger.mainCam = mainCam;

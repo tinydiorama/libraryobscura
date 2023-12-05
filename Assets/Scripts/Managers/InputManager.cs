@@ -15,6 +15,10 @@ public class InputManager : MonoBehaviour
     private bool interactPressed = false;
     private bool jumpPressed = false;
     private bool settingsPressed = false;
+    private bool menuPressed = false;
+    private bool menuMoveLeftPressed = false;
+    private bool menuMoveRightPressed = false;
+    private bool closePressed = false;
 
     private static InputManager instance;
 
@@ -79,6 +83,51 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public void MenuPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            menuPressed = true;
+        }
+        else if (context.canceled)
+        {
+            menuPressed = false;
+        }
+    }
+    public void MenuMoveLeftPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            menuMoveLeftPressed = true;
+        }
+        else if (context.canceled)
+        {
+            menuMoveLeftPressed = false;
+        }
+    }
+    public void MenuMoveRightPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            menuMoveRightPressed = true;
+        }
+        else if (context.canceled)
+        {
+            menuMoveRightPressed = false;
+        }
+    }
+    public void ClosePressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            closePressed = true;
+        }
+        else if (context.canceled)
+        {
+            closePressed = false;
+        }
+    }
+
     public Vector2 GetMoveDirection()
     {
         return moveDirection;
@@ -100,6 +149,30 @@ public class InputManager : MonoBehaviour
     {
         bool result = settingsPressed;
         settingsPressed = false;
+        return result;
+    }
+    public bool GetMenuPressed()
+    {
+        bool result = menuPressed;
+        menuPressed = false;
+        return result;
+    }
+    public bool GetMenuMoveLeftPressed()
+    {
+        bool result = menuMoveLeftPressed;
+        menuMoveLeftPressed = false;
+        return result;
+    }
+    public bool GetMenuMoveRightPressed()
+    {
+        bool result = menuMoveRightPressed;
+        menuMoveRightPressed = false;
+        return result;
+    }
+    public bool GetClosePressed()
+    {
+        bool result = closePressed;
+        closePressed = false;
         return result;
     }
 }

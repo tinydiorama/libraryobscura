@@ -20,6 +20,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool floor2Unlocked;
     public bool floor2StudyUnlocked;
     public bool floor3Unlocked;
+    public bool floor4Unlocked;
     public int lastLetterReceivedDay;
     public string lucidity;
 

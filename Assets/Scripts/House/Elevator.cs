@@ -21,6 +21,8 @@ public class Elevator : MonoBehaviour
     [SerializeField] private GameObject[] elevatorShafts;
     [SerializeField] private GameObject[] elevators;
 
+    [SerializeField] private ElevatorUI elevatorUI;
+
     private bool playerInRange;
     private GameManager gm;
     private GameObject player;
@@ -58,13 +60,21 @@ public class Elevator : MonoBehaviour
     public void interact()
     {
         StoryManager sm = StoryManager.instance;
-        if (InventoryManager.instance.containsItem("elevatorkey1"))
+        if (InventoryManager.instance.containsItem("elevatorkey1") || InventoryManager.instance.containsItem("elevatorkey2"))
         {
-            if (!sm.floor2Unlocked)
+            if (!sm.floor2Unlocked || !sm.floor3Unlocked)
             {
                 AudioManager.GetInstance().playSFX(doorUnlockedClip);
-                sm.floor2Unlocked = true;
-                houseController.unlockLibrary();
+                if ( ! sm.floor2Unlocked && InventoryManager.instance.containsItem("elevatorkey1"))
+                {
+                    sm.floor2Unlocked = true;
+                    houseController.unlockLibrary();
+                }
+                if ( ! sm.floor3Unlocked && InventoryManager.instance.containsItem("elevatorkey2"))
+                {
+                    sm.floor3Unlocked = true;
+                    houseController.unlockThirdFloor();
+                }
             }
             transform.GetChild(0).GetComponent<Animator>().SetBool("DoorStartOpen", false);
             transform.GetChild(0).GetComponent<Animator>().SetBool("CloseDoor", true);
@@ -77,6 +87,66 @@ public class Elevator : MonoBehaviour
         {
             DialogueManager.GetInstance().EnterDialogueMode(staircaseLocked);
         }
+    }
+
+    public void gotoFloor(int floorNum)
+    {
+        transform.GetChild(0).GetComponent<Animator>().SetBool("DoorStartOpen", false);
+        transform.GetChild(0).GetComponent<Animator>().SetBool("CloseDoor", true);
+        Vector3 playerPos = player.transform.position;
+        playerPos.x = floor2Pos.x;
+        StartCoroutine(MoveOverSeconds(player, playerPos, 1f));
+        StartCoroutine(selectFloor(floorNum));
+    }
+
+    public IEnumerator selectFloor(int floorNum)
+    {
+        yield return new WaitForSeconds(1f);
+        if (floorNum == 0)
+        {
+            gotoFloor1();
+        }
+        else if (floorNum == 1)
+        {
+            gotoFloor2();
+        }
+        else if (floorNum == 2)
+        {
+            gotoFloor3();
+        }
+    }
+
+    private void gotoFloor1()
+    {
+        floorToGoTo = 0;
+        StartCoroutine(MoveOverSeconds(player, floor1Pos, 5f));
+        if (anim != null)
+        {
+            anim.SetBool("ZoomInUpper", false);
+        }
+        StartCoroutine(resetElevatorPos());
+    }
+
+    private void gotoFloor2()
+    {
+        floorToGoTo = 1;
+        StartCoroutine(MoveOverSeconds(player, floor2Pos, 5f));
+        if (anim != null)
+        {
+            anim.SetBool("ZoomInUpper", true);
+        }
+        StartCoroutine(resetElevatorPos());
+    }
+
+    private void gotoFloor3()
+    {
+        floorToGoTo = 2;
+        StartCoroutine(MoveOverSeconds(player, floor3Pos, 5f));
+        if (anim != null)
+        {
+            anim.SetBool("ZoomInUpper", true);
+        }
+        StartCoroutine(resetElevatorPos());
     }
 
     private IEnumerator runElevator()
@@ -92,9 +162,11 @@ public class Elevator : MonoBehaviour
             pos.z = -1.42f;
             elevatorShaft.transform.localPosition = pos;
         }
-        if (StoryManager.instance.floor3Unlocked)
+        if ( sm.floor3Unlocked )
         {
             // show elevator UI and pick a floor and handle all that
+            elevatorUI.gameObject.SetActive(true);
+            elevatorUI.setupElevator(floorNum, this);
         }
         else
         {
@@ -102,23 +174,11 @@ public class Elevator : MonoBehaviour
             //floor2Collider.SetActive(false);
             if (floorNum == 0) // go up to first floor
             {
-                floorToGoTo = 1;
-                StartCoroutine(MoveOverSeconds(player, floor2Pos, 5f));
-                if (anim != null)
-                {
-                    anim.SetBool("ZoomInUpper", true);
-                }
-                StartCoroutine(resetElevatorPos());
+                gotoFloor2();
             }
             else // if floorNum == 1 go down to ground floor
             {
-                floorToGoTo = 0;
-                StartCoroutine(MoveOverSeconds(player, floor1Pos, 5f));
-                if (anim != null)
-                {
-                    anim.SetBool("ZoomInUpper", false);
-                }
-                StartCoroutine(resetElevatorPos());
+                gotoFloor1();
             }
         }
     }
@@ -141,6 +201,7 @@ public class Elevator : MonoBehaviour
     IEnumerator finishOpeningNewFloorDoor()
     {
         yield return new WaitForSeconds(1f);
+        elevators[floorToGoTo].transform.GetChild(0).GetComponent<Animator>().SetBool("CloseDoor", false);
         elevators[floorToGoTo].transform.GetChild(0).GetComponent<Animator>().SetBool("OpenDoor", false);
     }
 

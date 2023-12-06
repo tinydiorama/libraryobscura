@@ -11,6 +11,7 @@ public class HouseController : MonoBehaviour
 
     [SerializeField] private GameObject upstairsLibrary;
     [SerializeField] private GameObject upstairsStudy;
+    [SerializeField] private GameObject thirdfloorCover;
 
     private Animator anim;
 
@@ -61,6 +62,13 @@ public class HouseController : MonoBehaviour
     {
         unlockedRooms.Add(upstairsLibrary);
         unlockedRooms.Add(upstairsStudy);
+    }
+
+    public void unlockThirdFloor()
+    {
+        thirdfloorCover.GetComponent<Animator>().SetBool("FadeOut", true);
+        StartCoroutine(fadeRoom(thirdfloorCover));
+        unlockedRooms.Add(thirdfloorCover);
     }
 
     IEnumerator fadeRoom(GameObject room)

@@ -37,18 +37,6 @@ public class Bed : MonoBehaviour
                 }
             }
         }
-        if ( bedUIshown )
-        {
-
-            if (InputManager.GetInstance().GetClosePressed())
-            {
-                cancelSleep();
-            }
-            else if (InputManager.GetInstance().GetConfirmPressed())
-            {
-                sleep();
-            }
-        }
     }
 
     private IEnumerator enableButtons()

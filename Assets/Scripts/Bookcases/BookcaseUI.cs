@@ -90,11 +90,6 @@ public class BookcaseUI : MonoBehaviour
             {
                 selectBook(ref tempBook);
             });
-            if ( i == 0 ) // select first book
-            {
-                selectBook(ref tempBook);
-                EventSystem.current.SetSelectedGameObject(bookInstance);
-            }
         }
         StartCoroutine(enableShowBookSelect());
     }

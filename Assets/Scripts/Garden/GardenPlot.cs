@@ -247,7 +247,6 @@ public class GardenPlot : MonoBehaviour
                 seedInstance.GetComponent<Button>().onClick.AddListener(delegate { selectSeed(ref seedInstance, ref tempSeed); });
                 if ( j == 0 ) // first seed
                 {
-                    EventSystem.current.SetSelectedGameObject(seedInstance);
                     selectSeed(ref seedInstance, ref tempSeed);
                 }
                 j++;

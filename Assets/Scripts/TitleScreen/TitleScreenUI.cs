@@ -22,11 +22,7 @@ public class TitleScreenUI : MonoBehaviour
         if ( ! DataPersistenceManager.instance.HasGameData() )
         {
             continueButton.gameObject.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(newGameButton.gameObject);
-        } else
-        {
-            EventSystem.current.SetSelectedGameObject(continueButton.gameObject);
-        }
+        } 
     }
 
     public void NewGame()

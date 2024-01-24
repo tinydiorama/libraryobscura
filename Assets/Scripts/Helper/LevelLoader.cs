@@ -22,7 +22,7 @@ public class LevelLoader : MonoBehaviour
         instance = this;
         SceneManager.LoadSceneAsync((int)SceneIndexes.TITLE_SCREEN, LoadSceneMode.Additive);
         mostRecentScene = (int)SceneIndexes.TITLE_SCREEN;
-        oldEventSystem.SetActive(false);
+        //oldEventSystem.SetActive(false);
     }
 
     private void Start()

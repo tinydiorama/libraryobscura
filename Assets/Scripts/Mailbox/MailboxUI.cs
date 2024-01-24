@@ -14,14 +14,6 @@ public class MailboxUI : MonoBehaviour
 
     private GameManager gm;
 
-    private void Update()
-    {
-        if (InputManager.GetInstance().GetConfirmPressed())
-        {
-            getReceivedMail();
-        }
-    }
-
     public void showReceivedMail()
     {
         gm = GameManager.GetInstance();

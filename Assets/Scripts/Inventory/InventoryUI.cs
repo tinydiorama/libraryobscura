@@ -242,10 +242,6 @@ public class InventoryUI : MonoBehaviour
             }
             LetterSlot tempLetter = invManage.letters[i];
             letterInstance.GetComponent<Button>().onClick.AddListener(delegate { showLetterCloseup(ref tempLetter); });
-            if ( i == invManage.letters.Count - 1)
-            {
-                EventSystem.current.SetSelectedGameObject(letterInstance);
-            }
         }
     }
 
@@ -278,10 +274,6 @@ public class InventoryUI : MonoBehaviour
 
             BookSlot tempBook = invManage.books[i];
             //bookInstance.GetComponent<Button>().onClick.AddListener(delegate { showBookCloseup(ref tempBook); });
-            if (i == 0)
-            {
-                EventSystem.current.SetSelectedGameObject(bookInstance);
-            }
         }
     }
 
@@ -311,10 +303,6 @@ public class InventoryUI : MonoBehaviour
             itemInstance.GetComponent<ItemUI>().itemName.text = invManage.items[i].item.itemName;
             itemInstance.GetComponent<ItemUI>().count.text = invManage.items[i].count.ToString();
             itemInstance.GetComponent<ItemUI>().icon.sprite = invManage.items[i].item.icon;
-            if (i == 0)
-            {
-                EventSystem.current.SetSelectedGameObject(itemInstance);
-            }
         }
     }
 }

@@ -85,7 +85,6 @@ public class BuySellUI : MonoBehaviour
             emptyText.gameObject.SetActive(true);
             emptyText.text = "You have no letters.";
         }
-        int index = 0;
         foreach (Item shopItem in ShopManager.instance.shopItems)
         {
             GameObject buySellObject = Instantiate(buySellItemPrefab, buySellScrollContents.transform);
@@ -102,12 +101,7 @@ public class BuySellUI : MonoBehaviour
                     break;
                 }
             }
-            if (index == 0)
-            {
-                EventSystem.current.SetSelectedGameObject(buySellItem.gameObject);
-            }
             buySellItem.GetComponent<Button>().onClick.AddListener(delegate { buyItem(ref buySellItem); });
-            index++;
         }
         if (StoryManager.instance.sellAllowed)
         {
@@ -139,7 +133,6 @@ public class BuySellUI : MonoBehaviour
         }
         
         int numSellableItems = 0;
-        int index = 0;
         foreach (ItemSlot itemSlot in inventory.items)
         {
             if ( itemSlot.item.sellable )
@@ -151,13 +144,8 @@ public class BuySellUI : MonoBehaviour
                 buySellItem.cost.text = itemSlot.item.sellPrice.ToString();
                 buySellItem.count.text = itemSlot.count.ToString();
                 ItemSlot tempItem = itemSlot;
-                if (index == 0)
-                {
-                    EventSystem.current.SetSelectedGameObject(buySellItem.gameObject);
-                }
                 buySellItem.GetComponent<Button>().onClick.AddListener(delegate { sellItem(ref tempItem); });
                 numSellableItems++;
-                index++;
             }
         }
         if (numSellableItems > 0)

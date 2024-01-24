@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BookcaseUI : MonoBehaviour
@@ -29,6 +30,29 @@ public class BookcaseUI : MonoBehaviour
     private List<Book> currentBooksToRead;
     public BookSlot selectedBook;
     public GameObject referenceObject;
+
+    private bool showingBookSelect;
+    private bool showingBooktoRead;
+
+    private void Update()
+    {
+        if ( showingBookSelect )
+        {
+            if (InputManager.GetInstance().GetConfirmPressed())
+            {
+                placeBook();
+            } else if ( InputManager.GetInstance().GetClosePressed() )
+            {
+                closeBookSelectUI();
+            }
+        } else if ( showingBooktoRead )
+        {
+            if (InputManager.GetInstance().GetClosePressed())
+            {
+                closeBookReadUI();
+            }
+        }
+    }
 
     public void showBookSelectUI(GameObject refObj)
     {
@@ -69,8 +93,20 @@ public class BookcaseUI : MonoBehaviour
             if ( i == 0 ) // select first book
             {
                 selectBook(ref tempBook);
+                EventSystem.current.SetSelectedGameObject(bookInstance);
             }
         }
+        StartCoroutine(enableShowBookSelect());
+    }
+    private IEnumerator enableShowBookSelect()
+    {
+        yield return new WaitForSeconds(0.2f);
+        showingBookSelect = true;
+    }
+    private IEnumerator disableShowBookSelect()
+    {
+        yield return new WaitForSeconds(0.2f);
+        showingBookSelect = false;
     }
 
     public void selectBook(ref BookSlot bookToPlace)
@@ -83,6 +119,7 @@ public class BookcaseUI : MonoBehaviour
         selectedBook.placement = referenceObject.GetComponent<Bookcase>().bookcasePlacementText;
         referenceObject.GetComponent<Bookcase>().books.Add(selectedBook.book);
         closeBookSelectUI();
+        StartCoroutine(disableShowBookSelect());
         showBookReadUI(referenceObject.GetComponent<Bookcase>().books);
     }
 
@@ -91,6 +128,7 @@ public class BookcaseUI : MonoBehaviour
         GameManager.GetInstance().isPaused = false;
         overlay.SetActive(false);
         bookSelectPanel.SetActive(false);
+        StartCoroutine(disableShowBookSelect());
     }
 
     public void showBookReadUI( List<Book> booksToRead )
@@ -123,6 +161,7 @@ public class BookcaseUI : MonoBehaviour
                 showBookCloseup(ref tempBook);
             });
         }
+        StartCoroutine(enableShowBookReadUI());
         bookReadPanel.SetActive(true);
     }
     public void closeBookReadUI()
@@ -130,6 +169,17 @@ public class BookcaseUI : MonoBehaviour
         GameManager.GetInstance().isPaused = false;
         overlay.SetActive(false);
         bookReadPanel.SetActive(false);
+        StartCoroutine(disableShowBookReadUI());
+    }
+    private IEnumerator enableShowBookReadUI()
+    {
+        yield return new WaitForSeconds(0.2f);
+        showingBooktoRead = true;
+    }
+    private IEnumerator disableShowBookReadUI()
+    {
+        yield return new WaitForSeconds(0.2f);
+        showingBooktoRead = false;
     }
 
     public void showBookCloseup(ref Book bookToShow)

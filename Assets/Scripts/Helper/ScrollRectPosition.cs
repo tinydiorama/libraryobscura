@@ -1,59 +1,72 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections;
+using UnityEngine.UI;
+
+// Add the script to your Dropdown Menu Template Object via (Your Dropdown Button > Template)
+
+[RequireComponent(typeof(ScrollRect))]
 public class ScrollRectPosition : MonoBehaviour
 {
-    RectTransform scrollRectTransform;
-    RectTransform contentPanel;
-    RectTransform selectedRectTransform;
-    GameObject lastSelected;
-    void Start()
-    {
-        scrollRectTransform = GetComponent<RectTransform>();
-        contentPanel = GetComponent<ScrollRect>().content;
-    }
+    // Sets the speed to move the scrollbar
+    public float scrollSpeed = 10f;
+
+    // Set as Template Object via (Your Dropdown Button > Template)
+    public ScrollRect m_templateScrollRect;
+
+    // Set as Template Viewport Object via (Your Dropdown Button > Template > Viewport)
+    public RectTransform m_templateViewportTransform;
+
+    // Set as Template Content Object via (Your Dropdown Button > Template > Viewport > Content)
+    public RectTransform m_ContentRectTransform;
+
+    private RectTransform m_SelectedRectTransform;
+
     void Update()
     {
-        // Get the currently selected UI element from the event system.
+        UpdateScrollToSelected(m_templateScrollRect, m_ContentRectTransform, m_templateViewportTransform);
+    }
+
+    void UpdateScrollToSelected(ScrollRect scrollRect, RectTransform contentRectTransform, RectTransform viewportRectTransform)
+    {
+        // Get the current selected option from the eventsystem.
         GameObject selected = EventSystem.current.currentSelectedGameObject;
-        // Return if there are none.
+
         if (selected == null)
         {
             return;
         }
-        // Return if the selected game object is not inside the scroll rect.
-        if (selected.transform.parent != contentPanel.transform)
+        if (selected.transform.parent != contentRectTransform.transform)
         {
             return;
         }
-        // Return if the selected game object is the same as it was last frame,
-        // meaning we haven't moved.
-        if (selected == lastSelected)
+
+        m_SelectedRectTransform = selected.GetComponent<RectTransform>();
+
+        // Math stuff
+        Vector3 selectedDifference = viewportRectTransform.localPosition - m_SelectedRectTransform.localPosition;
+        float contentHeightDifference = (contentRectTransform.rect.height - viewportRectTransform.rect.height);
+
+        float selectedPosition = (contentRectTransform.rect.height - selectedDifference.y);
+        float currentScrollRectPosition = scrollRect.normalizedPosition.y * contentHeightDifference;
+        float above = currentScrollRectPosition - (m_SelectedRectTransform.rect.height / 2) + viewportRectTransform.rect.height;
+        float below = currentScrollRectPosition + (m_SelectedRectTransform.rect.height / 2);
+
+        // Check if selected option is out of bounds.
+        if (selectedPosition > above)
         {
-            return;
+            float step = selectedPosition - above;
+            float newY = currentScrollRectPosition + step;
+            float newNormalizedY = newY / contentHeightDifference;
+            scrollRect.normalizedPosition = Vector2.Lerp(scrollRect.normalizedPosition, new Vector2(0, newNormalizedY), scrollSpeed * Time.deltaTime);
         }
-        // Get the rect tranform for the selected game object.
-        selectedRectTransform = selected.GetComponent<RectTransform>();
-        // The position of the selected UI element is the absolute anchor position,
-        // ie. the local position within the scroll rect + its height if we're
-        // scrolling down. If we're scrolling up it's just the absolute anchor position.
-        float selectedPositionY = Mathf.Abs(selectedRectTransform.anchoredPosition.y) + selectedRectTransform.rect.height;
-        // The upper bound of the scroll view is the anchor position of the content we're scrolling.
-        float scrollViewMinY = contentPanel.anchoredPosition.y;
-        // The lower bound is the anchor position + the height of the scroll rect.
-        float scrollViewMaxY = contentPanel.anchoredPosition.y + scrollRectTransform.rect.height;
-        // If the selected position is below the current lower bound of the scroll view we scroll down.
-        if (selectedPositionY > scrollViewMaxY)
+        else if (selectedPosition < below)
         {
-            float newY = selectedPositionY - scrollRectTransform.rect.height;
-            contentPanel.anchoredPosition = new Vector2(contentPanel.anchoredPosition.x, newY);
+            float step = selectedPosition - below;
+            float newY = currentScrollRectPosition + step;
+            float newNormalizedY = newY / contentHeightDifference;
+            scrollRect.normalizedPosition = Vector2.Lerp(scrollRect.normalizedPosition, new Vector2(0, newNormalizedY), scrollSpeed * Time.deltaTime);
         }
-        // If the selected position is above the current upper bound of the scroll view we scroll up.
-        else if (Mathf.Abs(selectedRectTransform.anchoredPosition.y) < scrollViewMinY)
-        {
-            contentPanel.anchoredPosition = new Vector2(contentPanel.anchoredPosition.x, Mathf.Abs(selectedRectTransform.anchoredPosition.y - selectedRectTransform.rect.height));
-        }
-        lastSelected = selected;
     }
 }
+
+

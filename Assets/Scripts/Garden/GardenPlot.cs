@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Xml;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public enum PlantState { 
     DIRT = 0,
@@ -246,6 +247,7 @@ public class GardenPlot : MonoBehaviour
                 seedInstance.GetComponent<Button>().onClick.AddListener(delegate { selectSeed(ref seedInstance, ref tempSeed); });
                 if ( j == 0 ) // first seed
                 {
+                    EventSystem.current.SetSelectedGameObject(seedInstance);
                     selectSeed(ref seedInstance, ref tempSeed);
                 }
                 j++;

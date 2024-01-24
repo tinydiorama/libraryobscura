@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BuySellUI : MonoBehaviour
@@ -36,6 +37,22 @@ public class BuySellUI : MonoBehaviour
     private int activeQuantity;
     private bool isBuying;
     private int numCanSell;
+    private int tabindex;
+
+
+    private void Update()
+    {
+        if (InputManager.GetInstance().GetMenuMoveLeftPressed() || InputManager.GetInstance().GetMenuMoveRightPressed())
+        {
+            if (tabindex == 0 && StoryManager.instance.sellAllowed) // show sell tab
+            {
+                showSellTab();
+            } else
+            {
+                showShop();
+            }
+        }
+    }
 
     public void showShop() // buy tab
     {
@@ -45,6 +62,7 @@ public class BuySellUI : MonoBehaviour
         InventoryManager inv = InventoryManager.instance;
         cantAffordUI.SetActive(false);
         title.text = "Order Catalogue";
+        tabindex = 0;
 
         buyTab.GetComponent<Image>().color = activeColor;
         buyTab.GetComponent<Image>().sprite = activeSprite;
@@ -67,6 +85,7 @@ public class BuySellUI : MonoBehaviour
             emptyText.gameObject.SetActive(true);
             emptyText.text = "You have no letters.";
         }
+        int index = 0;
         foreach (Item shopItem in ShopManager.instance.shopItems)
         {
             GameObject buySellObject = Instantiate(buySellItemPrefab, buySellScrollContents.transform);
@@ -83,7 +102,12 @@ public class BuySellUI : MonoBehaviour
                     break;
                 }
             }
+            if (index == 0)
+            {
+                EventSystem.current.SetSelectedGameObject(buySellItem.gameObject);
+            }
             buySellItem.GetComponent<Button>().onClick.AddListener(delegate { buyItem(ref buySellItem); });
+            index++;
         }
         if (StoryManager.instance.sellAllowed)
         {
@@ -104,6 +128,7 @@ public class BuySellUI : MonoBehaviour
         sellTab.GetComponent<Image>().sprite = activeSprite;
         buyTab.GetComponent<Image>().color = inactiveColor;
         buyTab.GetComponent<Image>().sprite = null;
+        tabindex = 1;
 
         foreach (Transform child in buySellScrollContents.transform)
         {
@@ -114,6 +139,7 @@ public class BuySellUI : MonoBehaviour
         }
         
         int numSellableItems = 0;
+        int index = 0;
         foreach (ItemSlot itemSlot in inventory.items)
         {
             if ( itemSlot.item.sellable )
@@ -125,8 +151,13 @@ public class BuySellUI : MonoBehaviour
                 buySellItem.cost.text = itemSlot.item.sellPrice.ToString();
                 buySellItem.count.text = itemSlot.count.ToString();
                 ItemSlot tempItem = itemSlot;
+                if (index == 0)
+                {
+                    EventSystem.current.SetSelectedGameObject(buySellItem.gameObject);
+                }
                 buySellItem.GetComponent<Button>().onClick.AddListener(delegate { sellItem(ref tempItem); });
                 numSellableItems++;
+                index++;
             }
         }
         if (numSellableItems > 0)

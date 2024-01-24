@@ -19,8 +19,10 @@ public class InputManager : MonoBehaviour
     private bool menuMoveLeftPressed = false;
     private bool menuMoveRightPressed = false;
     private bool closePressed = false;
+    private bool confirmPressed = false;
 
     private static InputManager instance;
+    private PlayerInput playerInput;
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class InputManager : MonoBehaviour
             Debug.LogWarning("Found more than one Input Manager in the scene.");
         }
         instance = this;
+        playerInput = GetComponent<PlayerInput>();
     }
 
     public static InputManager GetInstance()
@@ -127,6 +130,17 @@ public class InputManager : MonoBehaviour
             closePressed = false;
         }
     }
+    public void ConfirmPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            confirmPressed = true;
+        }
+        else if (context.canceled)
+        {
+            confirmPressed = false;
+        }
+    }
 
     public Vector2 GetMoveDirection()
     {
@@ -174,5 +188,16 @@ public class InputManager : MonoBehaviour
         bool result = closePressed;
         closePressed = false;
         return result;
+    }
+    public bool GetConfirmPressed()
+    {
+        bool result = confirmPressed;
+        confirmPressed = false;
+        return result;
+    }
+
+    public PlayerInput GetPlayerInput()
+    {
+        return playerInput;
     }
 }

@@ -10,6 +10,7 @@ public class Bed : MonoBehaviour
     [SerializeField] private TextAsset finishExploringFirst;
 
     private bool playerInRange;
+    private bool bedUIshown;
 
     private void Awake()
     {
@@ -32,9 +33,28 @@ public class Bed : MonoBehaviour
                     timeText.text = DayTimeController.instance.getTime();
                     bedConfirmPanel.SetActive(true);
                     gm.isPaused = true;
+                    StartCoroutine(enableButtons());
                 }
             }
         }
+        if ( bedUIshown )
+        {
+
+            if (InputManager.GetInstance().GetClosePressed())
+            {
+                cancelSleep();
+            }
+            else if (InputManager.GetInstance().GetConfirmPressed())
+            {
+                sleep();
+            }
+        }
+    }
+
+    private IEnumerator enableButtons()
+    {
+        yield return new WaitForSeconds(0.2f);
+        bedUIshown = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -55,16 +75,25 @@ public class Bed : MonoBehaviour
 
     public void cancelSleep()
     {
+        bedUIshown = false;
         GameManager gm = GameManager.GetInstance();
         bedConfirmPanel.SetActive(false);
-        gm.isPaused = false;
+        StartCoroutine(unPause());
     }
 
     public void sleep()
     {
+        bedUIshown = false;
         GameManager gm = GameManager.GetInstance();
         gm.nextDay();
         bedConfirmPanel.SetActive(false);
+        gm.isPaused = false;
+    }
+
+    private IEnumerator unPause()
+    {
+        GameManager gm = GameManager.GetInstance();
+        yield return new WaitForSeconds(0.2f);
         gm.isPaused = false;
     }
 }

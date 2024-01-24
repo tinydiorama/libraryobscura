@@ -34,8 +34,9 @@ public class DayTransitionHelper : MonoBehaviour
     {
         if ( canContinue )
         {
-            if (InputManager.GetInstance().GetInteractPressed())
+            if (InputManager.GetInstance().GetConfirmPressed())
             {
+                Debug.Log("gets here");
                 canContinue = false;
                 StartCoroutine(GameManager.GetInstance().startNewDay());
             }

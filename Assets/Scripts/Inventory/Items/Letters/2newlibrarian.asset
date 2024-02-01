@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: 2newlibrarian
+  m_EditorClassIdentifier: 
+  id: 2newlibrarian
+  from: X
+  subject: To the new librarian
+  letterBgTan: 0
+  body: 'To the new librarian,
+
+
+    Time for you is stretched, but for us it dwindles
+    each day. Did you plant the seeds and care for them? Remember, you must send
+    them to me when you''ve grown them. Without water, they''ll become ash. Here
+    are two more seeds - it''s all I''ve got for now. If you can raise drobles, I
+    may be able to get more seeds. I''ve sent you what little I have.
+
+
+    I''ll
+    send another letter soon. Until later...
+
+    X'

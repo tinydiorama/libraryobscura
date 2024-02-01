@@ -26,7 +26,7 @@ MonoBehaviour:
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 7302cf128237bdc429581c883d41ce73, type: 2}
   crossBreedResult1: {fileID: 11400000, guid: ffade8b9dc5241649b3beaa2b394a0f4, type: 2}
-  crossBreed2: {fileID: 0}
-  crossBreedResult2: {fileID: 0}
-  crossBreed3: {fileID: 0}
-  crossBreedResult3: {fileID: 0}
+  crossBreed2: {fileID: 11400000, guid: ffade8b9dc5241649b3beaa2b394a0f4, type: 2}
+  crossBreedResult2: {fileID: 11400000, guid: 7302cf128237bdc429581c883d41ce73, type: 2}
+  crossBreed3: {fileID: 11400000, guid: 221bf172d524650429c0778b726806b3, type: 2}
+  crossBreedResult3: {fileID: 11400000, guid: f95f43a900e706942b4e11219f96988e, type: 2}

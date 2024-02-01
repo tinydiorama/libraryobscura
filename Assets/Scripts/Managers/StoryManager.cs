@@ -70,6 +70,10 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         MailManager mm = MailManager.instance;
         InventoryManager inv = InventoryManager.instance;
         DayTimeController dayTime = DayTimeController.instance;
+        CollectionManager cm = CollectionManager.instance;
+
+        int numDiscovered = cm.getAllDiscovered();
+
         if (dream1Triggered == true && dream2Triggered == false )
         {
             lucidity = "Uncertain";
@@ -79,75 +83,130 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         {
             if (dayTime.days == 1) // day 1 (really day 2) gives you a new letter and 2 new seeds
             {
-                mm.addNewLetter(data.day2Letter);
-                foreach (Item seed in data.day2Seeds)
+                mm.addNewLetter(data.phase2Letter);
+                foreach (Item seed in data.phase2Seeds)
                 {
                     mm.newItems.Add(seed);
                 }
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
-            else if (inv.containsLetter("letter2") && !inv.containsLetter("letter3")
-                && inv.numSold() >= 1) // after you've received the day 2 letter & sold ANYTHING
+            else if (dream1Triggered && inv.containsLetter("2newlibrarian") && !inv.containsLetter("3wizenedgardener"))
             {
-                foreach (Letter letter in data.day3Letters)
+                foreach (Letter letter in data.phase3Letters)
                 {
                     mm.addNewLetter(letter);
                 }
-                mm.addNewBook(data.day3Book);
+                mm.addNewBook(data.phase3Book);
                 allowBooks = true;
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
-            else if (inv.containsLetter("letter4") && !inv.containsLetter("letter5"))
+            else if (inv.containsLetter("4kindlytraveler") && !inv.containsLetter("5bookkeeper"))
             {
-                mm.addNewLetter(data.day4Letter);
-                mm.newItems.Add(data.day4Key);
-                mm.hasNewMail = true;
-                lastLetterReceivedDay = dayTime.days;
-            } else if (inv.containsLetter("letter5") && !inv.containsLetter("letter6") 
-                && (dayTime.days - lastLetterReceivedDay >= 2))
-            {
-                mm.addNewLetter(data.day5Letter);
-                lastLetterReceivedDay = dayTime.days;
-                mm.hasNewMail = true;
-            } else if (inv.containsLetter("letter6") && !inv.containsLetter("letter7")
-                && inv.numSold("cloudsprigplant") >= 1)
-            {
-                mm.addNewLetter(data.day6Letter);
-                mm.hasNewMail = true;
-                lastLetterReceivedDay = dayTime.days;
-            } else if (inv.containsLetter("letter7") && !inv.containsLetter("letter8"))
-            {
-                mm.addNewLetter(data.day7Letter);
-                mm.hasNewMail = true;
-                mm.addNewBook(data.day7Book);
-                lastLetterReceivedDay = dayTime.days;
-            }
-            else if (inv.containsLetter("letter8") && !inv.containsLetter("letter9"))
-            {
-                foreach (Letter letter in data.day10Letters)
+                foreach (Letter letter in data.phase4Letters)
                 {
                     mm.addNewLetter(letter);
                 }
+                mm.newItems.Add(data.phase4Key);
                 mm.hasNewMail = true;
-                mm.newItems.Add(data.day10Key);
                 lastLetterReceivedDay = dayTime.days;
             }
-            else if (inv.containsLetter("letter10") && !inv.containsLetter("letter11")
-                && inv.numSold() >= 10)
+
+            /* x path */
+            if ( inv.containsLetter("5bookkeeper") && ! inv.containsLetter("x1youmusthurry")
+                && inv.numItemsSoldAllTime > 1 )
             {
-                mm.addNewLetter(data.day11Letter);
+                mm.addNewLetter(data.x1Letter);
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
-            }
-            else if (inv.containsLetter("letter11") && !inv.containsLetter("letter12"))
+            } else if (inv.containsLetter("x1youmusthurry") && !inv.containsLetter("x2imsorry"))
             {
-                mm.addNewLetter(data.day12Letter);
-                mm.addNewBook(data.day12Book);
+                mm.addNewLetter(data.x2Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            } else if (inv.containsLetter("x2imsorry") && !inv.containsLetter("x3hopeless")
+                && inv.numItemsSoldAllTime > 5)
+            {
+                mm.addNewLetter(data.x3Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            } else if (inv.containsLetter("x3hopeless") && !inv.containsLetter("x4churchlyvisitors"))
+            {
+                mm.addNewLetter(data.x4Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            } else if (inv.containsLetter("x4churchlyvisitors") && !inv.containsLetter("x5vicaroverseers")
+                && inv.numItemsSoldAllTime > 10)
+            {
+                mm.addNewLetter(data.x5Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            } else if (inv.containsLetter("x5vicaroverseers") && !inv.containsLetter("x6strangebedfellows"))
+            {
+                mm.addNewLetter(data.x6Letter);
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
+
+            /* friend path */
+            if (inv.containsLetter("5bookkeeper") && !inv.containsLetter("f1breakthrough")
+                && numDiscovered > 3)
+            {
+                mm.addNewLetter(data.f1Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f1breakthrough") && !inv.containsLetter("f2anotherboonforyou"))
+            {
+                mm.addNewLetter(data.f2Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f2anotherboonforyou") && !inv.containsLetter("f3myresearch")
+                && numDiscovered > 4)
+            {
+                mm.addNewLetter(data.f3Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f3myresearch") && !inv.containsLetter("f4helpfultidings"))
+            {
+                mm.addNewLetter(data.f4Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f4helpfultidings") && !inv.containsLetter("f5humblebeginnings")
+                && numDiscovered > 5)
+            {
+                mm.addNewLetter(data.f5Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f5humblebeginnings") && !inv.containsLetter("f6finedining"))
+            {
+                mm.addNewLetter(data.f6Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+
+            /*else if (inv.containsLetter("5bookkeeper") && !inv.containsLetter("letter6") 
+                && (dayTime.days - lastLetterReceivedDay >= 2))
+            {
+                mm.addNewLetter(data.day5Letter);
+                mm.addNewLetter(data.day6Letter);
+                lastLetterReceivedDay = dayTime.days;
+                mm.hasNewMail = true;
+            } */
+
+            /*if (inv.containsLetter("letter6") && !inv.containsLetter("letter7")
+                && inv.numSold("cloudsprigplant") >= 1)
+            {
+                mm.addNewLetter(data.day7Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+                // miro point
+            } */
         }
     }
 

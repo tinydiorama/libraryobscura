@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f6finedining
+  m_EditorClassIdentifier: 
+  id: f6finedining
+  from: A Friend
+  subject: Fine Dining and Keyways
+  letterBgTan: 1
+  body: 'Things seem to be harder to find nowadays. Quills, writing supplies, rare
+    books, and even my favorite tea have all been in short supply. I had a meeting
+    at my favorite teahouse with a close colleague and they were out of several items.
+    Simply incredible! My colleague had found what I asked them to look for. I now
+    pass this key to you.
+
+
+    Quietly,
+
+    A Friend'

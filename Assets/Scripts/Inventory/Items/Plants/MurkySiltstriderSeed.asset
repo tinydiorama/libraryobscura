@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: MurkySiltstriderSeed
+  m_EditorClassIdentifier: 
+  id: murkysiltstriderseed
+  itemName: Murky Siltstrider Seed
+  icon: {fileID: 21300000, guid: 75dcb3be579775045a7a508385001b48, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 11
+  sellPrice: 11
+  itemDesc: 
+  seedImages:
+  - {fileID: 21300000, guid: ecc8cec33593b2e4081c975a42713d66, type: 3}
+  - {fileID: 21300000, guid: 8a927c0be6083b143b737412b6422149, type: 3}
+  - {fileID: 21300000, guid: f70beb79f6fe4bd46944a285ac114e01, type: 3}
+  harvestPlant: {fileID: 11400000, guid: 59bcd82f0eae6ed4894726c0c8883fc5, type: 2}
+  crossBreed1: {fileID: 0}
+  crossBreedResult1: {fileID: 0}
+  crossBreed2: {fileID: 0}
+  crossBreedResult2: {fileID: 0}
+  crossBreed3: {fileID: 0}
+  crossBreedResult3: {fileID: 0}

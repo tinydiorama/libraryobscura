@@ -213,6 +213,147 @@ public class AltarData : MonoBehaviour
     public List<Item> razorbackDarkspinneretItems;
     public List<Item> razorbackDuskDendronItems;
     public List<Item> razorbackHarshSnapjawItems;
+    [Header("Murky Siltstrider items")]
+    public List<Item> murkySiltstriderItems;
+    public List<Item> murkySiltstriderLucidSprigItems;
+    public List<Item> murkySiltstriderDwarfSageItems;
+    public List<Item> murkySiltstriderCloudSprigItems;
+    public List<Item> murkySiltstriderGrandTitianItems;
+    public List<Item> murkySiltstriderOphidianEyeItems;
+    public List<Item> murkySiltstriderSunbloomItems;
+    public List<Item> murkySiltstriderBloodrootItems;
+    public List<Item> murkySiltstriderDivineNeedleItems;
+    public List<Item> murkySiltstriderHeliotropeItems;
+    public List<Item> murkySiltstriderStormvineItems;
+    public List<Item> murkySiltstriderBrimstoneItems;
+    public List<Item> murkySiltstriderTwilightFernItems;
+    public List<Item> murkySiltstriderAureateItems;
+    public List<Item> murkySiltstriderBoorishThymeItems;
+    public List<Item> murkySiltstriderBrightflowerItems;
+    public List<Item> murkySiltstriderDarkspinneretItems;
+    public List<Item> murkySiltstriderDuskDendronItems;
+    public List<Item> murkySiltstriderHarshSnapjawItems;
+    public List<Item> murkySiltstriderRazorbackItems;
+    [Header("Pale Verruca items")]
+    public List<Item> paleVerrucaItems;
+    public List<Item> paleVerrucaLucidSprigItems;
+    public List<Item> paleVerrucaDwarfSageItems;
+    public List<Item> paleVerrucaCloudSprigItems;
+    public List<Item> paleVerrucaGrandTitianItems;
+    public List<Item> paleVerrucaOphidianEyeItems;
+    public List<Item> paleVerrucaSunbloomItems;
+    public List<Item> paleVerrucaBloodrootItems;
+    public List<Item> paleVerrucaDivineNeedleItems;
+    public List<Item> paleVerrucaHeliotropeItems;
+    public List<Item> paleVerrucaStormvineItems;
+    public List<Item> paleVerrucaBrimstoneItems;
+    public List<Item> paleVerrucaTwilightFernItems;
+    public List<Item> paleVerrucaAureateItems;
+    public List<Item> paleVerrucaBoorishThymeItems;
+    public List<Item> paleVerrucaBrightflowerItems;
+    public List<Item> paleVerrucaDarkspinneretItems;
+    public List<Item> paleVerrucaDuskDendronItems;
+    public List<Item> paleVerrucaHarshSnapjawItems;
+    public List<Item> paleVerrucaRazorbackItems;
+    public List<Item> paleVerrucaMurkySiltstriderItems;
+    [Header("Sanguine Clover items")]
+    public List<Item> sanguineCloverItems;
+    public List<Item> sanguineCloverLucidSprigItems;
+    public List<Item> sanguineCloverDwarfSageItems;
+    public List<Item> sanguineCloverCloudSprigItems;
+    public List<Item> sanguineCloverGrandTitianItems;
+    public List<Item> sanguineCloverOphidianEyeItems;
+    public List<Item> sanguineCloverSunbloomItems;
+    public List<Item> sanguineCloverBloodrootItems;
+    public List<Item> sanguineCloverDivineNeedleItems;
+    public List<Item> sanguineCloverHeliotropeItems;
+    public List<Item> sanguineCloverStormvineItems;
+    public List<Item> sanguineCloverBrimstoneItems;
+    public List<Item> sanguineCloverTwilightFernItems;
+    public List<Item> sanguineCloverAureateItems;
+    public List<Item> sanguineCloverBoorishThymeItems;
+    public List<Item> sanguineCloverBrightflowerItems;
+    public List<Item> sanguineCloverDarkspinneretItems;
+    public List<Item> sanguineCloverDuskDendronItems;
+    public List<Item> sanguineCloverHarshSnapjawItems;
+    public List<Item> sanguineCloverRazorbackItems;
+    public List<Item> sanguineCloverMurkySiltstriderItems;
+    public List<Item> sanguineCloverPaleVerrucaItems;
+    [Header("Sunworn Thistle items")]
+    public List<Item> sunwornThistleItems;
+    public List<Item> sunwornThistleLucidSprigItems;
+    public List<Item> sunwornThistleDwarfSageItems;
+    public List<Item> sunwornThistleCloudSprigItems;
+    public List<Item> sunwornThistleGrandTitianItems;
+    public List<Item> sunwornThistleOphidianEyeItems;
+    public List<Item> sunwornThistleSunbloomItems;
+    public List<Item> sunwornThistleBloodrootItems;
+    public List<Item> sunwornThistleDivineNeedleItems;
+    public List<Item> sunwornThistleHeliotropeItems;
+    public List<Item> sunwornThistleStormvineItems;
+    public List<Item> sunwornThistleBrimstoneItems;
+    public List<Item> sunwornThistleTwilightFernItems;
+    public List<Item> sunwornThistleAureateItems;
+    public List<Item> sunwornThistleBoorishThymeItems;
+    public List<Item> sunwornThistleBrightflowerItems;
+    public List<Item> sunwornThistleDarkspinneretItems;
+    public List<Item> sunwornThistleDuskDendronItems;
+    public List<Item> sunwornThistleHarshSnapjawItems;
+    public List<Item> sunwornThistleRazorbackItems;
+    public List<Item> sunwornThistleMurkySiltstriderItems;
+    public List<Item> sunwornThistlePaleVerrucaItems;
+    public List<Item> sunwornThistleSanguineCloverItems;
+    [Header("Thorned Esprit items")]
+    public List<Item> thornedEspritItems;
+    public List<Item> thornedEspritLucidSprigItems;
+    public List<Item> thornedEspritDwarfSageItems;
+    public List<Item> thornedEspritCloudSprigItems;
+    public List<Item> thornedEspritGrandTitianItems;
+    public List<Item> thornedEspritOphidianEyeItems;
+    public List<Item> thornedEspritSunbloomItems;
+    public List<Item> thornedEspritBloodrootItems;
+    public List<Item> thornedEspritDivineNeedleItems;
+    public List<Item> thornedEspritHeliotropeItems;
+    public List<Item> thornedEspritStormvineItems;
+    public List<Item> thornedEspritBrimstoneItems;
+    public List<Item> thornedEspritTwilightFernItems;
+    public List<Item> thornedEspritAureateItems;
+    public List<Item> thornedEspritBoorishThymeItems;
+    public List<Item> thornedEspritBrightflowerItems;
+    public List<Item> thornedEspritDarkspinneretItems;
+    public List<Item> thornedEspritDuskDendronItems;
+    public List<Item> thornedEspritHarshSnapjawItems;
+    public List<Item> thornedEspritRazorbackItems;
+    public List<Item> thornedEspritMurkySiltstriderItems;
+    public List<Item> thornedEspritPaleVerrucaItems;
+    public List<Item> thornedEspritSanguineCloverItems;
+    public List<Item> thornedEspritSunwornThistleItems;
+    [Header("Waxy Laurel items")]
+    public List<Item> waxyLaurelItems;
+    public List<Item> waxyLaurelLucidSprigItems;
+    public List<Item> waxyLaurelDwarfSageItems;
+    public List<Item> waxyLaurelCloudSprigItems;
+    public List<Item> waxyLaurelGrandTitianItems;
+    public List<Item> waxyLaurelOphidianEyeItems;
+    public List<Item> waxyLaurelSunbloomItems;
+    public List<Item> waxyLaurelBloodrootItems;
+    public List<Item> waxyLaurelDivineNeedleItems;
+    public List<Item> waxyLaurelHeliotropeItems;
+    public List<Item> waxyLaurelStormvineItems;
+    public List<Item> waxyLaurelBrimstoneItems;
+    public List<Item> waxyLaurelTwilightFernItems;
+    public List<Item> waxyLaurelAureateItems;
+    public List<Item> waxyLaurelBoorishThymeItems;
+    public List<Item> waxyLaurelBrightflowerItems;
+    public List<Item> waxyLaurelDarkspinneretItems;
+    public List<Item> waxyLaurelDuskDendronItems;
+    public List<Item> waxyLaurelHarshSnapjawItems;
+    public List<Item> waxyLaurelRazorbackItems;
+    public List<Item> waxyLaurelMurkySiltstriderItems;
+    public List<Item> waxyLaurelPaleVerrucaItems;
+    public List<Item> waxyLaurelSanguineCloverItems;
+    public List<Item> waxyLaurelSunwornThistleItems;
+    public List<Item> waxyLaurelThornedEspritItems;
 
     public List<Item> getSacrificeItems(Item item1, Item item2)
     {
@@ -1145,6 +1286,675 @@ public class AltarData : MonoBehaviour
             item1.id == "harshsnapjawplant" && item2.id == "razorbackplant")
         {
             return razorbackHarshSnapjawItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "dwarfsageplant" ||
+            item1.id == "dwarfsageplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderDwarfSageItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "lucidsprigplant" ||
+            item1.id == "lucidsprigplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderLucidSprigItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "cloudsprigplant" ||
+            item1.id == "cloudsprigplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderCloudSprigItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "grandtitianplant" ||
+            item1.id == "grandtitianplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderGrandTitianItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "ophidianeyeplant" ||
+            item1.id == "ophidianeyeplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderOphidianEyeItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "sunbloomplant" ||
+            item1.id == "sunbloomplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderSunbloomItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "bloodrootplant" ||
+            item1.id == "bloodrootplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderBloodrootItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "divineneedleplant" ||
+            item1.id == "divineneedleplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderDivineNeedleItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "heliotropeplant" ||
+            item1.id == "heliotropeplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderHeliotropeItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "stormvineplant" ||
+            item1.id == "stormvineplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderStormvineItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "brimstoneplant" ||
+            item1.id == "brimstoneplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderBrimstoneItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "twilightfernplant" ||
+            item1.id == "twilightfernplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderTwilightFernItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "aureate" ||
+            item1.id == "aureate" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderAureateItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "boorishthymeplant" ||
+            item1.id == "boorishthymeplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderBoorishThymeItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "brightflowerplant" ||
+            item1.id == "brightflowerplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderBrightflowerItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "darkspinneretplant" ||
+            item1.id == "darkspinneretplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderDarkspinneretItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "duskdendronplant" ||
+            item1.id == "duskdendronplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderDuskDendronItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "harshsnapjawplant" ||
+            item1.id == "harshsnapjawplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderHarshSnapjawItems;
+        }
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "razorbackplant" ||
+            item1.id == "razorbackplant" && item2.id == "murkysiltstriderplant")
+        {
+            return murkySiltstriderRazorbackItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "dwarfsageplant" ||
+            item1.id == "dwarfsageplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaDwarfSageItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "lucidsprigplant" ||
+            item1.id == "lucidsprigplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaLucidSprigItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "cloudsprigplant" ||
+            item1.id == "cloudsprigplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaCloudSprigItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "grandtitianplant" ||
+            item1.id == "grandtitianplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaGrandTitianItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "ophidianeyeplant" ||
+            item1.id == "ophidianeyeplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaOphidianEyeItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "sunbloomplant" ||
+            item1.id == "sunbloomplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaSunbloomItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "bloodrootplant" ||
+            item1.id == "bloodrootplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaBloodrootItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "divineneedleplant" ||
+            item1.id == "divineneedleplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaDivineNeedleItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "heliotropeplant" ||
+            item1.id == "heliotropeplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaHeliotropeItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "stormvineplant" ||
+            item1.id == "stormvineplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaStormvineItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "brimstoneplant" ||
+            item1.id == "brimstoneplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaBrimstoneItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "twilightfernplant" ||
+            item1.id == "twilightfernplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaTwilightFernItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "aureate" ||
+            item1.id == "aureate" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaAureateItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "boorishthymeplant" ||
+            item1.id == "boorishthymeplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaBoorishThymeItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "brightflowerplant" ||
+            item1.id == "brightflowerplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaBrightflowerItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "darkspinneretplant" ||
+            item1.id == "darkspinneretplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaDarkspinneretItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "duskdendronplant" ||
+            item1.id == "duskdendronplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaDuskDendronItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "harshsnapjawplant" ||
+            item1.id == "harshsnapjawplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaHarshSnapjawItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "razorbackplant" ||
+            item1.id == "razorbackplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaRazorbackItems;
+        }
+        else if (item1.id == "paleverrucaplant" && item2.id == "murkysiltstriderplant" ||
+            item1.id == "murkysiltstriderplant" && item2.id == "paleverrucaplant")
+        {
+            return paleVerrucaMurkySiltstriderItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "dwarfsageplant" ||
+            item1.id == "dwarfsageplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverDwarfSageItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "lucidsprigplant" ||
+            item1.id == "lucidsprigplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverLucidSprigItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "cloudsprigplant" ||
+            item1.id == "cloudsprigplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverCloudSprigItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "grandtitianplant" ||
+            item1.id == "grandtitianplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverGrandTitianItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "ophidianeyeplant" ||
+            item1.id == "ophidianeyeplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverOphidianEyeItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "sunbloomplant" ||
+            item1.id == "sunbloomplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverSunbloomItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "bloodrootplant" ||
+            item1.id == "bloodrootplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverBloodrootItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "divineneedleplant" ||
+            item1.id == "divineneedleplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverDivineNeedleItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "heliotropeplant" ||
+            item1.id == "heliotropeplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverHeliotropeItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "stormvineplant" ||
+            item1.id == "stormvineplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverStormvineItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "brimstoneplant" ||
+            item1.id == "brimstoneplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverBrimstoneItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "twilightfernplant" ||
+            item1.id == "twilightfernplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverTwilightFernItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "aureate" ||
+            item1.id == "aureate" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverAureateItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "boorishthymeplant" ||
+            item1.id == "boorishthymeplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverBoorishThymeItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "brightflowerplant" ||
+            item1.id == "brightflowerplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverBrightflowerItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "darkspinneretplant" ||
+            item1.id == "darkspinneretplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverDarkspinneretItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "duskdendronplant" ||
+            item1.id == "duskdendronplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverDuskDendronItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "harshsnapjawplant" ||
+            item1.id == "harshsnapjawplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverHarshSnapjawItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "razorbackplant" ||
+            item1.id == "razorbackplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverRazorbackItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "murkysiltstriderplant" ||
+            item1.id == "murkysiltstriderplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverMurkySiltstriderItems;
+        }
+        else if (item1.id == "sanguinecloverplant" && item2.id == "paleverrucaplant" ||
+            item1.id == "paleverrucaplant" && item2.id == "sanguinecloverplant")
+        {
+            return sanguineCloverPaleVerrucaItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "dwarfsageplant" ||
+            item1.id == "dwarfsageplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleDwarfSageItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "lucidsprigplant" ||
+            item1.id == "lucidsprigplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleLucidSprigItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "cloudsprigplant" ||
+            item1.id == "cloudsprigplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleCloudSprigItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "grandtitianplant" ||
+            item1.id == "grandtitianplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleGrandTitianItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "ophidianeyeplant" ||
+            item1.id == "ophidianeyeplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleOphidianEyeItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "sunbloomplant" ||
+            item1.id == "sunbloomplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleSunbloomItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "bloodrootplant" ||
+            item1.id == "bloodrootplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleBloodrootItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "divineneedleplant" ||
+            item1.id == "divineneedleplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleDivineNeedleItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "heliotropeplant" ||
+            item1.id == "heliotropeplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleHeliotropeItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "stormvineplant" ||
+            item1.id == "stormvineplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleStormvineItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "brimstoneplant" ||
+            item1.id == "brimstoneplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleBrimstoneItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "twilightfernplant" ||
+            item1.id == "twilightfernplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleTwilightFernItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "aureate" ||
+            item1.id == "aureate" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleAureateItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "boorishthymeplant" ||
+            item1.id == "boorishthymeplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleBoorishThymeItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "brightflowerplant" ||
+            item1.id == "brightflowerplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleBrightflowerItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "darkspinneretplant" ||
+            item1.id == "darkspinneretplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleDarkspinneretItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "duskdendronplant" ||
+            item1.id == "duskdendronplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleDuskDendronItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "harshsnapjawplant" ||
+            item1.id == "harshsnapjawplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleHarshSnapjawItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "razorbackplant" ||
+            item1.id == "razorbackplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleRazorbackItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "murkysiltstriderplant" ||
+            item1.id == "murkysiltstriderplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleMurkySiltstriderItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "paleverrucaplant" ||
+            item1.id == "paleverrucaplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistlePaleVerrucaItems;
+        }
+        else if (item1.id == "sunwornthistleplant" && item2.id == "sanguinecloverplant" ||
+            item1.id == "sanguinecloverplant" && item2.id == "sunwornthistleplant")
+        {
+            return sunwornThistleSanguineCloverItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "dwarfsageplant" ||
+            item1.id == "dwarfsageplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritDwarfSageItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "lucidsprigplant" ||
+            item1.id == "lucidsprigplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritLucidSprigItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "cloudsprigplant" ||
+            item1.id == "cloudsprigplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritCloudSprigItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "grandtitianplant" ||
+            item1.id == "grandtitianplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritGrandTitianItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "ophidianeyeplant" ||
+            item1.id == "ophidianeyeplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritOphidianEyeItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "sunbloomplant" ||
+            item1.id == "sunbloomplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritSunbloomItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "bloodrootplant" ||
+            item1.id == "bloodrootplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritBloodrootItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "divineneedleplant" ||
+            item1.id == "divineneedleplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritDivineNeedleItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "heliotropeplant" ||
+            item1.id == "heliotropeplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritHeliotropeItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "stormvineplant" ||
+            item1.id == "stormvineplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritStormvineItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "brimstoneplant" ||
+            item1.id == "brimstoneplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritBrimstoneItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "twilightfernplant" ||
+            item1.id == "twilightfernplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritTwilightFernItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "aureate" ||
+            item1.id == "aureate" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritAureateItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "boorishthymeplant" ||
+            item1.id == "boorishthymeplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritBoorishThymeItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "brightflowerplant" ||
+            item1.id == "brightflowerplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritBrightflowerItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "darkspinneretplant" ||
+            item1.id == "darkspinneretplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritDarkspinneretItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "duskdendronplant" ||
+            item1.id == "duskdendronplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritDuskDendronItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "harshsnapjawplant" ||
+            item1.id == "harshsnapjawplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritHarshSnapjawItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "razorbackplant" ||
+            item1.id == "razorbackplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritRazorbackItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "murkysiltstriderplant" ||
+            item1.id == "murkysiltstriderplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritMurkySiltstriderItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "paleverrucaplant" ||
+            item1.id == "paleverrucaplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritPaleVerrucaItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "sanguinecloverplant" ||
+            item1.id == "sanguinecloverplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritSanguineCloverItems;
+        }
+        else if (item1.id == "thornedespritplant" && item2.id == "sunwornthistleplant" ||
+            item1.id == "sunwornthistleplant" && item2.id == "thornedespritplant")
+        {
+            return thornedEspritSunwornThistleItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "dwarfsageplant" ||
+            item1.id == "dwarfsageplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelDwarfSageItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "lucidsprigplant" ||
+            item1.id == "lucidsprigplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelLucidSprigItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "cloudsprigplant" ||
+            item1.id == "cloudsprigplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelCloudSprigItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "grandtitianplant" ||
+            item1.id == "grandtitianplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelGrandTitianItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "ophidianeyeplant" ||
+            item1.id == "ophidianeyeplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelOphidianEyeItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "sunbloomplant" ||
+            item1.id == "sunbloomplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelSunbloomItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "bloodrootplant" ||
+            item1.id == "bloodrootplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelBloodrootItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "divineneedleplant" ||
+            item1.id == "divineneedleplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelDivineNeedleItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "heliotropeplant" ||
+            item1.id == "heliotropeplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelHeliotropeItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "stormvineplant" ||
+            item1.id == "stormvineplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelStormvineItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "brimstoneplant" ||
+            item1.id == "brimstoneplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelBrimstoneItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "twilightfernplant" ||
+            item1.id == "twilightfernplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelTwilightFernItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "aureate" ||
+            item1.id == "aureate" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelAureateItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "boorishthymeplant" ||
+            item1.id == "boorishthymeplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelBoorishThymeItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "brightflowerplant" ||
+            item1.id == "brightflowerplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelBrightflowerItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "darkspinneretplant" ||
+            item1.id == "darkspinneretplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelDarkspinneretItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "duskdendronplant" ||
+            item1.id == "duskdendronplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelDuskDendronItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "harshsnapjawplant" ||
+            item1.id == "harshsnapjawplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelHarshSnapjawItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "razorbackplant" ||
+            item1.id == "razorbackplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelRazorbackItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "murkysiltstriderplant" ||
+            item1.id == "murkysiltstriderplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelMurkySiltstriderItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "paleverrucaplant" ||
+            item1.id == "paleverrucaplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelPaleVerrucaItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "sanguinecloverplant" ||
+            item1.id == "sanguinecloverplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelSanguineCloverItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "sunwornthistleplant" ||
+            item1.id == "sunwornthistleplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelSunwornThistleItems;
+        }
+        else if (item1.id == "waxylaurelplant" && item2.id == "thornedespritplant" ||
+            item1.id == "thornedespritplant" && item2.id == "waxylaurelplant")
+        {
+            return waxyLaurelThornedEspritItems;
         }
         return new List<Item>();
     }

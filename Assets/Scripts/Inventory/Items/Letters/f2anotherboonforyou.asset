@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f2anotherboonforyou
+  m_EditorClassIdentifier: 
+  id: f2anotherboonforyou
+  from: A Friend
+  subject: Another boon for you
+  letterBgTan: 1
+  body: 'Thank you again for your continued correspondence. Together we''ll unravel
+    all of the house''s mysteries, inch by inch and page by page!
+
+
+    My endless
+    and benevolent research has yielded more fruit! I found another key. This one
+    was in an old antique store. The owner didn''t want to part with it, but I convinced
+    him otherwise. He seemed nervous. I''m sure it will be okay.
+
+
+    Kindly,
+
+    A
+    Friend'

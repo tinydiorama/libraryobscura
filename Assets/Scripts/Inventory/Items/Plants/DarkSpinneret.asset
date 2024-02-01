@@ -21,5 +21,12 @@ MonoBehaviour:
   category: 1
   buyPrice: 18
   sellPrice: 18
+  itemDesc: 
   seedImages: []
   harvestPlant: {fileID: 0}
+  crossBreed1: {fileID: 11400000, guid: 221bf172d524650429c0778b726806b3, type: 2}
+  crossBreedResult1: {fileID: 11400000, guid: d97ea8aaff9f92d4f9ac84af6101b5d9, type: 2}
+  crossBreed2: {fileID: 11400000, guid: a6f28687b4e18e144bda3b524e74754a, type: 2}
+  crossBreedResult2: {fileID: 11400000, guid: c416a9f879837744e9b835711a49b18f, type: 2}
+  crossBreed3: {fileID: 11400000, guid: 351554a8ad30f7349b933f2543ecd8a4, type: 2}
+  crossBreedResult3: {fileID: 11400000, guid: 7607fb4d242ec094f91fe02a75fe345c, type: 2}

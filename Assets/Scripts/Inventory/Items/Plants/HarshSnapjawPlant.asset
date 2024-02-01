@@ -24,9 +24,9 @@ MonoBehaviour:
   itemDesc: 
   seedImages: []
   harvestPlant: {fileID: 0}
-  crossBreed1: {fileID: 0}
-  crossBreedResult1: {fileID: 0}
-  crossBreed2: {fileID: 0}
-  crossBreedResult2: {fileID: 0}
-  crossBreed3: {fileID: 0}
-  crossBreedResult3: {fileID: 0}
+  crossBreed1: {fileID: 11400000, guid: d97ea8aaff9f92d4f9ac84af6101b5d9, type: 2}
+  crossBreedResult1: {fileID: 11400000, guid: f95f43a900e706942b4e11219f96988e, type: 2}
+  crossBreed2: {fileID: 11400000, guid: 7607fb4d242ec094f91fe02a75fe345c, type: 2}
+  crossBreedResult2: {fileID: 11400000, guid: bf0f15363019e974cb93e9964d2604c8, type: 2}
+  crossBreed3: {fileID: 11400000, guid: 826be620a9024784db9738638b33f36d, type: 2}
+  crossBreedResult3: {fileID: 11400000, guid: ea19d4ec7ddaa6642866d02647a5761c, type: 2}

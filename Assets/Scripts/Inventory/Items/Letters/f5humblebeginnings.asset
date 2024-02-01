@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f5humblebeginnings
+  m_EditorClassIdentifier: 
+  id: f5humblebeginnings
+  from: A Friend
+  subject: Humble beginnings
+  letterBgTan: 1
+  body: 'I hope your studies have progressed with these confounding books! We have
+    not exchanged many pleasantries so far. I grew up in the city and was fortunate
+    enough to be born to a wealthy trading family. They made their fortunes trading
+    rare and hard to acquire items. As a child, I did not want for anything but I
+    did try to keep an open mind. I want to change the world!
+
+
+    Boldly,
+
+    A
+    Friend'

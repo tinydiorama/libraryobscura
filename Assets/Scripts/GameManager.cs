@@ -91,12 +91,13 @@ public class GameManager : MonoBehaviour
         onEndOfDay?.Invoke();
 
         // nighttime activities :)
-        if (inv.containsLetter("letter2") && !StoryManager.instance.dream1Triggered
+        if (inv.containsLetter("2newlibrarian") && !StoryManager.instance.dream1Triggered
             && inv.itemsOrdered.Count == 0) // do the dream instead
         {
             CutsceneManager.instance.loadCutscene1();
             StoryManager.instance.dream1Triggered = true;
-        } else if ( inv.containsLetter("letter8") && ! StoryManager.instance.dream2Triggered)
+        } else if (inv.containsLetter("x6strangebedfellows") && inv.containsLetter("f6finedining")
+            && ! StoryManager.instance.dream2Triggered)
         {
             CutsceneManager.instance.loadCutscene2();
             StoryManager.instance.dream2Triggered = true;

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: PaleVerrucaSeed
+  m_EditorClassIdentifier: 
+  id: paleverrucaseed
+  itemName: Pale Verruca Seed
+  icon: {fileID: 21300000, guid: 0998e775668c8f545a9226e029f1615c, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 15
+  sellPrice: 15
+  itemDesc: 
+  seedImages:
+  - {fileID: 21300000, guid: 0120c8e08b6fa5a48acf506596e3411f, type: 3}
+  - {fileID: 21300000, guid: 92cd11548bd75c943b4e281e803de487, type: 3}
+  - {fileID: 21300000, guid: 37728b1684c962f4ea74d2ae2634f674, type: 3}
+  harvestPlant: {fileID: 11400000, guid: dfeea9ffe319d04458125c98aa27b7d5, type: 2}
+  crossBreed1: {fileID: 0}
+  crossBreedResult1: {fileID: 0}
+  crossBreed2: {fileID: 0}
+  crossBreedResult2: {fileID: 0}
+  crossBreed3: {fileID: 0}
+  crossBreedResult3: {fileID: 0}

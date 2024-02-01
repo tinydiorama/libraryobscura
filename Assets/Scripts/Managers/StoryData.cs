@@ -6,19 +6,23 @@ public class StoryData : MonoBehaviour
 {
     public Letter day1Letter;
     public List<Item> day1Seeds;
-    public Letter day2Letter;
-    public List<Item> day2Seeds;
-    public List<Letter> day3Letters;
-    public Book day3Book;
-    public Letter day4Letter;
-    public Item day4Key;
-    public Letter day5Letter;
-    public Letter day6Letter;
-    public Letter day7Letter;
-    public Book day7Book;
-    public List<Letter> day10Letters;
-    public Item day10Key;
-    public Letter day11Letter;
-    public Letter day12Letter;
-    public Book day12Book;
+    public Letter phase2Letter;
+    public List<Item> phase2Seeds;
+    public List<Letter> phase3Letters;
+    public Book phase3Book;
+    public List<Letter> phase4Letters;
+    public Item phase4Key;
+    public Letter x1Letter;
+    public Letter x2Letter;
+    public Letter x3Letter;
+    public Letter x4Letter;
+    public Letter x5Letter;
+    public Letter x6Letter;
+
+    public Letter f1Letter;
+    public Letter f2Letter;
+    public Letter f3Letter;
+    public Letter f4Letter;
+    public Letter f5Letter;
+    public Letter f6Letter;
 }

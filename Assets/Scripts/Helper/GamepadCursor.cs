@@ -10,6 +10,7 @@ public class GamepadCursor : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private RectTransform cursorTransform;
     [SerializeField] private RectTransform canvasTransform;
+
     private Mouse virtualMouse;
     private float cursorSpeed = 1000f;
     private bool previousMouseState;
@@ -20,14 +21,23 @@ public class GamepadCursor : MonoBehaviour
     private const string gamepadScheme = "Gamepad";
     private const string mouseScheme = "Keyboard&Mouse";
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     private void Update()
     {
+        Cursor.visible = false;
         if (previousControlScheme != playerInput.currentControlScheme)
         {
             cursorTransform.gameObject.SetActive(true);
-            Cursor.visible = false;
             InputState.Change(virtualMouse.position, currentMouse.position.ReadValue());
             AnchorCursor(currentMouse.position.ReadValue());
+        }
+        if ( playerInput.currentControlScheme == mouseScheme )
+        {
+            cursorTransform.position = Input.mousePosition;
         }
         previousControlScheme = playerInput.currentControlScheme;
     }

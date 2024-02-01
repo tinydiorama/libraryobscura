@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f3myresearch
+  m_EditorClassIdentifier: 
+  id: f3myresearch
+  from: A Friend
+  subject: My research
+  letterBgTan: 1
+  body: 'In research, scholars always dig deep to try to find the answers. That is
+    what I''m doing for the house you are in.
+
+
+    I have a working theory: it has
+    to do with the books. They yearn for the house, like iron filings to magnets.
+    Only at the house, you are able to read the books I cannot. The link between
+    these books and the house may be the answer...
+
+
+    Spellbound,
+
+    A Friend'

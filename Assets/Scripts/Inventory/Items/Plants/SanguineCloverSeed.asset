@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
+  m_Name: SanguineCloverSeed
+  m_EditorClassIdentifier: 
+  id: sanguinecloverseed
+  itemName: Sanguine Clover Seed
+  icon: {fileID: 21300000, guid: 48c739b87f608284899b165baa38f7a3, type: 3}
+  sellable: 0
+  buyable: 1
+  canBeSacrificed: 0
+  category: 0
+  buyPrice: 20
+  sellPrice: 20
+  itemDesc: 
+  seedImages:
+  - {fileID: 21300000, guid: 2479e821683f28c428c767be55346be8, type: 3}
+  - {fileID: 21300000, guid: 0b4a28b263664124fb0bc9e5c4789270, type: 3}
+  - {fileID: 21300000, guid: 34e3c6d6db78c9e4a90a39c06656c8b5, type: 3}
+  harvestPlant: {fileID: 11400000, guid: aa1d181bc59e86e4aac0e55f96bbbcff, type: 2}
+  crossBreed1: {fileID: 0}
+  crossBreedResult1: {fileID: 0}
+  crossBreed2: {fileID: 0}
+  crossBreedResult2: {fileID: 0}
+  crossBreed3: {fileID: 0}
+  crossBreedResult3: {fileID: 0}

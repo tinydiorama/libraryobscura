@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Book2
   m_EditorClassIdentifier: 
   id: book2
-  title: asdf
-  author: asdf
-  bookColor: {r: 0, g: 0, b: 0, a: 0}
+  title: The Brights
+  author: Julius Anandi
+  bookColor: {r: 0.9811321, g: 0.5845902, b: 0, a: 0}
   page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: asdfasdf
+  page2: 'The Seven Brights were said to be present moments after the very beginning.
+    They began as elemental forces: holders, splinters, and melders with each other
+    and all creation.
+
+
+    As willpower and consciousness developed over time, so
+    did the Brights take this into themselves. Humanity and the Brights moved together,
+    wills united as one. Each one reflected the other with kindnesses, strengths,
+    and certain weaknesses.'

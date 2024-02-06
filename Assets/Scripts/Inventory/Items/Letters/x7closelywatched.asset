@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: x7closelywatched
+  m_EditorClassIdentifier: 
+  id: x7closelywatched
+  from: X
+  subject: Closely Watched
+  letterBgTan: 0
+  body: 'Father Octavius continues to be my shadow. I treated a particularly afflicted
+    victim today, and I applied some of your herbs. The herbs cause pain at the beginning,
+    but soon the patient eases into a deep, restful sleep. This way, the shadows
+    lessen.
+
+
+    Only... Octavius asked how it worked. I did my best to answer,
+    but he was not pleased. This is very bad.
+
+
+    Stunned,
+
+    X'

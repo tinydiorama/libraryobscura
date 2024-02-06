@@ -24,7 +24,7 @@ public class Bed : MonoBehaviour
         {
             if (InputManager.GetInstance().GetInteractPressed())
             {
-                if (! StoryManager.instance.cutscene2Triggered || ! InventoryManager.instance.containsLetter("letter1"))
+                if (! StoryManager.instance.cutscene2Triggered || ! InventoryManager.instance.containsLetter("1newlybound"))
                 {
                     DialogueManager.GetInstance().EnterDialogueMode(finishExploringFirst);
                 }

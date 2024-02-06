@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c9a9b58a9f00d44ab7f89b28fe0858, type: 3}
+  m_Name: Book5
+  m_EditorClassIdentifier: 
+  id: book5
+  title: alsdkf
+  author: asdfa
+  bookColor: {r: 0, g: 0, b: 0, a: 0}
+  page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
+  page2: asdf

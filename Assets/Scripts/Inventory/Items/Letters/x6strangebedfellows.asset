@@ -16,8 +16,16 @@ MonoBehaviour:
   from: X
   subject: Strange Bedfellows
   letterBgTan: 0
-  body: "I wake up with knots and butterflies in my stomach every morning now. The
-    Vicars come through each day with blessings and purification rites. They haven't
-    changed anything outright, but it's all anyone can talk about. Father Octavius
-    seems to be keeping an eye on me everywhere I go in particular. He keep saying
-    I should pray more. \n\nSkeptically,\nX"
+  body: 'I wake up with knots and butterflies in my stomach every morning now. The
+    Vicars come through each day with blessings and purification rites. They haven''t
+    changed anything outright, but the threat hangs in the air.
+
+
+    Father Octavius
+    seems to be keeping a particular eye on me. He has more than once questioned
+    my piousness, asking me how often I sit down to my prayers.
+
+
+    Skeptically,
+
+    X'

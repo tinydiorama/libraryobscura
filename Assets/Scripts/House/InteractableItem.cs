@@ -87,7 +87,7 @@ public class InteractableItem : Interactable
     public void resetContainsItem()
     {
         int currentChance = Random.Range(1, 10);
-        if (currentChance <= randomChance) // success
+        if (currentChance <= randomChance && StoryManager.instance.sellAllowed) // success
         {
             hasItem = true;
             alertBubble.SetActive(true);

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: x12pestilent
+  m_EditorClassIdentifier: 
+  id: x12pestilent
+  from: X
+  subject: Priests and Exile
+  letterBgTan: 0
+  body: ' It was chaos when I came off the wards today. Several of the Vicars stormed
+    out of Father Octavius''s chambers, all the while shouting. It appears the Vicars
+    are being formally investigated for "abandonment of duty." I also heard that
+    two of the them have left for exile. What is happening?
+
+
+    As my luck perhaps
+    turns... so does yours. I have found another key in the confessionals. The keys
+    are so cold - I know they must belong with the manor.
+
+
+    Dazedly,
+
+    X'

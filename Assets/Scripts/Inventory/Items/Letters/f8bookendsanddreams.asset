@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f8bookendsanddreams
+  m_EditorClassIdentifier: 
+  id: f8bookendsanddreams
+  from: A Friend
+  subject: Bookends and Dreams
+  letterBgTan: 1
+  body: 'I admit to you I have been struggling to find you more books - it is difficult
+    to know where to go. On the streets now there are strange people who are sickly,
+    like ghosts. I hardly know what to make of it.
+
+
+    But at long last I have
+    found you something new. Letter after letter, an endless barrage of opened missives.
+    Then it finally came. The book is here.
+
+
+    Sleep comes to me now... but these
+    dreams are so strange.
+
+
+    Ponderingly,
+
+    A Friend'

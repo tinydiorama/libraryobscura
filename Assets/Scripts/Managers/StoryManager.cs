@@ -11,6 +11,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool cutscene3Triggered;
     public bool dream1Triggered;
     public bool dream2Triggered;
+    public bool dream3Triggered;
     public bool mailboxInteract1;
     public bool buyAllowed;
     public bool sellAllowed;
@@ -91,7 +92,8 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
-            else if (dream1Triggered && inv.containsLetter("2newlibrarian") && !inv.containsLetter("3wizenedgardener"))
+            else if (dream1Triggered && inv.containsLetter("2newlibrarian") && !inv.containsLetter("3wizenedgardener")
+                && inv.numItemsSoldAllTime >= 1)
             {
                 foreach (Letter letter in data.phase3Letters)
                 {
@@ -115,7 +117,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
 
             /* x path */
             if ( inv.containsLetter("5bookkeeper") && ! inv.containsLetter("x1youmusthurry")
-                && inv.numItemsSoldAllTime > 1 )
+                && inv.numItemsSoldAllTime >= 2 )
             {
                 mm.addNewLetter(data.x1Letter);
                 mm.hasNewMail = true;
@@ -123,10 +125,11 @@ public class StoryManager : MonoBehaviour, iDataPersistence
             } else if (inv.containsLetter("x1youmusthurry") && !inv.containsLetter("x2imsorry"))
             {
                 mm.addNewLetter(data.x2Letter);
+                mm.newItems.Add(data.secondFloorKey);
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             } else if (inv.containsLetter("x2imsorry") && !inv.containsLetter("x3hopeless")
-                && inv.numItemsSoldAllTime > 5)
+                && inv.numItemsSoldAllTime >= 5)
             {
                 mm.addNewLetter(data.x3Letter);
                 mm.hasNewMail = true;
@@ -137,7 +140,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             } else if (inv.containsLetter("x4churchlyvisitors") && !inv.containsLetter("x5vicaroverseers")
-                && inv.numItemsSoldAllTime > 10)
+                && inv.numItemsSoldAllTime >= 10)
             {
                 mm.addNewLetter(data.x5Letter);
                 mm.hasNewMail = true;
@@ -151,9 +154,10 @@ public class StoryManager : MonoBehaviour, iDataPersistence
 
             /* friend path */
             if (inv.containsLetter("5bookkeeper") && !inv.containsLetter("f1breakthrough")
-                && numDiscovered > 3)
+                && numDiscovered >= 2)
             {
                 mm.addNewLetter(data.f1Letter);
+                mm.addNewBook(data.book2);
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
@@ -164,7 +168,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("f2anotherboonforyou") && !inv.containsLetter("f3myresearch")
-                && numDiscovered > 4)
+                && numDiscovered >= 3)
             {
                 mm.addNewLetter(data.f3Letter);
                 mm.hasNewMail = true;
@@ -177,7 +181,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("f4helpfultidings") && !inv.containsLetter("f5humblebeginnings")
-                && numDiscovered > 5)
+                && numDiscovered >= 5)
             {
                 mm.addNewLetter(data.f5Letter);
                 mm.hasNewMail = true;
@@ -186,6 +190,155 @@ public class StoryManager : MonoBehaviour, iDataPersistence
             else if (inv.containsLetter("f5humblebeginnings") && !inv.containsLetter("f6finedining"))
             {
                 mm.addNewLetter(data.f6Letter);
+                mm.addNewBook(data.book3);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+
+            /* x path 2 */
+            if (dream2Triggered && !inv.containsLetter("x7closelywatched")
+                && inv.numItemsSoldAllTime >= 15)
+            {
+                mm.addNewLetter(data.x7Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x7closelywatched") && !inv.containsLetter("x8amatteroffaith"))
+            {
+                mm.addNewLetter(data.x8Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x8amatteroffaith") && !inv.containsLetter("x9gruntwork")
+                && inv.numItemsSoldAllTime >= 20)
+            {
+                mm.addNewLetter(data.x9Letter);
+                mm.newItems.Add(data.thirdFloorKey);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x9gruntwork") && !inv.containsLetter("x10traitorsofthecloth"))
+            {
+                mm.addNewLetter(data.x10Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x10traitorsofthecloth") && !inv.containsLetter("x11isawthemdoit")
+                && inv.numItemsSoldAllTime >= 25)
+            {
+                mm.addNewLetter(data.x11Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+
+
+            /* friend path 2 */
+            if (dream2Triggered && !inv.containsLetter("f7ashesandgardens")
+               && numDiscovered >= 6)
+            {
+                mm.addNewLetter(data.f7Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f7ashesandgardens") && !inv.containsLetter("f8bookendsanddreams"))
+            {
+                mm.addNewLetter(data.f8Letter);
+                mm.addNewBook(data.book4);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f8bookendsanddreams") && !inv.containsLetter("f9abrotherlyvisitor")
+                && numDiscovered >= 2)
+            {
+                mm.addNewLetter(data.f9Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f9abrotherlyvisitor") && !inv.containsLetter("f10brotherlyadventures"))
+            {
+                mm.addNewLetter(data.f10Letter);
+                mm.addNewBook(data.book5);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f10brotherlyadventures") && !inv.containsLetter("f11anonlychild")
+                && numDiscovered >= 2)
+            {
+                mm.addNewLetter(data.f11Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+
+            /* x path 3 */
+            if (dream3Triggered && !inv.containsLetter("x12pestilent")
+                && inv.numItemsSoldAllTime >= 30)
+            {
+                mm.addNewLetter(data.x12Letter);
+                mm.newItems.Add(data.fourthFloorKey);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x12pestilent") && !inv.containsLetter("x13homecomings"))
+            {
+                mm.addNewLetter(data.x13Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x13homecomings") && !inv.containsLetter("x14octavius")
+                && inv.numItemsSoldAllTime >= 35)
+            {
+                mm.addNewLetter(data.x14Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x14octavius") && !inv.containsLetter("x15itfinallyhappened"))
+            {
+                mm.addNewLetter(data.x15Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("x15itfinallyhappened") && !inv.containsLetter("x16isthistheend")
+                && inv.numItemsSoldAllTime >= 40)
+            {
+                mm.addNewLetter(data.x16Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+
+            /* friend path 3 */
+            if (dream3Triggered && !inv.containsLetter("f12familyhonor")
+               && numDiscovered >= 9)
+            {
+                mm.addNewLetter(data.f12Letter);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f12familyhonor") && !inv.containsLetter("f13theyspeaktome"))
+            {
+                mm.addNewLetter(data.f13Letter);
+                mm.addNewBook(data.book6);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f13theyspeaktome") && !inv.containsLetter("f14mindonfire")
+                && numDiscovered >= 10)
+            {
+                mm.addNewLetter(data.f14Letter);
+                mm.addNewBook(data.book7);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f14mindonfire") && !inv.containsLetter("f15thepagesarebleeding"))
+            {
+                mm.addNewLetter(data.f15Letter);
+                mm.addNewBook(data.book8);
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
+            else if (inv.containsLetter("f15thepagesarebleeding") && !inv.containsLetter("f16deliverance")
+                && numDiscovered >= 11)
+            {
+                mm.addNewLetter(data.f16Letter);
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             }
@@ -233,6 +386,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.sellAllowed = data.sellAllowed;
         this.dream1Triggered = data.dream1triggered;
         this.dream2Triggered = data.dream2triggered;
+        this.dream3Triggered = data.dream3triggered;
         this.seenAltar = data.seenAltar;
         this.lastLetterReceivedDay = data.lastLetterReceivedDay;
         this.lucidity = data.lucidity;
@@ -240,6 +394,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.floor2Unlocked = data.floor2Unlocked;
         this.floor2StudyUnlocked = data.floor2StudyUnlocked;
         this.floor3Unlocked = data.floor3Unlocked;
+        this.floor4Unlocked = data.floor4Unlocked;
         this.backgateUnlocked = data.backgateUnlocked;
 
         if (figure != null)
@@ -284,6 +439,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.sellAllowed = this.sellAllowed;
         data.dream1triggered = this.dream1Triggered;
         data.dream2triggered = this.dream2Triggered;
+        data.dream3triggered = this.dream3Triggered;
         data.seenAltar = this.seenAltar;
         data.lastLetterReceivedDay = this.lastLetterReceivedDay;
         data.lucidity = this.lucidity;
@@ -292,5 +448,6 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.floor2Unlocked = this.floor2Unlocked;
         data.floor2StudyUnlocked = this.floor2StudyUnlocked;
         data.floor3Unlocked = this.floor3Unlocked;
+        data.floor4Unlocked = this.floor4Unlocked;
     }
 }

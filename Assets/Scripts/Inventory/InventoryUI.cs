@@ -154,7 +154,7 @@ public class InventoryUI : MonoBehaviour
     public void showLetterCloseup(ref LetterSlot letterToShow)
     {
         isCloseupShown = true;
-        if (letterToShow.letter.id == "letter2")
+        if (letterToShow.letter.id == "2newlibrarian")
         {
             StoryManager.instance.buyAllowed = true;
             StoryManager.instance.sellAllowed = true;

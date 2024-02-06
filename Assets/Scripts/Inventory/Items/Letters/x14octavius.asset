@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: x14octavius
+  m_EditorClassIdentifier: 
+  id: x14octavius
+  from: X
+  subject: Father Octavius
+  letterBgTan: 0
+  body: 'The Church is ablaze with rumors! Dozens of priests have now left with the
+    two exiled Vicars. But it doesn''t matter -  the people have been mollified by
+    the silly Sanctity ritual. Octavius has announced that the Church''s Seat would
+    now be on the same grounds as the Infirmary. He said, "Faith is ever our shield."
+
+
+    It
+    seems I was wrong to hope. The Church is stronger than ever. All I can do now
+    is work. What else can be done? The plague still sweeps the city.
+
+
+    Faithlessly,
+
+    X'

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: x16isthistheend
+  m_EditorClassIdentifier: 
+  id: x16isthistheend
+  from: X
+  subject: Is this the end?
+  letterBgTan: 0
+  body: 'My dearest friend,
+
+
+    Thoughts are slow to come now. I feel like lead,
+    in thought and form. My fever is gone, and I know all too well that it is the
+    beginning of the end. I realize now the Plague is an affliction of body, mind,
+    and spirit.
+
+
+    The only thing that can stop the plague is the Panacea of Binding,
+    the strongest and most powerful herb. If you send it to me, perhaps I can save
+    even myself, and all of us.
+
+
+    Yours,
+
+    X'

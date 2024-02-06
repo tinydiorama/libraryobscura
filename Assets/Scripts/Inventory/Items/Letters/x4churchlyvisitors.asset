@@ -16,11 +16,14 @@ MonoBehaviour:
   from: X
   subject: Churchly Visitors
   letterBgTan: 0
-  body: 'The Church of Consecration have been increasingly present with the plague.
-    They''ve come to Saint Rose, our infirmary and house of rest, saying they''re
-    here to help. I don''t believe a word of it. I never believed any of their nonsense
-    growing up, though I''d never tell them that. The Church is not an ally, for
-    us or anyone. Remember this always.
+  body: 'The Church of Consecration have been nosying about Saint Rose, our infirmary,
+    recently. They say they''re here to help, but I don''t believe a word of it.
+    I tremble even putting these words to paper... I could be killed if this letter
+    were intercepted.
+
+
+    The Church is not an ally, for us or anyone. Remember
+    this always.
 
 
     Carefully,

@@ -16,13 +16,9 @@ MonoBehaviour:
   from: X
   subject: Vicar Overseers
   letterBgTan: 0
-  body: 'My clinic is no longer my own, it belongs to the Church. The Church ordained
-    that our humble hospital would benefit from holy words from the Brights. Five,
-    five of their Vicars have been sent to Saint Rose to "observe and support." They
-    say all of us should continue our duties of caring, healing, and burying. Watch
-    the Vicars closely.
-
-
-    Respectfully,
-
-    X'
+  body: "My clinic is no longer my own. It now belongs to the Church. It has ordained
+    that our humble hospital would benefit from holy words from the Brights, and
+    so they have sent five - five! - of their Vicars to \"observe and support.\"\n\nThey
+    say we should continue our duties of caring, healing, and burying and that they
+    are simply here to observe. But... I confess I worry for what will happen next.
+    \n\nRespectfully,\nX"

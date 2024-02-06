@@ -16,7 +16,7 @@ public class CutsceneTrigger3 : MonoBehaviour
         if ( canShowNotif )
         {
 
-            if (inv.containsLetter("letter2") )
+            if (inv.containsLetter("2newlibrarian") )
             {
                 GameObject notification = Instantiate(notificationPrefab, notifications.transform);
                 Notification currNotif = notification.GetComponent<Notification>();

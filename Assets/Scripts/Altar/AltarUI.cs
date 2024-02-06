@@ -31,22 +31,27 @@ public class AltarUI : MonoBehaviour
 
     private TextMeshProUGUI text;
     private TextMeshProUGUI text2;
+    private bool showingMessage;
 
     [SerializeField] private AltarData altarData;
 
     public void showIntroMessage()
     {
-        GameManager.GetInstance().isPaused = true;
-        introTextContainer.SetActive(true);
-        text = introText1.GetComponent<TextMeshProUGUI>();
-        var color = text.color;
-        var fadeincolor = color;
-        fadeincolor.a = 1;
-        LeanTween.value(introText1.gameObject, updateColorValueCallback, color, fadeincolor, 5f).setEase(LeanTweenType.easeInOutSine);
-        text2 = introText2.GetComponent<TextMeshProUGUI>();
-        LeanTween.value(introText2.gameObject, updateColorValueCallback2, color, fadeincolor, 5f).setEase(LeanTweenType.easeInOutSine).setDelay(1f);
+        if ( ! showingMessage )
+        {
 
-        StartCoroutine(fadeOutText());
+            GameManager.GetInstance().isPaused = true;
+            introTextContainer.SetActive(true);
+            text = introText1.GetComponent<TextMeshProUGUI>();
+            var color = text.color;
+            var fadeincolor = color;
+            fadeincolor.a = 1;
+            LeanTween.value(introText1.gameObject, updateColorValueCallback, color, fadeincolor, 5f).setEase(LeanTweenType.easeInOutSine);
+            text2 = introText2.GetComponent<TextMeshProUGUI>();
+            LeanTween.value(introText2.gameObject, updateColorValueCallback2, color, fadeincolor, 5f).setEase(LeanTweenType.easeInOutSine).setDelay(1f);
+            showingMessage = true;
+            StartCoroutine(fadeOutText());
+        }
     }
 
     private IEnumerator fadeOutText()
@@ -58,6 +63,7 @@ public class AltarUI : MonoBehaviour
         LeanTween.value(introText1.gameObject, updateColorValueCallback, color, fadeoutcolor, 3f).setEase(LeanTweenType.easeInOutSine);
         LeanTween.value(introText2.gameObject, updateColorValueCallback2, color, fadeoutcolor, 3f).setEase(LeanTweenType.easeInOutSine).setOnComplete(() =>
         {
+            showingMessage = false;
             introTextContainer.SetActive(true);
             StoryManager.instance.seenAltar = true;
             showAltar();
@@ -66,15 +72,20 @@ public class AltarUI : MonoBehaviour
 
     public void showAltar()
     {
-        InventoryManager inv = InventoryManager.instance;
-        GameManager.GetInstance().isPaused = true;
-        if ( inv.numItemsForSacrifice() < 2 ) // need 2 or more
+        if ( ! showingMessage )
         {
-            cannotUseAltar();
-        } else
-        {
-            altarPanel.SetActive(true);
-            setupItems();
+            showingMessage = true;
+            InventoryManager inv = InventoryManager.instance;
+            GameManager.GetInstance().isPaused = true;
+            if (inv.numItemsForSacrifice() < 2) // need 2 or more
+            {
+                cannotUseAltar();
+            }
+            else
+            {
+                altarPanel.SetActive(true);
+                setupItems();
+            }
         }
     }
 
@@ -216,6 +227,7 @@ public class AltarUI : MonoBehaviour
     {
         altarGetPanel.SetActive(false);
         GameManager.GetInstance().isPaused = false;
+        showingMessage = false;
     }
 
 
@@ -223,18 +235,21 @@ public class AltarUI : MonoBehaviour
     {
         GameManager.GetInstance().isPaused = false;
         altarPanel.SetActive(false);
+        showingMessage = false;
     }
 
     public void cannotUseAltar()
     {
         GameManager.GetInstance().isPaused = true;
         cannotUseAltarPanel.SetActive(true);
+        showingMessage = true;
     }
 
     public void closeCannotUse()
     {
         GameManager.GetInstance().isPaused = false;
         cannotUseAltarPanel.SetActive(false);
+        showingMessage = false;
     }
 
     private void updateColorValueCallback(Color val)

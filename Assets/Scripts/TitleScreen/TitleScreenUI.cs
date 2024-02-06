@@ -9,6 +9,7 @@ public class TitleScreenUI : MonoBehaviour
 {
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button continueButton;
+    [SerializeField] private GameObject newGameConfirmPanel;
 
     public LevelLoader loader;
 
@@ -29,7 +30,24 @@ public class TitleScreenUI : MonoBehaviour
     {
         disableButtons();
         DataPersistenceManager.instance.NewGame();
+        DataPersistenceManager.instance.SaveGame();
         loader.LoadLevel((int)SceneIndexes.MAIN_WORLD);
+    }
+
+    public void showConfirmNewGame()
+    {
+        if ( DataPersistenceManager.instance.HasGameData())
+        { // show confirm panel
+            newGameConfirmPanel.SetActive(true);
+        } else
+        { // can go straight to creating a new game because there's no game data already
+            NewGame();
+        }
+    }
+
+    public void hideConfirmNewGame()
+    {
+        newGameConfirmPanel.SetActive(false);
     }
 
     public void ContinueGame()

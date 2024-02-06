@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Book3
   m_EditorClassIdentifier: 
   id: book3
-  title: who cares
-  author: blah
-  bookColor: {r: 0, g: 0, b: 0, a: 1}
+  title: Church of Consecration
+  author: Father Antoninus
+  bookColor: {r: 0, g: 0.041199084, b: 0.4811321, a: 1}
   page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: asdfasdf
+  page2: 'The Brights walked closely with Humanity until the first cities were built.
+    With time, the Brights stepped back and watched Humanity grow. In this distance,
+    the Church of Consecration was formed to venerate the Brights.
+
+
+    The Church
+    and its Vicars were charged with recording how the Brights and Humanity walked
+    together. The Vicars wrote the histories, spread the Word, and asked only for
+    all to listen.'

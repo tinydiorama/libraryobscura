@@ -44,8 +44,9 @@ public class Dream2Trigger : MonoBehaviour
     }
     private IEnumerator animateTrigger()
     {
+        player.GetComponent<SpriteRenderer>().flipX = true;
         player.GetComponent<Animator>().SetBool("Falling", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         gm.showNightFade();
         StartCoroutine(cleanupTrigger());
     }

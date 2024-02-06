@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f11anonlychild
+  m_EditorClassIdentifier: 
+  id: f11anonlychild
+  from: A Friend
+  subject: An Only Child
+  letterBgTan: 1
+  body: 'My brother, Bartholomew, often speaks of the love between us and among our
+    family. He speaks of how our family is favored by the Brights. I cannot find
+    fault with what he says... but why do I feel a sinking thought in my heart?
+
+
+    He
+    was the golden boy, with all his treats and tricks, his lovers and his myrth-oils.
+    Those who have gone to prison for him, who have rotted for him. What can it be
+    like to be an only child?
+
+
+    Longingly,
+
+    A Friend'

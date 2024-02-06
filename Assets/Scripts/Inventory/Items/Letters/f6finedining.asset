@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: f6finedining
   from: A Friend
-  subject: Fine Dining and Keyways
+  subject: Fine Dining and Books
   letterBgTan: 1
-  body: 'Things seem to be harder to find nowadays. Quills, writing supplies, rare
-    books, and even my favorite tea have all been in short supply. I had a meeting
-    at my favorite teahouse with a close colleague and they were out of several items.
-    Simply incredible! My colleague had found what I asked them to look for. I now
-    pass this key to you.
+  body: 'It seems to be harder to find supplies nowadays. Quills, paper, rare books,
+    and even my favorite tea have all been in short supply. I had a meeting at my
+    favorite teahouse with a close colleague and she is having similar problems.
+    Simply incredible!
+
+
+    But my meeting with her was fruitful - she came across
+    this old book, and neither of us can read it. I suspect it might be another book
+    for the manor.
 
 
     Quietly,

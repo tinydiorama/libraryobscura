@@ -99,7 +99,11 @@ public class DataPersistenceManager : MonoBehaviour
 
     public bool HasGameData()
     {
-        return gameData != null;
+        if ( gameData == null || gameData.days == 0 )
+        {
+            return false;
+        }
+        return true;
     }
 
     private void OnApplicationQuit()

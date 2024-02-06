@@ -19,7 +19,7 @@ MonoBehaviour:
   buyable: 0
   canBeSacrificed: 1
   category: 1
-  buyPrice: 20
+  buyPrice: 3
   sellPrice: 10
   itemDesc: 
   seedImages: []

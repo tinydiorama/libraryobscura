@@ -8,6 +8,7 @@ public class ElevatorUI : MonoBehaviour
     [SerializeField] private Vector3 floor1Pos = new Vector3(18.44929f, -2.79659f, 0);
     [SerializeField] private Vector3 floor2Pos = new Vector3(18.44929f, 0.2506582f, 0);
     [SerializeField] private Vector3 floor3Pos = new Vector3(18.44929f, 2.95f, 0);
+    [SerializeField] private Vector3 floor4Pos = new Vector3(18.44929f, 7.1f, 0);
 
     public Elevator currentElevator;
 

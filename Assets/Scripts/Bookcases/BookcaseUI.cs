@@ -80,16 +80,23 @@ public class BookcaseUI : MonoBehaviour
         }
         for (int i = 0; i < invManage.books.Count; i++)
         {
-            GameObject bookInstance = Instantiate(bookSelectPrefab, bookSelectList.transform);
-
-            // TODO: bookInstance doesn't have a bookUI on it yet
-            bookInstance.GetComponent<BookUI>().bookTitle.text = invManage.books[i].book.title;
-            bookInstance.GetComponent<BookUI>().bookAuthor.text = "by " + invManage.books[i].book.author;
-            BookSlot tempBook = invManage.books[i];
-            bookInstance.GetComponent<Button>().onClick.AddListener(delegate
+            if (invManage.books[i].placement == "" ) // skip over already placed books
             {
-                selectBook(ref tempBook);
-            });
+                GameObject bookInstance = Instantiate(bookSelectPrefab, bookSelectList.transform);
+
+                // TODO: bookInstance doesn't have a bookUI on it yet
+                bookInstance.GetComponent<BookUI>().bookTitle.text = invManage.books[i].book.title;
+                bookInstance.GetComponent<BookUI>().bookAuthor.text = "by " + invManage.books[i].book.author;
+                BookSlot tempBook = invManage.books[i];
+                bookInstance.GetComponent<Button>().onClick.AddListener(delegate
+                {
+                    selectBook(ref tempBook);
+                });
+                if (i == 0)
+                { // select the first book
+                    selectBook(ref tempBook);
+                }
+            }
         }
         StartCoroutine(enableShowBookSelect());
     }

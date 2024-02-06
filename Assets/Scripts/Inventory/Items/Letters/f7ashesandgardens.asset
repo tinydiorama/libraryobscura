@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f7ashesandgardens
+  m_EditorClassIdentifier: 
+  id: f7ashesandgardens
+  from: A Friend
+  subject: Ashes and Gardens
+  letterBgTan: 1
+  body: 'Have you noticed the ash falling from the sky? I saw it today when I was
+    watering my rooftop garden. In the morning, at first light, there was a layer
+    of black film on the leaves. I swept up it all up and looked closer. It looked
+    like ash from a fire! Why would there be ash falling from the sky? The wind has
+    a strange sickly sweet smell.
+
+
+    Bewilderedly,
+
+    A Friend'

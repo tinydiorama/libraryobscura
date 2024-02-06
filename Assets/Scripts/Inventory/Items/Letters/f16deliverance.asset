@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: f16deliverance
+  m_EditorClassIdentifier: 
+  id: f16deliverance
+  from: A Friend
+  subject: Deliverance
+  letterBgTan: 1
+  body: 'Midnight at last! It has all become so clear now. I understand everything;
+    the darkness IS the answer. The books, the Plague, and even the Seven Brights
+    cannot know everything. Do you see? Do you understand?
+
+
+    Give me the Panacea
+    of Binding, and we can stop the plague, and you can finally leave that cursed
+    place! Nothing can stop us, not even the Brights!
+
+
+    Enlightened,
+
+    A Friend'

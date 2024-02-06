@@ -11,6 +11,7 @@ public class Elevator : MonoBehaviour
     [SerializeField] private Vector3 floor1Pos = new Vector3(18.44929f, -2.79659f, 0);
     [SerializeField] private Vector3 floor2Pos = new Vector3(18.44929f, 0.2506582f, 0);
     [SerializeField] private Vector3 floor3Pos;
+    [SerializeField] private Vector3 floor4Pos = new Vector3(18.44929f, 7.1f, 0);
     [SerializeField] private bool startOpen;
     [SerializeField] private CinemachineVirtualCamera vcam;
 
@@ -60,9 +61,9 @@ public class Elevator : MonoBehaviour
     public void interact()
     {
         StoryManager sm = StoryManager.instance;
-        if (InventoryManager.instance.containsItem("elevatorkey1") || InventoryManager.instance.containsItem("elevatorkey2"))
+        if (InventoryManager.instance.containsItem("elevatorkey1") || InventoryManager.instance.containsItem("elevatorkey2") || InventoryManager.instance.containsItem("elevatorkey3"))
         {
-            if (!sm.floor2Unlocked || !sm.floor3Unlocked)
+            if (!sm.floor2Unlocked || !sm.floor3Unlocked || !sm.floor4Unlocked)
             {
                 AudioManager.GetInstance().playSFX(doorUnlockedClip);
                 if ( ! sm.floor2Unlocked && InventoryManager.instance.containsItem("elevatorkey1"))
@@ -74,6 +75,11 @@ public class Elevator : MonoBehaviour
                 {
                     sm.floor3Unlocked = true;
                     houseController.unlockThirdFloor();
+                }
+                if (!sm.floor4Unlocked && InventoryManager.instance.containsItem("elevatorkey3"))
+                {
+                    sm.floor4Unlocked = true;
+                    houseController.unlockFourthFloor();
                 }
             }
             transform.GetChild(0).GetComponent<Animator>().SetBool("DoorStartOpen", false);
@@ -114,6 +120,10 @@ public class Elevator : MonoBehaviour
         {
             gotoFloor3();
         }
+        else if (floorNum == 3)
+        {
+            gotoFloor4();
+        }
     }
 
     private void gotoFloor1()
@@ -142,6 +152,17 @@ public class Elevator : MonoBehaviour
     {
         floorToGoTo = 2;
         StartCoroutine(MoveOverSeconds(player, floor3Pos, 5f));
+        if (anim != null)
+        {
+            anim.SetBool("ZoomInUpper", true);
+        }
+        StartCoroutine(resetElevatorPos());
+    }
+
+    private void gotoFloor4()
+    {
+        floorToGoTo = 3;
+        StartCoroutine(MoveOverSeconds(player, floor4Pos, 5f));
         if (anim != null)
         {
             anim.SetBool("ZoomInUpper", true);

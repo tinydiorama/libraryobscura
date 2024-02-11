@@ -31,6 +31,7 @@ public class GameData
     public bool dream1triggered;
     public bool dream2triggered;
     public bool dream3triggered;
+    public bool dream4triggered;
     public bool seenAltar;
     public bool backgateUnlocked;
     public bool allowBooks;
@@ -80,6 +81,7 @@ public class GameData
         this.dream1triggered = false;
         this.dream2triggered = false;
         this.dream3triggered = false;
+        this.dream4triggered = false;
         this.seenAltar = false;
         this.backgateUnlocked = false;
         this.allowBooks = false;

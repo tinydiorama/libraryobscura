@@ -2219,7 +2219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131117185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.368946, y: 4.2, z: 4.48}
+  m_LocalPosition: {x: 28.368029, y: 4.2, z: 4.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3355,7 +3355,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  timeScale: 850
+  timeScale: 1250
   globalLight: {fileID: 1258048238}
   timeArrow: {fileID: 482722769870094080}
 --- !u!1 &215628654
@@ -10845,7 +10845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387699434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.701742, y: -1.7, z: 7.68}
+  m_LocalPosition: {x: -23.703272, y: -1.7, z: 7.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11253,7 +11253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431297749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.202085, y: -3, z: 41.53989}
+  m_LocalPosition: {x: -22.203922, y: -3, z: 41.53989}
   m_LocalScale: {x: 70.42894, y: 18.591969, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11470,7 +11470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440307733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.798258, y: 4.21, z: 7.68}
+  m_LocalPosition: {x: 28.796728, y: 4.21, z: 7.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26659,11 +26659,13 @@ MonoBehaviour:
   tooDarkToSee: {fileID: 4900000, guid: e8e60c1b3d52f4d4ab4ad311a38573a6, type: 3}
   randomChance: 3
   alertBubble: {fileID: 3159285238215707363}
-  somethingisHere: {fileID: 4900000, guid: 9be4f99280ffe614ebcce6f740d2443e, type: 3}
+  somethingisHere: {fileID: 4900000, guid: 3f0956d6684e7bd4788f60114946ce75, type: 3}
   dialogToShow: {fileID: 4900000, guid: aee155f31825fd04a8b70509ad043fa7, type: 3}
   maxMoneyAmount: 15
-  potentialItems: []
-  obtainMoney: 1
+  potentialItems:
+  - {fileID: 11400000, guid: 221bf172d524650429c0778b726806b3, type: 2}
+  - {fileID: 11400000, guid: 55fd78b595d478f439faa668b0339908, type: 2}
+  obtainMoney: 0
   moneyImage: {fileID: 21300000, guid: 9c0eb2cd2251bdf42a7bb10dbaa62b30, type: 3}
   notifications: {fileID: 424083489131805187}
   notificationPrefab: {fileID: 2632581119087296027, guid: 3ecf1987d402b1f4ca81df975b63b1e7, type: 3}
@@ -29137,977 +29139,653 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lucidSprigItems:
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
-  - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   lucidSprigDwarfSageItems:
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   dwarfSageItems:
   - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   cloudsprigItems:
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
-  - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   cloudsprigDwarfSageItems:
-  - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   cloudsprigLucidSprigItems:
-  - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   grandtitianItems:
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   grandtitianLucidSprigItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   grandtitianDwarfSageItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   grandtitianCloudSprigItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   ophidianeyeItems:
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
-  - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   ophidianeyeLucidSprigItems:
-  - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   ophidianeyeDwarfSageItems:
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   ophidianeyeCloudSprigItems:
-  - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   ophidianeyeGrandTitianItems:
-  - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   sunbloomItems:
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
-  - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   sunbloomLucidSprigItems:
-  - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   sunbloomDwarfSageItems:
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   sunbloomCloudSprigItems:
-  - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   sunbloomGrandTitianItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   sunbloomOphidianEyeItems:
-  - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   bloodrootItems:
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
-  - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   bloodrootLucidSprigItems:
-  - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   bloodrootDwarfSageItems:
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   bloodrootCloudSprigItems:
-  - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   bloodrootGrandTitianItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   bloodrootOphidianEyeItems:
-  - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   bloodrootSunbloomItems:
-  - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   divineNeedleItems:
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   divineNeedleLucidSprigItems:
-  - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   divineNeedleDwarfSageItems:
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   divineNeedleCloudSprigItems:
-  - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   divineNeedleGrandTitianItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   divineNeedleOphidianEyeItems:
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   divineNeedleSunbloomItems:
-  - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   divineNeedleBloodrootItems:
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   heliotropeItems:
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
-  - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   heliotropeLucidSprigItems:
-  - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   heliotropeDwarfSageItems:
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   heliotropeCloudSprigItems:
-  - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   heliotropeGrandTitianItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   heliotropeOphidianEyeItems:
-  - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   heliotropeSunbloomItems:
-  - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   heliotropeBloodrootItems:
-  - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   heliotropeDivineNeedleItems:
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   stormvineItems:
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   stormvineLucidSprigItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   stormvineDwarfSageItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   stormvineCloudSprigItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   stormvineGrandTitianItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   stormvineOphidianEyeItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   stormvineSunbloomItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   stormvineBloodrootItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   stormvineDivineNeedleItems:
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   stormvineHeliotropeItems:
-  - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   brimstoneItems:
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   brimstoneLucidSprigItems:
-  - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   brimstoneDwarfSageItems:
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   brimstoneCloudSprigItems:
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   brimstoneGrandTitianItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   brimstoneOphidianEyeItems:
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   brimstoneSunbloomItems:
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   brimstoneBloodrootItems:
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   brimstoneDivineNeedleItems:
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   brimstoneHeliotropeItems:
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   brimstoneStormvineItems:
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   twilightFernItems:
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   twilightFernLucidSprigItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   twilightFernDwarfSageItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   twilightFernCloudSprigItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   twilightFernGrandTitianItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   twilightFernOphidianEyeItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   twilightFernSunbloomItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   twilightFernBloodrootItems:
-  - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   twilightFernDivineNeedleItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   twilightFernHeliotropeItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   twilightFernStormvineItems:
-  - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   twilightFernBrimstoneItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   aureateItems:
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   aureateLucidSprigItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   aureateDwarfSageItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   aureateCloudSprigItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   aureateGrandTitianItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   aureateOphidianEyeItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   aureateSunbloomItems:
-  - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   aureateBloodrootItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
-  - {fileID: 11400000, guid: 7607fb4d242ec094f91fe02a75fe345c, type: 2}
+  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   aureateDivineNeedleItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
-  - {fileID: 11400000, guid: a6f28687b4e18e144bda3b524e74754a, type: 2}
+  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   aureateHeliotropeItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
-  - {fileID: 11400000, guid: f95f43a900e706942b4e11219f96988e, type: 2}
+  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   aureateStormvineItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
-  - {fileID: 11400000, guid: ea19d4ec7ddaa6642866d02647a5761c, type: 2}
+  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   aureateBrimstoneItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
-  - {fileID: 11400000, guid: ffade8b9dc5241649b3beaa2b394a0f4, type: 2}
+  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   aureateTwilightFernItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   boorishThymeItems:
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   boorishThymeLucidSprigItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   boorishThymeDwarfSageItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   boorishThymeCloudSprigItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   boorishThymeGrandTitianItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   boorishThymeOphidianEyeItems:
-  - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   boorishThymeSunbloomItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   boorishThymeBloodrootItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   boorishThymeDivineNeedleItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   boorishThymeHeliotropeItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   boorishThymeStormvineItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   boorishThymeBrimstoneItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   boorishThymeTwilightFernItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   boorishThymeAureateItems:
-  - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   brightflowerItems:
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   brightflowerLucidSprigItems:
-  - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   brightflowerDwarfSageItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   brightflowerCloudSprigItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   brightflowerGrandTitianItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   brightflowerOphidianEyeItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   brightflowerSunbloomItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   brightflowerBloodrootItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   brightflowerDivineNeedleItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   brightflowerHeliotropeItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   brightflowerStormvineItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   brightflowerBrimstoneItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   brightflowerTwilightFernItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   brightflowerAureateItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   brightflowerBoorishThymeItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   darkspinneretItems:
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   darkspinneretLucidSprigItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   darkspinneretDwarfSageItems:
-  - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   darkspinneretCloudSprigItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   darkspinneretGrandTitianItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   darkspinneretOphidianEyeItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   darkspinneretSunbloomItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   darkspinneretBloodrootItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   darkspinneretDivineNeedleItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   darkspinneretHeliotropeItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   darkspinneretStormvineItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   darkspinneretBrimstoneItems:
-  - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   darkspinneretTwilightFernItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   darkspinneretAureateItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   darkspinneretBoorishThymeItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   darkspinneretBrightflowerItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   duskdendronItems:
   - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   duskdendronLucidSprigItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   duskdendronDwarfSageItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   duskdendronCloudSprigItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   duskdendronGrandTitianItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   duskdendronOphidianEyeItems:
-  - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   duskdendronSunbloomItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   duskdendronBloodrootItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   duskdendronDivineNeedleItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   duskdendronHeliotropeItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   duskdendronStormvineItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   duskdendronBrimstoneItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   duskdendronTwilightFernItems:
-  - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   duskdendronAureateItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   duskdendronBoorishThymeItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   duskdendronBrightflowerItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   duskdendronDarkspinneretItems:
-  - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   harshSnapjawItems:
   - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   harshSnapjawLucidSprigItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   harshSnapjawDwarfSageItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   harshSnapjawCloudSprigItems:
-  - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   harshSnapjawGrandTitianItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   harshSnapjawOphidianEyeItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   harshSnapjawSunbloomItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   harshSnapjawBloodrootItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   harshSnapjawDivineNeedleItems:
-  - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   harshSnapjawHeliotropeItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   harshSnapjawStormvineItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   harshSnapjawBrimstoneItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 791531ed94c368148bce3c1b4bf4415f, type: 2}
   harshSnapjawTwilightFernItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   harshSnapjawAureateItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   harshSnapjawBoorishThymeItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   harshSnapjawBrightflowerItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   harshSnapjawDarkspinneretItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   harshSnapjawDuskDendronItems:
-  - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   razorbackItems:
   - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   razorbackLucidSprigItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   razorbackDwarfSageItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   razorbackCloudSprigItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   razorbackGrandTitianItems:
-  - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   razorbackOphidianEyeItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   razorbackSunbloomItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   razorbackBloodrootItems:
-  - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   razorbackDivineNeedleItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   razorbackHeliotropeItems:
-  - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   razorbackStormvineItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   razorbackBrimstoneItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   razorbackTwilightFernItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   razorbackAureateItems:
-  - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   razorbackBoorishThymeItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   razorbackBrightflowerItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   razorbackDarkspinneretItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   razorbackDuskDendronItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   razorbackHarshSnapjawItems:
-  - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   murkySiltstriderItems:
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   murkySiltstriderLucidSprigItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   murkySiltstriderDwarfSageItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   murkySiltstriderCloudSprigItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   murkySiltstriderGrandTitianItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   murkySiltstriderOphidianEyeItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   murkySiltstriderSunbloomItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   murkySiltstriderBloodrootItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   murkySiltstriderDivineNeedleItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   murkySiltstriderHeliotropeItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   murkySiltstriderStormvineItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   murkySiltstriderBrimstoneItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   murkySiltstriderTwilightFernItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   murkySiltstriderAureateItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   murkySiltstriderBoorishThymeItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   murkySiltstriderBrightflowerItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   murkySiltstriderDarkspinneretItems:
-  - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   murkySiltstriderDuskDendronItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   murkySiltstriderHarshSnapjawItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   murkySiltstriderRazorbackItems:
-  - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   paleVerrucaItems:
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   paleVerrucaLucidSprigItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   paleVerrucaDwarfSageItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   paleVerrucaCloudSprigItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   paleVerrucaGrandTitianItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   paleVerrucaOphidianEyeItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   paleVerrucaSunbloomItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   paleVerrucaBloodrootItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   paleVerrucaDivineNeedleItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   paleVerrucaHeliotropeItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   paleVerrucaStormvineItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   paleVerrucaBrimstoneItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   paleVerrucaTwilightFernItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   paleVerrucaAureateItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   paleVerrucaBoorishThymeItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   paleVerrucaBrightflowerItems:
-  - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   paleVerrucaDarkspinneretItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   paleVerrucaDuskDendronItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   paleVerrucaHarshSnapjawItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   paleVerrucaRazorbackItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   paleVerrucaMurkySiltstriderItems:
-  - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   sanguineCloverItems:
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   sanguineCloverLucidSprigItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   sanguineCloverDwarfSageItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   sanguineCloverCloudSprigItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   sanguineCloverGrandTitianItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 02f45ffe3b9b742479844d0fc072c766, type: 2}
   sanguineCloverOphidianEyeItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   sanguineCloverSunbloomItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   sanguineCloverBloodrootItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   sanguineCloverDivineNeedleItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   sanguineCloverHeliotropeItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   sanguineCloverStormvineItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   sanguineCloverBrimstoneItems:
   - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   sanguineCloverTwilightFernItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   sanguineCloverAureateItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   sanguineCloverBoorishThymeItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   sanguineCloverBrightflowerItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   sanguineCloverDarkspinneretItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   sanguineCloverDuskDendronItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   sanguineCloverHarshSnapjawItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   sanguineCloverRazorbackItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   sanguineCloverMurkySiltstriderItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   sanguineCloverPaleVerrucaItems:
-  - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   sunwornThistleItems:
   - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   sunwornThistleLucidSprigItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   sunwornThistleDwarfSageItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   sunwornThistleCloudSprigItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   sunwornThistleGrandTitianItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   sunwornThistleOphidianEyeItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   sunwornThistleSunbloomItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   sunwornThistleBloodrootItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   sunwornThistleDivineNeedleItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   sunwornThistleHeliotropeItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   sunwornThistleStormvineItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   sunwornThistleBrimstoneItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   sunwornThistleTwilightFernItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   sunwornThistleAureateItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   sunwornThistleBoorishThymeItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   sunwornThistleBrightflowerItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   sunwornThistleDarkspinneretItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   sunwornThistleDuskDendronItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   sunwornThistleHarshSnapjawItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   sunwornThistleRazorbackItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   sunwornThistleMurkySiltstriderItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   sunwornThistlePaleVerrucaItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   sunwornThistleSanguineCloverItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   thornedEspritItems:
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   thornedEspritLucidSprigItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   thornedEspritDwarfSageItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 6c377f7d4a194514e88a26349fbe1683, type: 2}
   thornedEspritCloudSprigItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   thornedEspritGrandTitianItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 0825e1b0e6474ee49aaa952602b9e9c7, type: 2}
   thornedEspritOphidianEyeItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   thornedEspritSunbloomItems:
-  - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   thornedEspritBloodrootItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   thornedEspritDivineNeedleItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   thornedEspritHeliotropeItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   thornedEspritStormvineItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   thornedEspritBrimstoneItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   thornedEspritTwilightFernItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   thornedEspritAureateItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   thornedEspritBoorishThymeItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   thornedEspritBrightflowerItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 41eb649872463e540b4714e61467ed7d, type: 2}
   thornedEspritDarkspinneretItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   thornedEspritDuskDendronItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 94fadecc9092fb147bfd8000d25e0d82, type: 2}
   thornedEspritHarshSnapjawItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 1147211dd9345a543bf4ead84d62272f, type: 2}
   thornedEspritRazorbackItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   thornedEspritMurkySiltstriderItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   thornedEspritPaleVerrucaItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 14efbad107feca24ea3dcc2b43838c9f, type: 2}
   thornedEspritSanguineCloverItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   thornedEspritSunwornThistleItems:
-  - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   waxyLaurelItems:
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   waxyLaurelLucidSprigItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   waxyLaurelDwarfSageItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   waxyLaurelCloudSprigItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: ee2d248fd4c85b54fb3e390edd3676b4, type: 2}
   waxyLaurelGrandTitianItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   waxyLaurelOphidianEyeItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   waxyLaurelSunbloomItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: c8075546e92a0354e904cb4af07a20e6, type: 2}
   waxyLaurelBloodrootItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 9bda9f55a504cef45a9198bc5dfc49af, type: 2}
   waxyLaurelDivineNeedleItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 3a23107c73cb23e4bb10d75c4938b7fb, type: 2}
   waxyLaurelHeliotropeItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 6f14f28dd77900d4a9a848f87f780f42, type: 2}
   waxyLaurelStormvineItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: a3dc3e584ae91ea47bcdba4ad45abece, type: 2}
   waxyLaurelBrimstoneItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: d7891aa69be3d754c9fffb7b0130bb62, type: 2}
   waxyLaurelTwilightFernItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 0972be21ac623884499912f30a22fa37, type: 2}
   waxyLaurelAureateItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   waxyLaurelBoorishThymeItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 7c9e6367b2cac1f4c9d5d6a02af312c7, type: 2}
   waxyLaurelBrightflowerItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   waxyLaurelDarkspinneretItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
   waxyLaurelDuskDendronItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   waxyLaurelHarshSnapjawItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 773438aef1931fb46a3049dfeea12bc0, type: 2}
   waxyLaurelRazorbackItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 451b303129a770a49baa2cd0493da6ae, type: 2}
   waxyLaurelMurkySiltstriderItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 8176d1eb386e0364295c4b6f5e9e948f, type: 2}
   waxyLaurelPaleVerrucaItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: abf519d46267ad24fb58a74316ad3feb, type: 2}
   waxyLaurelSanguineCloverItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 89824124b1435814f98040735db23f66, type: 2}
   waxyLaurelSunwornThistleItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: d135bd6b5e12edc4ab45874816bcb01c, type: 2}
   waxyLaurelThornedEspritItems:
-  - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: 6604e83e94023c24c8a5851c4fb6edae, type: 2}
 --- !u!1 &999894013
 GameObject:
@@ -33526,7 +33204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268500584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.44929, y: 7.1, z: 3.8120816}
+  m_LocalPosition: {x: 227.87, y: -5.84, z: 3.8120816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45830,7 +45508,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Your sacrifice to hold back the shadow-meld. So it shall be done - we give
-    new growth or twice what you held.
+    new growth or what you held.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ed29a7f2df437041a231810ece85f76, type: 2}
   m_sharedMaterial: {fileID: 5139436780223138733, guid: 0ed29a7f2df437041a231810ece85f76, type: 2}
@@ -46868,7 +46546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990548528}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 71.80067, y: 5.2, z: -5.99}
+  m_LocalPosition: {x: 71.80128, y: 5.2, z: -5.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48093,7 +47771,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043366398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.10105, y: -1.7, z: 4.48}
+  m_LocalPosition: {x: -23.101967, y: -1.7, z: 4.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48509,7 +48187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065541284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.13931, y: -1.1, z: -5.99}
+  m_LocalPosition: {x: -23.138699, y: -1.1, z: -5.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50327,7 +50005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937778936380748187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.85542345, y: -0.61612, z: -10}
+  m_LocalPosition: {x: -0.8618603, y: -0.6161, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50455,6 +50133,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9cec8346967a4e42af43294c47fd23f, type: 2}
   - {fileID: 11400000, guid: a0eda1aa337bf6b4eb47f67908f45cb8, type: 2}
   - {fileID: 11400000, guid: 899e8e90da363be44b5e49fc9bc9a118, type: 2}
+  - {fileID: 11400000, guid: c7c245d9eb8fd09498388b05d85cd77e, type: 2}
   itemsOrdered: []
   booksOrdered: []
   itemsSold: []
@@ -52293,6 +51972,7 @@ MonoBehaviour:
   dream1Triggered: 0
   dream2Triggered: 0
   dream3Triggered: 0
+  dream4Triggered: 0
   mailboxInteract1: 0
   buyAllowed: 0
   sellAllowed: 0

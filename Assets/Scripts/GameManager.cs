@@ -102,6 +102,18 @@ public class GameManager : MonoBehaviour
             CutsceneManager.instance.loadCutscene2();
             StoryManager.instance.dream2Triggered = true;
         }
+        else if (inv.containsLetter("f11anonlychild") && inv.containsLetter("x11isawthemdoit")
+            && !StoryManager.instance.dream3Triggered)
+        {
+            CutsceneManager.instance.loadCutscene3();
+            StoryManager.instance.dream3Triggered = true;
+        }
+        else if (inv.containsLetter("f16deliverance") && inv.containsLetter("x16isthistheend")
+            && !StoryManager.instance.dream4Triggered)
+        {
+            CutsceneManager.instance.loadCutscene4();
+            StoryManager.instance.dream4Triggered = true;
+        }
         else
         {
             dayTransition.showItems(showPackageInfo);

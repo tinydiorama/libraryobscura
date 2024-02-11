@@ -12,6 +12,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool dream1Triggered;
     public bool dream2Triggered;
     public bool dream3Triggered;
+    public bool dream4Triggered;
     public bool mailboxInteract1;
     public bool buyAllowed;
     public bool sellAllowed;
@@ -129,7 +130,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             } else if (inv.containsLetter("x2imsorry") && !inv.containsLetter("x3hopeless")
-                && inv.numItemsSoldAllTime >= 5)
+                && inv.numItemsSoldAllTime >= 4)
             {
                 mm.addNewLetter(data.x3Letter);
                 mm.hasNewMail = true;
@@ -140,7 +141,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
             } else if (inv.containsLetter("x4churchlyvisitors") && !inv.containsLetter("x5vicaroverseers")
-                && inv.numItemsSoldAllTime >= 10)
+                && inv.numItemsSoldAllTime >= 6)
             {
                 mm.addNewLetter(data.x5Letter);
                 mm.hasNewMail = true;
@@ -197,7 +198,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
 
             /* x path 2 */
             if (dream2Triggered && !inv.containsLetter("x7closelywatched")
-                && inv.numItemsSoldAllTime >= 15)
+                && inv.numItemsSoldAllTime >= 8)
             {
                 mm.addNewLetter(data.x7Letter);
                 mm.hasNewMail = true;
@@ -210,7 +211,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("x8amatteroffaith") && !inv.containsLetter("x9gruntwork")
-                && inv.numItemsSoldAllTime >= 20)
+                && inv.numItemsSoldAllTime >= 10)
             {
                 mm.addNewLetter(data.x9Letter);
                 mm.newItems.Add(data.thirdFloorKey);
@@ -224,7 +225,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("x10traitorsofthecloth") && !inv.containsLetter("x11isawthemdoit")
-                && inv.numItemsSoldAllTime >= 25)
+                && inv.numItemsSoldAllTime >= 12)
             {
                 mm.addNewLetter(data.x11Letter);
                 mm.hasNewMail = true;
@@ -271,7 +272,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
 
             /* x path 3 */
             if (dream3Triggered && !inv.containsLetter("x12pestilent")
-                && inv.numItemsSoldAllTime >= 30)
+                && inv.numItemsSoldAllTime >= 14)
             {
                 mm.addNewLetter(data.x12Letter);
                 mm.newItems.Add(data.fourthFloorKey);
@@ -285,7 +286,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("x13homecomings") && !inv.containsLetter("x14octavius")
-                && inv.numItemsSoldAllTime >= 35)
+                && inv.numItemsSoldAllTime >= 16)
             {
                 mm.addNewLetter(data.x14Letter);
                 mm.hasNewMail = true;
@@ -298,7 +299,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 lastLetterReceivedDay = dayTime.days;
             }
             else if (inv.containsLetter("x15itfinallyhappened") && !inv.containsLetter("x16isthistheend")
-                && inv.numItemsSoldAllTime >= 40)
+                && inv.numItemsSoldAllTime >= 18)
             {
                 mm.addNewLetter(data.x16Letter);
                 mm.hasNewMail = true;
@@ -387,6 +388,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.dream1Triggered = data.dream1triggered;
         this.dream2Triggered = data.dream2triggered;
         this.dream3Triggered = data.dream3triggered;
+        this.dream4Triggered = data.dream4triggered;
         this.seenAltar = data.seenAltar;
         this.lastLetterReceivedDay = data.lastLetterReceivedDay;
         this.lucidity = data.lucidity;

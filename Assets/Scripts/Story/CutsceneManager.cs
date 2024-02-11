@@ -16,6 +16,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private Light2D globalLight;
     [SerializeField] private GameObject hud;
     private Vignette vnt;
+    private Bloom blm;
 
     private void Start()
     {
@@ -23,6 +24,11 @@ public class CutsceneManager : MonoBehaviour
         if (globalVolume.profile.TryGet<Vignette>(out temp))
         {
             vnt = temp;
+        }
+        Bloom tempBloom;
+        if (globalVolume.profile.TryGet<Bloom>(out tempBloom))
+        {
+            blm = tempBloom;
         }
     }
 
@@ -53,6 +59,21 @@ public class CutsceneManager : MonoBehaviour
 
     }
 
+    public void loadCutscene3()
+    {
+        hud.SetActive(false);
+        GameObject cutscene = InstantiateResource("Cutscenes", "Dream3");
+        cutscene.GetComponent<Dream3Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight, vcam);
+
+    }
+    public void loadCutscene4()
+    {
+        hud.SetActive(false);
+        GameObject cutscene = InstantiateResource("Cutscenes", "Dream4");
+        cutscene.GetComponent<Dream4Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight, vcam);
+
+    }
+
     public void cleanupCutscene()
     {
         // reset everything
@@ -72,8 +93,12 @@ public class CutsceneManager : MonoBehaviour
     {
         GameManager gm = GameManager.GetInstance();
         yield return new WaitForSeconds(4f);
+        vnt.active = true;
         vnt.intensity.Override(0.508f);
         vnt.smoothness.Override(0.171f);
+        blm.intensity.Override(20.4f);
+        blm.threshold.Override(1f);
+        blm.tint.Override(new Color(0.9f, 0.83f, 0.5f));
         globalLight.intensity = 1f;
         gm.isInteractionsDisabled = false;
         hud.SetActive(true);

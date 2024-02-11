@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class PlayerPlatformerController : PhysicsObject
 {
-
+    [SerializeField] private AudioClip footstep;
+    [SerializeField] private AudioSource audioSource;
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
     public float defaultSpeed = 5;
@@ -15,6 +16,7 @@ public class PlayerPlatformerController : PhysicsObject
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     public bool facingRight;
+    public bool loudFootsteps;
     private GameManager gm;
 
     public event UnityAction onJump;
@@ -30,6 +32,9 @@ public class PlayerPlatformerController : PhysicsObject
     private void Start()
     {
         gm = GameManager.GetInstance();
+        audioSource.clip = footstep;
+        audioSource.loop = true;
+        audioSource.volume = 0.1f;
     }
 
     protected override void ComputeVelocity()
@@ -65,6 +70,23 @@ public class PlayerPlatformerController : PhysicsObject
                     Flip();
                     facingRight = true;
                 }
+                if ( ! audioSource.isPlaying )
+                {
+                    if ( loudFootsteps )
+                    {
+                        audioSource.volume = 0.5f;
+                    } else
+                    {
+                        audioSource.volume = 0.1f;
+                    }
+                    audioSource.Play();
+                }
+            } else if (inputVector.x < 0.5f && inputVector.x > -0.5f)
+            {
+                if ( audioSource.isPlaying )
+                {
+                    audioSource.Stop();
+                }
             }
 
             animator.SetBool("grounded", grounded);
@@ -76,6 +98,7 @@ public class PlayerPlatformerController : PhysicsObject
             Vector2 move = Vector2.zero;
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
             targetVelocity = move * maxSpeed;
+            
         }
 
         if (velocity.y != 0)
@@ -101,6 +124,7 @@ public class PlayerPlatformerController : PhysicsObject
     {
         velocity.x = 0;
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        audioSource.Stop();
     }
 
     public void Flip()
@@ -114,5 +138,11 @@ public class PlayerPlatformerController : PhysicsObject
     {
         facingRight = true;
         spriteRenderer.flipX = true;
+    }
+
+    public void faceRight()
+    {
+        facingRight = false;
+        spriteRenderer.flipX = false;
     }
 }

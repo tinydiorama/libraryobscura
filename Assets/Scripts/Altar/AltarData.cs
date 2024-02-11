@@ -1955,6 +1955,9 @@ public class AltarData : MonoBehaviour
             item1.id == "thornedespritplant" && item2.id == "waxylaurelplant")
         {
             return waxyLaurelThornedEspritItems;
+        } else if ( item1.id == "panacea" || item2.id == "panacea" ) // if EITHER item is a panacea
+        { // do something? end the game? literally do not know
+            Debug.Log("yay you did it");
         }
         return new List<Item>();
     }

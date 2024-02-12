@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 7
   sellPrice: 15
-  itemDesc: 
+  itemDesc: True to its name, the roots of the Bloodroot are indeed blood red. Its
+    leaves are rich and full of iron, but the bark is bitter to taste. This plant
+    can be used for many rituals.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: ffade8b9dc5241649b3beaa2b394a0f4, type: 2}

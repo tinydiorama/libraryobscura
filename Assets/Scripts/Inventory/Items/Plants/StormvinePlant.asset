@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 7
   sellPrice: 16
-  itemDesc: 
+  itemDesc: The Stormvine's long swooping branches are commonly pruned into topiaries
+    by many wealthy city-dwellers. They are a common sight lining the streets. Its
+    leaves are heart-shaped.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 26872f3e626820547a3bc5dff87d8482, type: 2}

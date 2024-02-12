@@ -1,1 +1,1 @@
-What a strange marking on the wall.
+What is this? Odd.

@@ -46,7 +46,7 @@ public class Dream3Trigger : MonoBehaviour
         altarObject.SetActive(true);
         AudioManager.GetInstance().playSFX(boom);
         player.GetComponent<PlayerPlatformerController>().stopPlayer();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         gm.showNightFade();
         StartCoroutine(cleanupTrigger());
     }

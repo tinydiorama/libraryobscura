@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 8
   sellPrice: 16
-  itemDesc: 
+  itemDesc: The Heliotrope only grows in full sunlight. It is  highly prized for
+    vibrant flowers, which are most fragrant when the wind blows. The scent of the
+    flowers is an acquired taste.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 221bf172d524650429c0778b726806b3, type: 2}

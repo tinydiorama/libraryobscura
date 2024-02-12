@@ -1,2 +1,2 @@
-A chill radiates from the graves.
-The silence, comforting but absolute.
+The grave writing emerges.
+Lines of ancient greed.

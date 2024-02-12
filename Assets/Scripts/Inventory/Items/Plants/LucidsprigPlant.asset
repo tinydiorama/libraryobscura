@@ -21,7 +21,8 @@ MonoBehaviour:
   category: 1
   buyPrice: 5
   sellPrice: 10
-  itemDesc: 
+  itemDesc: The Lucid Sprig smells of springwater, a fresh and bright scent. Its
+    leaves are said to promote mental acuity when brewed into a tea.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 55fd78b595d478f439faa668b0339908, type: 2}

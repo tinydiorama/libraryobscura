@@ -21,7 +21,8 @@ MonoBehaviour:
   category: 1
   buyPrice: 3
   sellPrice: 10
-  itemDesc: 
+  itemDesc: An earthy, stout herb. The dwarf sage is easy to grow and hard to kill,
+    making it the perfect garden plant. Used in many recipes, as the leaves are fragrant.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: f618fc591560e4345ab1ce8a3f645cd5, type: 2}

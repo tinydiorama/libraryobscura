@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 15
   sellPrice: 25
-  itemDesc: 
+  itemDesc: The Pale Verruca is very fragile and delicate, easily snapped and destroyed.
+    However, it is curiously resistant to the wind. The small berries are translucent
+    and poisonous, but the branches provide great pain relief.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: f95f43a900e706942b4e11219f96988e, type: 2}

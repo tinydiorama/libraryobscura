@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 8
   sellPrice: 18
-  itemDesc: 
+  itemDesc: The Aureate is the official plant of the royal family. It is known for
+    its long dangling delicate flowers with a golden sheen. The flowers contain numerous
+    medicinal properties.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 7302cf128237bdc429581c883d41ce73, type: 2}

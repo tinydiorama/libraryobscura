@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 11
   sellPrice: 20
-  itemDesc: 
+  itemDesc: The Razorback is highly prized for its shape and size. They are typically
+    grown in rows along the artisan district in the cities. Its leaves have a waxy
+    coating that can be used for waterproofing.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 4cdda4a83cb3b6c4080ab898b0a11fc7, type: 2}

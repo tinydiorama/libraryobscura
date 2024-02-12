@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 5
   sellPrice: 12
-  itemDesc: 
+  itemDesc: When watered abundantly, the Grand Titian yields bright orange flowers.
+    These are highly prized by high society, and many flora-traders pay a high price
+    for them. Take caution, for the roots are poisonous.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 221bf172d524650429c0778b726806b3, type: 2}

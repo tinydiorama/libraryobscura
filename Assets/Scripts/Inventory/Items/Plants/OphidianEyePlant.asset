@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 6
   sellPrice: 12
-  itemDesc: 
+  itemDesc: The Ophidian's Eye is traditionally wrapped tight, dried, and used as
+    incense and for future-gazing. When burnt, its woody sharp smell is said to bring
+    good omens.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 55fd78b595d478f439faa668b0339908, type: 2}

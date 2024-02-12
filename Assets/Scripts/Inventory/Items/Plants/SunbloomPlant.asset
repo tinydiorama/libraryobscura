@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 7
   sellPrice: 16
-  itemDesc: 
+  itemDesc: The Sunbloom is sensitive to temperature changes, but when cultivated
+    properly, bears sweet and tangy small fruit. These are normally served as a palate
+    cleanser between courses.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 55fd78b595d478f439faa668b0339908, type: 2}

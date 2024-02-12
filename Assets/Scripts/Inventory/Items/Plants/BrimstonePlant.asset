@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 7
   sellPrice: 16
-  itemDesc: 
+  itemDesc: The flowers of the Brimstone smell vaguely of sulphur and myrrh. These
+    flowers may be compounded into an acid, which are then used in many rituals,
+    including visions and dream-rites. A powerful plant.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: f618fc591560e4345ab1ce8a3f645cd5, type: 2}

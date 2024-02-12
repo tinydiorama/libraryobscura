@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 8
   sellPrice: 16
-  itemDesc: 
+  itemDesc: The Brightflower is immediately recognized by its cheerful yellow flowers.
+    The long leaves represent long life to the recipient. It is given as a tradition
+    at weddings.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: f618fc591560e4345ab1ce8a3f645cd5, type: 2}

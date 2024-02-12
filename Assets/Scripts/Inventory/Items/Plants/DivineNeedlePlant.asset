@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 7
   sellPrice: 15
-  itemDesc: 
+  itemDesc: The Divine Needle bears sharp leaves that change color as they grow.
+    These are used for medicinal purposes, which are useful in stopping bleeding.
+    They smell strangely like spirits.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 7302cf128237bdc429581c883d41ce73, type: 2}

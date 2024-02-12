@@ -19,6 +19,8 @@ public class BookcaseUI : MonoBehaviour
     [SerializeField] private GameObject bookReadPanel;
     [SerializeField] private GameObject bookReadList;
     [SerializeField] private GameObject noBooksToRead;
+    [SerializeField] private TextMeshProUGUI numBooksInShelf;
+    [SerializeField] private TextMeshProUGUI numBooksCanBePlaced;
 
     [Header("Book Closeup Fields")]
     [SerializeField] private Image bookCover;
@@ -30,6 +32,7 @@ public class BookcaseUI : MonoBehaviour
     private List<Book> currentBooksToRead;
     public BookSlot selectedBook;
     public GameObject referenceObject;
+    private int maxBooks;
 
     private bool showingBookSelect;
     private bool showingBooktoRead;
@@ -38,10 +41,7 @@ public class BookcaseUI : MonoBehaviour
     {
         if ( showingBookSelect )
         {
-            if (InputManager.GetInstance().GetConfirmPressed())
-            {
-                placeBook();
-            } else if ( InputManager.GetInstance().GetClosePressed() )
+            if ( InputManager.GetInstance().GetClosePressed() )
             {
                 closeBookSelectUI();
             }
@@ -54,12 +54,13 @@ public class BookcaseUI : MonoBehaviour
         }
     }
 
-    public void showBookSelectUI(GameObject refObj)
+    public void showBookSelectUI(GameObject refObj, int numPossibleBooks)
     {
         GameManager.GetInstance().isPaused = true;
         referenceObject = refObj;
         overlay.SetActive(true);
         bookSelectPanel.SetActive(true);
+        maxBooks = numPossibleBooks;
 
         foreach (Transform child in bookSelectList.transform)
         {
@@ -122,7 +123,7 @@ public class BookcaseUI : MonoBehaviour
         referenceObject.GetComponent<Bookcase>().books.Add(selectedBook.book);
         closeBookSelectUI();
         StartCoroutine(disableShowBookSelect());
-        showBookReadUI(referenceObject.GetComponent<Bookcase>().books);
+        showBookReadUI(referenceObject.GetComponent<Bookcase>().books, maxBooks);
     }
 
     public void closeBookSelectUI()
@@ -133,7 +134,7 @@ public class BookcaseUI : MonoBehaviour
         StartCoroutine(disableShowBookSelect());
     }
 
-    public void showBookReadUI( List<Book> booksToRead )
+    public void showBookReadUI( List<Book> booksToRead, int numPossibleBooks )
     {
         GameManager.GetInstance().isPaused = true;
         overlay.SetActive(true);
@@ -152,6 +153,9 @@ public class BookcaseUI : MonoBehaviour
         {
             noBooksToRead.SetActive(true);
         }
+
+        numBooksInShelf.text = booksToRead.Count.ToString();
+        numBooksCanBePlaced.text = numPossibleBooks.ToString();
         for (int i = 0; i < currentBooksToRead.Count; i++)
         {
             GameObject bookInstance = Instantiate(bookSelectPrefab, bookReadList.transform);
@@ -200,6 +204,6 @@ public class BookcaseUI : MonoBehaviour
         GameManager.GetInstance().isPaused = false;
         overlay.SetActive(false);
         bookCloseup.SetActive(false);
-        showBookReadUI(currentBooksToRead);
+        showBookReadUI(currentBooksToRead, maxBooks);
     }
 }

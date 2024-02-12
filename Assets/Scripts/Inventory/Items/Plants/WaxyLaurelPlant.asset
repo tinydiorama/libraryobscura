@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 20
   sellPrice: 30
-  itemDesc: 
+  itemDesc: The Waxy Laurel is traditionally used as a decoration, made into wreaths
+    for the Festival of the Anointed. Adding to the ambience, it smells earthy and
+    pungent. It is also enjoyed as a tea.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: fd3b7abbf62112c47ad507f7eca9d929, type: 2}

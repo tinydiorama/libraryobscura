@@ -1,0 +1,1 @@
+What a strange marking on the wall.

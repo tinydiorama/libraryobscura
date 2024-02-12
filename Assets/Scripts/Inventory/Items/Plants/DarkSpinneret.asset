@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978554616fba3f64f88615c41a5c8422, type: 3}
   m_Name: DarkSpinneret
   m_EditorClassIdentifier: 
-  id: darkspinneret
+  id: darkspinneretplant
   itemName: Dark Spinneret
   icon: {fileID: 21300000, guid: 54c16364d95ab82468a8eefb440adf8d, type: 3}
   sellable: 1
@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 9
   sellPrice: 18
-  itemDesc: 
+  itemDesc: The Dark Spinneret's leaves form a curious pattern, almost like a flower
+    at the ends. Not much is known about this plant. It grows in foggy conditions
+    near rivers.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 221bf172d524650429c0778b726806b3, type: 2}

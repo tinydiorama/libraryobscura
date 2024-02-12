@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 11
   sellPrice: 20
-  itemDesc: 
+  itemDesc: The Murky Siltstrider contains clusters of berries, which are often made
+    into jams. These are sold at high prices. The plant grows best in humid, shady
+    conditions, and its leaves become more vibrant when picked.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 351554a8ad30f7349b933f2543ecd8a4, type: 2}

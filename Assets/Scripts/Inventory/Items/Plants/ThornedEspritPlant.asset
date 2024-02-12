@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 20
   sellPrice: 30
-  itemDesc: 
+  itemDesc: The thorns of the Thorned Esprit make picking the flowers very difficult.
+    Please handle with care! Its flowers are used in a variety of medicinal applications,
+    and so is highly prized by medics.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: c416a9f879837744e9b835711a49b18f, type: 2}

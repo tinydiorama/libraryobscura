@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 9
   sellPrice: 18
-  itemDesc: 
+  itemDesc: A funerary flower. The Dusk Dendron is said to attract the attention
+    of the Shades to carry the dead to the afterlife. According to superstition,
+    it must be collected only after sunset.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 26872f3e626820547a3bc5dff87d8482, type: 2}

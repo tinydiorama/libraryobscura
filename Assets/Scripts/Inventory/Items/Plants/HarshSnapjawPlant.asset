@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 10
   sellPrice: 20
-  itemDesc: 
+  itemDesc: The stems of the Harsh Snapjaw are used to help bind wounds and banish
+    minor wraiths. The delicate pink leaf clusters tingle to the touch and cause
+    a numbing effect.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: d97ea8aaff9f92d4f9ac84af6101b5d9, type: 2}

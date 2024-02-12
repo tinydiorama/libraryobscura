@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 8
   sellPrice: 16
-  itemDesc: 
+  itemDesc: The Boorish Thyme is used as seasoning in many dishes, and has a nostalgic
+    flavor. It is often paired with dwarf sage. When it flowers, the taste becomes
+    bitter.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: ffade8b9dc5241649b3beaa2b394a0f4, type: 2}

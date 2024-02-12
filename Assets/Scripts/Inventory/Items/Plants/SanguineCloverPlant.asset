@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 20
   sellPrice: 25
-  itemDesc: 
+  itemDesc: The flowers of the Sanguine Clover are used primarily to create vibrant
+    red dyes and pigments. It is said that this plant was gifted by the Brights to
+    humanity to create art and beautiful works. They are difficult to grow.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: a6f28687b4e18e144bda3b524e74754a, type: 2}

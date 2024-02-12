@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 8
   sellPrice: 17
-  itemDesc: 
+  itemDesc: There is a myth that says the Twilight Fern will flower at night, but
+    no one has ever seen the flowers. Its leaves curl during the day. It is said
+    they contain the power of the moon.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: f95f43a900e706942b4e11219f96988e, type: 2}

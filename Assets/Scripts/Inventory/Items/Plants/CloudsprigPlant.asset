@@ -21,7 +21,8 @@ MonoBehaviour:
   category: 1
   buyPrice: 5
   sellPrice: 12
-  itemDesc: 
+  itemDesc: The soft and velvety flowers of the Cloudsprig bloom only in overcast
+    weather. In the mornings, dew drops settle on the leaves.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 4b71518dbe4507c4cafa830bdb12dad9, type: 2}

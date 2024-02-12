@@ -29,7 +29,7 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     [Header("Story Objects")]
     [SerializeField] private GameObject figure;
     [SerializeField] private GameObject backgate;
-    [SerializeField] private StairsLockedDoor upstairsTrigger;
+    [SerializeField] private HouseController upstairsTrigger;
     [SerializeField] private Sprite backgateOpenedSprite;
     [SerializeField] private StoryData data;
 
@@ -79,6 +79,15 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         if (dream1Triggered == true && dream2Triggered == false )
         {
             lucidity = "Uncertain";
+        } else if ( dream2Triggered == true && dream3Triggered == false )
+        {
+            lucidity = "Crumbling";
+        } else if ( dream3Triggered == true && dream4Triggered == false )
+        {
+            lucidity = "Decayed";
+        } else if ( dream4Triggered == true )
+        {
+            lucidity = "Epiphany";
         }
 
         if ( ! mm.hasNewMail ) // only put mail in if there's not already current mail
@@ -420,9 +429,20 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 backgate.GetComponent<HighlightShowController>().disableHighlight();
             }
         }
-        if (upstairsTrigger != null && this.floor2Unlocked )
+        if (upstairsTrigger != null )
         {
-            upstairsTrigger.unlockLibrary();
+            if ( this.floor2Unlocked )
+            {
+                upstairsTrigger.unlockLibrary();
+            }
+            if ( this.floor3Unlocked )
+            {
+                upstairsTrigger.unlockThirdFloor();
+            }
+            if ( this.floor4Unlocked )
+            {
+                upstairsTrigger.unlockFourthFloor();
+            }
         }
         if (this.buyAllowed)
         {

@@ -17,11 +17,11 @@ public class Bookcase : Interactable
         {
             if (books.Count < numPossibleBooks) // still room in bookcase
             {
-                bookcaseUI.showBookSelectUI(this.gameObject);
+                bookcaseUI.showBookSelectUI(this.gameObject, numPossibleBooks);
             }
             else // no room in bookcase
             {
-                bookcaseUI.showBookReadUI(books);
+                bookcaseUI.showBookReadUI(books, numPossibleBooks);
             }
         }
         else

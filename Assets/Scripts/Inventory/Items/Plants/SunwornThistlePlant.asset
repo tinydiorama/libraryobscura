@@ -21,7 +21,9 @@ MonoBehaviour:
   category: 1
   buyPrice: 20
   sellPrice: 30
-  itemDesc: 
+  itemDesc: With its soft and velvety leaves, the fibers of the Sunworn Thistle can
+    be spun into popular baskets and hats. These are said to bring about good luck
+    when worn, and are additionally used in warding rituals.
   seedImages: []
   harvestPlant: {fileID: 0}
   crossBreed1: {fileID: 11400000, guid: 4cdda4a83cb3b6c4080ab898b0a11fc7, type: 2}

@@ -134,7 +134,7 @@ public class Elevator : MonoBehaviour
         {
             anim.SetBool("ZoomInUpper", false);
         }
-        StartCoroutine(resetElevatorPos());
+        StartCoroutine(resetElevatorPos(1.2f));
     }
 
     private void gotoFloor2()
@@ -145,7 +145,7 @@ public class Elevator : MonoBehaviour
         {
             anim.SetBool("ZoomInUpper", true);
         }
-        StartCoroutine(resetElevatorPos());
+        StartCoroutine(resetElevatorPos(1.2f));
     }
 
     private void gotoFloor3()
@@ -156,7 +156,7 @@ public class Elevator : MonoBehaviour
         {
             anim.SetBool("ZoomInUpper", true);
         }
-        StartCoroutine(resetElevatorPos());
+        StartCoroutine(resetElevatorPos(1.2f));
     }
 
     private void gotoFloor4()
@@ -167,7 +167,7 @@ public class Elevator : MonoBehaviour
         {
             anim.SetBool("ZoomInUpper", true);
         }
-        StartCoroutine(resetElevatorPos());
+        StartCoroutine(resetElevatorPos(1.2f));
     }
 
     private IEnumerator runElevator()
@@ -204,9 +204,16 @@ public class Elevator : MonoBehaviour
         }
     }
 
-    IEnumerator resetElevatorPos()
+    public void cancelElevator( int currentFloor )
     {
-        yield return new WaitForSeconds(1.2f);
+        //yield return new WaitForSeconds(0.2f);
+        floorToGoTo = currentFloor;
+        StartCoroutine(resetElevatorPos( 0.5f ));
+    }
+
+    IEnumerator resetElevatorPos( float timeToWait )
+    {
+        yield return new WaitForSeconds(timeToWait);
         elevators[floorToGoTo].transform.GetChild(0).GetComponent<Animator>().SetBool("OpenDoor", true);
         floor2Collider.SetActive(true);
         gm.isPaused = false;

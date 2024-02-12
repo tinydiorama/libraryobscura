@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ElevatorUI : MonoBehaviour
 {
+    [SerializeField] private GameObject elevatorPanel;
     [SerializeField] private ElevatorUIItem[] elevatorUIButtons;
     [SerializeField] private Vector3 floor1Pos = new Vector3(18.44929f, -2.79659f, 0);
     [SerializeField] private Vector3 floor2Pos = new Vector3(18.44929f, 0.2506582f, 0);
@@ -11,6 +12,7 @@ public class ElevatorUI : MonoBehaviour
     [SerializeField] private Vector3 floor4Pos = new Vector3(18.44929f, 7.1f, 0);
 
     public Elevator currentElevator;
+    public int currentFloor;
 
     private StoryManager sm;
 
@@ -18,6 +20,7 @@ public class ElevatorUI : MonoBehaviour
     {
         sm = StoryManager.instance;
         currentElevator = setElevator;
+        currentFloor = myFloor;
         foreach (ElevatorUIItem elevatorUIItem in elevatorUIButtons)
         {
             if ((elevatorUIItem.floorIndex == myFloor) ||
@@ -37,5 +40,11 @@ public class ElevatorUI : MonoBehaviour
     {
         currentElevator.gotoFloor(floorIndex);
         gameObject.SetActive(false);
+    }
+
+    public void closeElevatorUI()
+    {
+        elevatorPanel.SetActive(false);
+        currentElevator.cancelElevator( currentFloor );
     }
 }

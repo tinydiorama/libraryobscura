@@ -32,7 +32,7 @@ public class BookcaseUI : MonoBehaviour
     private List<Book> currentBooksToRead;
     public BookSlot selectedBook;
     public GameObject referenceObject;
-    private int maxBooks;
+    [SerializeField] private int maxBooks;
 
     private bool showingBookSelect;
     private bool showingBooktoRead;
@@ -139,6 +139,7 @@ public class BookcaseUI : MonoBehaviour
         GameManager.GetInstance().isPaused = true;
         overlay.SetActive(true);
         currentBooksToRead = booksToRead;
+        maxBooks = numPossibleBooks;
         foreach (Transform child in bookReadList.transform)
         {
             if (child.name != "NoThings")

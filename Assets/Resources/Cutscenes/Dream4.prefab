@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 3542794669474646270}
   - component: {fileID: 4751589538065804116}
   - component: {fileID: 7158407991211678280}
+  - component: {fileID: 7895962806835384957}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -367,7 +368,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There is a place upon which few stumble... and none return...
+  m_text: Behold the Panacea of Binding, a mote of our selves. May your choices be
+    Binding.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ed29a7f2df437041a231810ece85f76, type: 2}
   m_sharedMaterial: {fileID: 5139436780223138733, guid: 0ed29a7f2df437041a231810ece85f76, type: 2}
@@ -377,7 +379,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 16777215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -436,6 +438,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &7895962806835384957
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494617947928415099}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1570274403193952926
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +717,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3.2, y: -0.0000038147}
-  m_SizeDelta: {x: 52.4552, y: 49.2591}
+  m_SizeDelta: {x: 56.25, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1030038357757618703
 CanvasRenderer:
@@ -733,7 +747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9022a5cbd91e89e4e9d7c82cf310e4c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1865,6 +1879,7 @@ GameObject:
   - component: {fileID: 3610961845853776443}
   - component: {fileID: 6009577260769534978}
   - component: {fileID: 7030327392779360312}
+  - component: {fileID: 1282722525323478869}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1920,7 +1935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take care when venturing into the woods, they said.
+  m_text: We the Brights bear witness to the Bound, to honor you and your labors.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ed29a7f2df437041a231810ece85f76, type: 2}
   m_sharedMaterial: {fileID: 5139436780223138733, guid: 0ed29a7f2df437041a231810ece85f76, type: 2}
@@ -1930,7 +1945,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 16777215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1989,6 +2004,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &1282722525323478869
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9083017940030532894}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &6727333048845302048
 PrefabInstance:
   m_ObjectHideFlags: 0

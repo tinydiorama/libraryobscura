@@ -862,8 +862,8 @@ public class AltarData : MonoBehaviour
         {
             return boorishThymeTwilightFernItems;
         }
-        else if (item1.id == "boorishthymeplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "boorishthymeplant")
+        else if (item1.id == "boorishthymeplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "boorishthymeplant")
         {
             return boorishThymeAureateItems;
         }
@@ -931,8 +931,8 @@ public class AltarData : MonoBehaviour
         {
             return brightflowerTwilightFernItems;
         }
-        else if (item1.id == "brightflowerplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "brightflowerplant")
+        else if (item1.id == "brightflowerplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "brightflowerplant")
         {
             return brightflowerAureateItems;
         }
@@ -1005,8 +1005,8 @@ public class AltarData : MonoBehaviour
         {
             return darkspinneretTwilightFernItems;
         }
-        else if (item1.id == "darkspinneretplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "darkspinneretplant")
+        else if (item1.id == "darkspinneretplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "darkspinneretplant")
         {
             return darkspinneretAureateItems;
         }
@@ -1084,8 +1084,8 @@ public class AltarData : MonoBehaviour
         {
             return duskdendronTwilightFernItems;
         }
-        else if (item1.id == "duskdendronplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "duskdendronplant")
+        else if (item1.id == "duskdendronplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "duskdendronplant")
         {
             return duskdendronAureateItems;
         }
@@ -1168,8 +1168,8 @@ public class AltarData : MonoBehaviour
         {
             return harshSnapjawTwilightFernItems;
         }
-        else if (item1.id == "harshsnapjawplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "harshsnapjawplant")
+        else if (item1.id == "harshsnapjawplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "harshsnapjawplant")
         {
             return harshSnapjawAureateItems;
         }
@@ -1257,8 +1257,8 @@ public class AltarData : MonoBehaviour
         {
             return razorbackTwilightFernItems;
         }
-        else if (item1.id == "razorbackplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "razorbackplant")
+        else if (item1.id == "razorbackplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "razorbackplant")
         {
             return razorbackAureateItems;
         }
@@ -1351,8 +1351,8 @@ public class AltarData : MonoBehaviour
         {
             return murkySiltstriderTwilightFernItems;
         }
-        else if (item1.id == "murkysiltstriderplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "murkysiltstriderplant")
+        else if (item1.id == "murkysiltstriderplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "murkysiltstriderplant")
         {
             return murkySiltstriderAureateItems;
         }
@@ -1450,8 +1450,8 @@ public class AltarData : MonoBehaviour
         {
             return paleVerrucaTwilightFernItems;
         }
-        else if (item1.id == "paleverrucaplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "paleverrucaplant")
+        else if (item1.id == "paleverrucaplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "paleverrucaplant")
         {
             return paleVerrucaAureateItems;
         }
@@ -1554,8 +1554,8 @@ public class AltarData : MonoBehaviour
         {
             return sanguineCloverTwilightFernItems;
         }
-        else if (item1.id == "sanguinecloverplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "sanguinecloverplant")
+        else if (item1.id == "sanguinecloverplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "sanguinecloverplant")
         {
             return sanguineCloverAureateItems;
         }
@@ -1663,8 +1663,8 @@ public class AltarData : MonoBehaviour
         {
             return sunwornThistleTwilightFernItems;
         }
-        else if (item1.id == "sunwornthistleplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "sunwornthistleplant")
+        else if (item1.id == "sunwornthistleplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "sunwornthistleplant")
         {
             return sunwornThistleAureateItems;
         }
@@ -1777,8 +1777,8 @@ public class AltarData : MonoBehaviour
         {
             return thornedEspritTwilightFernItems;
         }
-        else if (item1.id == "thornedespritplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "thornedespritplant")
+        else if (item1.id == "thornedespritplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "thornedespritplant")
         {
             return thornedEspritAureateItems;
         }
@@ -1896,8 +1896,8 @@ public class AltarData : MonoBehaviour
         {
             return waxyLaurelTwilightFernItems;
         }
-        else if (item1.id == "waxylaurelplant" && item2.id == "aureate" ||
-            item1.id == "aureate" && item2.id == "waxylaurelplant")
+        else if (item1.id == "waxylaurelplant" && item2.id == "aureateplant" ||
+            item1.id == "aureateplant" && item2.id == "waxylaurelplant")
         {
             return waxyLaurelAureateItems;
         }
@@ -1955,10 +1955,7 @@ public class AltarData : MonoBehaviour
             item1.id == "thornedespritplant" && item2.id == "waxylaurelplant")
         {
             return waxyLaurelThornedEspritItems;
-        } else if ( item1.id == "panacea" || item2.id == "panacea" ) // if EITHER item is a panacea
-        { // do something? end the game? literally do not know
-            Debug.Log("yay you did it");
-        }
+        } 
         return new List<Item>();
     }
 }

@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Book8
   m_EditorClassIdentifier: 
   id: book8
-  title: alsdkf
-  author: asdfa
-  bookColor: {r: 0, g: 0, b: 0, a: 0}
-  page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: asdf
+  title: Treatise on the Brights
+  author: Philosopher Adrian Wainwright
+  bookColor: {r: 0.085711785, g: 0.037006076, b: 0.31132078, a: 1}
+  page1: {fileID: 21300000, guid: f8409af2fd3101648af08edb87c9676d, type: 3}
+  page2: 'What if we''re wrong? What if the Church''s interpretation of the Brights
+    is overconfident? Perhaps there is more to the Brights than any of us could ever
+    understand. In my studies of firsthand accounts of those who dealt with the Brights,
+    there appears to be no evidence that they comprehend us as we think we comprehend
+    them.
+
+
+    What if our understanding of the Brights, who we trust above all
+    else, have a hidden duality that could spell our doom?'

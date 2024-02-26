@@ -13,8 +13,17 @@ MonoBehaviour:
   m_Name: Book4
   m_EditorClassIdentifier: 
   id: book4
-  title: asldkfj
-  author: asdlf
-  bookColor: {r: 0, g: 0, b: 0, a: 0}
-  page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: asdfasdf
+  title: Saint Rose
+  author: Board of Nurses
+  bookColor: {r: 0.9607843, g: 0.7243742, b: 0, a: 0}
+  page1: {fileID: 21300000, guid: af53d1dc13d4a4441905827dad7129ba, type: 3}
+  page2: 'In compassionate memory of Saint Rose. Rose dedicated her life to caring
+    and healing others. She first trained with the Church of  Consecration in caring
+    for the sick. She developed practices such as washing wounds  with saltwater,
+    boiling water for clean bandages, and using native herbs for treatment. Saint
+    Rose''s commitment led her and her fellow nurses to establish their own hospital.
+
+
+    Her
+    profound impact on the community compelled the Church to canonize her posthumously
+    as a Saint.'

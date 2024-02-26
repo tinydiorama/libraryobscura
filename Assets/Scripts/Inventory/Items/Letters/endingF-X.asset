@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: endingF-X
+  m_EditorClassIdentifier: 
+  id: endingF-X
+  from: Dr. Adelaide Thorne
+  subject: Tragic news
+  letterBgTan: 0
+  body: 'I am sending this letter with unfortunate tidings. I am a physician at Saint
+    Rose Infirmary, and I found your letters among my colleague''s belongings. My
+    colleague passed away several days ago due to complications from the plague.
+    Please accept my deepest condolences.
+
+
+    Despite this tragedy, our work at
+    Saint Rose continues in my colleague''s memory. We hope that you are well and
+    safe.
+
+
+    Respectfully,
+
+    Dr. Adelaide Thorne'

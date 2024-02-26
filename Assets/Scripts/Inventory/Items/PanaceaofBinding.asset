@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: panacea
   itemName: Panacea of Binding
-  icon: {fileID: 21300000, guid: 933681e8e97ee9e4c9b2ccd0e80c9d39, type: 3}
+  icon: {fileID: 21300000, guid: 9022a5cbd91e89e4e9d7c82cf310e4c3, type: 3}
   sellable: 0
   buyable: 0
   canBeSacrificed: 1

@@ -13,8 +13,15 @@ MonoBehaviour:
   m_Name: Book7
   m_EditorClassIdentifier: 
   id: book8
-  title: alsdkf
-  author: asdfa
-  bookColor: {r: 0, g: 0, b: 0, a: 0}
-  page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: asdf
+  title: The Manor
+  author: Prof. Eleanor Weatherby
+  bookColor: {r: 0.018939136, g: 0.3584906, b: 0.22627679, a: 1}
+  page1: {fileID: 21300000, guid: 3eb571d9ac70c0d49892f92487cd4ea9, type: 3}
+  page2: 'Some say that The Manor is older than the Shadowed Forest itself. Since
+    time immemorial, the Manor has been where the veil between the Brights and the
+    mortal world is at its thinnest. Through the Altar, one may become Bound and
+    commune directly with the Brights.
+
+
+    Is it possible that the Brights affect
+    our world through sacrifice? Can the Manor grounds hold such a power?'

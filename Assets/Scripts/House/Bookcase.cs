@@ -13,9 +13,19 @@ public class Bookcase : Interactable
 
     public override void interact()
     {
+        int numNonPlacedBooks = 0; 
+        InventoryManager invManage = InventoryManager.instance;
+        for (int i = 0; i < invManage.books.Count; i++)
+        {
+            if (invManage.books[i].placement == "") // this book hasn't been placed yet
+            {
+                numNonPlacedBooks++;
+            }
+        }
+        
         if (StoryManager.instance.allowBooks)
         {
-            if (books.Count < numPossibleBooks) // still room in bookcase
+            if (books.Count < numPossibleBooks && numNonPlacedBooks > 0) // still room in bookcase AND there's a nonplaced book in inventory
             {
                 bookcaseUI.showBookSelectUI(this.gameObject, numPossibleBooks);
             }

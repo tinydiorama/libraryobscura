@@ -59,4 +59,8 @@ public class StoryData : MonoBehaviour
     public Book book7;
     public Book book8;
     public Letter f16Letter;
+
+    public List<Letter> endingXLetters;
+    public List<Letter> endingFriendLetters;
+    public List<Letter> endingManorLetters;
 }

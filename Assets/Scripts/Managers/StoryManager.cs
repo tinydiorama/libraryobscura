@@ -23,6 +23,11 @@ public class StoryManager : MonoBehaviour, iDataPersistence
     public bool floor2StudyUnlocked;
     public bool floor3Unlocked;
     public bool floor4Unlocked;
+    public bool endingChoiceMade;
+    public bool xChoice;
+    public bool friendChoice;
+    public bool manorChoice;
+    public bool endCreditsSeen;
     public int lastLetterReceivedDay;
     public string lucidity;
 
@@ -353,23 +358,31 @@ public class StoryManager : MonoBehaviour, iDataPersistence
                 lastLetterReceivedDay = dayTime.days;
             }
 
-            /*else if (inv.containsLetter("5bookkeeper") && !inv.containsLetter("letter6") 
-                && (dayTime.days - lastLetterReceivedDay >= 2))
+            // ending
+            if (endingChoiceMade && xChoice && !inv.containsLetter("endingX-X"))
             {
-                mm.addNewLetter(data.day5Letter);
-                mm.addNewLetter(data.day6Letter);
-                lastLetterReceivedDay = dayTime.days;
-                mm.hasNewMail = true;
-            } */
-
-            /*if (inv.containsLetter("letter6") && !inv.containsLetter("letter7")
-                && inv.numSold("cloudsprigplant") >= 1)
-            {
-                mm.addNewLetter(data.day7Letter);
+                foreach (Letter letter in data.endingXLetters)
+                {
+                    mm.addNewLetter(letter);
+                }
                 mm.hasNewMail = true;
                 lastLetterReceivedDay = dayTime.days;
-                // miro point
-            } */
+            } else if (endingChoiceMade && friendChoice && !inv.containsLetter("endingF-X")) {
+                foreach (Letter letter in data.endingFriendLetters)
+                {
+                    mm.addNewLetter(letter);
+                }
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            } else if (endingChoiceMade && manorChoice && !inv.containsLetter("endingManor-X"))
+            {
+                foreach (Letter letter in data.endingManorLetters)
+                {
+                    mm.addNewLetter(letter);
+                }
+                mm.hasNewMail = true;
+                lastLetterReceivedDay = dayTime.days;
+            }
         }
     }
 
@@ -407,6 +420,11 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         this.floor3Unlocked = data.floor3Unlocked;
         this.floor4Unlocked = data.floor4Unlocked;
         this.backgateUnlocked = data.backgateUnlocked;
+        this.endingChoiceMade = data.endingChoiceMade;
+        this.xChoice = data.xChoice;
+        this.friendChoice = data.friendChoice;
+        this.manorChoice = data.manorChoice;
+        this.endCreditsSeen = data.endCreditsSeen;
 
         if (figure != null)
         {
@@ -462,14 +480,20 @@ public class StoryManager : MonoBehaviour, iDataPersistence
         data.dream1triggered = this.dream1Triggered;
         data.dream2triggered = this.dream2Triggered;
         data.dream3triggered = this.dream3Triggered;
+        data.dream4triggered = this.dream4Triggered;
         data.seenAltar = this.seenAltar;
         data.lastLetterReceivedDay = this.lastLetterReceivedDay;
         data.lucidity = this.lucidity;
-        data.backgateUnlocked = this.backgateUnlocked;
         data.allowBooks = this.allowBooks;
         data.floor2Unlocked = this.floor2Unlocked;
         data.floor2StudyUnlocked = this.floor2StudyUnlocked;
         data.floor3Unlocked = this.floor3Unlocked;
         data.floor4Unlocked = this.floor4Unlocked;
+        data.backgateUnlocked = this.backgateUnlocked;
+        data.endingChoiceMade = this.endingChoiceMade;
+        data.xChoice = this.xChoice;
+        data.friendChoice = this.friendChoice;
+        data.manorChoice = this.manorChoice;
+        data.endCreditsSeen = this.endCreditsSeen;
     }
 }

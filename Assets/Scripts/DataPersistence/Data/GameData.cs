@@ -39,6 +39,12 @@ public class GameData
     public bool floor2StudyUnlocked;
     public bool floor3Unlocked;
     public bool floor4Unlocked;
+
+    public bool endingChoiceMade;
+    public bool xChoice;
+    public bool friendChoice;
+    public bool manorChoice;
+    public bool endCreditsSeen;
     public SerializableDictionary<string, int> saleItems;
     public SerializableDictionary<string, string> booksOrdered;
     public SerializableDictionary<string, int> itemsOrdered;
@@ -52,6 +58,10 @@ public class GameData
     // bookcases
     public List<string> floor1Bookcase;
     public List<string> floor2Bookcase;
+    public List<string> floor3Bookcase;
+    public List<string> floor4Bookcase;
+
+    public List<string> shopManagerIds;
 
     // the values defined in this constructor are the default values
     // default values on new game
@@ -89,6 +99,12 @@ public class GameData
         this.floor2StudyUnlocked = false;
         this.floor3Unlocked = false;
         this.floor4Unlocked = false;
+        this.endCreditsSeen = false;
+
+        this.endingChoiceMade = false;
+        this.xChoice = false;
+        this.friendChoice = false;
+        this.manorChoice = false;
         this.saleItems = new SerializableDictionary<string, int>();
         this.booksOrdered = new SerializableDictionary<string, string>();
         this.itemsOrdered = new SerializableDictionary<string, int>();
@@ -100,5 +116,9 @@ public class GameData
 
         this.floor1Bookcase = new List<string>();
         this.floor2Bookcase = new List<string>();
+        this.floor3Bookcase = new List<string>();
+        this.floor4Bookcase = new List<string>();
+
+        this.shopManagerIds = new List<string>();
     }
 }

@@ -16,7 +16,7 @@ public class ParallaxBackground : MonoBehaviour
         SetLayers();
     }
 
-    void SetLayers()
+    public void SetLayers()
     {
         if ( this != null )
         {

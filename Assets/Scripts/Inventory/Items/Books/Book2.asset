@@ -14,15 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: book2
   title: The Brights
-  author: Julius Anandi
+  author: An Unknown Priest
   bookColor: {r: 0.9811321, g: 0.5845902, b: 0, a: 0}
-  page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: 'The Seven Brights were said to be present moments after the very beginning.
-    They began as elemental forces: holders, splinters, and melders with each other
-    and all creation.
+  page1: {fileID: 21300000, guid: 6159e8bbc891f3645818ff9860787107, type: 3}
+  page2: 'We all know that the Seven Brights began at the dawn of time. They began
+    just like the Earth, they elementally manifested as holders, splinters, and melders.
+    As Creation grew, it became aware and consciousness spread. The Brights absorbed
+    these new aspects into their selves as well.
 
 
-    As willpower and consciousness developed over time, so
-    did the Brights take this into themselves. Humanity and the Brights moved together,
-    wills united as one. Each one reflected the other with kindnesses, strengths,
-    and certain weaknesses.'
+    Eventually, Humanity emerged
+    and was nurtured by the Brights and their heralds. In our harmonies, we developed
+    strength, kindness, and compassion.
+
+
+    We all ask now, are the Brights still
+    among us?'

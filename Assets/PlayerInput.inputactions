@@ -266,6 +266,17 @@
                 },
                 {
                     "name": "",
+                    "id": "422c29b7-76e7-4b20-ab76-ed48463d4113",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5c6bb774-b242-4f66-aa62-555b6df20df6",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -326,6 +337,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a91a71b8-c73a-41ac-a6ce-99c0172c3b65",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false

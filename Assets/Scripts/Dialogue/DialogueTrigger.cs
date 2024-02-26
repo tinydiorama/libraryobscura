@@ -8,6 +8,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange;
     private bool isTriggered;
+    private GameObject player;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             if (! isTriggered)
             {
+                player.GetComponent<PlayerPlatformerController>().stopPlayer();
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 isTriggered = true;
             }
@@ -31,6 +33,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = true;
+            player = collider.gameObject;
         }
     }
 

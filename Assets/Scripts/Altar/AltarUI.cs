@@ -203,24 +203,42 @@ public class AltarUI : MonoBehaviour
     private IEnumerator showSacrificeResults()
     {
         yield return new WaitForSeconds(0.7f);
-        altarAnimation.SetActive(false);
-        altarGetPanel.SetActive(true);
         InventoryManager inv = InventoryManager.instance;
-        List<Item> itemsToGet = altarData.getSacrificeItems(item1.altarItem, item2.altarItem);
-        inv.removeItem(item1.altarItem);
-        inv.removeItem(item2.altarItem);
-        ShopManager shop = ShopManager.instance;
-        foreach (Item item in itemsToGet)
+        if (item1.altarItem.id == "panacea" || item2.altarItem.id == "panacea")
         {
-            if ( item.buyable && ! shop.shopItems.Contains(item) )
+            altarAnimation.SetActive(false);
+            inv.removeItem(item1.altarItem);
+            inv.removeItem(item2.altarItem);
+            GameManager.GetInstance().showNightFade();
+            StartCoroutine(showEndingCutscene());
+        } else
+        {
+            altarAnimation.SetActive(false);
+            altarGetPanel.SetActive(true);
+            List<Item> itemsToGet = altarData.getSacrificeItems(item1.altarItem, item2.altarItem);
+            inv.removeItem(item1.altarItem);
+            inv.removeItem(item2.altarItem);
+            ShopManager shop = ShopManager.instance;
+            foreach (Item item in itemsToGet)
             {
-                shop.shopItems.Add(item); // add the newly discovered altar seed to the shop
+                if (item.buyable && !shop.shopItems.Contains(item))
+                {
+                    shop.shopItems.Add(item); // add the newly discovered altar seed to the shop
+                }
+                GameObject tempObj = Instantiate(altarItemPrefab, altarItemList.transform);
+                tempObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.itemName;
+                tempObj.transform.GetChild(1).GetComponent<Image>().sprite = item.icon;
+                inv.addItem(item);
             }
-            GameObject tempObj = Instantiate(altarItemPrefab, altarItemList.transform);
-            tempObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.itemName;
-            tempObj.transform.GetChild(1).GetComponent<Image>().sprite = item.icon;
-            inv.addItem(item);
         }
+    }
+
+    IEnumerator showEndingCutscene()
+    {
+        yield return new WaitForSeconds(2f);
+        StoryManager.instance.endingChoiceMade = true;
+        StoryManager.instance.manorChoice = true;
+        CutsceneManager.instance.loadEndingCutscene();
     }
 
     public void closeGetSacrificeItems()

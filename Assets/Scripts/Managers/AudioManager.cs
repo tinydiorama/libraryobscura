@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
 public class AudioManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _sfxsource;
     [SerializeField] private AudioClip[] songs;
     [SerializeField] private int songPlaying;
+    public bool playlistStarted;
 
     private static AudioManager instance;
 
@@ -18,6 +20,13 @@ public class AudioManager : MonoBehaviour
         }
         instance = this;
         songPlaying = 0;
+    }
+    private void Update()
+    {
+        /*if ( !_audiosource.isPlaying && playlistStarted )
+        {
+            ChangeSong();
+        }*/
     }
 
     public static AudioManager GetInstance()
@@ -56,10 +65,12 @@ public class AudioManager : MonoBehaviour
 
     public void StartPlaylist()
     {
+        _audiosource.volume = 1;
         songPlaying = 0;
-        ChangeSong();
+        _audiosource.loop = true;
         _audiosource.clip = songs[songPlaying];
         _audiosource.Play();
+        playlistStarted = true;
     }
     public void ChangeSong()
     {
@@ -69,6 +80,7 @@ public class AudioManager : MonoBehaviour
         {
             songPlaying = 0;
         }
+        playlistStarted = true;
         _audiosource.clip = songs[songPlaying];
         _audiosource.Play();
     }

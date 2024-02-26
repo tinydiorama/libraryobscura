@@ -73,11 +73,33 @@ public class CutsceneManager : MonoBehaviour
         cutscene.GetComponent<Dream4Manager>().startDream(cameraCollider, player, world, globalVolume, globalLight, vcam);
 
     }
+    public void loadEndingCutscene()
+    {
+        hud.SetActive(false);
+        GameObject cutscene = InstantiateResource("Cutscenes", "EndingCutscene");
+        cutscene.GetComponent<EndingCutscene>().startDream(cameraCollider, player, world, globalVolume, globalLight, vcam);
+
+    }
 
     public void cleanupCutscene()
     {
         // reset everything
         Vector2 newPos = new Vector2(27.45f, -1.97f);
+        Vector2 posDelta = newPos - (Vector2)player.transform.position;
+        GameManager gm = GameManager.GetInstance();
+        world.SetActive(true);
+        gm.isStopTime = false;
+        player.transform.position = newPos;
+        cameraCollider.transform.position = new Vector3(50.179f, 3.400905f, 0.009863324f);
+        vcam.OnTargetObjectWarped(player.transform, posDelta);
+        player.GetComponent<PlayerPlatformerController>().maxSpeed = player.GetComponent<PlayerPlatformerController>().defaultSpeed;
+        StartCoroutine(afterMoveCleanup());
+    }
+
+    public void cleanupCutsceneEndingSacrifice()
+    {
+        // reset everything
+        Vector2 newPos = new Vector2(68.25f, -0.73f);
         Vector2 posDelta = newPos - (Vector2)player.transform.position;
         GameManager gm = GameManager.GetInstance();
         world.SetActive(true);
@@ -107,7 +129,7 @@ public class CutsceneManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-
+        DataPersistenceManager.instance.SaveGame();
         StartCoroutine(gm.startNewDay());
     }
 

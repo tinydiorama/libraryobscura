@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: endingManor-F
+  m_EditorClassIdentifier: 
+  id: endingManor-F
+  from: A Friend
+  subject: New Beginnings
+  letterBgTan: 1
+  body: 'The plague is a shadow of its former self! The streets are bustling again,
+    and the markets have reopened. Even I feel more present and alive as well. I
+    have made a resolution to provide for myself. My family''s wealth has done more
+    harm than good.
+
+
+    I accepted a lowly research assistant position at the University.
+    It is a good start. As for my brother, I do not know how he fits in my life.
+    Whatever the future brings, I''m
+
+
+    Brightly,
+
+    A Friend'

@@ -359,6 +359,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
 
     public void SaveData(ref GameData data)
     {
+        data.letters.Clear();
         foreach (LetterSlot slot in letters)
         {
             if (data.letters.ContainsKey(slot.letter.id))
@@ -371,6 +372,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         {
             data.letters.Clear();
         }
+        data.books.Clear();
         foreach (BookSlot slot in books)
         {
             if (data.books.ContainsKey(slot.book.id))
@@ -383,6 +385,7 @@ public class InventoryManager : MonoBehaviour, iDataPersistence
         {
             data.books.Clear();
         }
+        data.items.Clear();
         foreach (ItemSlot slot in items)
         {
             if (data.items.ContainsKey(slot.item.id))

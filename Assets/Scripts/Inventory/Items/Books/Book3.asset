@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: book3
   title: Church of Consecration
-  author: Father Antoninus
+  author: Father Ambrose
   bookColor: {r: 0, g: 0.041199084, b: 0.4811321, a: 1}
-  page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: 'The Brights walked closely with Humanity until the first cities were built.
-    With time, the Brights stepped back and watched Humanity grow. In this distance,
-    the Church of Consecration was formed to venerate the Brights.
+  page1: {fileID: 21300000, guid: d658d5beecad31b478be7b1cb56d0c1c, type: 3}
+  page2: 'Praised be the Brights, benevolent beings of light. They guided Humanity
+    in its early days, nurturing and protecting us as we grew. As our cities developed,
+    the Brights returned to their realm, observing from afar. Our Holy Church of
+    Consecration was established to honor and grow the Brights'' vision for Humanity.
 
 
-    The Church
-    and its Vicars were charged with recording how the Brights and Humanity walked
-    together. The Vicars wrote the histories, spread the Word, and asked only for
-    all to listen.'
+    Our
+    Church is our community. Your esteemed Vicars are mere servants. Together we
+    tell the sacred journey of the Brights and Humanity. Come and join our Holy Assemblies
+    that are held every seventh day. Together we will commit and affirm our dedication
+    before the Brights.'

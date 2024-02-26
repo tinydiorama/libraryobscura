@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DayTransitionHelper dayTransition;
     [SerializeField] private GameObject nightFade;
     [SerializeField] private GameObject hud;
+    [SerializeField] private GameObject endCredits;
     public bool saveAtNight;
 
     public bool isPaused;
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
         hud.SetActive(false);
         showNightFade();
         AudioManager.GetInstance().FadeOutMusic();
+        AudioManager.GetInstance().playlistStarted = false;
         StartCoroutine(processDay());
     }
 
@@ -113,6 +115,15 @@ public class GameManager : MonoBehaviour
         {
             CutsceneManager.instance.loadCutscene4();
             StoryManager.instance.dream4Triggered = true;
+        }
+        else if ((inv.containsLetter("endingF-X") || inv.containsLetter("endingManor-X") || inv.containsLetter("endingX-X"))
+            && ! StoryManager.instance.endCreditsSeen)
+        {
+            endCredits.SetActive(true);
+            isInteractionsDisabled = true;
+            isStopTime = true;
+            StoryManager.instance.endCreditsSeen = true;
+            StartCoroutine(hideCredits());
         }
         else
         {
@@ -151,5 +162,14 @@ public class GameManager : MonoBehaviour
         InteractableItemsManager.instance.resetItems();
         yield return new WaitForSeconds(1f);
         isPaused = false;
+    }
+
+    public IEnumerator hideCredits()
+    {
+        yield return new WaitForSeconds(37f);
+        isInteractionsDisabled = false;
+        isStopTime = false;
+        endCredits.SetActive(false);
+        StartCoroutine(startNewDay());
     }
 }

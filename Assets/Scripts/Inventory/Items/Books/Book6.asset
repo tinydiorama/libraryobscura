@@ -13,8 +13,17 @@ MonoBehaviour:
   m_Name: Book6
   m_EditorClassIdentifier: 
   id: book6
-  title: alsdkf
-  author: asdfa
-  bookColor: {r: 0, g: 0, b: 0, a: 0}
-  page1: {fileID: 21300000, guid: 8039a4b613ef5044cb80e9da59d61bda, type: 3}
-  page2: asdf
+  title: Secrets of the Brights?
+  author: Father Demetrius
+  bookColor: {r: 0.31132078, g: 0, b: 0.21650799, a: 1}
+  page1: {fileID: 21300000, guid: 7a545d60859670f428efcc99ac093ffa, type: 3}
+  page2: 'We have studied the ancient texts for so long that actually meeting one
+    of the Brights was... a shock. Father Julius recognized it as the Bright of Compassion.
+    When it approached the makeshift grave we had dug for Father Henrick, we all
+    drew a breath. But as Father Henrick lived again, the Bright took the life from
+    our manservant in exchange.
+
+
+    It is paradoxical that an entity of Compassion
+    would demand such an exchange or sacrifice! There is a shadow of Cruelty in this
+    act. But... even writing this is heresy, I know. I must hide this journal!'

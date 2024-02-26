@@ -11,6 +11,7 @@ public class Dream1Trigger : MonoBehaviour {
 
     private GameManager gm;
     private bool playerInRange;
+    private GameObject player;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class Dream1Trigger : MonoBehaviour {
             gm.isPaused = true;
             whine.Stop();
             knock.Stop();
+            player.GetComponent<PlayerPlatformerController>().stopPlayer();
             AudioManager.GetInstance().playSFX(boom);
             CutsceneManager.instance.cleanupCutscene();
         }
@@ -36,6 +38,7 @@ public class Dream1Trigger : MonoBehaviour {
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = true;
+            player = collider.gameObject;
         }
     }
 

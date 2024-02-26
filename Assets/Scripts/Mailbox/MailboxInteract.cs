@@ -8,6 +8,7 @@ public class MailboxInteract : Interactable
     [SerializeField] private InventoryUI inventoryUI;
     [SerializeField] private MailboxUI mailboxUI;
     [SerializeField] private BuySellUI buySellUI;
+    [SerializeField] private GameObject endingChoice;
 
     private void LateUpdate()
     {
@@ -24,6 +25,7 @@ public class MailboxInteract : Interactable
 
     public override void interact()
     {
+        InventoryManager inv = InventoryManager.instance;
         if ( ! GameManager.GetInstance().isPaused )
         {
             if (!StoryManager.instance.mailboxInteract1) // have never interacted with the mailbox before
@@ -36,14 +38,20 @@ public class MailboxInteract : Interactable
             }
             else
             {
-                if (MailManager.instance.hasNewMail)
+                if ( inv.containsItem("panacea") ) // we have the panacea, so show ending choice
                 {
-                    mailboxUI.showReceivedMail();
-                }
-                else if (StoryManager.instance.buyAllowed)
+                    endingChoice.SetActive(true);
+                } else
                 {
-                    MailManager.instance.showAlert = false;
-                    buySellUI.showShop();
+                    if (MailManager.instance.hasNewMail)
+                    {
+                        mailboxUI.showReceivedMail();
+                    }
+                    else if (StoryManager.instance.buyAllowed)
+                    {
+                        MailManager.instance.showAlert = false;
+                        buySellUI.showShop();
+                    }
                 }
             }
         }

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483ec5261e3a2124caf90bf8e81a3db9, type: 3}
+  m_Name: endingManor-X
+  m_EditorClassIdentifier: 
+  id: endingManor-X
+  from: X
+  subject: Amazing news
+  letterBgTan: 0
+  body: 'I have amazing and astonishing news! I feel like I have new life in me.
+    Moreover, the plague seems to be diminishing. Everyone in the City seems to be
+    recovering. It is as if it has lost substance. Is it something you did? Perhaps
+    we will never know for certain.
+
+
+    Either way, thank you for everything. Our
+    work here is just beginning, but for the first time, there is hope.
+
+
+    Gracefully,
+
+    X'

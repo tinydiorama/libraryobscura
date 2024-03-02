@@ -72,6 +72,7 @@ public class Bed : MonoBehaviour
     public void sleep()
     {
         bedUIshown = false;
+        AudioManager.GetInstance().playBoop();
         GameManager gm = GameManager.GetInstance();
         gm.nextDay();
         bedConfirmPanel.SetActive(false);

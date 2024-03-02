@@ -42,7 +42,7 @@ public class InteractableItem : Interactable
                 InventoryManager.instance.money += (int)moneyObtained;
             } else
             {
-                int itemToObtain = Random.Range(0, potentialItems.Count - 1);
+                int itemToObtain = Random.Range(0, potentialItems.Count);
                 Item itemObtained = potentialItems[itemToObtain];
                 addNotification("Found a " + itemObtained.itemName, itemObtained.icon, true);
                 InventoryManager.instance.addItem(itemObtained);

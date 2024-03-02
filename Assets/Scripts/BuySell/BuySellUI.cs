@@ -235,6 +235,7 @@ public class BuySellUI : MonoBehaviour
     {
         GameManager gm = GameManager.GetInstance();
         InventoryManager inv = InventoryManager.instance;
+        AudioManager.GetInstance().playBoop();
         confirmPanel.SetActive(false);
         if (isBuying) // buying
         {

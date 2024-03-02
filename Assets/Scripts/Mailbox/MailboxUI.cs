@@ -49,6 +49,7 @@ public class MailboxUI : MonoBehaviour
         gm = GameManager.GetInstance();
         MailManager manager = MailManager.instance;
         InventoryManager inv = InventoryManager.instance;
+        AudioManager.GetInstance().playBoop();
         foreach (Transform child in receivedMailPanel.transform)
         {
             Destroy(child.gameObject);

@@ -31,14 +31,16 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void Start()
     {
+        AudioManager am = AudioManager.GetInstance();
         gm = GameManager.GetInstance();
         audioSource.clip = footstep;
         audioSource.loop = true;
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.1f * am.masterSoundVolume;
     }
 
     protected override void ComputeVelocity()
     {
+        AudioManager am = AudioManager.GetInstance();
         if ( ! gm.isPaused )
         {
             Vector2 move = Vector2.zero;
@@ -74,10 +76,10 @@ public class PlayerPlatformerController : PhysicsObject
                 {
                     if ( loudFootsteps )
                     {
-                        audioSource.volume = 0.5f;
+                        audioSource.volume = 0.5f * am.masterSoundVolume;
                     } else
                     {
-                        audioSource.volume = 0.1f;
+                        audioSource.volume = 0.1f * am.masterSoundVolume;
                     }
                     audioSource.Play();
                 }

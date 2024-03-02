@@ -39,6 +39,10 @@ public class GardenPlot : MonoBehaviour
     [SerializeField] private Sprite witheredImage;
     [SerializeField] private TextAsset tooDarkToSee;
 
+    [SerializeField] private AudioClip dig;
+    [SerializeField] private AudioClip hoe;
+    [SerializeField] private AudioClip water;
+
     private ItemSlot seedSelected;
     public ItemSlot growingSeed;
     private Button seedSelectedUI;
@@ -87,6 +91,7 @@ public class GardenPlot : MonoBehaviour
                     }
                     else if (state == (int)PlantState.DEAD)
                     {
+                        AudioManager.GetInstance().playSFX(hoe);
                         setStateDirt();
                         addNotification("This plant has died. You've cleared it away.",
                             null, false);
@@ -119,6 +124,7 @@ public class GardenPlot : MonoBehaviour
 
     public void waterPlant()
     {
+        AudioManager.GetInstance().playSFX(water);
         watered = true;
         sr.sprite = wateredSoil;
         GetComponent<HighlightShowController>().disableHighlight();
@@ -136,6 +142,7 @@ public class GardenPlot : MonoBehaviour
 
     public void setStateTilled()
     {
+        AudioManager.GetInstance().playSFX(hoe);
         sr.sprite = tilledSprite;
         state = (int)PlantState.TILLED;
         watered = false;
@@ -186,6 +193,7 @@ public class GardenPlot : MonoBehaviour
 
     public void harvestPlant()
     {
+        AudioManager.GetInstance().playSFX(dig);
         Item harvestPlant = growingSeed.item.harvestPlant;
         CollectionManager.instance.discoverNew(harvestPlant);
         InventoryManager.instance.addItem(harvestPlant);
@@ -286,6 +294,7 @@ public class GardenPlot : MonoBehaviour
 
     public void plantSeed()
     {
+        AudioManager.GetInstance().playSFX(dig);
         bool successfulPlant = InventoryManager.instance.removeItem(seedSelected.item);
         growingSeed = seedSelected;
         if ( successfulPlant )

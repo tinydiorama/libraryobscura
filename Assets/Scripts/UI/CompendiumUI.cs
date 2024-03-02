@@ -25,6 +25,7 @@ public class CompendiumUI : MonoBehaviour
     [SerializeField] private string baseName;
     [SerializeField] private string baseDesc;
     [SerializeField] private string basePrice;
+    [SerializeField] private AudioClip pageturn;
     private CollectionSlot currItemSlot;
     private int currItemPos;
     private GameManager gm;
@@ -183,6 +184,7 @@ public class CompendiumUI : MonoBehaviour
 
     public void nextPage()
     {
+        AudioManager.GetInstance().playSFX(pageturn);
         currItemPos++;
         if ( currItemPos >= cm.collection.Count )
         {
@@ -195,6 +197,7 @@ public class CompendiumUI : MonoBehaviour
 
     public void prevPage()
     {
+        AudioManager.GetInstance().playSFX(pageturn);
         currItemPos--;
         if (currItemPos < 0 )
         {

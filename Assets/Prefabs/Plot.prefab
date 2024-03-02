@@ -373,7 +373,7 @@ Transform:
   - {fileID: 1069312554555073133}
   - {fileID: 7471300784998382082}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &420179247856143714
 SpriteRenderer:
@@ -518,6 +518,9 @@ MonoBehaviour:
   plantImage: {fileID: 474584877097918295}
   witheredImage: {fileID: 0}
   tooDarkToSee: {fileID: 0}
+  dig: {fileID: 8300000, guid: 243963287bdfbdf468f42fb008bfd897, type: 3}
+  hoe: {fileID: 8300000, guid: 2d6fd33b23448a741979f2043a38ccc1, type: 3}
+  water: {fileID: 8300000, guid: c21f4b9d6225ca545816f098d1f1f3b1, type: 3}
   growingSeed:
     item: {fileID: 0}
     count: 0

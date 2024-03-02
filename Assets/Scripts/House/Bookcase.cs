@@ -25,13 +25,16 @@ public class Bookcase : Interactable
         
         if (StoryManager.instance.allowBooks)
         {
-            if (books.Count < numPossibleBooks && numNonPlacedBooks > 0) // still room in bookcase AND there's a nonplaced book in inventory
+            if ( ! bookcaseUI.showingBookSelect && ! bookcaseUI.showingBooktoRead && ! bookcaseUI.showingBookCloseup)
             {
-                bookcaseUI.showBookSelectUI(this.gameObject, numPossibleBooks);
-            }
-            else // no room in bookcase
-            {
-                bookcaseUI.showBookReadUI(books, numPossibleBooks);
+                if (books.Count < numPossibleBooks && numNonPlacedBooks > 0) // still room in bookcase AND there's a nonplaced book in inventory
+                {
+                    bookcaseUI.showBookSelectUI(this.gameObject, numPossibleBooks);
+                }
+                else // no room in bookcase
+                {
+                    bookcaseUI.showBookReadUI(books, numPossibleBooks);
+                }
             }
         }
         else

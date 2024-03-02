@@ -18,6 +18,13 @@ public class Dream1Trigger : MonoBehaviour {
         playerInRange = false;
     }
 
+    private void Start()
+    {
+        AudioManager am = AudioManager.GetInstance();
+        whine.volume = am.masterMusicVolume;
+        knock.volume = am.masterMusicVolume;
+    }
+
     private void Update()
     {
         gm = GameManager.GetInstance();

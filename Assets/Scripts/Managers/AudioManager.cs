@@ -7,7 +7,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _audiosource;
     [SerializeField] private AudioSource _sfxsource;
     [SerializeField] private AudioClip[] songs;
+    [SerializeField] private AudioClip boop;
     [SerializeField] private int songPlaying;
+    public float masterMusicVolume;
+    public float masterSoundVolume;
     public bool playlistStarted;
 
     private static AudioManager instance;
@@ -20,6 +23,8 @@ public class AudioManager : MonoBehaviour
         }
         instance = this;
         songPlaying = 0;
+        masterMusicVolume = 1;
+        masterSoundVolume = 1;
     }
     private void Update()
     {
@@ -45,7 +50,7 @@ public class AudioManager : MonoBehaviour
         {
             for (float i = 0; i < transitionTime; i += Time.deltaTime)
             {
-                _audiosource.volume = (1 - (i / transitionTime));
+                _audiosource.volume = (masterMusicVolume - (i / transitionTime));
                 yield return null;
             }
 
@@ -55,17 +60,19 @@ public class AudioManager : MonoBehaviour
 
     public void setMusicVolume(float volume)
     {
+        masterMusicVolume = volume;
         _audiosource.volume = volume;
     }
 
     public void setSFXVolume(float volume)
     {
+        masterSoundVolume = volume;
         _sfxsource.volume = volume;
     }
 
     public void StartPlaylist()
     {
-        _audiosource.volume = 1;
+        _audiosource.volume = masterMusicVolume;
         songPlaying = 0;
         _audiosource.loop = true;
         _audiosource.clip = songs[songPlaying];
@@ -74,7 +81,7 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeSong()
     {
-        _audiosource.volume = 1;
+        _audiosource.volume = masterMusicVolume;
         songPlaying++;
         if ( songPlaying >= songs.Length)
         {
@@ -83,6 +90,12 @@ public class AudioManager : MonoBehaviour
         playlistStarted = true;
         _audiosource.clip = songs[songPlaying];
         _audiosource.Play();
+    }
+
+    public void playBoop()
+    {
+        _sfxsource.loop = false;
+        _sfxsource.PlayOneShot(boop);
     }
 
     public void playSFXLoop(AudioClip clip)

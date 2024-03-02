@@ -36,6 +36,7 @@ public class DayTransitionHelper : MonoBehaviour
         {
             if (InputManager.GetInstance().GetConfirmPressed())
             {
+                AudioManager.GetInstance().playBoop();
                 canContinue = false;
                 StartCoroutine(GameManager.GetInstance().startNewDay());
             }

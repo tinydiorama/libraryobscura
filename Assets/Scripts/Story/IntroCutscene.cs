@@ -70,6 +70,7 @@ public class IntroCutscene : MonoBehaviour
             if (InputManager.GetInstance().GetInteractPressed())
             {
                 allowContinue = false;
+                AudioManager.GetInstance().playBoop();
                 fadeOut();
             }
         }

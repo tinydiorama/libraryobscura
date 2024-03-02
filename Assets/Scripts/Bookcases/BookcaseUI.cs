@@ -34,8 +34,9 @@ public class BookcaseUI : MonoBehaviour
     public GameObject referenceObject;
     [SerializeField] private int maxBooks;
 
-    private bool showingBookSelect;
-    private bool showingBooktoRead;
+    public bool showingBookSelect;
+    public bool showingBooktoRead;
+    public bool showingBookCloseup;
 
     private void Update()
     {
@@ -79,6 +80,7 @@ public class BookcaseUI : MonoBehaviour
         {
             noThings.SetActive(true);
         }
+        bool firstBook = true;
         for (int i = 0; i < invManage.books.Count; i++)
         {
             if (invManage.books[i].placement == "" ) // skip over already placed books
@@ -93,9 +95,10 @@ public class BookcaseUI : MonoBehaviour
                 {
                     selectBook(ref tempBook);
                 });
-                if (i == 0)
+                if (firstBook)
                 { // select the first book
                     selectBook(ref tempBook);
+                    firstBook = false;
                 }
             }
         }
@@ -119,6 +122,7 @@ public class BookcaseUI : MonoBehaviour
 
     public void placeBook()
     {
+        AudioManager.GetInstance().playBoop();
         selectedBook.placement = referenceObject.GetComponent<Bookcase>().bookcasePlacementText;
         referenceObject.GetComponent<Bookcase>().books.Add(selectedBook.book);
         closeBookSelectUI();
@@ -192,6 +196,8 @@ public class BookcaseUI : MonoBehaviour
     public void showBookCloseup(ref Book bookToShow)
     {
         closeBookReadUI();
+        showingBookCloseup = true;
+        AudioManager.GetInstance().playBoop();
         GameManager.GetInstance().isPaused = true;
         overlay.SetActive(true);
         bookCover.color = bookToShow.bookColor;
@@ -203,6 +209,7 @@ public class BookcaseUI : MonoBehaviour
     public void closeBookCloseup()
     {
         GameManager.GetInstance().isPaused = false;
+        showingBookCloseup = false;
         overlay.SetActive(false);
         bookCloseup.SetActive(false);
         showBookReadUI(currentBooksToRead, maxBooks);

@@ -21,6 +21,9 @@ public class Elevator : MonoBehaviour
 
     [SerializeField] private GameObject[] elevatorShafts;
     [SerializeField] private GameObject[] elevators;
+    
+    [SerializeField] private AudioClip elevatordoor;
+    [SerializeField] private AudioClip elevatording;
 
     [SerializeField] private ElevatorUI elevatorUI;
 
@@ -84,6 +87,7 @@ public class Elevator : MonoBehaviour
             }
             transform.GetChild(0).GetComponent<Animator>().SetBool("DoorStartOpen", false);
             transform.GetChild(0).GetComponent<Animator>().SetBool("CloseDoor", true);
+            AudioManager.GetInstance().playSFX(elevatordoor);
             Vector3 playerPos = player.transform.position;
             playerPos.x = floor2Pos.x;
             StartCoroutine(MoveOverSeconds(player, playerPos, 1f));
@@ -229,6 +233,7 @@ public class Elevator : MonoBehaviour
     IEnumerator finishOpeningNewFloorDoor()
     {
         yield return new WaitForSeconds(1f);
+        //AudioManager.GetInstance().playSFX(elevatording);
         elevators[floorToGoTo].transform.GetChild(0).GetComponent<Animator>().SetBool("CloseDoor", false);
         elevators[floorToGoTo].transform.GetChild(0).GetComponent<Animator>().SetBool("OpenDoor", false);
     }

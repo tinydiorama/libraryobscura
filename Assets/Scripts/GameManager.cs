@@ -92,6 +92,15 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         onEndOfDay?.Invoke();
 
+        bool allBooksSlotted = true;
+        foreach( BookSlot bookSlot in inv.books )
+        {
+            if ( bookSlot.placement == "" )
+            {
+                allBooksSlotted = false;
+            }
+        }
+
         // nighttime activities :)
         if (inv.containsLetter("2newlibrarian") && !StoryManager.instance.dream1Triggered
             && inv.itemsOrdered.Count == 0) // do the dream instead
@@ -111,7 +120,7 @@ public class GameManager : MonoBehaviour
             StoryManager.instance.dream3Triggered = true;
         }
         else if (inv.containsLetter("f16deliverance") && inv.containsLetter("x16isthistheend")
-            && !StoryManager.instance.dream4Triggered)
+            && !StoryManager.instance.dream4Triggered && allBooksSlotted)
         {
             CutsceneManager.instance.loadCutscene4();
             StoryManager.instance.dream4Triggered = true;

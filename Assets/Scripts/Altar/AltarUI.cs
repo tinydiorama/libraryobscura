@@ -64,7 +64,7 @@ public class AltarUI : MonoBehaviour
         LeanTween.value(introText2.gameObject, updateColorValueCallback2, color, fadeoutcolor, 3f).setEase(LeanTweenType.easeInOutSine).setOnComplete(() =>
         {
             showingMessage = false;
-            introTextContainer.SetActive(true);
+            introTextContainer.SetActive(false);
             StoryManager.instance.seenAltar = true;
             showAltar();
         });
